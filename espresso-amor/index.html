@@ -4,250 +4,441 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Cafetería Espresso Amor · Lindavista</title>
+<title>Espresso Amor · cafetería en Lindavista Nte.</title>
+<meta name="description" content="Café de barrio con terraza, plantas y luces en Barranquilla 138, Lindavista Nte. Pedidos por WhatsApp.">
+<meta property="og:title" content="Espresso Amor · cafetería en Lindavista">
+<meta property="og:description" content="La esquina con sombra, plantas y buen café. Barranquilla 138, Lindavista Nte.">
+<meta property="og:image" content="https://toshiodev.github.io/pulselat-demos/espresso-amor/img/hero.jpg">
+<meta property="og:url" content="https://toshiodev.github.io/pulselat-demos/espresso-amor/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noche:#120f0c;
-    --noche-2:#1b1611;
-    --crema:#f3ece1;
-    --amb:#e6a955;
-    --amb-2:#f6ce8c;
-    --linea:rgba(243,236,225,.16);
-    --gris:#a89c8d;
+    --crema:#f2e7d2;
+    --crema-2:#e7d5b9;
+    --crema-3:#fbf4e6;
+    --negro:#1a1712;
+    --carbon:#2a251d;
+    --teja:#b5654a;
+    --teja-osc:#8a4630;
+    --verde:#4f6b3a;
+    --verde-claro:#8aa06a;
+    --ambar:#f2c68d;
+    --rojo:#b23a2a;
+    --tinta:#241f18;
+    --gris:#6d6353;
+    --linea:rgba(36,31,24,.16);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--noche);color:var(--crema);
-    font-family:"Inter Tight",system-ui,sans-serif;
-    font-weight:300;line-height:1.55;
+    background:var(--crema);color:var(--tinta);
+    font-family:"Archivo",system-ui,sans-serif;font-weight:400;line-height:1.62;
     -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 500px at 90% -8%,rgba(242,198,141,.22),transparent 70%);
   }
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-  .serif{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1.02}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;line-height:1.04;letter-spacing:.005em}
+  .kicker{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--teja-osc)}
 
-  /* nav */
-  nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 28px;max-width:1180px;margin:0 auto}
-  .marca{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
-  .marca svg{width:30px;height:30px;flex:none}
-  .nav-links{display:flex;gap:28px;font-size:14px;color:rgba(243,236,225,.72)}
-  .nav-links a:hover{color:var(--amb-2)}
+  /* franja superior */
+  .top{border-bottom:1px solid var(--linea);background:var(--crema-2);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris)}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:34px}
+  .top b{color:var(--tinta);font-weight:500}
+  .top a:hover{color:var(--teja)}
+
+  .barra{position:sticky;top:0;z-index:30;background:rgba(242,231,210,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+  .barra .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:74px}
+  .firma{display:flex;flex-direction:column;line-height:1}
+  .firma b{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:27px;letter-spacing:.01em}
+  .firma span{margin-top:5px;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris)}
+  .nav{display:flex;gap:26px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris)}
+  .nav a:hover{color:var(--teja)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--negro);transition:.2s}
+  .btn-solido{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+  .btn-solido:hover{background:var(--teja-osc);border-color:var(--teja-osc)}
+  .btn-linea{color:var(--negro)}
+  .btn-linea:hover{background:var(--negro);color:var(--crema)}
+  .barra .btn{padding:10px 18px}
+
+  /* lona */
+  .lona{background:linear-gradient(180deg,#211d16,#14110c);color:var(--crema);position:relative;z-index:2;box-shadow:0 18px 34px rgba(20,17,12,.28)}
+  .lona::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.22),transparent 18%,transparent 82%,rgba(0,0,0,.25))}
+  .lona .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;padding-top:20px;padding-bottom:12px}
+  .lona-txt{display:flex;align-items:baseline;font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:600;font-size:clamp(48px,9.4vw,124px);line-height:.84;letter-spacing:.005em;color:var(--crema)}
+  .l{display:inline-block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+  .l i{display:inline-block;font-style:normal}
+  .js .l i{transform:translateY(112%);animation:subir .9s cubic-bezier(.22,1,.36,1) forwards}
+  .js .l:nth-child(1) i{animation-delay:.05s}
+  .js .l:nth-child(2) i{animation-delay:.11s}
+  .js .l:nth-child(3) i{animation-delay:.17s}
+  .js .l:nth-child(4) i{animation-delay:.23s}
+  .js .l:nth-child(5) i{animation-delay:.29s}
+  .js .l:nth-child(6) i{animation-delay:.35s}
+  .js .l:nth-child(7) i{animation-delay:.41s}
+  .js .l:nth-child(8) i{animation-delay:.47s}
+  .js .l:nth-child(9) i{animation-delay:.53s}
+  @keyframes subir{to{transform:translateY(0)}}
 
   /* hero */
-  .hero{position:relative;min-height:min(94vh,880px);display:flex;align-items:flex-end;overflow:hidden}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;filter:saturate(1.05) contrast(1.02)}
-  .hero::after{content:"";position:absolute;inset:0;background:
-    linear-gradient(180deg,rgba(18,15,12,.72) 0%,rgba(18,15,12,.18) 32%,rgba(18,15,12,.55) 68%,var(--noche) 100%)}
-  .hero .wrap{position:relative;z-index:2;padding-bottom:64px;padding-top:180px}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amb-2)}
-  .eyebrow::before{content:"";width:34px;height:1px;background:var(--amb);display:block}
-  h1{font-size:clamp(56px,10.5vw,146px);margin:18px 0 14px;font-weight:400}
-  h1 em{font-style:italic;color:var(--amb-2)}
-  .lead{max-width:46ch;font-size:clamp(16px,1.5vw,19px);color:rgba(243,236,225,.82)}
-  .acciones{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-size:15px;font-weight:500;letter-spacing:.01em;transition:.2s}
-  .btn-solido{background:var(--amb);color:#1a1206}
-  .btn-solido:hover{background:var(--amb-2);transform:translateY(-1px)}
-  .btn-linea{border:1px solid rgba(243,236,225,.34);color:var(--crema)}
-  .btn-linea:hover{border-color:var(--amb-2);color:var(--amb-2)}
+  .hero{position:relative;z-index:3;padding:128px 0 84px;min-height:620px;display:flex;align-items:flex-end}
+  .hero-fondo{position:absolute;inset:0;overflow:hidden}
+  .hero-fondo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.95) contrast(1.03) brightness(.82)}
+  .hero-fondo::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(26,23,18,.94) 0%,rgba(26,23,18,.72) 42%,rgba(26,23,18,.28) 100%),
+    linear-gradient(180deg,rgba(26,23,18,.34) 0%,rgba(26,23,18,0) 28%,rgba(26,23,18,.82) 100%)}
+  .hero .wrap{position:relative;z-index:2}
+  .copia{max-width:560px;color:var(--crema)}
+  .copia .kicker{color:var(--ambar)}
+  h1{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:clamp(42px,5.6vw,72px);line-height:1.02;margin-top:16px;text-shadow:0 2px 30px rgba(20,17,12,.35)}
+  .lead{margin-top:22px;max-width:44ch;font-size:16px;color:rgba(242,231,210,.84)}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .hero .btn-solido{background:var(--crema);color:var(--negro);border-color:var(--crema)}
+  .hero .btn-solido:hover{background:var(--ambar);border-color:var(--ambar)}
+  .hero .btn-linea{color:var(--crema);border-color:rgba(242,231,210,.6)}
+  .hero .btn-linea:hover{background:var(--crema);color:var(--negro);border-color:var(--crema)}
+  .nota-hero{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:11.5px;letter-spacing:.05em;color:rgba(242,231,210,.72)}
+  .nota-hero::before{content:"";width:34px;height:1px;background:var(--ambar)}
 
-  /* cinta de calificación */
-  .cinta{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:var(--noche-2)}
-  .cinta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 28px}
-  .estrellas{display:flex;align-items:center;gap:14px}
-  .estrellas b{font-family:"Fraunces",serif;font-weight:500;font-size:30px;line-height:1}
-  .estrellas span{font-size:14px;color:var(--gris)}
-  .estrellas .stars{color:var(--amb);letter-spacing:2px;font-size:15px}
-  .cinta a.enlace{font-size:14px;border-bottom:1px solid var(--amb);padding-bottom:2px;color:var(--amb-2)}
+  .emblema{position:absolute;top:-76px;right:max(28px,calc((100vw - 1140px)/2 + 28px));z-index:5;width:152px;height:152px;border-radius:50%;background:var(--crema-3);border:1px solid rgba(36,31,24,.2);box-shadow:0 20px 44px rgba(20,17,12,.34);display:grid;place-items:center;color:var(--teja-osc)}
+  .emblema svg{width:84%;height:84%;overflow:visible}
+  .emblema text{font-family:"Instrument Serif",serif;font-style:italic;font-size:9.4px;letter-spacing:1.1px}
+
+  /* faja */
+  .faja{background:var(--crema-3);border-bottom:1px solid var(--linea)}
+  .faja .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;padding:15px 28px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris)}
+  .faja span{display:flex;align-items:center;gap:9px}
+  .faja span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--teja)}
 
   /* secciones */
-  section{padding:110px 0}
-  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin-bottom:22px}
-  h2{font-size:clamp(34px,4.6vw,62px);max-width:22ch}
-  .dos{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
-  .dos p{color:rgba(243,236,225,.76);font-size:17px;max-width:44ch}
-  .dos p + p{margin-top:18px}
-  .lista-hechos{border-top:1px solid var(--linea)}
-  .lista-hechos div{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--linea);align-items:baseline}
-  .lista-hechos b{font-family:"Fraunces",serif;font-weight:400;font-size:22px;color:var(--amb-2);min-width:34px}
-  .lista-hechos span{font-size:15px;color:rgba(243,236,225,.8)}
+  section{padding:94px 0}
+  .cabeza{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding-bottom:22px;margin-bottom:44px}
+  .cabeza::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--linea);transform:scaleX(0);transform-origin:left}
+  .vis .cabeza::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+  .cabeza h2{font-size:clamp(38px,5vw,60px);margin-top:10px}
+  .cabeza h2 em{color:var(--teja-osc)}
+  .cabeza p{max-width:38ch;font-size:13px;color:var(--gris)}
+
+  .terraza{display:grid;grid-template-columns:.94fr 1.06fr;gap:64px;align-items:center}
+  .terraza h2{font-size:clamp(40px,5.2vw,64px);margin:12px 0 20px}
+  .terraza h2 em{color:var(--teja-osc)}
+  .terraza p{max-width:44ch;font-size:15.5px;color:rgba(36,31,24,.82)}
+  .terraza p+p{margin-top:14px}
+  .datos-terraza{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+  .dato-terraza{border-top:1px solid var(--linea);padding-top:14px}
+  .dato-terraza b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.1;color:var(--teja-osc)}
+  .dato-terraza span{display:block;margin-top:5px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris)}
+
+  .collage{position:relative;padding:0 0 52px 0}
+  .foto-terraza{position:relative;border:1px solid rgba(36,31,24,.2);overflow:hidden;background:var(--crema-2)}
+  .foto-terraza img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(.96)}
+  .lona-foto{position:absolute;left:-42px;bottom:0;width:64%;padding:8px;background:var(--crema-3);border:1px solid rgba(36,31,24,.2);box-shadow:0 20px 40px rgba(36,31,24,.2);transform:rotate(-2deg)}
+  .lona-foto img{display:block;width:100%;height:auto}
+  .lona-foto figcaption{margin-top:6px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);text-align:right}
 
   /* menú */
-  .menu{background:var(--noche-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-  .menu .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:54px}
-  .nota{font-size:13px;color:var(--gris);max-width:30ch;text-align:right}
-  .platillos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 70px}
-  .platillo{display:flex;align-items:baseline;gap:14px;padding:22px 0;border-bottom:1px solid var(--linea)}
-  .platillo .n{font-size:19px;font-weight:400}
-  .platillo .d{font-size:13px;color:var(--gris);margin-top:4px}
-  .platillo .puntos{flex:1;border-bottom:1px dotted rgba(243,236,225,.25);transform:translateY(-4px)}
-  .platillo .precio{font-family:"Fraunces",serif;font-size:19px;color:var(--amb-2);white-space:nowrap}
+  .menu-sec{background:var(--crema-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .menu{display:grid;grid-template-columns:1fr 1fr;gap:0 54px}
+  .grupo h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:var(--negro);color:var(--crema);padding:10px 14px;font-family:"Archivo",sans-serif;font-stretch:112%;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .grupo h3 span{font-family:"Archivo",sans-serif;font-stretch:100%;font-weight:400;font-size:8.5px;letter-spacing:.14em;color:rgba(242,231,210,.55)}
+  .renglon{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:baseline;padding:12px 2px;border-bottom:1px dotted rgba(36,31,24,.3)}
+  .renglon b{display:block;font-size:15px;font-weight:500;line-height:1.4}
+  .renglon small{display:block;margin-top:3px;font-family:"Instrument Serif",serif;font-style:italic;font-size:13.5px;line-height:1.4;color:var(--gris)}
+  .renglon .punto{font-family:"Instrument Serif",serif;font-style:italic;font-size:12px;color:var(--teja-osc);white-space:nowrap}
+  .nota-menu{grid-column:1/-1;margin-top:34px;padding-left:15px;border-left:2px solid var(--teja);font-size:12px;line-height:1.65;color:var(--gris);max-width:60ch}
 
-  /* ubicación */
-  .ubic{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-  .dato{padding:24px 0;border-bottom:1px solid var(--linea)}
-  .dato h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);font-weight:400;margin-bottom:8px}
-  .dato p{font-size:18px;max-width:34ch}
-  .dato a{color:var(--amb-2)}
-  .horario{display:flex;justify-content:space-between;gap:16px;font-size:15px;padding:10px 0;color:rgba(243,236,225,.8)}
-  .horario b{font-weight:500;color:var(--crema)}
+  /* visita */
+  .visita .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+  .visita h2{font-size:clamp(40px,5.4vw,68px);margin:12px 0 20px}
+  .visita h2 em{color:var(--teja-osc)}
+  .visita .lead2{max-width:40ch;font-size:15.5px;color:rgba(36,31,24,.82)}
+  .dato{padding:19px 0;border-bottom:1px solid var(--linea)}
+  .dato:first-child{padding-top:0}
+  .dato h3{font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--teja);margin-bottom:6px}
+  .dato p,.dato a{font-size:15.5px}
+  .dato a:hover{color:var(--teja)}
+  .dato small{display:block;margin-top:4px;font-size:11.5px;color:var(--gris)}
+  .visita .acciones{margin-top:28px}
+  .postal{position:relative;padding:10px 10px 12px;background:var(--crema-3);border:1px solid rgba(36,31,24,.2);box-shadow:0 22px 48px rgba(36,31,24,.14);transform:rotate(1.2deg)}
+  .postal img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.95)}
+  .postal .leyenda{margin-top:10px;font-family:"Instrument Serif",serif;font-style:italic;font-size:14px;color:var(--gris);text-align:center}
+  .postal .sello{position:absolute;top:-26px;right:-18px;width:92px;height:92px;border-radius:50%;background:var(--teja);color:var(--crema-3);display:grid;place-content:center;text-align:center;font-size:8px;letter-spacing:.16em;text-transform:uppercase;line-height:1.5;box-shadow:0 12px 24px rgba(138,70,48,.35);transform:rotate(-8deg)}
+  .postal .sello b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:21px;letter-spacing:0;line-height:1;margin-bottom:3px}
 
   /* cierre */
-  .cierre{position:relative;background:var(--noche-2);border-top:1px solid var(--linea);text-align:center;padding:120px 0}
-  .cierre h2{margin:0 auto 18px;max-width:26ch}
-  .cierre p{color:var(--gris);margin:0 auto 36px;max-width:52ch}
+  .cierre{background:linear-gradient(180deg,#211d16,#14110c);color:var(--crema);text-align:center;padding:90px 0}
+  .cierre .kicker{color:var(--ambar)}
+  .cierre h2{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:600;font-size:clamp(46px,8.6vw,110px);line-height:.9;letter-spacing:.01em;margin:12px 0 16px}
+  .cierre p{max-width:44ch;margin:0 auto 30px;font-size:15px;color:rgba(242,231,210,.7)}
   .cierre .acciones{justify-content:center}
+  .cierre .btn-solido{background:var(--crema);color:var(--negro);border-color:var(--crema)}
+  .cierre .btn-solido:hover{background:var(--ambar);border-color:var(--ambar)}
+  .cierre .btn-linea{color:var(--crema);border-color:rgba(242,231,210,.55)}
+  .cierre .btn-linea:hover{background:var(--crema);color:var(--negro)}
 
-  footer{padding:44px 0;border-top:1px solid var(--linea);font-size:12px;color:var(--gris)}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
+  footer{background:#14110c;color:rgba(242,231,210,.55);padding:28px 0;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
-  @media (max-width:860px){
-    .nav-links{display:none}
-    .dos,.ubic{grid-template-columns:1fr;gap:40px}
-    .platillos{grid-template-columns:1fr}
-    .nota{text-align:left}
-    section{padding:76px 0}
-    .hero{min-height:88vh}
-    .hero::after{background:linear-gradient(180deg,rgba(18,15,12,.78) 0%,rgba(18,15,12,.35) 26%,rgba(18,15,12,.72) 62%,var(--noche) 100%)}
-    .hero .wrap{padding-top:140px}
-    .acciones{gap:10px}
+  /* movimiento */
+  .draw path{stroke-dasharray:1;stroke-dashoffset:1}
+  .draw.on path{animation:dibujar 1.3s cubic-bezier(.3,.7,.2,1) .5s forwards}
+  .draw.on path:nth-child(2){animation-delay:.56s}
+  .draw.on path:nth-child(3){animation-delay:.62s}
+  .draw.on path:nth-child(4){animation-delay:.68s}
+  .draw.on path:nth-child(5){animation-delay:.74s}
+  .draw.on path:nth-child(6){animation-delay:.8s}
+  @keyframes dibujar{to{stroke-dashoffset:0}}
+  .emblema{opacity:0;animation:aparecer .8s ease .35s forwards}
+  @keyframes aparecer{to{opacity:1}}
+
+  .js .hero-fondo img{animation:acercar 1.8s cubic-bezier(.22,1,.36,1) both}
+  @keyframes acercar{from{transform:scale(1.06);opacity:.7}}
+
+  .grupo,.foto-terraza,.lona-foto,.dato,.postal{opacity:0;transform:translateY(14px)}
+  .vis .grupo,.vis .foto-terraza,.vis .lona-foto,.vis .dato,.vis .postal{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+  .vis .grupo:nth-child(2){transition-delay:.1s}
+  .vis .lona-foto{transition-delay:.16s}
+  .vis .dato:nth-child(2){transition-delay:.06s}
+  .vis .dato:nth-child(3){transition-delay:.12s}
+  .vis .dato:nth-child(4){transition-delay:.18s}
+  .foto-terraza{clip-path:inset(0 0 100% 0);opacity:1;transform:none}
+  .vis .foto-terraza{clip-path:inset(0 0 0 0);transition:clip-path 1.1s cubic-bezier(.22,1,.36,1)}
+  .lona-foto{transform:rotate(-2deg) translateY(16px)}
+  .vis .lona-foto{transform:rotate(-2deg)}
+  .postal{transform:rotate(1.2deg) translateY(14px)}
+  .vis .postal{transform:rotate(1.2deg)}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .l i{animation:none!important;transform:none!important}
+    .draw path{animation:none!important;stroke-dashoffset:0!important}
+    .emblema,.js .hero-fondo img{animation:none!important;opacity:1!important;transform:none!important}
+    .grupo,.foto-terraza,.lona-foto,.dato,.postal{animation:none!important;transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}
+    .lona-foto{transform:rotate(-2deg)!important}
+    .postal{transform:rotate(1.2deg)!important}
+    .cabeza::after{transform:scaleX(1)!important}
+  }
+
+  @media (max-width:1020px){
+    .terraza,.visita .grid{grid-template-columns:1fr;gap:46px}
+    .nav{display:none}
+    .collage{max-width:620px}
+    .lona-foto{left:0;width:58%}
+    .postal{max-width:460px;order:2}
+  }
+  @media (max-width:720px){
+    .lona-meta{display:none}
+    .lona .wrap{padding-top:16px;padding-bottom:8px}
+    .emblema{top:-42px;right:20px;width:94px;height:94px}
+    .hero{padding:96px 0 62px;min-height:560px}
+    .hero .wrap{padding-right:20px}
+    h1{font-size:38px}
     .acciones .btn{flex:1;justify-content:center}
+    section{padding:66px 0}
+    .menu{grid-template-columns:1fr;gap:34px}
+    .dato-terraza b{font-size:19px}
+    .cierre h2{font-size:44px}
+    .collage{padding-bottom:42px}
+    .lona-foto{position:relative;left:auto;bottom:auto;width:78%;margin:-28px auto 0;transform:rotate(-2deg)}
+    .top .oculto{display:none}
+    .barra .btn span{display:none}
+    .barra .btn{padding:10px 14px}
+    .firma b{font-size:23px}
+  }
+  @media (max-width:420px){
+    .wrap{padding:0 20px}
+    .lona-txt{font-size:36px}
+    .emblema{width:74px;height:74px;top:-36px;right:16px}
+    .postal .sello{width:80px;height:80px;right:-10px}
+  }
+  @media (max-width:360px){
+    .lona-txt{font-size:26px}
+    .emblema{width:56px;height:56px;top:-28px;right:8px}
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="marca">
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <circle cx="20" cy="20" r="18.5" stroke="#e6a955" stroke-width="1.2"/>
-      <circle cx="20" cy="20" r="12" stroke="rgba(230,169,85,.5)" stroke-width="1"/>
-      <circle cx="20" cy="20" r="5" fill="#e6a955"/>
-    </svg>
-    Espresso Amor
-  </div>
-  <div class="nav-links">
-    <a href="#casa">La casa</a>
-    <a href="#menu">Menú</a>
+<div class="top"><div class="wrap">
+  <span class="oculto">Lindavista Nte. · CDMX</span>
+  <span><b>4.8 en Google</b> · 760 reseñas</span>
+  <a href="https://wa.me/525519287031">WhatsApp 55 1928 7031</a>
+</div></div>
+
+<div class="barra"><div class="wrap">
+  <a class="firma" href="#barra">
+    <b>Espresso Amor</b>
+    <span>Cafetería · Lindavista Nte.</span>
+  </a>
+  <nav class="nav">
+    <a href="#terraza">La terraza</a>
+    <a href="#barra">La barra</a>
     <a href="#visita">Visítanos</a>
-    <a href="https://wa.me/525519287031">WhatsApp</a>
+  </nav>
+  <a class="btn btn-solido" href="https://wa.me/525519287031"><span>Pedir</span> WhatsApp</a>
+</div></div>
+
+<div class="lona" aria-label="Cafetería">
+  <div class="wrap">
+    <div class="lona-txt" role="img" aria-label="Cafetería">
+      <span class="l"><i>C</i></span><span class="l"><i>A</i></span><span class="l"><i>F</i></span><span class="l"><i>E</i></span><span class="l"><i>T</i></span><span class="l"><i>E</i></span><span class="l"><i>R</i></span><span class="l"><i>Í</i></span><span class="l"><i>A</i></span>
+    </div>
   </div>
-</nav>
+</div>
 
 <header class="hero">
-  <img src="fotos/foto1.jpg" alt="Terraza iluminada de Cafetería Espresso Amor en Lindavista">
+  <div class="hero-fondo"><img src="img/terraza.jpg" alt="Terraza de Espresso Amor con plantas, focos y mesas ocupadas de noche"></div>
+  <div class="emblema" aria-hidden="true">
+    <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <defs><path id="arco-amor" d="M18 70a42 42 0 0 0 84 0"/></defs>
+      <circle pathLength="1" cx="60" cy="60" r="55"/>
+      <circle cx="60" cy="60" r="49" stroke-width="0.8" opacity=".55"/>
+      <path pathLength="1" d="M48 30c-4-5 0-8 1-12"/>
+      <path pathLength="1" d="M60 27c-4-5 0-9 1-13"/>
+      <path pathLength="1" d="M72 30c-4-5 0-8 1-12"/>
+      <path pathLength="1" d="M60 38c14 0 24 10 24 23S74 84 60 84 36 74 36 61s10-23 24-23Z"/>
+      <path pathLength="1" d="M48 42c8 10 10 26 4 38"/>
+      <text font-size="9.4" letter-spacing="1.1" fill="currentColor" stroke="none"><textPath href="#arco-amor" startOffset="50%" text-anchor="middle">Espresso Amor</textPath></text>
+    </svg>
+  </div>
   <div class="wrap">
-    <span class="eyebrow">Lindavista · Barranquilla 138</span>
-    <h1 class="serif">Café de barrio,<br><em>sin prisa.</em></h1>
-    <p class="lead">Terraza entre plantas, luces cálidas y café bien hecho. El lugar donde Lindavista se queda un rato más.</p>
-    <div class="acciones">
-      <a class="btn btn-solido" href="https://wa.me/525519287031">Pedir por WhatsApp</a>
-      <a class="btn btn-linea" href="#menu">Ver el menú</a>
+    <div class="copia">
+      <div class="kicker">Cafetería de barrio · Lindavista Nte.</div>
+      <h1>La esquina con sombra, plantas y buen café.</h1>
+      <p class="lead">Una terraza con focos cálidos, macetas de madera y mesas para quedarse. Café, pan dulce y pedidos para llevar en Barranquilla 138.</p>
+      <div class="acciones">
+        <a class="btn btn-solido" href="https://wa.me/525519287031">Pedir por WhatsApp</a>
+        <a class="btn btn-linea" href="#barra">Ver la barra</a>
+      </div>
+      <p class="nota-hero">Barranquilla 138 · a unas calles de Plaza Lindavista</p>
     </div>
   </div>
 </header>
 
-<div class="cinta">
-  <div class="wrap">
-    <div class="estrellas">
-      <b>4.8</b>
+<div class="faja"><div class="wrap">
+  <span>Café de barrio</span>
+  <span>Terraza con plantas</span>
+  <span>Pan dulce</span>
+  <span>Pedidos por WhatsApp</span>
+  <span>Lindavista Nte.</span>
+</div></div>
+
+<section id="terraza" data-anim><div class="wrap">
+  <div class="terraza">
+    <div>
+      <div class="kicker">La terraza</div>
+      <h2 class="serif">Sombra, plantas y <em>luz cálida</em></h2>
+      <p>La lona negra se ve desde la esquina. Abajo, las macetas de madera separan la terraza de la banqueta y los focos se prenden al atardecer.</p>
+      <p>Es el tipo de lugar donde uno llega por un café y se queda a la charla. Hay mesas adentro y afuera; el perro de la esquina a veces se suma.</p>
+      <div class="datos-terraza">
+        <div class="dato-terraza"><b>Barranquilla 138</b><span>Lindavista Nte.</span></div>
+        <div class="dato-terraza"><b>4.8 en Google</b><span>760 reseñas</span></div>
+      </div>
+    </div>
+    <div class="collage">
+      <figure class="foto-terraza"><img src="img/hero.jpg" alt="Terraza de Espresso Amor con palmas, macetas y mesas de metal"></figure>
+      <figure class="lona-foto">
+        <img src="img/lona.jpg" alt="Lona original de Espresso Amor con la palabra CAFETERÍA y el emblema circular">
+        <figcaption>La lona original</figcaption>
+      </figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="barra" class="menu-sec" data-anim><div class="wrap">
+  <div class="cabeza">
+    <div>
+      <div class="kicker">La barra</div>
+      <h2 class="serif">Lo que se sirve <em>en la esquina</em></h2>
+    </div>
+    <p>Café, pan dulce y algo salado. Los precios y lo del día, en la barra.</p>
+  </div>
+  <div class="menu">
+    <div class="grupo">
+      <h3>Café <span>caliente y frío</span></h3>
+      <div class="renglon"><div><b>Espresso</b><small>Solo, cortado o doble.</small></div><span class="punto">de la casa</span></div>
+      <div class="renglon"><div><b>Americano</b><small>Para la sobremesa larga.</small></div><span class="punto">clásico</span></div>
+      <div class="renglon"><div><b>Capuchino</b><small>Leche vaporizada y espuma.</small></div><span class="punto">caliente</span></div>
+      <div class="renglon"><div><b>Latte</b><small>Caliente o con hielo.</small></div><span class="punto">suave</span></div>
+      <div class="renglon"><div><b>Cold brew</b><small>Extracción en frío, con hielo.</small></div><span class="punto">frío</span></div>
+      <div class="renglon"><div><b>Chocolate</b><small>Con leche y canela.</small></div><span class="punto">de la casa</span></div>
+    </div>
+    <div class="grupo">
+      <h3>Para acompañar <span>dulce y salado</span></h3>
+      <div class="renglon"><div><b>Pan dulce del día</b><small>Concha, oreja o lo que salga del horno.</small></div><span class="punto">de la charola</span></div>
+      <div class="renglon"><div><b>Bagel con queso crema</b><small>Tostado, con opción de jamón.</small></div><span class="punto">tostado</span></div>
+      <div class="renglon"><div><b>Sándwich de pierna</b><small>Pierna, aguacate y chiles en vinagre.</small></div><span class="punto">para llevar</span></div>
+      <div class="renglon"><div><b>Cheesecake</b><small>Rebanada con mermelada del día.</small></div><span class="punto">de vitrina</span></div>
+      <div class="renglon"><div><b>Galletas de avena</b><small>Con nuez, horneadas en el local.</small></div><span class="punto">de la casa</span></div>
+      <div class="renglon"><div><b>Molletes</b><small>Frijoles, queso gratinado y pico.</small></div><span class="punto">caliente</span></div>
+    </div>
+    <p class="nota-menu">El menú cambia con el día. Para precios, pedidos grandes o para llevar, escribe al 55 1928 7031; contestamos desde la barra.</p>
+  </div>
+</div></section>
+
+<section id="visita" data-anim><div class="wrap">
+  <div class="visita">
+    <div class="grid">
       <div>
-        <div class="stars">★★★★★</div>
-        <span>760 reseñas en Google</span>
+        <div class="kicker">Visítanos</div>
+        <h2 class="serif">Ven a <em>la esquina</em></h2>
+        <p class="lead2">Sobre Barranquilla, en Lindavista Nte. Pasa por un café, siéntate en la terraza o mándanos el pedido y lo tienes listo.</p>
+        <div class="acciones">
+          <a class="btn btn-solido" href="https://wa.me/525519287031">Escribir por WhatsApp</a>
+          <a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Espresso+Amor+Barranquilla+138">Cómo llegar</a>
+        </div>
+        <div class="dato"><h3>Dirección</h3><p>Barranquilla 138<br>Lindavista Nte., Gustavo A. Madero, 07300</p></div>
+        <div class="dato"><h3>WhatsApp y llamadas</h3><p><a href="https://wa.me/525519287031">55 1928 7031</a></p><small>Pedidos para llevar y preguntas del menú.</small></div>
+        <div class="dato"><h3>Horario</h3><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Espresso+Amor+Barranquilla+138">Ver el horario de hoy en Google Maps →</a></p><small>El horario puede cambiar; la ficha de Maps es la que manda.</small></div>
       </div>
+      <figure class="postal">
+        <img src="img/plantas.jpg" alt="Macetas de madera y palmas en la entrada de la terraza de Espresso Amor">
+        <figcaption class="leyenda">La entrada, entre palmas y macetas de madera</figcaption>
+        <div class="sello"><span><b>4.8</b>en Google</span></div>
+      </figure>
     </div>
-    <a class="enlace" href="https://flamastars.pulselat.online/r/espresso-amor">Leer las reseñas</a>
   </div>
-</div>
+</div></section>
 
-<section id="casa">
-  <div class="wrap dos">
-    <div>
-      <div class="kicker">La casa</div>
-      <h2 class="serif">Una esquina con sombra, plantas y buen café.</h2>
-      <p style="margin-top:26px">Abrimos temprano para el que va al trabajo y nos quedamos hasta tarde para el que viene a platicar. Todo se prepara al momento.</p>
-      <p>Pasa por un espresso, quédate por la terraza. También tenemos todo para llevar.</p>
-    </div>
-    <div class="lista-hechos">
-      <div><b>01</b><span>Café de especialidad preparado al momento</span></div>
-      <div><b>02</b><span>Terraza pet friendly, con sombra y plantas</span></div>
-      <div><b>03</b><span>Pedidos para llevar y entregas por WhatsApp</span></div>
-    </div>
+<section class="cierre"><div class="wrap">
+  <div class="kicker">Cafetería · Lindavista Nte.</div>
+  <h2>TE ESPERAMOS</h2>
+  <p>Un café, una silla en la terraza y los focos prendidos. Así se cierra el día en la esquina.</p>
+  <div class="acciones">
+    <a class="btn btn-solido" href="https://wa.me/525519287031">Escribir por WhatsApp</a>
+    <a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Espresso+Amor+Barranquilla+138">Abrir en Google Maps</a>
   </div>
-</section>
+</div></section>
 
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="kicker">Menú</div>
-        <h2 class="serif">Lo de siempre,<br>bien hecho.</h2>
-      </div>
-      <p class="nota">Ejemplo de carta: se arma con tu menú real y tus precios.</p>
-    </div>
-    <div class="platillos">
-      <div class="platillo"><div><div class="n">Espresso</div><div class="d">Doble, taza corta</div></div><div class="puntos"></div><div class="precio">$45</div></div>
-      <div class="platillo"><div><div class="n">Capuchino</div><div class="d">Leche vaporizada, canela</div></div><div class="puntos"></div><div class="precio">$65</div></div>
-      <div class="platillo"><div><div class="n">Latte de la casa</div><div class="d">Con jarabe de la casa</div></div><div class="puntos"></div><div class="precio">$70</div></div>
-      <div class="platillo"><div><div class="n">Cold brew</div><div class="d">18 horas en frío</div></div><div class="puntos"></div><div class="precio">$75</div></div>
-      <div class="platillo"><div><div class="n">Pan del día</div><div class="d">Horneado en casa</div></div><div class="puntos"></div><div class="precio">$55</div></div>
-      <div class="platillo"><div><div class="n">Chocolate caliente</div><div class="d">Cacao de Oaxaca</div></div><div class="puntos"></div><div class="precio">$60</div></div>
-    </div>
-  </div>
-</section>
+<footer><div class="wrap">
+  <span>Espresso Amor · Barranquilla 138, Lindavista Nte.</span>
+  <span>Muestra de Pulse LAT · pulselat.online</span>
+</div></footer>
 
-<section id="visita">
-  <div class="wrap ubic">
-    <div>
-      <div class="kicker">Visítanos</div>
-      <h2 class="serif">Aquí, a dos calles de Plaza Lindavista.</h2>
-      <div class="dato" style="margin-top:34px">
-        <h3>Dirección</h3>
-        <p>Barranquilla 138<br>Lindavista Norte, Gustavo A. Madero, 07300</p>
-      </div>
-      <div class="dato">
-        <h3>WhatsApp y llamadas</h3>
-        <p><a href="https://wa.me/525519287031">55 1928 7031</a></p>
-      </div>
-      <div class="dato" style="border:none">
-        <h3>Cómo llegar</h3>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Cafeter%C3%ADa+Espresso+Amor+CDMX">Abrir en Google Maps →</a></p>
-      </div>
-    </div>
-    <div>
-      <div class="kicker">Horario</div>
-      <div class="horario"><b>Lunes a viernes</b><span>Abrimos 10:00</span></div>
-      <div class="horario"><b>Sábado</b><span>Abrimos 10:00</span></div>
-      <div class="horario"><b>Domingo</b><span>Abrimos 10:00</span></div>
-      <div class="dato" style="margin-top:44px">
-        <h3>Para llevar</h3>
-        <p>Manda tu pedido por WhatsApp y pasa por él sin fila.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cierre">
-  <div class="wrap">
-    <h2 class="serif">¿Nos vemos en la terraza?</h2>
-    <p>Escríbenos por WhatsApp para apartar mesa, pedir para llevar o preguntar por el café del día.</p>
-    <div class="acciones">
-      <a class="btn btn-solido" href="https://wa.me/525519287031">Escribir por WhatsApp</a>
-      <a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&query=Cafeter%C3%ADa+Espresso+Amor+CDMX">Cómo llegar</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>Cafetería Espresso Amor · Barranquilla 138, Lindavista</span>
-    <span>Propuesta de Pulse LAT · pulselat.online</span>
-  </div>
-</footer>
+<noscript><style>
+  .l i{transform:none!important;animation:none!important}
+  .draw path{stroke-dashoffset:0!important;animation:none!important}
+  .emblema{opacity:1!important;animation:none!important}
+  .grupo,.foto-terraza,.lona-foto,.dato,.postal{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}
+  .lona-foto{transform:rotate(-2deg)!important}
+  .postal{transform:rotate(1.2deg)!important}
+  .cabeza::after{transform:scaleX(1)}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Espresso Amor","image":"https://toshiodev.github.io/pulselat-demos/espresso-amor/img/hero.jpg","telephone":"+525519287031","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Barranquilla 138","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"760"}}
+</script>
 
 </body>
 </html>

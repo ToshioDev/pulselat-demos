@@ -4,168 +4,397 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Cafetzin · Lindavista</title>
+<title>Cafetzin · café de barrio en la Col. Estrella</title>
+<meta name="description" content="Café de olla, espresso y pan del día en Calz. de Guadalupe 537, Col. Estrella. Pedidos para llevar por WhatsApp.">
+<meta property="og:title" content="Cafetzin · café de barrio en Lindavista">
+<meta property="og:description" content="El letrero de neón de Calz. de Guadalupe 537. Café, pan dulce y pedidos para llevar.">
+<meta property="og:image" content="https://toshiodev.github.io/pulselat-demos/cafetzin/img/hero.jpg">
+<meta property="og:url" content="https://toshiodev.github.io/pulselat-demos/cafetzin/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noche:#120d10; --noche-2:#1a1216; --crema:#f6ecea;
-    --amb:#ef5b4c; --amb-2:#ff9478; --gris:#a89693;
-    --linea:rgba(247,236,224,.16);
+    --noche:#0f0d0e;
+    --noche-2:#171315;
+    --panel:rgba(14,12,13,.62);
+    --neon:#f0f5ff;
+    --neon-2:#b9c6ee;
+    --rojo:#ff0026;
+    --ambar:#ffb066;
+    --follaje:#4b7c3a;
+    --madera:#8f5d3e;
+    --texto:#e6dfd9;
+    --humo:#a2999b;
+    --linea:rgba(240,245,255,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--noche);color:var(--crema);font-family:"Inter Tight",system-ui,sans-serif;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{
+    background:var(--noche);color:var(--texto);
+    font-family:"Space Grotesk",system-ui,sans-serif;font-weight:400;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(900px 520px at 82% -8%,rgba(255,176,102,.07),transparent 70%),
+      radial-gradient(720px 480px at -4% 34%,rgba(255,0,38,.05),transparent 70%);
+  }
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-  .serif{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1.02}
-  nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 28px;max-width:1180px;margin:0 auto}
-  .marca{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
-  .marca svg{width:30px;height:30px;flex:none}
-  .nav-links{display:flex;gap:28px;font-size:14px;color:rgba(247,236,224,.72)}
-  .nav-links a:hover{color:var(--amb-2)}
-  .hero{position:relative;min-height:min(94vh,880px);display:flex;align-items:flex-end;overflow:hidden}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;filter:saturate(1.03) contrast(1.02)}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,7,.74) 0%,rgba(10,8,7,.15) 30%,rgba(10,8,7,.6) 66%,var(--noche) 100%)}
-  .hero .wrap{position:relative;z-index:2;padding-bottom:64px;padding-top:180px}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amb-2)}
-  .eyebrow::before{content:"";width:34px;height:1px;background:var(--amb);display:block}
-  h1{font-size:clamp(50px,9.5vw,132px);margin:18px 0 14px;font-weight:400}
-  h1 em{font-style:italic;color:var(--amb-2)}
-  .lead{max-width:46ch;font-size:clamp(16px,1.5vw,19px);color:rgba(247,236,224,.84)}
-  .acciones{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-size:15px;font-weight:500;transition:.2s}
-  .btn-solido{background:var(--amb);color:#17100a}
-  .btn-solido:hover{background:var(--amb-2);transform:translateY(-1px)}
-  .btn-linea{border:1px solid rgba(247,236,224,.34)}
-  .btn-linea:hover{border-color:var(--amb-2);color:var(--amb-2)}
-  .cinta{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:var(--noche-2)}
-  .cinta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 28px}
-  .estrellas{display:flex;align-items:center;gap:14px}
-  .estrellas b{font-family:"Fraunces",serif;font-weight:500;font-size:30px;line-height:1}
-  .estrellas span{font-size:14px;color:var(--gris)}
-  .estrellas .stars{color:var(--amb);letter-spacing:2px;font-size:15px}
-  .cinta a.enlace{font-size:14px;border-bottom:1px solid var(--amb);padding-bottom:2px;color:var(--amb-2)}
-  section{padding:110px 0}
-  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gris);margin-bottom:22px}
-  h2{font-size:clamp(34px,4.6vw,62px);max-width:22ch}
-  .dos{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
-  .dos p{color:rgba(247,236,224,.76);font-size:17px;max-width:44ch}
-  .dos p + p{margin-top:18px}
-  .lista-hechos{border-top:1px solid var(--linea)}
-  .lista-hechos div{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--linea);align-items:baseline}
-  .lista-hechos b{font-family:"Fraunces",serif;font-weight:400;font-size:22px;color:var(--amb-2);min-width:34px}
-  .lista-hechos span{font-size:15px;color:rgba(247,236,224,.8)}
-  .menu{background:var(--noche-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-  .menu .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:54px}
-  .nota{font-size:13px;color:var(--gris);max-width:30ch;text-align:right}
-  .platillos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 70px}
-  .platillo{display:flex;align-items:baseline;gap:14px;padding:22px 0;border-bottom:1px solid var(--linea)}
-  .platillo .n{font-size:19px}
-  .platillo .d{font-size:13px;color:var(--gris);margin-top:4px}
-  .platillo .puntos{flex:1;border-bottom:1px dotted rgba(247,236,224,.25);transform:translateY(-4px)}
-  .platillo .precio{font-family:"Fraunces",serif;font-size:19px;color:var(--amb-2);white-space:nowrap}
-  .ubic{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-  .dato{padding:24px 0;border-bottom:1px solid var(--linea)}
-  .dato h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);font-weight:400;margin-bottom:8px}
-  .dato p{font-size:18px;max-width:34ch}
-  .dato a{color:var(--amb-2)}
-  .horario{display:flex;justify-content:space-between;gap:16px;font-size:15px;padding:10px 0;color:rgba(247,236,224,.8)}
-  .horario b{font-weight:500;color:var(--crema)}
-  .cierre{background:var(--noche-2);border-top:1px solid var(--linea);text-align:center;padding:120px 0}
-  .cierre h2{margin:0 auto 18px;max-width:26ch}
-  .cierre p{color:var(--gris);margin:0 auto 36px;max-width:52ch}
-  .cierre .acciones{justify-content:center}
-  footer{padding:44px 0;border-top:1px solid var(--linea);font-size:12px;color:var(--gris)}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
-  @media (max-width:860px){
-    .nav-links{display:none}
-    .dos,.ubic{grid-template-columns:1fr;gap:40px}
-    .platillos{grid-template-columns:1fr}
-    .nota{text-align:left}
-    section{padding:76px 0}
-    .hero{min-height:88vh}
-    .hero::after{background:linear-gradient(180deg,rgba(10,8,7,.78) 0%,rgba(10,8,7,.34) 26%,rgba(10,8,7,.72) 62%,var(--noche) 100%)}
-    .hero .wrap{padding-top:140px}
-    .acciones{gap:10px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .display{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;line-height:.9;letter-spacing:.05em;text-transform:uppercase}
+  .kicker{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ambar)}
+
+  /* barra */
+  .top{position:sticky;top:0;z-index:20;background:rgba(15,13,14,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:66px}
+  .firma{display:flex;align-items:center;gap:12px;color:var(--neon)}
+  .firma svg{width:32px;height:32px;filter:drop-shadow(0 0 7px rgba(185,198,238,.55))}
+  .firma span{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:23px;letter-spacing:.2em;text-transform:uppercase;line-height:1}
+  .nav{display:flex;gap:26px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
+  .nav a:hover{color:var(--neon)}
+  .top .btn{padding:10px 18px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(240,245,255,.4);color:var(--neon);transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+  .btn:hover{border-color:var(--neon);box-shadow:0 0 24px rgba(185,198,238,.22)}
+  .btn-rojo{background:var(--rojo);border-color:var(--rojo);color:#fff;box-shadow:0 0 22px rgba(255,0,38,.35)}
+  .btn-rojo:hover{background:#e00021;border-color:#e00021;box-shadow:0 0 30px rgba(255,0,38,.5)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:92px 0 86px;min-height:min(90vh,840px);display:flex;align-items:center}
+  .fondo{position:absolute;inset:0;z-index:0}
+  .fondo img{width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.86) contrast(1.05) brightness(.72)}
+  .fondo::after{content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(90deg,rgba(15,13,14,.95) 0%,rgba(15,13,14,.76) 44%,rgba(15,13,14,.28) 100%),
+      linear-gradient(180deg,rgba(15,13,14,.6) 0%,rgba(15,13,14,0) 26%,rgba(15,13,14,.9) 100%)}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center;width:100%}
+  .letrero{position:relative;display:inline-block;max-width:620px;padding:34px 36px 30px;background:var(--panel);border:1px solid rgba(240,245,255,.2);backdrop-filter:blur(7px);box-shadow:0 40px 90px rgba(0,0,0,.55),inset 0 0 60px rgba(185,198,238,.05)}
+  .letrero::before,.letrero::after{content:"";position:absolute;top:10px;width:5px;height:5px;border-radius:50%;background:rgba(240,245,255,.35);box-shadow:0 0 6px rgba(240,245,255,.4)}
+  .letrero::before{left:12px}
+  .letrero::after{right:12px}
+  .marca-arriba{display:flex;align-items:center;gap:14px;margin-bottom:16px;color:var(--neon)}
+  .marca-arriba svg{width:68px;height:68px;flex:none;filter:drop-shadow(0 0 9px rgba(185,198,238,.5))}
+  .marca-arriba div{font-size:10px;letter-spacing:.22em;text-transform:uppercase;line-height:1.7;color:var(--neon-2)}
+  .marca-arriba b{display:block;color:var(--neon);font-weight:500}
+  h1{font-size:clamp(62px,9.4vw,124px);color:#fff;text-shadow:0 0 4px rgba(255,255,255,.95),0 0 16px rgba(200,214,255,.7),0 0 44px rgba(130,158,255,.45),0 0 94px rgba(255,0,38,.16)}
+  .tab-rojo{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:7px 13px;background:var(--rojo);color:#fff;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 20px rgba(255,0,38,.45)}
+  .tab-rojo::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff}
+  .lead{margin-top:26px;max-width:44ch;font-size:16.5px;color:rgba(230,223,217,.82)}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .nota-hero{margin-top:28px;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.06em;color:var(--humo)}
+  .nota-hero::before{content:"";width:36px;height:1px;background:rgba(255,176,102,.55)}
+
+  .ficha-letrero{justify-self:end;width:100%;max-width:360px;padding:9px;background:rgba(14,12,13,.55);border:1px solid rgba(240,245,255,.18);transform:rotate(-1.6deg);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .ficha-letrero img{display:block;width:100%;height:auto}
+  .ficha-letrero figcaption{margin-top:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon-2);text-align:right}
+
+  /* marquesina */
+  .marquesina{border-top:1px solid rgba(255,0,38,.4);border-bottom:1px solid var(--linea);background:#0a090a;overflow:hidden;padding:13px 0}
+  .tira{display:flex;align-items:center;gap:34px;width:max-content;animation:correr 30s linear infinite}
+  .marquesina:hover .tira{animation-play-state:paused}
+  .tira span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--neon-2);white-space:nowrap}
+  .tira i{font-style:normal;color:var(--rojo);font-size:9px}
+  @keyframes correr{to{transform:translateX(-50%)}}
+
+  /* secciones */
+  section{padding:98px 0}
+  .cabeza{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding-bottom:24px;margin-bottom:44px}
+  .cabeza::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--linea);transform:scaleX(0);transform-origin:left}
+  .vis .cabeza::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+  .cabeza h2{font-size:clamp(38px,5vw,62px);margin-top:10px;color:var(--neon)}
+  .cabeza p{max-width:38ch;font-size:13px;color:var(--humo)}
+
+  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:0 46px}
+  .grupo h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:11px;border-bottom:1px solid rgba(255,176,102,.35);margin-bottom:3px;font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ambar)}
+  .grupo h3 span{color:var(--humo);font-size:9.5px;letter-spacing:.12em}
+  .fila{display:grid;grid-template-columns:26px 1fr;gap:8px;padding:13px 0;border-bottom:1px dotted rgba(240,245,255,.13)}
+  .fila .n{font-size:10px;letter-spacing:.1em;color:var(--rojo);padding-top:5px}
+  .fila b{display:block;font-size:15px;font-weight:500;color:var(--neon);line-height:1.35}
+  .fila small{display:block;margin-top:4px;font-size:12px;line-height:1.5;color:var(--humo)}
+  .nota-carta{margin-top:32px;max-width:56ch;border-left:2px solid var(--rojo);padding-left:15px;font-size:12px;line-height:1.65;color:var(--humo)}
+
+  /* esquina */
+  .esquina{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .foto-mural{position:relative}
+  .foto-mural img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.95) contrast(1.03)}
+  .foto-mural::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid rgba(240,245,255,.18);z-index:-1}
+  .esquina h2{font-size:clamp(36px,4.6vw,58px);color:var(--neon);margin:12px 0 20px}
+  .esquina p{font-size:15.5px;color:rgba(230,223,217,.82);max-width:46ch}
+  .esquina p+p{margin-top:14px}
+  .hechos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+  .hecho{border-top:1px solid var(--linea);padding-top:15px}
+  .hecho b{display:block;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:32px;line-height:1;color:var(--ambar);letter-spacing:.03em}
+  .hecho span{display:block;margin-top:7px;font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--humo);line-height:1.6}
+
+  .barra-foto{position:relative;margin-top:72px}
+  .barra-foto img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;filter:saturate(.9) brightness(.82)}
+  .barra-foto figcaption{position:absolute;left:22px;bottom:20px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,245,255,.85);background:rgba(15,13,14,.6);padding:6px 12px;backdrop-filter:blur(4px)}
+
+  /* visita */
+  .visita{border-top:1px solid var(--linea)}
+  .visita .grid{display:grid;grid-template-columns:1fr 1fr;gap:74px;align-items:start}
+  .visita h2{font-size:clamp(42px,5.6vw,74px);color:var(--neon);margin:12px 0 22px}
+  .visita .lead2{font-size:15.5px;color:rgba(230,223,217,.8);max-width:42ch}
+  .dato{padding:20px 0;border-bottom:1px solid var(--linea)}
+  .dato:first-child{padding-top:0}
+  .dato h3{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rojo);margin-bottom:7px}
+  .dato p,.dato a{font-size:15.5px;color:var(--texto)}
+  .dato a:hover{color:var(--ambar)}
+  .dato small{display:block;margin-top:5px;font-size:11.5px;color:var(--humo)}
+  .visita .acciones{margin-top:30px}
+  .mapa{position:relative;border:1px solid var(--linea);padding:8px}
+  .mapa img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;filter:saturate(.85) brightness(.8)}
+  .mapa span{position:absolute;left:20px;bottom:18px;background:var(--rojo);color:#fff;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;padding:7px 11px;box-shadow:0 0 18px rgba(255,0,38,.4)}
+
+  footer{border-top:1px solid var(--linea);padding:32px 0;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+  /* movimiento */
+  .draw path{stroke-dasharray:1;stroke-dashoffset:1}
+  .draw.on path{animation:dibujar 1.2s cubic-bezier(.3,.7,.2,1) forwards}
+  .draw.on path:nth-child(2){animation-delay:.08s}
+  .draw.on path:nth-child(3){animation-delay:.16s}
+  .draw.on path:nth-child(4){animation-delay:.24s}
+  .draw.on path:nth-child(5){animation-delay:.32s}
+  .draw.on path:nth-child(6){animation-delay:.4s}
+  .draw.on path:nth-child(7){animation-delay:.48s}
+  .draw.on path:nth-child(8){animation-delay:.56s}
+  .draw.on path:nth-child(9){animation-delay:.64s}
+  @keyframes dibujar{to{stroke-dashoffset:0}}
+
+  .wm-ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+  .wm-ln>span{display:block}
+  .js .wm-ln>span{transform:translateY(106%);opacity:0;animation:wm-subir 1s cubic-bezier(.22,1,.36,1) .15s forwards}
+  @keyframes wm-subir{to{transform:translateY(0);opacity:1}}
+  .js h1{animation:latido 6s 1.6s ease-in-out infinite}
+  @keyframes latido{
+    0%,100%{text-shadow:0 0 4px rgba(255,255,255,.95),0 0 16px rgba(200,214,255,.7),0 0 44px rgba(130,158,255,.45),0 0 94px rgba(255,0,38,.16)}
+    50%{text-shadow:0 0 6px rgba(255,255,255,1),0 0 22px rgba(210,222,255,.8),0 0 56px rgba(140,168,255,.55),0 0 110px rgba(255,0,38,.24)}
+  }
+
+  .js .ficha-letrero{opacity:0;transform:rotate(-1.6deg) translateY(20px);animation:entrar .9s cubic-bezier(.22,1,.36,1) .45s forwards}
+  @keyframes entrar{to{opacity:1;transform:rotate(-1.6deg) translateY(0)}}
+
+  .grupo,.foto-mural,.hecho,.barra-foto,.dato{opacity:0;transform:translateY(12px)}
+  .vis .grupo,.vis .foto-mural,.vis .hecho,.vis .barra-foto,.vis .dato{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+  .vis .grupo:nth-child(2){transition-delay:.08s}
+  .vis .grupo:nth-child(3){transition-delay:.16s}
+  .vis .hecho:nth-child(2){transition-delay:.08s}
+  .vis .hecho:nth-child(3){transition-delay:.16s}
+  .vis .dato:nth-child(2){transition-delay:.08s}
+  .vis .dato:nth-child(3){transition-delay:.16s}
+  .vis .dato:nth-child(4){transition-delay:.24s}
+  .foto-mural img,.barra-foto img{filter:saturate(.6) brightness(.55);transition:filter 1.1s ease}
+  .vis .foto-mural img,.vis .barra-foto img{filter:saturate(.95) contrast(1.03) brightness(.95)}
+  .vis .barra-foto img{filter:saturate(.9) brightness(.82)}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .tira{animation:none!important}
+    .draw path,.wm-ln>span,.ficha-letrero,.grupo,.foto-mural,.hecho,.barra-foto,.dato{animation:none!important;transition:none!important;transform:none!important;opacity:1!important;stroke-dashoffset:0!important}
+    .cabeza::after{transform:scaleX(1)!important}
+    .foto-mural img,.barra-foto img{filter:saturate(.9) brightness(.9)!important}
+    h1{animation:none!important;text-shadow:0 0 4px rgba(255,255,255,.95),0 0 16px rgba(200,214,255,.7),0 0 44px rgba(130,158,255,.45)}
+  }
+
+  @media (max-width:980px){
+    .hero .wrap{grid-template-columns:1fr;gap:44px}
+    .ficha-letrero{justify-self:start;max-width:330px;margin-top:4px}
+    .nav{display:none}
+    .menu{grid-template-columns:1fr;gap:38px}
+    .esquina,.visita .grid{grid-template-columns:1fr;gap:46px}
+    .mapa{order:-1}
+    section{padding:70px 0}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px}
+    .hero{padding:56px 0 62px;min-height:0}
+    .letrero{padding:26px 22px 24px}
+    h1{font-size:58px}
+    .marca-arriba svg{width:44px;height:44px}
     .acciones .btn{flex:1;justify-content:center}
+    .hechos{grid-template-columns:1fr;gap:16px}
+    .hecho b{font-size:26px}
+    .barra-foto img{aspect-ratio:4/3}
+    .top .btn span{display:none}
+    .top .btn{padding:10px 14px}
   }
 </style>
 </head>
 <body>
-<nav>
-  <div class="marca">
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <circle cx="20" cy="20" r="18.5" stroke="var(--amb)" stroke-width="1.2"/>
-      <circle cx="20" cy="20" r="12" stroke="var(--amb)" stroke-opacity=".45" stroke-width="1"/>
-      <circle cx="20" cy="20" r="5" fill="var(--amb)"/>
+
+<div class="top"><div class="wrap">
+  <a class="firma" href="#barra">
+    <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path pathLength="1" d="M24 52h58a8 8 0 0 1 8 8v26a12 12 0 0 1-12 12H28a12 12 0 0 1-12-12V60a8 8 0 0 1 8-8Z"/>
+      <path pathLength="1" d="M34 52V42h9v-8h9"/>
+      <path pathLength="1" d="M72 52V42h-9v-8h-9"/>
+      <path pathLength="1" d="M57 34V22"/>
+      <path pathLength="1" d="M57 28c-6 0-10-4-10-10 6 0 10 4 10 10Z"/>
+      <path pathLength="1" d="M57 28c6 0 10-4 10-10-6 0-10 4-10 10Z"/>
+      <path pathLength="1" d="M31 66h14M59 66h14"/>
+      <path pathLength="1" d="M31 72c4 3 10 3 14 0M59 72c4 3 10 3 14 0"/>
+      <path pathLength="1" d="M52 58v12M44 74h16l-8 9-8-9Z"/>
+      <path pathLength="1" d="M20 92h64"/>
+      <path pathLength="1" d="M26 92c4 7 10 7 14 0 4 7 10 7 14 0 4 7 10 7 14 0 4 7 8 6 12 0"/>
+      <path pathLength="1" d="M90 62c8 0 13 5 13 12s-5 10-10 10-9-4-9-8 3-7 7-7 6 3 6 6"/>
     </svg>
-    Cafetzin
-  </div>
-  <div class="nav-links">
-    <a href="#casa">La casa</a><a href="#menu">Menú</a><a href="#visita">Visítanos</a>
-    <a href="https://wa.me/527971301245">WhatsApp</a>
-  </div>
-</nav>
+    <span>Cafetzin</span>
+  </a>
+  <nav class="nav">
+    <a href="#barra">La barra</a>
+    <a href="#esquina">La esquina</a>
+    <a href="#visita">Visítanos</a>
+  </nav>
+  <a class="btn btn-rojo" href="https://wa.me/527971301245"><span>Pedir</span> WhatsApp</a>
+</div></div>
+
 <header class="hero">
-  <img src="fotos/foto2.jpg" alt="Cafetzin en Lindavista">
+  <div class="fondo"><img src="img/hero.jpg" alt="Fachada de Cafetzin de noche, con letrero de neón y plantas en la banqueta"></div>
   <div class="wrap">
-    <span class="eyebrow">Estrella · Calz. de Guadalupe 537</span>
-    <h1 class="serif">Café de barrio<br><em>hasta la noche.</em></h1>
-    <p class="lead">Neón encendido, mesas afuera y café que no se acaba. El punto de la colonia para platicar sin mirar el reloj.</p>
-    <div class="acciones">
-      <a class="btn btn-solido" href="https://wa.me/527971301245">Pedir por WhatsApp</a>
-      <a class="btn btn-linea" href="#menu">Ver el menú</a>
+    <div>
+      <div class="letrero">
+        <div class="marca-arriba">
+          <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path pathLength="1" d="M24 52h58a8 8 0 0 1 8 8v26a12 12 0 0 1-12 12H28a12 12 0 0 1-12-12V60a8 8 0 0 1 8-8Z"/>
+            <path pathLength="1" d="M34 52V42h9v-8h9"/>
+            <path pathLength="1" d="M72 52V42h-9v-8h-9"/>
+            <path pathLength="1" d="M57 34V22"/>
+            <path pathLength="1" d="M57 28c-6 0-10-4-10-10 6 0 10 4 10 10Z"/>
+            <path pathLength="1" d="M57 28c6 0 10-4 10-10-6 0-10 4-10 10Z"/>
+            <path pathLength="1" d="M31 66h14M59 66h14"/>
+            <path pathLength="1" d="M31 72c4 3 10 3 14 0M59 72c4 3 10 3 14 0"/>
+            <path pathLength="1" d="M52 58v12M44 74h16l-8 9-8-9Z"/>
+            <path pathLength="1" d="M20 92h64"/>
+            <path pathLength="1" d="M26 92c4 7 10 7 14 0 4 7 10 7 14 0 4 7 10 7 14 0 4 7 8 6 12 0"/>
+            <path pathLength="1" d="M90 62c8 0 13 5 13 12s-5 10-10 10-9-4-9-8 3-7 7-7 6 3 6 6"/>
+          </svg>
+          <div>cafetería de barrio<b>Col. Estrella · Lindavista</b></div>
+        </div>
+        <h1 class="display wm"><span class="wm-ln"><span>Cafetzin</span></span></h1>
+        <div class="tab-rojo">4.8 en Google · 362 reseñas</div>
+      </div>
+      <p class="lead">El letrero que se ve desde Calz. de Guadalupe. Café de olla, espresso y pan del día; plantas en la banqueta y mesas para quedarse un rato.</p>
+      <div class="acciones">
+        <a class="btn btn-rojo" href="https://wa.me/527971301245">Pedir para llevar</a>
+        <a class="btn" href="#barra">Ver la barra</a>
+      </div>
+      <div class="nota-hero">Calz. de Guadalupe 537 · horario del día en Google Maps</div>
     </div>
+    <figure class="ficha-letrero">
+      <img src="img/letrero.jpg" alt="Letrero de neón original de Cafetzin con el glifo y el nombre">
+      <figcaption>El letrero de la esquina, tal cual</figcaption>
+    </figure>
   </div>
 </header>
-<div class="cinta"><div class="wrap">
-  <div class="estrellas"><b>4.8</b><div><div class="stars">★★★★★</div><span>362 reseñas en Google</span></div></div>
-  <a class="enlace" href="https://flamastars.pulselat.online/r/cafetzin">Leer las reseñas</a>
-</div></div>
-<section id="casa"><div class="wrap dos">
-  <div>
-    <div class="kicker">La casa</div>
-    <h2 class="serif">Aquí se viene <br>sin prisa.</h2>
-    <p style="margin-top:26px">Neón encendido, mesas afuera y café que no se acaba. El punto de la colonia para platicar sin mirar el reloj.</p>
-    <p>Todo se prepara al momento, con café de tueste local. También tenemos todo para llevar.</p>
+
+<div class="marquesina" aria-label="Especialidades de la casa">
+  <div class="tira">
+    <span>Café de olla</span><i>✦</i><span>Espresso</span><i>✦</i><span>Cold brew</span><i>✦</i><span>Pan dulce del día</span><i>✦</i><span>Para llevar</span><i>✦</i><span>Col. Estrella</span><i>✦</i>
+    <span aria-hidden="true">Café de olla</span><i aria-hidden="true">✦</i><span aria-hidden="true">Espresso</span><i aria-hidden="true">✦</i><span aria-hidden="true">Cold brew</span><i aria-hidden="true">✦</i><span aria-hidden="true">Pan dulce del día</span><i aria-hidden="true">✦</i><span aria-hidden="true">Para llevar</span><i aria-hidden="true">✦</i><span aria-hidden="true">Col. Estrella</span><i aria-hidden="true">✦</i>
   </div>
-  <div class="lista-hechos"><div><b>01</b><span>Abierto hasta tarde, todos los días</span></div><div><b>02</b><span>Café, sándwiches y postres caseros</span></div><div><b>03</b><span>Terraza con mesas para grupos</span></div></div>
+</div>
+
+<section id="barra" data-anim><div class="wrap">
+  <div class="cabeza">
+    <div>
+      <div class="kicker">La barra</div>
+      <h2 class="display">Lo que hay hoy</h2>
+    </div>
+    <p>Lo de siempre y lo del día. Los precios y los especiales se preguntan en la barra.</p>
+  </div>
+  <div class="menu">
+    <div class="grupo">
+      <h3>Café <span>caliente y frío</span></h3>
+      <div class="fila"><span class="n">01</span><div><b>Café de olla</b><small>Con canela y piloncillo, servido en taza de barro.</small></div></div>
+      <div class="fila"><span class="n">02</span><div><b>Espresso</b><small>Solo o cortado; también doble para la noche larga.</small></div></div>
+      <div class="fila"><span class="n">03</span><div><b>Capuchino</b><small>Leche vaporizada y un dedo de espuma.</small></div></div>
+      <div class="fila"><span class="n">04</span><div><b>Cold brew</b><small>Extracción en frío, servido con hielo.</small></div></div>
+      <div class="fila"><span class="n">05</span><div><b>Chocolate caliente</b><small>Con leche y canela; opción con chile.</small></div></div>
+    </div>
+    <div class="grupo">
+      <h3>Para acompañar <span>salado</span></h3>
+      <div class="fila"><span class="n">06</span><div><b>Pan dulce del día</b><small>Concha, oreja o lo que salga del horno.</small></div></div>
+      <div class="fila"><span class="n">07</span><div><b>Sándwich de pierna</b><small>Pierna de cerdo, aguacate y chiles en vinagre.</small></div></div>
+      <div class="fila"><span class="n">08</span><div><b>Molletes</b><small>Frijoles, queso gratinado y pico de gallo.</small></div></div>
+      <div class="fila"><span class="n">09</span><div><b>Chilaquiles</b><small>Verdes o rojos, con queso y crema.</small></div></div>
+      <div class="fila"><span class="n">10</span><div><b>Bagel con queso crema</b><small>Tostado, con opción de jamón.</small></div></div>
+    </div>
+    <div class="grupo">
+      <h3>Dulce <span>de vitrina</span></h3>
+      <div class="fila"><span class="n">11</span><div><b>Cheesecake</b><small>Rebanada clásica, con mermelada del día.</small></div></div>
+      <div class="fila"><span class="n">12</span><div><b>Concha rellena</b><small>De nata o chocolate, según la tanda.</small></div></div>
+      <div class="fila"><span class="n">13</span><div><b>Galletas de la casa</b><small>Avena con nuez, horneadas en el local.</small></div></div>
+      <div class="fila"><span class="n">14</span><div><b>Pan de elote</b><small>Cuando hay; pregunta antes de pedirlo.</small></div></div>
+    </div>
+  </div>
+  <p class="nota-carta">El menú cambia con el día. Para precios, especiales o pedidos grandes, manda WhatsApp al 797 130 1245 y te contestamos desde la barra.</p>
 </div></section>
-<section class="menu" id="menu"><div class="wrap">
-  <div class="head">
-    <div><div class="kicker">Menú</div><h2 class="serif">Lo de siempre,<br>bien hecho.</h2></div>
-    <p class="nota">Ejemplo de carta: se arma con tu menú real y tus precios.</p>
+
+<section id="esquina" data-anim><div class="wrap">
+  <div class="esquina">
+    <figure class="foto-mural">
+      <img src="img/mural.jpg" alt="Mural de un perro con suéter azul en la pared blanca junto al letrero">
+    </figure>
+    <div>
+      <div class="kicker">La esquina</div>
+      <h2 class="display">Se prende<br>el letrero</h2>
+      <p>Al caer la noche, el neón se refleja en la banqueta y la barra se llena de vecinos. Hay plantas en la entrada, murales en la pared y mesas afuera para ver pasar la calle.</p>
+      <p>Es un café de barrio: sin mantel, sin ceremonia. Se viene por un espresso, se queda uno por la charla.</p>
+      <div class="hechos">
+        <div class="hecho"><b>4.8</b><span>Google · 362 reseñas</span></div>
+        <div class="hecho"><b>537</b><span>Calz. de Guadalupe</span></div>
+        <div class="hecho"><b>GAM</b><span>Col. Estrella, CDMX</span></div>
+      </div>
+    </div>
   </div>
-  <div class="platillos"><div class="platillo"><div><div class="n">Americano</div><div class="d">Café de olla o americano</div></div><div class="puntos"></div><div class="precio">$40</div></div><div class="platillo"><div><div class="n">Capuchino</div><div class="d">Con canela de la casa</div></div><div class="puntos"></div><div class="precio">$60</div></div><div class="platillo"><div><div class="n">Chocolate</div><div class="d">Con leche y canela</div></div><div class="puntos"></div><div class="precio">$55</div></div><div class="platillo"><div><div class="n">Sándwich de la casa</div><div class="d">Pan artesanal, al gusto</div></div><div class="puntos"></div><div class="precio">$85</div></div><div class="platillo"><div><div class="n">Cuernito relleno</div><div class="d">Jamón y queso</div></div><div class="puntos"></div><div class="precio">$60</div></div><div class="platillo"><div><div class="n">Pastel del día</div><div class="d">Pregunta por la rebanada</div></div><div class="puntos"></div><div class="precio">$50</div></div></div>
+  <figure class="barra-foto">
+    <img src="img/barra.jpg" alt="Barra de Cafetzin iluminada con bombillas cálidas y clientes sentados">
+    <figcaption>La barra, en noche de semana</figcaption>
+  </figure>
 </div></section>
-<section id="visita"><div class="wrap ubic">
-  <div>
-    <div class="kicker">Visítanos</div>
-    <h2 class="serif">Aquí, en el barrio.</h2>
-    <div class="dato" style="margin-top:34px"><h3>Dirección</h3><p>Calz. de Guadalupe 537<br>Col. Estrella, Gustavo A. Madero, 07800</p></div>
-    <div class="dato"><h3>WhatsApp y llamadas</h3><p><a href="https://wa.me/527971301245">797 130 1245</a></p></div>
-    <div class="dato" style="border:none"><h3>Cómo llegar</h3><p><a href="https://www.google.com/maps/search/?api=1&query=Cafetería+Cafetzin+Calz+de+Guadalupe+537">Abrir en Google Maps →</a></p></div>
-  </div>
-  <div>
-    <div class="kicker">Horario</div>
-    <div class="horario"><b>Lunes a viernes</b><span>Abierto</span></div>
-    <div class="horario"><b>Sábado</b><span>Abierto</span></div>
-    <div class="horario"><b>Domingo</b><span>Abierto</span></div>
-    <div class="dato" style="margin-top:44px"><h3>Para llevar</h3><p>Manda tu pedido por WhatsApp y pasa por él sin fila.</p></div>
-  </div>
-</div></section>
-<section class="cierre"><div class="wrap">
-  <h2 class="serif">¿Nos vemos?</h2>
-  <p>Escríbenos por WhatsApp para apartar mesa, pedir para llevar o preguntar qué hay hoy.</p>
-  <div class="acciones">
-    <a class="btn btn-solido" href="https://wa.me/527971301245">Escribir por WhatsApp</a>
-    <a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&query=Cafetería+Cafetzin+Calz+de+Guadalupe+537">Cómo llegar</a>
+
+<section id="visita" class="visita" data-anim><div class="wrap">
+  <div class="grid">
+    <div>
+      <div class="kicker">Visítanos</div>
+      <h2 class="display">Nos vemos<br>en la esquina</h2>
+      <p class="lead2">Sobre Calz. de Guadalupe, en la Col. Estrella. Pasa por un café o mándanos el pedido y lo tienes listo al llegar.</p>
+      <div class="acciones">
+        <a class="btn btn-rojo" href="https://wa.me/527971301245">Escribir por WhatsApp</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537">Cómo llegar</a>
+      </div>
+    </div>
+    <div>
+      <div class="dato"><h3>Dirección</h3><p>Calz. de Guadalupe 537<br>Col. Estrella, Gustavo A. Madero, 07810</p></div>
+      <div class="dato"><h3>WhatsApp y llamadas</h3><p><a href="https://wa.me/527971301245">797 130 1245</a></p><small>Pedidos para llevar y apartado de mesa.</small></div>
+      <div class="dato"><h3>Horario</h3><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537">Ver el horario de hoy en Google Maps →</a></p><small>Los horarios cambian; la ficha de Maps es la que manda.</small></div>
+      <div class="dato"><h3>Cómo llegar</h3><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537">Abrir en Google Maps →</a></p></div>
+    </div>
   </div>
 </div></section>
+
 <footer><div class="wrap">
-  <span>Cafetzin · Estrella · Calz. de Guadalupe 537</span><span>Propuesta de Pulse LAT · pulselat.online</span>
+  <span>Cafetzin · Calz. de Guadalupe 537, Col. Estrella</span>
+  <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
+
+<noscript><style>
+  .wm-ln>span,.draw path,.ficha-letrero,.grupo,.foto-mural,.hecho,.barra-foto,.dato{transform:none!important;opacity:1!important;stroke-dashoffset:0!important}
+  .cabeza::after{transform:scaleX(1)}
+  .foto-mural img,.barra-foto img{filter:saturate(.9) brightness(.9)}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Cafetzin","image":"https://toshiodev.github.io/pulselat-demos/cafetzin/img/hero.jpg","telephone":"+527971301245","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calz. de Guadalupe 537","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07810","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"362"}}
+</script>
+
 </body>
 </html>
