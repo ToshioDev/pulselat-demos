@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Espresso Amor · cafetería en Lindavista Nte.</title>
-<meta name="description" content="Café de barrio con terraza, plantas y luces en Barranquilla 138, Lindavista Nte. Pedidos por WhatsApp.">
+<meta name="description" content="Café, molletes y sándwiches en una terraza con plantas y luces en Barranquilla 138, Lindavista Nte. Pedidos por WhatsApp.">
 <meta property="og:title" content="Espresso Amor · cafetería en Lindavista">
 <meta property="og:description" content="La esquina con sombra, plantas y buen café. Barranquilla 138, Lindavista Nte.">
 <meta property="og:image" content="https://toshiodev.github.io/pulselat-demos/espresso-amor/img/hero.jpg">
@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --crema:#f2e7d2;
@@ -29,6 +30,19 @@
     --tinta:#241f18;
     --gris:#6d6353;
     --linea:rgba(36,31,24,.16);
+    --rc-bg:#1a1712;
+    --rc-fg:#f2e7d2;
+    --rc-acc:#f2c68d;
+    --rc-acc-fg:#1a1712;
+    --rc-line:rgba(242,231,210,.22);
+    --rc-tenue:rgba(242,231,210,.74);
+    --rc-display:"Instrument Serif",Georgia,serif;
+    --rc-display-weight:400;
+    --rc-display-style:italic;
+    --rc-display-ls:.005em;
+    --rc-float-bg:#14110c;
+    --rc-float-fg:#f2e7d2;
+    --rc-float-acc:#f2c68d;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -141,7 +155,7 @@
 
   /* menú */
   .menu-sec{background:var(--crema-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-  .menu{display:grid;grid-template-columns:1fr 1fr;gap:0 54px}
+  .menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 54px;align-items:start}
   .grupo h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:var(--negro);color:var(--crema);padding:10px 14px;font-family:"Archivo",sans-serif;font-stretch:112%;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
   .grupo h3 span{font-family:"Archivo",sans-serif;font-stretch:100%;font-weight:400;font-size:8.5px;letter-spacing:.14em;color:rgba(242,231,210,.55)}
   .renglon{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:baseline;padding:12px 2px;border-bottom:1px dotted rgba(36,31,24,.3)}
@@ -253,6 +267,7 @@
     .lona-txt{font-size:36px}
     .emblema{width:74px;height:74px;top:-36px;right:16px}
     .postal .sello{width:80px;height:80px;right:-10px}
+    .cierre h2{font-size:clamp(28px,10.5vw,44px)}
   }
   @media (max-width:360px){
     .lona-txt{font-size:26px}
@@ -308,7 +323,7 @@
     <div class="copia">
       <div class="kicker">Cafetería de barrio · Lindavista Nte.</div>
       <h1>La esquina con sombra, plantas y buen café.</h1>
-      <p class="lead">Una terraza con focos cálidos, macetas de madera y mesas para quedarse. Café, pan dulce y pedidos para llevar en Barranquilla 138.</p>
+      <p class="lead">Una terraza con focos cálidos, macetas de madera y mesas para quedarse. Café, molletes y sándwiches; pedidos para llevar en Barranquilla 138.</p>
       <div class="acciones">
         <a class="btn btn-solido" href="https://wa.me/525519287031">Pedir por WhatsApp</a>
         <a class="btn btn-linea" href="#barra">Ver la barra</a>
@@ -321,7 +336,7 @@
 <div class="faja"><div class="wrap">
   <span>Café de barrio</span>
   <span>Terraza con plantas</span>
-  <span>Pan dulce</span>
+  <span>Molletes y sándwiches</span>
   <span>Pedidos por WhatsApp</span>
   <span>Lindavista Nte.</span>
 </div></div>
@@ -354,28 +369,25 @@
       <div class="kicker">La barra</div>
       <h2 class="serif">Lo que se sirve <em>en la esquina</em></h2>
     </div>
-    <p>Café, pan dulce y algo salado. Los precios y lo del día, en la barra.</p>
+    <p>Café, molletes y sándwiches. Los precios y lo del día, en la barra.</p>
   </div>
   <div class="menu">
     <div class="grupo">
-      <h3>Café <span>caliente y frío</span></h3>
+      <h3>Café <span>de la barra</span></h3>
       <div class="renglon"><div><b>Espresso</b><small>Solo, cortado o doble.</small></div><span class="punto">de la casa</span></div>
       <div class="renglon"><div><b>Americano</b><small>Para la sobremesa larga.</small></div><span class="punto">clásico</span></div>
       <div class="renglon"><div><b>Capuchino</b><small>Leche vaporizada y espuma.</small></div><span class="punto">caliente</span></div>
       <div class="renglon"><div><b>Latte</b><small>Caliente o con hielo.</small></div><span class="punto">suave</span></div>
-      <div class="renglon"><div><b>Cold brew</b><small>Extracción en frío, con hielo.</small></div><span class="punto">frío</span></div>
       <div class="renglon"><div><b>Chocolate</b><small>Con leche y canela.</small></div><span class="punto">de la casa</span></div>
+      <div class="renglon"><div><b>Té</b><small>Infusión caliente.</small></div><span class="punto">sencillo</span></div>
     </div>
     <div class="grupo">
-      <h3>Para acompañar <span>dulce y salado</span></h3>
-      <div class="renglon"><div><b>Pan dulce del día</b><small>Concha, oreja o lo que salga del horno.</small></div><span class="punto">de la charola</span></div>
-      <div class="renglon"><div><b>Bagel con queso crema</b><small>Tostado, con opción de jamón.</small></div><span class="punto">tostado</span></div>
-      <div class="renglon"><div><b>Sándwich de pierna</b><small>Pierna, aguacate y chiles en vinagre.</small></div><span class="punto">para llevar</span></div>
-      <div class="renglon"><div><b>Cheesecake</b><small>Rebanada con mermelada del día.</small></div><span class="punto">de vitrina</span></div>
-      <div class="renglon"><div><b>Galletas de avena</b><small>Con nuez, horneadas en el local.</small></div><span class="punto">de la casa</span></div>
-      <div class="renglon"><div><b>Molletes</b><small>Frijoles, queso gratinado y pico.</small></div><span class="punto">caliente</span></div>
+      <h3>Para comer <span>salado</span></h3>
+      <div class="renglon"><div><b>Molletes</b><small>Frijoles, queso gratinado y pico de gallo.</small></div><span class="punto">caliente</span></div>
+      <div class="renglon"><div><b>Sándwich de pollo</b><small>Con queso manchego.</small></div><span class="punto">de la casa</span></div>
+      <div class="renglon"><div><b>Sándwich de pollo</b><small>Con queso Oaxaca.</small></div><span class="punto">a elegir</span></div>
+      <p class="nota-menu" style="margin-top:24px">Lo que se ve en la barra es lo que hay. Pregunta por lo que se acabe de preparar.</p>
     </div>
-    <p class="nota-menu">El menú cambia con el día. Para precios, pedidos grandes o para llevar, escribe al 55 1928 7031; contestamos desde la barra.</p>
   </div>
 </div></section>
 
@@ -413,6 +425,24 @@
   </div>
 </div></section>
 
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Espresso%20Amor.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Espresso%20Amor.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">
   <span>Espresso Amor · Barranquilla 138, Lindavista Nte.</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -439,6 +469,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Espresso Amor","image":"https://toshiodev.github.io/pulselat-demos/espresso-amor/img/hero.jpg","telephone":"+525519287031","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Barranquilla 138","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"760"}}
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Espresso%20Amor.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>

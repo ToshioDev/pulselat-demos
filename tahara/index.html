@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Instrument+Sans:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --papel:#f8f3e9;
@@ -25,6 +26,17 @@
     --kraft:#c9a77d;
     --linea:rgba(16,29,27,.16);
     --tenue:rgba(16,29,27,.62);
+    --rc-bg:#0e5e58;
+    --rc-fg:#f8f3e9;
+    --rc-acc:#9ad6c5;
+    --rc-acc-fg:#0a4743;
+    --rc-line:rgba(248,243,233,.22);
+    --rc-tenue:rgba(248,243,233,.74);
+    --rc-display:"Jost",system-ui,sans-serif;
+    --rc-display-weight:500;
+    --rc-float-bg:#0a4743;
+    --rc-float-fg:#f8f3e9;
+    --rc-float-acc:#9ad6c5;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -84,10 +96,19 @@
   .pizarron .cabeza p{color:rgba(248,243,233,.7)}
   .tablero{border:14px solid var(--kraft);border-radius:4px;background:#0b3f3b;padding:44px 40px;box-shadow:inset 0 0 60px rgba(0,0,0,.35)}
   .tablero .mano{font-family:"Caveat",cursive;font-size:30px;color:var(--menta);margin-bottom:26px;line-height:1.3}
-  .columnas{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 46px}
-  .col h4{font-family:"Jost",sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--menta);font-weight:500;padding-bottom:8px;border-bottom:1px dashed rgba(154,214,197,.45);margin-bottom:10px}
-  .col ul{list-style:none;font-size:15px;line-height:2;color:rgba(248,243,233,.9)}
-  .col li span{color:rgba(248,243,233,.55)}
+  .columnas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 46px;align-items:start}
+  .col{display:grid;align-content:start;gap:30px;min-width:0}
+  .bloque{min-width:0}
+  .col h4{font-family:"Jost",sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--menta);font-weight:500;padding-bottom:8px;border-bottom:1px dashed rgba(154,214,197,.45);margin-bottom:8px}
+  .col ul{list-style:none;font-size:14.5px;color:rgba(248,243,233,.9)}
+  .col li{display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px dotted rgba(154,214,197,.16)}
+  .col li:last-child{border-bottom:0}
+  .col .np{min-width:0}
+  .col .np small{display:block;font-size:11px;line-height:1.4;color:rgba(248,243,233,.5);margin-top:1px}
+  .col .puntos{flex:1;border-bottom:1px dotted rgba(154,214,197,.3);transform:translateY(-4px)}
+  .col .precio{font-family:"Jost",sans-serif;font-size:14px;color:var(--menta);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .col li.sin-precio{display:block}
+  .col li.sin-precio small{display:block;font-size:11px;color:rgba(248,243,233,.5);margin-top:1px}
 
   /* vitrina */
   .vitrina{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
@@ -243,35 +264,61 @@
     <div class="mano">Hoy hay…</div>
     <div class="columnas">
       <div class="col">
-        <h4>Café caliente</h4>
-        <ul>
-          <li>Espresso <span>sencillo y doble</span></li>
-          <li>Americano</li>
-          <li>Capuccino</li>
-          <li>Latte <span>con leche entera o deslactosada</span></li>
-          <li>Chocolate <span>espeso, con canela</span></li>
-        </ul>
+        <div class="bloque">
+          <h4>Café caliente</h4>
+          <ul>
+            <li><div class="np">Espresso</div><div class="puntos"></div><div class="precio">$35</div></li>
+            <li><div class="np">Doble</div><div class="puntos"></div><div class="precio">$40</div></li>
+            <li><div class="np">Flat white</div><div class="puntos"></div><div class="precio">$55</div></li>
+            <li><div class="np">Americano<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$46 · $53</div></li>
+            <li><div class="np">Capuccino<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$57 · $67</div></li>
+            <li><div class="np">Latte<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$57 · $67</div></li>
+            <li><div class="np">Moka<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$67 · $77</div></li>
+          </ul>
+        </div>
       </div>
       <div class="col">
-        <h4>Fríos y malteadas</h4>
-        <ul>
-          <li>Frappé de café</li>
-          <li>Malteada <span>vainilla, chocolate o fresa</span></li>
-          <li>Jugo natural <span>naranja y verduras</span></li>
-          <li>Té helado</li>
-        </ul>
+        <div class="bloque">
+          <h4>Fríos</h4>
+          <ul>
+            <li><div class="np">Chai frío<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$87 · $92</div></li>
+            <li><div class="np">Taro frío<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$87 · $92</div></li>
+            <li><div class="np">Matcha frío<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$87 · $92</div></li>
+            <li><div class="np">Rompope</div><div class="puntos"></div><div class="precio">$92</div></li>
+            <li><div class="np">Moka frío</div><div class="puntos"></div><div class="precio">$92</div></li>
+          </ul>
+        </div>
+        <div class="bloque">
+          <h4>Malteadas</h4>
+          <ul>
+            <li><div class="np">Vainilla</div><div class="puntos"></div><div class="precio">$92</div></li>
+            <li><div class="np">Chocolate</div><div class="puntos"></div><div class="precio">$92</div></li>
+            <li><div class="np">Fresa</div><div class="puntos"></div><div class="precio">$92</div></li>
+          </ul>
+        </div>
       </div>
       <div class="col">
-        <h4>Para comer</h4>
-        <ul>
-          <li>Chilaquiles verdes <span>con queso fresco</span></li>
-          <li>Sincronizadas</li>
-          <li>Sándwich de la casa</li>
-          <li>Pan dulce <span>de la vitrina</span></li>
-        </ul>
+        <div class="bloque">
+          <h4>Especiales calientes</h4>
+          <ul>
+            <li><div class="np">Matcha latte<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$67 · $77</div></li>
+            <li><div class="np">Taro latte<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$67 · $77</div></li>
+            <li><div class="np">Chai latte<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$67 · $77</div></li>
+            <li><div class="np">Chocolate con canela<small>chico / grande</small></div><div class="puntos"></div><div class="precio">$67 · $77</div></li>
+          </ul>
+        </div>
+        <div class="bloque">
+          <h4>Para comer</h4>
+          <ul>
+            <li class="sin-precio">Chilaquiles verdes<small>con queso fresco</small></li>
+            <li class="sin-precio">Sincronizadas</li>
+            <li class="sin-precio">Pan dulce<small>de la vitrina</small></li>
+            <li class="sin-precio">Jugos naturales<small>naranja y verduras</small></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <p style="margin-top:30px;font-size:13px;color:rgba(248,243,233,.6)">El menú completo y los precios están en el pizarrón del local. Pregunta por el pan que acaba de salir.</p>
+    <p style="margin-top:30px;font-size:13px;color:rgba(248,243,233,.6)">Café y bebidas con precio de pizarrón. Los platillos de cocina se escriben cada día: pregunta qué hay y cuánto cuesta. El pan dulce se acaba.</p>
   </div>
 </div></section>
 
@@ -321,6 +368,24 @@
   </div>
 </div></section>
 
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tahara.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tahara.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">
   <span>Tahara · Insurgentes Norte 1894, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -338,6 +403,15 @@
   }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tahara.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>

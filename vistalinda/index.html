@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --papel:#f5f1e4;
@@ -24,6 +25,18 @@
     --kids:#e6edc7;
     --linea:rgba(34,37,27,.18);
     --tenue:rgba(34,37,27,.62);
+    --rc-bg:#22251b;
+    --rc-fg:#f5f1e4;
+    --rc-acc:#c3cb9a;
+    --rc-acc-fg:#22251b;
+    --rc-line:rgba(245,241,228,.2);
+    --rc-tenue:rgba(245,241,228,.72);
+    --rc-display:"Cormorant Garamond",Georgia,serif;
+    --rc-display-weight:500;
+    --rc-display-ls:0em;
+    --rc-float-bg:#22251b;
+    --rc-float-fg:#f5f1e4;
+    --rc-float-acc:#c3cb9a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -87,16 +100,18 @@
   .cabeza h2{font-size:clamp(34px,4.4vw,56px)}
   .cabeza p{font-size:13.5px;color:var(--tenue);max-width:34ch}
 
-  .carta{display:grid;grid-template-columns:repeat(3,1fr);gap:0 46px}
-  .barra-menu{background:var(--oliva);color:var(--papel);font-family:"Cormorant Garamond",serif;font-size:19px;letter-spacing:.2em;text-transform:uppercase;padding:9px 14px;margin-bottom:6px}
-  .barra-menu.alt{background:transparent;color:var(--oliva-osc);border-top:1px solid var(--oliva);border-bottom:1px solid var(--oliva);margin-top:34px}
-  .fila{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px dotted rgba(34,37,27,.22)}
+  .carta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 34px;align-items:start}
+  .carta .columna{min-width:0}
+  .barra-menu{background:var(--oliva);color:var(--papel);font-family:"Cormorant Garamond",serif;font-size:16px;letter-spacing:.14em;text-transform:uppercase;padding:8px 11px;margin-bottom:6px}
+  .barra-menu.alt{background:transparent;color:var(--oliva-osc);border-top:1px solid var(--oliva);border-bottom:1px solid var(--oliva);margin-top:30px}
+  .fila{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-bottom:1px dotted rgba(34,37,27,.22)}
   .fila:last-child{border-bottom:0}
-  .fila .n{font-size:15px}
-  .fila .n small{display:block;font-size:12.5px;color:var(--tenue);margin-top:2px;line-height:1.45}
+  .fila .n{font-size:14px;line-height:1.4}
+  .fila .n small{display:block;font-size:11.5px;color:var(--tenue);margin-top:2px;line-height:1.45}
   .fila .p{flex:1}
-  .fila .precio{font-family:"Cormorant Garamond",serif;font-size:18px;white-space:nowrap;font-variant-numeric:tabular-nums}
-  .subbar{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--oliva-osc);margin:18px 0 2px}
+  .fila .precio{font-family:"Cormorant Garamond",serif;font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .subbar{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--oliva-osc);margin:16px 0 2px}
+  .mini-nota{margin-top:14px;font-size:11.5px;line-height:1.5;color:var(--tenue)}
 
   /* combos */
   .combos{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
@@ -110,7 +125,7 @@
   /* kids */
   .kids{background:var(--kids);border-top:1px solid rgba(119,133,75,.35);border-bottom:1px solid rgba(119,133,75,.35)}
   .kids .cabeza{border-color:rgba(34,37,27,.16)}
-  .kids-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 46px}
+  .kids-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 46px}
   .kids .fila .precio{background:var(--oliva);color:#fff;border-radius:999px;padding:2px 12px;font-size:16px}
 
   /* visita */
@@ -168,6 +183,7 @@
   .vis .barra-menu{clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.22,1,.36,1)}
   .vis .carta>div:nth-child(2) .barra-menu{transition-delay:.1s}
   .vis .carta>div:nth-child(3) .barra-menu{transition-delay:.2s}
+  .vis .carta>div:nth-child(4) .barra-menu{transition-delay:.3s}
 
   .combo{opacity:0;transform:translateY(10px)}
   .vis .combo{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
@@ -187,7 +203,8 @@
     .hero .wrap{grid-template-columns:1fr;gap:44px}
     .marco img{aspect-ratio:4/3}
     .sello{right:8px;bottom:-16px;width:96px;height:96px;font-size:9px}
-    .carta,.kids-grid{grid-template-columns:1fr;gap:0}
+    .carta{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
+    .kids-grid{grid-template-columns:1fr}
     .grid-combos{grid-template-columns:repeat(2,1fr)}
     .visita{grid-template-columns:1fr;gap:44px}
     section{padding:66px 0}
@@ -195,6 +212,7 @@
   }
   @media (max-width:560px){
     .grid-combos{grid-template-columns:1fr}
+    .carta{grid-template-columns:1fr;gap:34px}
     .wrap{padding:0 20px}
     .hero{padding:52px 0}
     h1{font-size:44px}
@@ -248,45 +266,73 @@
 <section id="carta" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="serif">Lo que hay hoy.</h2>
-    <p>Carta tomada del menú impreso del local. Los precios pueden cambiar; pregunta por lo del día.</p>
+    <p>Carta completa del menú impreso del local. Los precios pueden cambiar; pregunta por lo del día.</p>
   </div>
 
   <div class="carta">
-    <div>
+    <div class="columna">
       <div class="barra-menu">Desayunos · 8:00 a 12:00</div>
-      <div class="subbar">Paquetes con café incluido</div>
-      <div class="fila"><div class="n">Molletes chico<small>Pan con frijoles, queso fundido, pico de gallo y café americano chico</small></div><div class="p"></div><div class="precio">$100</div></div>
+      <div class="fila"><div class="n">Molletes<small>Pan con frijoles, queso gratinado y pico de gallo; incluye café americano chico</small></div><div class="p"></div><div class="precio">$100</div></div>
       <div class="fila"><div class="n">Sincronizadas<small>Jamón y queso manchego en tortillas de harina, jitomate y chiles en vinagre</small></div><div class="p"></div><div class="precio">$90</div></div>
-      <div class="fila"><div class="n">Croissant clásico<small>Relleno de jamón y queso, papas fritas y latte chico</small></div><div class="p"></div><div class="precio">$99</div></div>
+      <div class="fila"><div class="n">Croissant<small>Jamón y queso, papas fritas y latte chico</small></div><div class="p"></div><div class="precio">$99</div></div>
       <div class="fila"><div class="n">Sándwich<small>Jamón, queso, lechuga, jitomate y papas fritas</small></div><div class="p"></div><div class="precio">$110</div></div>
       <div class="fila"><div class="n">Sándwich de pollo<small>Pollo, queso, lechuga fresca y papas</small></div><div class="p"></div><div class="precio">$120</div></div>
-      <div class="nota-hero" style="margin-top:16px;font-size:12px">Cambia tu café americano por un latte chico por $15 más.</div>
+      <p class="mini-nota">Cambia el café americano por un latte chico por $15 más.</p>
+
+      <div class="barra-menu alt">Postres</div>
+      <div class="fila"><div class="n">Waffle con dip</div><div class="p"></div><div class="precio">$75</div></div>
+      <div class="fila"><div class="n">Croissant dulce</div><div class="p"></div><div class="precio">$40</div></div>
+      <div class="fila"><div class="n">Bisquets</div><div class="p"></div><div class="precio">$40</div></div>
+      <div class="fila"><div class="n">Helado</div><div class="p"></div><div class="precio">$35</div></div>
     </div>
 
-    <div>
-      <div class="barra-menu">Bebidas calientes</div>
-      <div class="subbar">Café Punta del Cielo</div>
-      <div class="fila"><div class="n">Espresso</div><div class="p"></div><div class="precio">$40</div></div>
-      <div class="fila"><div class="n">Americano <small>chico / grande</small></div><div class="p"></div><div class="precio">$43 · $48</div></div>
-      <div class="fila"><div class="n">Capuccino clásico <small>chico / grande</small></div><div class="p"></div><div class="precio">$55 · $60</div></div>
+    <div class="columna">
+      <div class="barra-menu">Café caliente</div>
+      <div class="subbar">Punta del Cielo · chico / grande</div>
+      <div class="fila"><div class="n">Espresso<small>Doble +$15</small></div><div class="p"></div><div class="precio">$40</div></div>
+      <div class="fila"><div class="n">Americano</div><div class="p"></div><div class="precio">$43 · $48</div></div>
+      <div class="fila"><div class="n">Capuccino clásico</div><div class="p"></div><div class="precio">$55 · $60</div></div>
       <div class="fila"><div class="n">Capuccino de caramelo</div><div class="p"></div><div class="precio">$59 · $65</div></div>
-      <div class="fila"><div class="n">Latte de canela</div><div class="p"></div><div class="precio">$59 · $65</div></div>
-      <div class="fila"><div class="n">Matcha latte</div><div class="p"></div><div class="precio">$68 · $73</div></div>
-      <div class="fila"><div class="n">Chai latte café</div><div class="p"></div><div class="precio">$73 · $78</div></div>
-      <div class="fila"><div class="n">Té en bolsa</div><div class="p"></div><div class="precio">$35</div></div>
+      <div class="fila"><div class="n">Capuccino de cajeta</div><div class="p"></div><div class="precio">$59 · $65</div></div>
+      <div class="fila"><div class="n">Capuccino crema irlandesa</div><div class="p"></div><div class="precio">$59 · $65</div></div>
+      <div class="fila"><div class="n">Latte clásico</div><div class="p"></div><div class="precio">$55 · $60</div></div>
+      <div class="fila"><div class="n">Latte de sabor<small>Vainilla, caramelo o cajeta</small></div><div class="p"></div><div class="precio">$59 · $65</div></div>
+      <div class="fila"><div class="n">Mocha</div><div class="p"></div><div class="precio">$59 · $65</div></div>
+      <div class="fila"><div class="n">Chocolate</div><div class="p"></div><div class="precio">$59 · $65</div></div>
     </div>
 
-    <div>
+    <div class="columna">
+      <div class="barra-menu">De la casa</div>
+      <div class="subbar">Chai, matcha y taro · chico / grande</div>
+      <div class="fila"><div class="n">Chai verde</div><div class="p"></div><div class="precio">$68 · $73</div></div>
+      <div class="fila"><div class="n">Chai café</div><div class="p"></div><div class="precio">$73 · $78</div></div>
+      <div class="fila"><div class="n">Matcha</div><div class="p"></div><div class="precio">$68 · $73</div></div>
+      <div class="fila"><div class="n">Matcha café</div><div class="p"></div><div class="precio">$73 · $78</div></div>
+      <div class="fila"><div class="n">Taro</div><div class="p"></div><div class="precio">$68 · $73</div></div>
+      <div class="fila"><div class="n">Taro café</div><div class="p"></div><div class="precio">$73 · $78</div></div>
+      <div class="fila"><div class="n">Té en bolsa</div><div class="p"></div><div class="precio">$35</div></div>
+      <div class="fila"><div class="n">Tisana frutal</div><div class="p"></div><div class="precio">$70 · $75</div></div>
+      <p class="mini-nota">Shot de espresso +$10 · tapioca +$10.</p>
+    </div>
+
+    <div class="columna">
       <div class="barra-menu">Bebidas frías</div>
       <div class="subbar">Frappés, sodas y malteadas</div>
       <div class="fila"><div class="n">Frappé de café</div><div class="p"></div><div class="precio">$75</div></div>
-      <div class="fila"><div class="n">Frappé de Oreo</div><div class="p"></div><div class="precio">$70</div></div>
+      <div class="fila"><div class="n">Frappé de sabor<small>Vainilla, caramelo, cajeta o chocolate</small></div><div class="p"></div><div class="precio">$70</div></div>
+      <div class="fila"><div class="n">Frappé de Oreo</div><div class="p"></div><div class="precio">$75</div></div>
       <div class="fila"><div class="n">Iced coffee</div><div class="p"></div><div class="precio">$65</div></div>
-      <div class="fila"><div class="n">Iced matcha</div><div class="p"></div><div class="precio">$75</div></div>
+      <div class="fila"><div class="n">Iced chai, matcha, taro o coco</div><div class="p"></div><div class="precio">$75</div></div>
       <div class="fila"><div class="n">Soda italiana<small>Limón, frutos rojos, cereza, maracuyá, manzana verde o fresa</small></div><div class="p"></div><div class="precio">$65</div></div>
-      <div class="fila"><div class="n">Malteada de fresa</div><div class="p"></div><div class="precio">$70</div></div>
+      <div class="fila"><div class="n">Refrescos</div><div class="p"></div><div class="precio">$25</div></div>
+      <div class="fila"><div class="n">Agua mineral</div><div class="p"></div><div class="precio">$25</div></div>
+      <div class="fila"><div class="n">Agua natural</div><div class="p"></div><div class="precio">$15</div></div>
+      <div class="fila"><div class="n">Limonada o naranjada</div><div class="p"></div><div class="precio">$50</div></div>
+      <div class="fila"><div class="n">Malteada<small>Fresa, vainilla o chocolate</small></div><div class="p"></div><div class="precio">$70</div></div>
+      <div class="fila"><div class="n">Malteada napolitana</div><div class="p"></div><div class="precio">$75</div></div>
+      <div class="fila"><div class="n">Malteada especial con café</div><div class="p"></div><div class="precio">$85</div></div>
+      <div class="fila"><div class="n">Chocolate frío</div><div class="p"></div><div class="precio">$65</div></div>
       <div class="fila"><div class="n">Licuado<small>Chocolate, fresa o plátano</small></div><div class="p"></div><div class="precio">$50</div></div>
-      <div class="fila"><div class="n">Postres<small>Waffle con dip $75 · croissant dulce $40 · bisquets $40 · helado $35</small></div><div class="p"></div><div class="precio"></div></div>
     </div>
   </div>
 </div></section>
@@ -294,7 +340,7 @@
 <section class="combos" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="serif">Combos que ya<br>tienen nombre.</h2>
-    <p>Cinco maneras de comer completo, de la más chica a la más grande.</p>
+    <p>Cinco maneras de comer completo; hay uno para cada antojo.</p>
   </div>
   <div class="grid-combos">
     <div class="combo">
@@ -308,7 +354,7 @@
       <div class="precio-oval">$140</div>
     </div>
     <div class="combo">
-      <h3>Rionbamba</h3>
+      <h3>Riobamba</h3>
       <ul><li>Boneless BBQ</li><li>Papas gajo</li><li>Malteada 400 ml</li></ul>
       <div class="precio-oval">$155</div>
     </div>
@@ -387,6 +433,24 @@
   </div>
 </div></section>
 
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Vistalinda.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Vistalinda.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">
   <span>Vistalinda cafetería · Sierravista 133, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -405,6 +469,15 @@
   }, { threshold: 0.22, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Vistalinda.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>

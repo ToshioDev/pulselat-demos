@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Cafetzin · café de barrio en la Col. Estrella</title>
-<meta name="description" content="Café de olla, espresso y pan del día en Calz. de Guadalupe 537, Col. Estrella. Pedidos para llevar por WhatsApp.">
+<meta name="description" content="Chapatas, molletes, pasta y café en Calz. de Guadalupe 537, Col. Estrella. Pedidos para llevar por WhatsApp.">
 <meta property="og:title" content="Cafetzin · café de barrio en Lindavista">
-<meta property="og:description" content="El letrero de neón de Calz. de Guadalupe 537. Café, pan dulce y pedidos para llevar.">
+<meta property="og:description" content="El letrero de neón de Calz. de Guadalupe 537. Chapatas, molletes, pasta y café para llevar.">
 <meta property="og:image" content="https://toshiodev.github.io/pulselat-demos/cafetzin/img/hero.jpg">
 <meta property="og:url" content="https://toshiodev.github.io/pulselat-demos/cafetzin/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --noche:#0f0d0e;
@@ -27,6 +28,19 @@
     --texto:#e6dfd9;
     --humo:#a2999b;
     --linea:rgba(240,245,255,.14);
+    --rc-bg:#171315;
+    --rc-fg:#f0f5ff;
+    --rc-acc:#ff0026;
+    --rc-acc-fg:#ffffff;
+    --rc-line:rgba(240,245,255,.2);
+    --rc-tenue:rgba(240,245,255,.72);
+    --rc-display:"Big Shoulders Display",Impact,sans-serif;
+    --rc-display-weight:800;
+    --rc-display-transform:uppercase;
+    --rc-display-ls:.05em;
+    --rc-float-bg:#0f0d0e;
+    --rc-float-fg:#f0f5ff;
+    --rc-float-acc:#ffb066;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -103,14 +117,17 @@
   .cabeza h2{font-size:clamp(38px,5vw,62px);margin-top:10px;color:var(--neon)}
   .cabeza p{max-width:38ch;font-size:13px;color:var(--humo)}
 
-  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:0 46px}
+  .menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 46px;align-items:start}
+  .columna{display:grid;align-content:start;gap:38px;min-width:0}
+  .grupo{min-width:0}
   .grupo h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:11px;border-bottom:1px solid rgba(255,176,102,.35);margin-bottom:3px;font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ambar)}
   .grupo h3 span{color:var(--humo);font-size:9.5px;letter-spacing:.12em}
-  .fila{display:grid;grid-template-columns:26px 1fr;gap:8px;padding:13px 0;border-bottom:1px dotted rgba(240,245,255,.13)}
-  .fila .n{font-size:10px;letter-spacing:.1em;color:var(--rojo);padding-top:5px}
+  .fila{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:12px 0;border-bottom:1px dotted rgba(240,245,255,.13)}
+  .fila .n{font-size:10px;letter-spacing:.1em;color:var(--rojo)}
   .fila b{display:block;font-size:15px;font-weight:500;color:var(--neon);line-height:1.35}
   .fila small{display:block;margin-top:4px;font-size:12px;line-height:1.5;color:var(--humo)}
-  .nota-carta{margin-top:32px;max-width:56ch;border-left:2px solid var(--rojo);padding-left:15px;font-size:12px;line-height:1.65;color:var(--humo)}
+  .fila .precio{font-size:14.5px;font-weight:500;letter-spacing:.03em;color:var(--ambar);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .nota-carta{margin-top:32px;max-width:60ch;border-left:2px solid var(--rojo);padding-left:15px;font-size:12px;line-height:1.65;color:var(--humo)}
 
   /* esquina */
   .esquina{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -200,7 +217,8 @@
     .hero .wrap{grid-template-columns:1fr;gap:44px}
     .ficha-letrero{justify-self:start;max-width:330px;margin-top:4px}
     .nav{display:none}
-    .menu{grid-template-columns:1fr;gap:38px}
+    .menu{grid-template-columns:1fr;gap:34px}
+    .columna{gap:34px}
     .esquina,.visita .grid{grid-template-columns:1fr;gap:46px}
     .mapa{order:-1}
     section{padding:70px 0}
@@ -273,7 +291,7 @@
         <h1 class="display wm"><span class="wm-ln"><span>Cafetzin</span></span></h1>
         <div class="tab-rojo">4.8 en Google · 362 reseñas</div>
       </div>
-      <p class="lead">El letrero que se ve desde Calz. de Guadalupe. Café de olla, espresso y pan del día; plantas en la banqueta y mesas para quedarse un rato.</p>
+      <p class="lead">El letrero que se ve desde Calz. de Guadalupe. Chapatas, molletes, pasta y café de la barra; plantas en la banqueta y mesas para quedarse un rato.</p>
       <div class="acciones">
         <a class="btn btn-rojo" href="https://wa.me/527971301245">Pedir para llevar</a>
         <a class="btn" href="#barra">Ver la barra</a>
@@ -289,8 +307,8 @@
 
 <div class="marquesina" aria-label="Especialidades de la casa">
   <div class="tira">
-    <span>Café de olla</span><i>✦</i><span>Espresso</span><i>✦</i><span>Cold brew</span><i>✦</i><span>Pan dulce del día</span><i>✦</i><span>Para llevar</span><i>✦</i><span>Col. Estrella</span><i>✦</i>
-    <span aria-hidden="true">Café de olla</span><i aria-hidden="true">✦</i><span aria-hidden="true">Espresso</span><i aria-hidden="true">✦</i><span aria-hidden="true">Cold brew</span><i aria-hidden="true">✦</i><span aria-hidden="true">Pan dulce del día</span><i aria-hidden="true">✦</i><span aria-hidden="true">Para llevar</span><i aria-hidden="true">✦</i><span aria-hidden="true">Col. Estrella</span><i aria-hidden="true">✦</i>
+    <span>Chapatas</span><i>✦</i><span>Molletes</span><i>✦</i><span>Pasta</span><i>✦</i><span>Café caliente</span><i>✦</i><span>Postres</span><i>✦</i><span>Para llevar</span><i>✦</i><span>Col. Estrella</span><i>✦</i>
+    <span aria-hidden="true">Chapatas</span><i aria-hidden="true">✦</i><span aria-hidden="true">Molletes</span><i aria-hidden="true">✦</i><span aria-hidden="true">Pasta</span><i aria-hidden="true">✦</i><span aria-hidden="true">Café caliente</span><i aria-hidden="true">✦</i><span aria-hidden="true">Postres</span><i aria-hidden="true">✦</i><span aria-hidden="true">Para llevar</span><i aria-hidden="true">✦</i><span aria-hidden="true">Col. Estrella</span><i aria-hidden="true">✦</i>
   </div>
 </div>
 
@@ -300,34 +318,51 @@
       <div class="kicker">La barra</div>
       <h2 class="display">Lo que hay hoy</h2>
     </div>
-    <p>Lo de siempre y lo del día. Los precios y los especiales se preguntan en la barra.</p>
+    <p>Carta de reparto. Lo que no aparece aquí se pregunta en la barra.</p>
   </div>
   <div class="menu">
-    <div class="grupo">
-      <h3>Café <span>caliente y frío</span></h3>
-      <div class="fila"><span class="n">01</span><div><b>Café de olla</b><small>Con canela y piloncillo, servido en taza de barro.</small></div></div>
-      <div class="fila"><span class="n">02</span><div><b>Espresso</b><small>Solo o cortado; también doble para la noche larga.</small></div></div>
-      <div class="fila"><span class="n">03</span><div><b>Capuchino</b><small>Leche vaporizada y un dedo de espuma.</small></div></div>
-      <div class="fila"><span class="n">04</span><div><b>Cold brew</b><small>Extracción en frío, servido con hielo.</small></div></div>
-      <div class="fila"><span class="n">05</span><div><b>Chocolate caliente</b><small>Con leche y canela; opción con chile.</small></div></div>
+    <div class="columna">
+      <div class="grupo">
+        <h3>Chilaquiles y enchiladas <span>de la casa</span></h3>
+        <div class="fila"><span class="n">01</span><div><b>Chilaquiles verdes</b></div><span class="precio">$102</span></div>
+        <div class="fila"><span class="n">02</span><div><b>Chilaqueso</b></div><span class="precio">$129</span></div>
+        <div class="fila"><span class="n">03</span><div><b>Enchiladas Cafetzin</b></div><span class="precio">$163</span></div>
+      </div>
+      <div class="grupo">
+        <h3>Molletes, pasta y ensalada <span>para comer</span></h3>
+        <div class="fila"><span class="n">04</span><div><b>Molletes</b><small>Cuatro piezas con frijoles, queso gratinado y pico de gallo.</small></div><span class="precio">$98</span></div>
+        <div class="fila"><span class="n">05</span><div><b>Pasta Malagueña</b></div><span class="precio">$195</span></div>
+        <div class="fila"><span class="n">06</span><div><b>Ensalada César</b></div><span class="precio">$130</span></div>
+      </div>
     </div>
-    <div class="grupo">
-      <h3>Para acompañar <span>salado</span></h3>
-      <div class="fila"><span class="n">06</span><div><b>Pan dulce del día</b><small>Concha, oreja o lo que salga del horno.</small></div></div>
-      <div class="fila"><span class="n">07</span><div><b>Sándwich de pierna</b><small>Pierna de cerdo, aguacate y chiles en vinagre.</small></div></div>
-      <div class="fila"><span class="n">08</span><div><b>Molletes</b><small>Frijoles, queso gratinado y pico de gallo.</small></div></div>
-      <div class="fila"><span class="n">09</span><div><b>Chilaquiles</b><small>Verdes o rojos, con queso y crema.</small></div></div>
-      <div class="fila"><span class="n">10</span><div><b>Bagel con queso crema</b><small>Tostado, con opción de jamón.</small></div></div>
+    <div class="columna">
+      <div class="grupo">
+        <h3>Chapatas <span>de la barra</span></h3>
+        <div class="fila"><span class="n">07</span><div><b>Tradicional</b></div><span class="precio">$129</span></div>
+        <div class="fila"><span class="n">08</span><div><b>Norteño</b></div><span class="precio">$129</span></div>
+        <div class="fila"><span class="n">09</span><div><b>Tzoalli</b></div><span class="precio">$130</span></div>
+        <div class="fila"><span class="n">10</span><div><b>Queso de cabra</b></div><span class="precio">$137</span></div>
+        <div class="fila"><span class="n">11</span><div><b>Mediterráneo</b></div><span class="precio">$150</span></div>
+        <div class="fila"><span class="n">12</span><div><b>Bravo</b></div><span class="precio">$150</span></div>
+        <div class="fila"><span class="n">13</span><div><b>Oliva</b></div><span class="precio">$195</span></div>
+      </div>
     </div>
-    <div class="grupo">
-      <h3>Dulce <span>de vitrina</span></h3>
-      <div class="fila"><span class="n">11</span><div><b>Cheesecake</b><small>Rebanada clásica, con mermelada del día.</small></div></div>
-      <div class="fila"><span class="n">12</span><div><b>Concha rellena</b><small>De nata o chocolate, según la tanda.</small></div></div>
-      <div class="fila"><span class="n">13</span><div><b>Galletas de la casa</b><small>Avena con nuez, horneadas en el local.</small></div></div>
-      <div class="fila"><span class="n">14</span><div><b>Pan de elote</b><small>Cuando hay; pregunta antes de pedirlo.</small></div></div>
+    <div class="columna">
+      <div class="grupo">
+        <h3>Café caliente <span>de la barra</span></h3>
+        <div class="fila"><span class="n">14</span><div><b>Moka</b></div><span class="precio">$86</span></div>
+        <div class="fila"><span class="n">15</span><div><b>Caramel latte</b></div><span class="precio">$93</span></div>
+        <div class="fila"><span class="n">16</span><div><b>Latte irlandés</b></div><span class="precio">$93</span></div>
+        <div class="fila"><span class="n">17</span><div><b>Lavanda latte</b></div><span class="precio">$93</span></div>
+      </div>
+      <div class="grupo">
+        <h3>Dulce <span>para cerrar</span></h3>
+        <div class="fila"><span class="n">18</span><div><b>Strudel de manzana</b><small>Con helado.</small></div><span class="precio">$80</span></div>
+        <div class="fila"><span class="n">19</span><div><b>Waffles</b></div><span class="precio">$86</span></div>
+      </div>
     </div>
   </div>
-  <p class="nota-carta">El menú cambia con el día. Para precios, especiales o pedidos grandes, manda WhatsApp al 797 130 1245 y te contestamos desde la barra.</p>
+  <p class="nota-carta">Carta de reparto: precios publicados en la app de Uber Eats; en la barra pueden cambiar. También hay omelettes, croissants salados, bebidas frías, frappés, smoothies, infusiones y postres. Pregunta por lo del día al 797 130 1245.</p>
 </div></section>
 
 <section id="esquina" data-anim><div class="wrap">
@@ -373,6 +408,24 @@
   </div>
 </div></section>
 
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cafetzin.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cafetzin.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">
   <span>Cafetzin · Calz. de Guadalupe 537, Col. Estrella</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -395,6 +448,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Cafetzin","image":"https://toshiodev.github.io/pulselat-demos/cafetzin/img/hero.jpg","telephone":"+527971301245","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calz. de Guadalupe 537","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07810","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"362"}}
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cafetzin.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>

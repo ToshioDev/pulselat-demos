@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Cultura, Ideas &amp; Café · Guadalupe Insurgentes</title>
-<meta name="description" content="Café, desayunos y comida en Ing. Carlos Daza 202, Guadalupe Insurgentes. Menú en la pizarra y pedidos por WhatsApp.">
+<meta name="description" content="Sándwiches, crepas, desayunos y café en Ing. Carlos Daza 202, Guadalupe Insurgentes. Carta en la pizarra y pedidos por WhatsApp.">
 <meta property="og:title" content="Cultura, Ideas &amp; Café · Lindavista">
 <meta property="og:description" content="Un café de barrio con pizarrones, cuadros y mesas para quedarse. Ing. Carlos Daza 202.">
 <meta property="og:image" content="https://toshiodev.github.io/pulselat-demos/cultura/img/hero.jpg">
@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --papel:#f3e3cd;
@@ -26,6 +27,19 @@
     --salmon:#d99a78;
     --gris:#6f6557;
     --linea:rgba(36,31,25,.16);
+    --rc-bg:#a8422a;
+    --rc-fg:#fcf4e3;
+    --rc-acc:#c2cc63;
+    --rc-acc-fg:#241f19;
+    --rc-kicker:#fcf4e3;
+    --rc-line:rgba(252,244,227,.26);
+    --rc-tenue:rgba(252,244,227,.78);
+    --rc-display:"Newsreader",Georgia,serif;
+    --rc-display-weight:400;
+    --rc-display-ls:-.015em;
+    --rc-float-bg:#7a2e1d;
+    --rc-float-fg:#fcf4e3;
+    --rc-float-acc:#c2cc63;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -104,8 +118,8 @@
   .cabeza h2 em{font-style:italic;color:var(--teja)}
   .cabeza p{max-width:38ch;font-size:13px;color:var(--gris)}
 
-  .menu{display:grid;grid-template-columns:1fr 1fr;gap:34px 30px}
-  .ficha-menu{position:relative;margin-top:22px;padding:28px 26px 18px;background:var(--crema);border:1px solid rgba(36,31,25,.22);box-shadow:0 12px 26px rgba(36,31,25,.07)}
+  .menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 30px;align-items:start}
+  .ficha-menu{position:relative;padding:28px 26px 18px;background:var(--crema);border:1px solid rgba(36,31,25,.22);box-shadow:0 12px 26px rgba(36,31,25,.07)}
   .ficha-menu::before{content:attr(data-tab);position:absolute;top:-23px;left:20px;background:var(--c,var(--lima));border:1px solid rgba(36,31,25,.24);border-bottom:0;padding:6px 12px;font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta)}
   .renglon{padding:11px 0;border-bottom:1px dotted rgba(36,31,25,.26)}
   .renglon:last-child{border-bottom:0}
@@ -191,6 +205,8 @@
   .vis .ficha-menu:nth-child(2){transition-delay:.08s}
   .vis .ficha-menu:nth-child(3){transition-delay:.16s}
   .vis .ficha-menu:nth-child(4){transition-delay:.24s}
+  .vis .ficha-menu:nth-child(5){transition-delay:.32s}
+  .vis .ficha-menu:nth-child(6){transition-delay:.4s}
   .hecho,.foto-grande,.cuadro,.sello-visita{opacity:0;transform:translateY(12px)}
   .vis .hecho,.vis .foto-grande,.vis .cuadro,.vis .sello-visita{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
   .vis .hecho:nth-child(2){transition-delay:.08s}
@@ -288,21 +304,21 @@
     <article class="frente">
       <div class="pestana">Hoy en la pizarra</div>
       <ul>
-        <li>Café de olla <small>de la casa</small></li>
-        <li>Chilaquiles verdes <small>o rojos</small></li>
-        <li>Molletes <small>con pico</small></li>
-        <li>Pan dulce del día <small>de la charola</small></li>
+        <li>Molletes especiales <small>de la carta</small></li>
+        <li>Sincronizadas <small>para empezar</small></li>
+        <li>Sándwich de jamón serrano <small>de la carta</small></li>
+        <li>Chocolate imperial <small>caliente</small></li>
       </ul>
-      <p class="pie">El menú del día se escribe cada mañana. Pregunta por el guisado antes de sentarte.</p>
+      <p class="pie">La carta se escribe en la pizarra. Pregunta qué hay hoy antes de sentarte.</p>
     </article>
   </div>
 </div></header>
 
 <div class="cinta"><div class="wrap">
   <span>Desayunos</span><i>·</i>
-  <span>Comida del día</span><i>·</i>
-  <span>Café de olla</span><i>·</i>
-  <span>Pan dulce</span><i>·</i>
+  <span>Sándwiches</span><i>·</i>
+  <span>Crepas</span><i>·</i>
+  <span>Café caliente</span><i>·</i>
   <span>Para llevar</span><i>·</i>
   <span>Cuadros y plantas</span>
 </div></div>
@@ -313,37 +329,53 @@
       <div class="kicker">El menú</div>
       <h2 class="serif">Lo que está <em>en la pizarra</em></h2>
     </div>
-    <p>Cuatro pizarrones arriba de la barra. Esto es lo que suele haber; lo del día cambia.</p>
+    <p>La carta del local, agrupada para leerla de un tirón. Lo del día se escribe en la pizarra.</p>
   </div>
   <div class="menu">
     <div class="ficha-menu" data-tab="Desayunos" style="--c:var(--lima)">
-      <div class="renglon"><b>Chilaquiles verdes o rojos</b><small>Con queso, crema y cebolla; huevo al gusto.</small></div>
-      <div class="renglon"><b>Molletes</b><small>Frijoles, queso gratinado y pico de gallo.</small></div>
-      <div class="renglon"><b>Huevos al gusto</b><small>Al horno, revueltos o estrellados con frijoles.</small></div>
-      <div class="renglon"><b>Sándwich de pierna</b><small>Pierna, aguacate y chiles en vinagre.</small></div>
-      <div class="renglon"><b>Pan dulce del día</b><small>Concha, oreja o lo que salga de la charola.</small></div>
+      <div class="renglon"><b>Molletes tradicionales</b></div>
+      <div class="renglon"><b>Molletes especiales</b></div>
+      <div class="renglon"><b>Sincronizadas</b></div>
+      <div class="renglon"><b>Bisquets</b></div>
     </div>
-    <div class="ficha-menu" data-tab="Comida" style="--c:var(--naranja)">
-      <div class="renglon"><b>Menú del día</b><small>Sopa, guisado y agua; se anota en la pizarra cada mañana.</small></div>
-      <div class="renglon"><b>Torta de milanesa</b><small>Con lechuga, jitomate y aguacate.</small></div>
-      <div class="renglon"><b>Sopa de tortilla</b><small>Con pasilla, queso y crema.</small></div>
-      <div class="renglon"><b>Ensalada de la casa</b><small>Lechuga, jitomate, pepino y aderezo de la casa.</small></div>
+    <div class="ficha-menu" data-tab="Pan" style="--c:var(--naranja)">
+      <div class="renglon"><b>Croissant</b></div>
+      <div class="renglon"><b>Baguette</b></div>
+      <div class="renglon"><b>Chapata</b></div>
     </div>
-    <div class="ficha-menu" data-tab="Café" style="--c:var(--teja)">
-      <div class="renglon"><b>Café de olla</b><small>Con canela y piloncillo.</small></div>
-      <div class="renglon"><b>Americano</b><small>Para la sobremesa larga.</small></div>
-      <div class="renglon"><b>Capuchino</b><small>Con espuma de leche.</small></div>
-      <div class="renglon"><b>Latte</b><small>Caliente o con hielo.</small></div>
-      <div class="renglon"><b>Chocolate</b><small>Caliente, con canela.</small></div>
+    <div class="ficha-menu" data-tab="Sándwiches" style="--c:var(--salmon)">
+      <div class="renglon"><b>De la casa</b></div>
+      <div class="renglon"><b>De atún</b></div>
+      <div class="renglon"><b>De jamón serrano</b></div>
+      <div class="renglon"><b>De pavo</b></div>
+      <div class="renglon"><b>De tres quesos</b></div>
     </div>
-    <div class="ficha-menu" data-tab="Dulce" style="--c:var(--salmon)">
-      <div class="renglon"><b>Pay de queso</b><small>Rebanada con mermelada del día.</small></div>
-      <div class="renglon"><b>Gelatina</b><small>De leche o de agua, según la charola.</small></div>
-      <div class="renglon"><b>Galletas</b><small>De avena con nuez.</small></div>
-      <div class="renglon"><b>Pan de elote</b><small>Cuando hay; pregunta antes.</small></div>
+    <div class="ficha-menu" data-tab="Crepas y ensalada" style="--c:var(--lima)">
+      <div class="renglon"><b>Crepas saladas</b></div>
+      <div class="renglon"><b>Crepas dulces</b></div>
+      <div class="renglon"><b>Ensalada de atún</b></div>
+    </div>
+    <div class="ficha-menu" data-tab="Café caliente" style="--c:var(--teja)">
+      <div class="renglon"><b>Café</b></div>
+      <div class="renglon"><b>Espresso</b></div>
+      <div class="renglon"><b>Americano</b></div>
+      <div class="renglon"><b>Machiatto</b></div>
+      <div class="renglon"><b>Capuchino</b></div>
+      <div class="renglon"><b>Latte</b></div>
+      <div class="renglon"><b>Moka</b></div>
+    </div>
+    <div class="ficha-menu" data-tab="Tés y refrescantes" style="--c:var(--naranja)">
+      <div class="renglon"><b>Té</b></div>
+      <div class="renglon"><b>Chai</b></div>
+      <div class="renglon"><b>Chocolate imperial</b></div>
+      <div class="renglon"><b>Soda italiana</b></div>
+      <div class="renglon"><b>Naranjada</b></div>
+      <div class="renglon"><b>Limonada</b></div>
+      <div class="renglon"><b>Soda de infusión</b></div>
+      <div class="renglon"><b>Frappés</b></div>
     </div>
   </div>
-  <p class="nota-menu">Los precios están en los pizarrones del local y cambian con el menú del día. Para pedidos para llevar o mesas grandes, escribe al 55 9037 0545.</p>
+  <p class="nota-menu">Los precios se consultan en el local y cambian con el menú del día. Para pedidos para llevar o mesas grandes, escribe al 55 9037 0545.</p>
 </div></section>
 
 <section id="local" data-anim><div class="wrap">
@@ -390,12 +422,30 @@
 
 <section class="cierre"><div class="wrap">
   <h2 class="serif">Nos vemos en <em>la mesa de siempre.</em></h2>
-  <p>Un café de olla, el guisado del día y una sobremesa que se alarga. Así es un martes aquí.</p>
+  <p>Un café caliente, un sándwich y una sobremesa que se alarga. Así es un martes aquí.</p>
   <div class="acciones">
     <a class="btn btn-solido" href="https://wa.me/525590370545">Escribir por WhatsApp</a>
     <a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&amp;query=Cultura+Ideas+y+Caf%C3%A9+Ing+Carlos+Daza+202">Abrir en Google Maps</a>
   </div>
 </div></section>
+
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cultura%20Ideas%20y%20Caf%C3%A9.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cultura%20Ideas%20y%20Caf%C3%A9.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
 
 <footer><div class="wrap">
   <span>Cultura, Ideas &amp; Café · Ing. Carlos Daza 202</span>
@@ -421,6 +471,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cultura, Ideas & Café","image":"https://toshiodev.github.io/pulselat-demos/cultura/img/hero.jpg","telephone":"+525590370545","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Ing. Carlos Daza 202","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07870","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"532"}}
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cultura%20Ideas%20y%20Caf%C3%A9.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>

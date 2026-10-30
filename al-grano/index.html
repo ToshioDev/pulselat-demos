@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
 <style>
   :root{
     --noche:#111613;
@@ -24,6 +25,18 @@
     --crema:#f3ece2;
     --humo:#9aa79c;
     --linea:rgba(243,236,226,.16);
+    --rc-bg:#161d19;
+    --rc-fg:#f3ece2;
+    --rc-acc:#ef8a1f;
+    --rc-acc-fg:#12100c;
+    --rc-line:rgba(243,236,226,.18);
+    --rc-tenue:rgba(243,236,226,.7);
+    --rc-display:"Bricolage Grotesque",system-ui,sans-serif;
+    --rc-display-weight:700;
+    --rc-display-ls:-.03em;
+    --rc-float-bg:#0f1411;
+    --rc-float-fg:#f3ece2;
+    --rc-float-acc:#ffb45c;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -79,13 +92,17 @@
   .pizarron{background:var(--noche-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
   .pizarron .tablero{border:1px solid rgba(243,236,226,.22);padding:44px 40px;background:radial-gradient(120% 120% at 20% 0%,rgba(47,90,61,.22),transparent 60%)}
   .pizarron .titulo-mano{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--cempa);margin-bottom:28px}
-  .platillos{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
-  .platillo{display:flex;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid rgba(243,236,226,.12)}
-  .platillo .n{font-size:16.5px}
-  .platillo .n small{display:block;font-size:12.5px;color:var(--humo);margin-top:2px}
+  .platillos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 46px;align-items:start}
+  .grupo-menu{min-width:0}
+  .grupo-titulo{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px;padding-bottom:9px;border-bottom:1px solid rgba(239,138,31,.5);font-family:"Bricolage Grotesque",sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cempa)}
+  .grupo-titulo span{font-family:"Instrument Sans",sans-serif;font-size:9px;font-weight:400;letter-spacing:.06em;text-transform:none;color:var(--humo);text-align:right}
+  .grupo-nota{margin:6px 0 2px;font-size:10.5px;line-height:1.45;color:var(--humo)}
+  .platillo{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(243,236,226,.1)}
+  .platillo .n{font-size:15px;line-height:1.35}
+  .platillo .n small{display:block;font-size:11.5px;line-height:1.45;color:var(--humo);margin-top:2px}
   .platillo .p{flex:1;border-bottom:1px dotted rgba(243,236,226,.22);transform:translateY(-4px)}
-  .platillo .precio{font-variant-numeric:tabular-nums;font-size:15px;color:var(--cempa-2)}
-  .nota{font-size:12.5px;color:var(--humo);margin-top:22px}
+  .platillo .precio{font-variant-numeric:tabular-nums;font-size:14px;color:var(--cempa-2);white-space:nowrap}
+  .nota{font-size:12.5px;line-height:1.6;color:var(--humo);margin-top:28px;max-width:72ch}
 
   .ubic{display:grid;grid-template-columns:1fr 1fr;gap:70px}
   .dato{padding:20px 0;border-bottom:1px solid var(--linea)}
@@ -138,14 +155,20 @@
     .cabeza::after{transform:scaleX(1)}
   }
 
+  @media (max-width:1000px){
+    .platillos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
   @media (max-width:900px){
     .enlaces{display:none}
     .terraza,.ubic{grid-template-columns:1fr;gap:40px}
     .terraza img{aspect-ratio:4/3}
-    .platillos{grid-template-columns:1fr}
     .datos{grid-template-columns:1fr}
     section{padding:72px 0}
     header{min-height:84vh}
+  }
+  @media (max-width:680px){
+    .platillos{grid-template-columns:1fr;gap:34px}
+    .tablero{padding:32px 22px}
   }
   @media (max-width:560px){
     .wrap{padding:0 20px}
@@ -211,19 +234,152 @@
 <section class="pizarron" id="carta" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="grotesca">Lo de siempre,<br>bien hecho.</h2>
-    <p>Carta de ejemplo. Se arma con tu menú real y tus precios.</p>
+    <p>Desayunos, chilaquiles y café todo el día. Carta y precios tomados del menú del negocio.</p>
   </div>
   <div class="tablero">
-    <div class="titulo-mano">Café y comida · todo el día</div>
+    <div class="titulo-mano">Carta · todo el día</div>
     <div class="platillos">
-      <div class="platillo"><div class="n">Espresso<small>Doble, taza corta</small></div><div class="p"></div><div class="precio">$42</div></div>
-      <div class="platillo"><div class="n">Capuchino<small>Leche vaporizada, cocoa</small></div><div class="p"></div><div class="precio">$62</div></div>
-      <div class="platillo"><div class="n">Latte de la casa<small>Con jarabe de temporada</small></div><div class="p"></div><div class="precio">$68</div></div>
-      <div class="platillo"><div class="n">Frappé de café<small>Con crema batida</small></div><div class="p"></div><div class="precio">$75</div></div>
-      <div class="platillo"><div class="n">Baguette de pavo<small>Pan horneado, aderezos</small></div><div class="p"></div><div class="precio">$95</div></div>
-      <div class="platillo"><div class="n">Rebanada del día<small>Pregunta por la del día</small></div><div class="p"></div><div class="precio">$55</div></div>
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Chilaquiles</h3>
+        <p class="grupo-nota">Con salsa a elegir, crema, queso y cebolla; acompañados de frijoles refritos.</p>
+        <div class="platillo"><div class="n">Sencillos</div><div class="p"></div><div class="precio">$88</div></div>
+        <div class="platillo"><div class="n">Con huevo</div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">Con chorizo</div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">Con suadero</div><div class="p"></div><div class="precio">$138</div></div>
+        <div class="platillo"><div class="n">Con pastor</div><div class="p"></div><div class="precio">$138</div></div>
+        <div class="platillo"><div class="n">De cochinita</div><div class="p"></div><div class="precio">$148</div></div>
+        <div class="platillo"><div class="n">De pechuga</div><div class="p"></div><div class="precio">$158</div></div>
+        <div class="platillo"><div class="n">De bistec</div><div class="p"></div><div class="precio">$168</div></div>
+        <div class="platillo"><div class="n">Con arrachera</div><div class="p"></div><div class="precio">$188</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Chilaquilocas</h3>
+        <p class="grupo-nota">Incluyen café de olla de 12 oz.</p>
+        <div class="platillo"><div class="n">Sencillos</div><div class="p"></div><div class="precio">$85</div></div>
+        <div class="platillo"><div class="n">Con huevo</div><div class="p"></div><div class="precio">$98</div></div>
+        <div class="platillo"><div class="n">Con chorizo</div><div class="p"></div><div class="precio">$108</div></div>
+        <div class="platillo"><div class="n">Con suadero</div><div class="p"></div><div class="precio">$108</div></div>
+        <div class="platillo"><div class="n">De pastor</div><div class="p"></div><div class="precio">$108</div></div>
+        <div class="platillo"><div class="n">Con pollo</div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">De cochinita</div><div class="p"></div><div class="precio">$128</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Omelettes</h3>
+        <p class="grupo-nota">Con ensalada, salchichas de casa y café de olla de 12 oz.</p>
+        <div class="platillo"><div class="n">Cuatro quesos<small>Chiapas, ramonetti, manchego y gouda</small></div><div class="p"></div><div class="precio">$168</div></div>
+        <div class="platillo"><div class="n">Florentino<small>Jamón de pavo, queso de cabra y espinaca</small></div><div class="p"></div><div class="precio">$178</div></div>
+        <div class="platillo"><div class="n">Champiñones<small>Elote, flor de calabaza y queso asadero</small></div><div class="p"></div><div class="precio">$178</div></div>
+        <div class="platillo"><div class="n">Al Grano Expréss<small>Ensalada, betabel y 3 salchichas de casa</small></div><div class="p"></div><div class="precio">$188</div></div>
+        <div class="platillo"><div class="n">Huevos Santos<small>Mole, chorizo, suadero y hoja santa</small></div><div class="p"></div><div class="precio">$198</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Desayunos</h3>
+        <div class="platillo"><div class="n">Plato de fruta<small>Papaya, piña, mango y sandía</small></div><div class="p"></div><div class="precio">$72</div></div>
+        <div class="platillo"><div class="n">Cuernito<small>Pechuga de pavo y ensalada rusa</small></div><div class="p"></div><div class="precio">$78</div></div>
+        <div class="platillo"><div class="n">Pan francés<small>Fresas, moras y frambuesas</small></div><div class="p"></div><div class="precio">$132</div></div>
+        <div class="platillo"><div class="n">Hot cakes<small>3 piezas de la fórmula de la casa</small></div><div class="p"></div><div class="precio">$158</div></div>
+        <div class="platillo"><div class="n">Enfrijoladas con huevo<small>Incluyen café de olla de 12 oz</small></div><div class="p"></div><div class="precio">$168</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Huevos</h3>
+        <p class="grupo-nota">Incluyen café de olla de 12 oz.</p>
+        <div class="platillo"><div class="n">Divorciados<small>2 tortillas fritas, salsa a elegir y totopos</small></div><div class="p"></div><div class="precio">$148</div></div>
+        <div class="platillo"><div class="n">Bañados<small>Salsa y queso a elegir, cama de frijoles</small></div><div class="p"></div><div class="precio">$168</div></div>
+        <div class="platillo"><div class="n">En cazuela<small>Nopal, chorizo, queso y salsa de la casa</small></div><div class="p"></div><div class="precio">$158</div></div>
+        <div class="platillo"><div class="n">Revueltos<small>Con una proteína a elegir</small></div><div class="p"></div><div class="precio">$163</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Ensaladas</h3>
+        <div class="platillo"><div class="n">Veggi<small>Lechuga, huevo cocido, crutones y pollo</small></div><div class="p"></div><div class="precio">$72</div></div>
+        <div class="platillo"><div class="n">Fiesta<small>Fruta de temporada, manchego y semillas</small></div><div class="p"></div><div class="precio">$83</div></div>
+        <div class="platillo"><div class="n">Hawái<small>Jamón, manchego, piña y cebolla</small></div><div class="p"></div><div class="precio">$94</div></div>
+        <div class="platillo"><div class="n">César<small>Parmesano, crutones y pollo deshebrado</small></div><div class="p"></div><div class="precio">$108</div></div>
+        <div class="platillo"><div class="n">Al Grano<small>Quinoa, jitomate, cilantro y tortilla frita</small></div><div class="p"></div><div class="precio">$138</div></div>
+        <div class="platillo"><div class="n">De la Jefa<small>Rúcula, pera, nueces y queso de cabra</small></div><div class="p"></div><div class="precio">$148</div></div>
+        <div class="platillo"><div class="n">De la Casa<small>Fresas, manzana, uvas y arándanos</small></div><div class="p"></div><div class="precio">$158</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Algo más</h3>
+        <div class="platillo"><div class="n">Tazón de frutos rojos + smoothie<small>16 oz; arándanos, fresas, frambuesas y cerezas</small></div><div class="p"></div><div class="precio">$99</div></div>
+        <div class="platillo"><div class="n">Sincronizadas<small>2 piezas con ensalada rusa</small></div><div class="p"></div><div class="precio">$94</div></div>
+        <div class="platillo"><div class="n">Papas a la francesa<small>Queso amarillo, tocino y jalapeños</small></div><div class="p"></div><div class="precio">$98</div></div>
+        <div class="platillo"><div class="n">Papas criollas<small>Receta de la casa</small></div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">Croissant<small>Jamón, queso de cabra y miel</small></div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">Molletes<small>3 piezas con longaniza y pico de gallo</small></div><div class="p"></div><div class="precio">$118</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Tacos y flautas</h3>
+        <div class="platillo"><div class="n">Taco de cochinita<small>Por pieza, con cebolla morada</small></div><div class="p"></div><div class="precio">$33</div></div>
+        <div class="platillo"><div class="n">3 tacos dorados de picadillo</div><div class="p"></div><div class="precio">$94</div></div>
+        <div class="platillo"><div class="n">3 tacos dorados<small>Proteína a elegir</small></div><div class="p"></div><div class="precio">$98</div></div>
+        <div class="platillo"><div class="n">3 flautas doradas<small>Proteína a elegir</small></div><div class="p"></div><div class="precio">$135</div></div>
+        <div class="platillo"><div class="n">3 flautas de picadillo</div><div class="p"></div><div class="precio">$148</div></div>
+        <div class="platillo"><div class="n">3 flautas ahogadas en mole<small>Proteína a elegir y queso gratinado</small></div><div class="p"></div><div class="precio">$168</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Sándwiches y baguettes</h3>
+        <div class="platillo"><div class="n">Sándwich rústico<small>Pollo al grill, provolone y mostaza</small></div><div class="p"></div><div class="precio">$149</div></div>
+        <div class="platillo"><div class="n">Club sándwich<small>Pavo, manchego, pollo y papas</small></div><div class="p"></div><div class="precio">$158</div></div>
+        <div class="platillo"><div class="n">Baguette clásica<small>Jamón, queso, pepino y chipotle</small></div><div class="p"></div><div class="precio">$98</div></div>
+        <div class="platillo"><div class="n">Baguette de pollo<small>Pollo asado a la parrilla</small></div><div class="p"></div><div class="precio">$118</div></div>
+        <div class="platillo"><div class="n">Baguette al Grano<small>Suadero, cebolla caramelizada y queso</small></div><div class="p"></div><div class="precio">$128</div></div>
+        <div class="platillo"><div class="n">Baguette de carnes<small>Res, longaniza, queso de cabra y fruta</small></div><div class="p"></div><div class="precio">$138</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Especialidades</h3>
+        <div class="platillo"><div class="n">Rollitos del Abuelo<small>2 piezas con champiñones y chile verde</small></div><div class="p"></div><div class="precio">$94</div></div>
+        <div class="platillo"><div class="n">Choripán<small>Chorizo argentino, chimichurri y manchego</small></div><div class="p"></div><div class="precio">$127</div></div>
+        <div class="platillo"><div class="n">Montaditas<small>Pan de hogaza, queso de cabra y arúgula</small></div><div class="p"></div><div class="precio">$175</div></div>
+        <div class="platillo"><div class="n">Montaditas Veggi<small>Aguacate, champiñones y pimiento rojo</small></div><div class="p"></div><div class="precio">$178</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Crepas y antojitos</h3>
+        <div class="platillo"><div class="n">Crepa sencilla<small>Dulce a elegir, fresas y azúcar glass</small></div><div class="p"></div><div class="precio">$85</div></div>
+        <div class="platillo"><div class="n">Crepa 2 ingredientes<small>Con fresas y azúcar glass</small></div><div class="p"></div><div class="precio">$104</div></div>
+        <div class="platillo"><div class="n">Crepa 3 ingredientes<small>Nuez, almendras y plátano</small></div><div class="p"></div><div class="precio">$124</div></div>
+        <div class="platillo"><div class="n">Gordita de chicharrón</div><div class="p"></div><div class="precio">$50</div></div>
+        <div class="platillo"><div class="n">Panuchos<small>3 piezas con frijol, aguacate y habanero</small></div><div class="p"></div><div class="precio">$72</div></div>
+        <div class="platillo"><div class="n">Quesadillas de carne<small>Tortilla de maíz hecha a mano</small></div><div class="p"></div><div class="precio">$72</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Postres</h3>
+        <div class="platillo"><div class="n">Helado<small>1 bola, sabor a elegir</small></div><div class="p"></div><div class="precio">$28</div></div>
+        <div class="platillo"><div class="n">Pie de limón</div><div class="p"></div><div class="precio">$45</div></div>
+        <div class="platillo"><div class="n">Arroz con leche<small>Con canela</small></div><div class="p"></div><div class="precio">$45</div></div>
+        <div class="platillo"><div class="n">Flan napolitano</div><div class="p"></div><div class="precio">$50</div></div>
+        <div class="platillo"><div class="n">Pastel imposible</div><div class="p"></div><div class="precio">$50</div></div>
+        <div class="platillo"><div class="n">Fresas con crema<small>Crema chantilly</small></div><div class="p"></div><div class="precio">$55</div></div>
+      </div>
+
+      <div class="grupo-menu">
+        <h3 class="grupo-titulo">Café y bebidas</h3>
+        <div class="platillo"><div class="n">Café de olla</div><div class="p"></div><div class="precio">$35</div></div>
+        <div class="platillo"><div class="n">Americano</div><div class="p"></div><div class="precio">$40</div></div>
+        <div class="platillo"><div class="n">Capuchino</div><div class="p"></div><div class="precio">$65</div></div>
+        <div class="platillo"><div class="n">Chocolate caliente</div><div class="p"></div><div class="precio">$68</div></div>
+        <div class="platillo"><div class="n">Frappés de la casa<small>Vainilla francesa, taro, almendra, cookies &amp; cream, mocaccino, chocolate o caramelo</small></div><div class="p"></div><div class="precio">$85</div></div>
+        <div class="platillo"><div class="n">Refrescos<small>Pepsi, Coca-Cola, 7Up, Mirinda, Sangría, Squirt y Tehuacán</small></div><div class="p"></div><div class="precio">$38</div></div>
+        <div class="platillo"><div class="n">Vaso de leche</div><div class="p"></div><div class="precio">$28</div></div>
+        <div class="platillo"><div class="n">Jugo de naranja<small>500 ml / 1 L</small></div><div class="p"></div><div class="precio">$48 · $88</div></div>
+        <div class="platillo"><div class="n">Jugo verde<small>500 ml</small></div><div class="p"></div><div class="precio">$58</div></div>
+        <div class="platillo"><div class="n">Agua fresca<small>500 ml / 1 L, sabor a elegir</small></div><div class="p"></div><div class="precio">$45 · $60</div></div>
+        <div class="platillo"><div class="n">Limonada<small>Natural o mineral</small></div><div class="p"></div><div class="precio">$55</div></div>
+        <div class="platillo"><div class="n">Naranjada<small>Natural o mineral</small></div><div class="p"></div><div class="precio">$65</div></div>
+        <div class="platillo"><div class="n">Limonada con frutos rojos</div><div class="p"></div><div class="precio">$78</div></div>
+      </div>
     </div>
-    <p class="nota">Pedidos para llevar y para oficina por WhatsApp.</p>
+    <p class="nota">Precios tomados del menú público del negocio al armar esta muestra; pueden cambiar. Pedidos para llevar y para oficina por WhatsApp.</p>
   </div>
 </div></section>
 
@@ -256,6 +412,24 @@
   </div>
 </div></section>
 
+<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
+  <div class="rc-wrap">
+    <div class="rc-copy">
+      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
+      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
+      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
+    </div>
+    <div class="rc-acciones">
+      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Al%20Grano.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
+      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Al%20Grano.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
+      <a class="rc-tel" href="tel:+522296500422">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+        <span>Llámanos</span> <b>+52 229 650 0422</b>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">
   <span>Al Grano · Calz. Azcapotzalco 1248, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -274,6 +448,15 @@
   }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Al%20Grano.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
 
 </body>
 </html>
