@@ -254,6 +254,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -267,11 +268,12 @@
   <nav class="nav nav-escritorio" aria-label="Secciones del sitio">
     <a href="#carta">La carta</a>
     <a href="#combos">Combos</a>
+    <a href="#pedido">Pedir</a>
     <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
   <span class="oculto">Lun–vie 7:50–19:00 · Sáb 8:00–16:00</span>
-  <a class="wa-barra" href="https://wa.me/525582313313">WhatsApp 55 8231 3313</a>
+  <a class="wa-barra" href="https://wa.me/525582313313">WhatsApp <span class="wa-num">55 8231 3313</span></a>
   <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></div>
 
@@ -283,8 +285,9 @@
   <nav class="menu-movil-nav" aria-label="Menú del sitio">
     <a href="#carta"><span>01</span> La carta</a>
     <a href="#combos"><span>02</span> Combos</a>
-    <a href="#dudas"><span>03</span> Dudas</a>
-    <a href="#visita"><span>04</span> Visítanos</a>
+    <a href="#pedido"><span>03</span> Pedir</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/525582313313">Pedir por WhatsApp</a>
@@ -452,6 +455,62 @@
   </div>
 </div></section>
 
+<section class="venta" id="pedido" aria-labelledby="vl-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Para llevar, sin fila</div>
+      <h2 id="vl-venta-titulo">Pide tu combo<br>y pásalo a recoger.</h2>
+      <p class="venta-lead">La cocina arma el pedido al momento. Dinos qué quieres y a qué hora pasas; te confirmamos por el mismo WhatsApp y lo encuentras listo en el mostrador.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Arma tu pedido</strong><span>Combos, desayunos o algo de la carta. Anota la hora a la que pasas.</span></div></li>
+        <li><b>02</b><div><strong>Te confirmamos</strong><span>El mostrador contesta con el total y confirma que tu pedido va en camino.</span></div></li>
+        <li><b>03</b><div><strong>Pasa por él</strong><span>Recógelo en Sierravista 133 y, si quieres, acomódate en la mesa de afuera.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Combo Lindavista <em>· croissant y capuccino</em></span><b>$99</b></li>
+          <li><span>Molletes <em>· con café americano chico</em></span><b>$100</b></li>
+          <li><span>Capuccino clásico <em>· chico / grande</em></span><b>$55 · $60</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Lunes a viernes de 7:50 a 19:00; sábado de 8:00 a 16:00. Los combos completos también van para llevar y el pan depende de la hornada del día.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="525582313313" data-cafe="Vistalinda" data-asunto="un pedido para llevar" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="vl-nombre">Tu nombre</label>
+          <input id="vl-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="vl-pedido">Qué vas a pedir</label>
+          <textarea id="vl-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. un combo Lindavista, dos molletes y un capuccino grande."></textarea>
+        </div>
+        <div class="campo">
+          <label for="vl-cuando">¿A qué hora pasas?</label>
+          <select id="vl-cuando" name="cuando" data-campo data-label="Hora" required>
+            <option value="">Elige un horario</option>
+            <option>Lo antes posible</option>
+            <option>En la mañana, antes de las 12</option>
+            <option>Al mediodía</option>
+            <option>Por la tarde</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="vl-nota">Nota <span aria-hidden="true">· opcional</span></label>
+          <input id="vl-nota" name="nota" data-campo data-label="Nota" placeholder="Sin azúcar, para oficina, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. El pedido se confirma en el chat y se paga al recogerlo.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525582313313">WhatsApp 55 8231 3313</a> · <a href="tel:+525582313313">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
 <section class="dudas" id="dudas" data-anim><div class="wrap">
   <div class="dudas-cabeza">
     <div class="dudas-kicker">Antes de venir</div>
@@ -516,24 +575,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Vistalinda.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Vistalinda.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><img class="logo-pie" src="img/taza.png" alt="" aria-hidden="true">Vistalinda cafetería · Sierravista 133, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -555,6 +596,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Vistalinda cafetería","url":"https://demos.pulselat.online/vistalinda/","image":"https://demos.pulselat.online/vistalinda/fotos/fachada.jpg","telephone":"+525582313313","priceRange":"$","servesCuisine":"Café y desayunos","address":{"@type":"PostalAddress","streetAddress":"Sierravista 133","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:50","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}]}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

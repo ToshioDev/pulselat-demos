@@ -217,6 +217,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -228,7 +229,7 @@
     <b>Tahara</b>
   </a>
   <div class="enlaces nav-escritorio">
-    <a href="#cafe">El café</a><a href="#pizarron">El pizarrón</a><a href="#vitrina">La vitrina</a><a href="#dudas">Dudas</a><a href="#visita">Visítanos</a>
+    <a href="#cafe">El café</a><a href="#pizarron">El pizarrón</a><a href="#vitrina">La vitrina</a><a href="#pedido">Pedir</a><a href="#dudas">Dudas</a><a href="#visita">Visítanos</a>
   </div>
   <a class="wa wa-barra" href="https://wa.me/525573032487">WhatsApp</a>
   <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
@@ -243,8 +244,9 @@
     <a href="#cafe"><span>01</span> El café</a>
     <a href="#pizarron"><span>02</span> El pizarrón</a>
     <a href="#vitrina"><span>03</span> La vitrina</a>
-    <a href="#dudas"><span>04</span> Dudas</a>
-    <a href="#visita"><span>05</span> Visítanos</a>
+    <a href="#pedido"><span>04</span> Pedir</a>
+    <a href="#dudas"><span>05</span> Dudas</a>
+    <a href="#visita"><span>06</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/525573032487">Pedir por WhatsApp</a>
@@ -367,6 +369,62 @@
   </div>
 </div></section>
 
+<section class="venta" id="pedido" aria-labelledby="th-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Pedidos y talleres</div>
+      <h2 id="th-venta-titulo">Aparta tu pan<br>o pregunta por el taller.</h2>
+      <p class="venta-lead">El café se prepara al momento y la vitrina se llena cada día. Mándanos qué quieres llevar o en qué taller te interesa entrar; te contestamos por WhatsApp con lo que haya disponible.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige pedido o taller</strong><span>Dinos qué quieres llevar o qué taller te interesa.</span></div></li>
+        <li><b>02</b><div><strong>Te decimos qué hay</strong><span>La barra contesta con lo disponible, el precio del día y el lugar del taller.</span></div></li>
+        <li><b>03</b><div><strong>Pasa por la esquina</strong><span>Recoge tu pedido en Insurgentes Norte 1894 o llega al taller.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Flat white</span><b>$55</b></li>
+          <li><span>Capuccino grande</span><b>$67</b></li>
+          <li><span>Pan dulce del día <em>· conchas, orejas y cuernitos</em></span><b class="sin-precio">En vitrina</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Todos los días desde las 7:00. El pan dulce se aparta hasta agotar la charola; los talleres se anuncian en <a href="https://www.instagram.com/tahara.cafe/" target="_blank" rel="noopener">@tahara.cafe</a>.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="525573032487" data-cafe="Tahara" data-asunto="hacer un pedido o preguntar por los talleres" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="th-nombre">Tu nombre</label>
+          <input id="th-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="th-tema">Qué necesitas</label>
+          <select id="th-tema" name="tema" data-campo data-label="Tema" required>
+            <option value="">Elige una opción</option>
+            <option>Un pedido para llevar</option>
+            <option>Información de talleres</option>
+            <option>Apartar una mesa</option>
+            <option>Otra consulta</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="th-detalle">Cuéntanos más</label>
+          <textarea id="th-detalle" name="detalle" data-campo data-label="Detalle" required placeholder="Ej. dos flat white, cuatro conchas y una oreja; o el taller de la semana."></textarea>
+        </div>
+        <div class="campo">
+          <label for="th-cuando">Para cuándo <span aria-hidden="true">· opcional</span></label>
+          <input id="th-cuando" name="cuando" data-campo data-label="Cuándo" placeholder="Hoy en la tarde, el sábado, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. El pedido, la mesa o el lugar del taller se confirman en el chat.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525573032487">WhatsApp 55 7303 2487</a> · <a href="tel:+525573032487">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
 <section class="dudas" id="dudas" data-anim><div class="wrap">
   <div class="dudas-cabeza">
     <div class="dudas-kicker">Antes de venir</div>
@@ -423,24 +481,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tahara.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tahara.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><img class="logo-pie" src="img/logo-verde.png" alt="" aria-hidden="true">Tahara · Insurgentes Norte 1894, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -461,6 +501,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Tahara","url":"https://demos.pulselat.online/tahara/","image":"https://demos.pulselat.online/tahara/fotos/barra.jpg","telephone":"+525573032487","priceRange":"$","servesCuisine":"Café de especialidad y pan dulce","address":{"@type":"PostalAddress","streetAddress":"Insurgentes Norte 1894-2","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"07:00","closes":"21:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"15:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"255"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

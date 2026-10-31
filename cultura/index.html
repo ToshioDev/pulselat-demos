@@ -284,6 +284,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -301,6 +302,7 @@
   </a>
   <nav class="nav nav-escritorio">
     <a href="#menu">El menú</a>
+    <a href="#pedido">Pedir</a>
     <a href="#local">El local</a>
     <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
@@ -316,9 +318,10 @@
   </div>
   <nav class="menu-movil-nav" aria-label="Menú del sitio">
     <a href="#menu"><span>01</span> El menú</a>
-    <a href="#local"><span>02</span> El local</a>
-    <a href="#dudas"><span>03</span> Dudas</a>
-    <a href="#visita"><span>04</span> Visítanos</a>
+    <a href="#pedido"><span>02</span> Pedir</a>
+    <a href="#local"><span>03</span> El local</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/525590370545">Pedir por WhatsApp</a>
@@ -418,6 +421,62 @@
   <p class="nota-menu">Los precios se consultan en el local y cambian con el menú del día. Para pedidos para llevar o mesas grandes, escribe al 55 9037 0545.</p>
 </div></section>
 
+<section class="venta" id="pedido" aria-labelledby="cu-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Para llevar o para quedarse</div>
+      <h2 id="cu-venta-titulo">Pide de<br>la pizarra.</h2>
+      <p class="venta-lead">La carta se escribe cada día y lo que hay se pregunta en la barra. Mándanos tu pedido y la hora a la que pasas; el local te contesta por WhatsApp con el precio del día.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige de la pizarra</strong><span>Molletes, sincronizadas, sándwiches, crepas o café.</span></div></li>
+        <li><b>02</b><div><strong>Te confirmamos el precio</strong><span>La barra contesta con lo que hay hoy y cuánto cuesta.</span></div></li>
+        <li><b>03</b><div><strong>Pasa por él</strong><span>Ing. Carlos Daza 202, Guadalupe Insurgentes.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Molletes tradicionales</span><b class="sin-precio">En pizarra</b></li>
+          <li><span>Sincronizadas</span><b class="sin-precio">Para empezar</b></li>
+          <li><span>Capuchino <em>· de la barra</em></span><b class="sin-precio">Caliente</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Los precios viven en la pizarra del local y cambian con el menú del día. Si vienes en grupo, avísanos: el local es pequeño y conviene guardar la mesa.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="525590370545" data-cafe="Cultura" data-asunto="un pedido para llevar" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="cu-nombre">Tu nombre</label>
+          <input id="cu-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="cu-pedido">Qué vas a pedir</label>
+          <textarea id="cu-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. dos molletes tradicionales, un capuchino y una naranjada."></textarea>
+        </div>
+        <div class="campo">
+          <label for="cu-cuando">¿A qué hora pasas?</label>
+          <select id="cu-cuando" name="cuando" data-campo data-label="Hora" required>
+            <option value="">Elige un horario</option>
+            <option>Lo antes posible</option>
+            <option>En la mañana</option>
+            <option>Al mediodía</option>
+            <option>Por la tarde</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cu-nota">Nota <span aria-hidden="true">· opcional</span></label>
+          <input id="cu-nota" name="nota" data-campo data-label="Nota" placeholder="Sin cebolla, mesa para grupo, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. El precio del día y el pedido se confirman en el chat.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525590370545">WhatsApp 55 9037 0545</a> · <a href="tel:+525590370545">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
 <section id="local" data-anim><div class="wrap">
   <div class="local">
     <div class="texto">
@@ -494,24 +553,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cultura%20Ideas%20y%20Caf%C3%A9.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cultura%20Ideas%20y%20Caf%C3%A9.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><i class="punto-lima" aria-hidden="true"></i>Cultura, Ideas &amp; Café · Ing. Carlos Daza 202</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -536,6 +577,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cultura, Ideas & Café","url":"https://demos.pulselat.online/cultura/","image":"https://demos.pulselat.online/cultura/img/hero.jpg","telephone":"+525590370545","priceRange":"$","servesCuisine":"Café, desayunos y sándwiches","address":{"@type":"PostalAddress","streetAddress":"Ing. Carlos Daza 202","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07870","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"532"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

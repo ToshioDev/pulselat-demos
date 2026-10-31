@@ -243,6 +243,8 @@
   }
   @media (max-width:560px){
     .wrap{padding:0 20px}
+    .firma span{display:none}
+    .firma img{height:34px}
     .hero{padding:56px 0 62px;min-height:0}
     .letrero{padding:26px 22px 24px}
     h1{font-size:58px}
@@ -257,19 +259,21 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
 <a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <div class="top"><div class="wrap">
-  <a class="firma" href="#inicio">
+  <a class="firma" href="#inicio" aria-label="Cafetzin">
     <img class="marca-brillo marca-hover" src="img/logo.png" alt="" aria-hidden="true">
     <span>Cafetzin</span>
   </a>
   <nav class="nav nav-escritorio">
     <a href="#barra">La barra</a>
     <a href="#esquina">La esquina</a>
+    <a href="#aparta">Apartar</a>
     <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
@@ -285,8 +289,9 @@
   <nav class="menu-movil-nav" aria-label="Menú del sitio">
     <a href="#barra"><span>01</span> La barra</a>
     <a href="#esquina"><span>02</span> La esquina</a>
-    <a href="#dudas"><span>03</span> Dudas</a>
-    <a href="#visita"><span>04</span> Visítanos</a>
+    <a href="#aparta"><span>03</span> Apartar</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/527971301245">Pedir por WhatsApp</a>
@@ -380,6 +385,71 @@
   <p class="nota-carta">Carta de reparto: precios publicados en la app de Uber Eats; en la barra pueden cambiar. También hay omelettes, croissants salados, bebidas frías, frappés, smoothies, infusiones y postres. Pregunta por lo del día al 797 130 1245.</p>
 </div></section>
 
+<section class="venta" id="aparta" aria-labelledby="cz-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Mesas y pedidos</div>
+      <h2 id="cz-venta-titulo">Aparta tu mesa<br>o pide para llevar.</h2>
+      <p class="venta-lead">Para venir en grupo, para una noche de neón o para recoger sin esperar en la barra. Dinos cuándo y cuántos son; Cafetzin confirma por WhatsApp.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige mesa o pedido</strong><span>Dinos si vienes a sentarte o si pasas por la comida.</span></div></li>
+        <li><b>02</b><div><strong>Confirma día y hora</strong><span>La barra contesta con la mesa disponible o el tiempo de tu pedido.</span></div></li>
+        <li><b>03</b><div><strong>Llega a la esquina</strong><span>Calz. de Guadalupe 537, con el letrero prendido.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Chilaquiles verdes</span><b>$102</b></li>
+          <li><span>Chapata Bravo</span><b>$150</b></li>
+          <li><span>Lavanda latte</span><b>$93</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Los precios vienen de la app de reparto y en la barra pueden cambiar. También hay omelettes, croissants salados, bebidas frías y postres; el reparto corre por Uber Eats.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="527971301245" data-cafe="Cafetzin" data-asunto="apartar una mesa o hacer un pedido" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="cz-nombre">Tu nombre</label>
+          <input id="cz-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="cz-tipo">Qué necesitas</label>
+          <select id="cz-tipo" name="tipo" data-campo data-label="Tipo" required>
+            <option value="">Elige una opción</option>
+            <option>Mesa para grupo</option>
+            <option>Pedido para llevar</option>
+            <option>Mesa y pedido</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cz-personas">Para cuántas personas</label>
+          <select id="cz-personas" name="personas" data-campo data-label="Personas" required>
+            <option value="">Elige cuántos son</option>
+            <option>1 a 2</option>
+            <option>3 a 4</option>
+            <option>5 a 8</option>
+            <option>Más de 8</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cz-cuando">Día y hora</label>
+          <input id="cz-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. viernes a las 8 pm">
+        </div>
+        <div class="campo">
+          <label for="cz-nota">Nota <span aria-hidden="true">· opcional</span></label>
+          <input id="cz-nota" name="nota" data-campo data-label="Nota" placeholder="Cumpleaños, mesa afuera, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/527971301245">WhatsApp 797 130 1245</a> · <a href="tel:+527971301245">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
 <section id="esquina" data-anim><div class="wrap">
   <div class="esquina">
     <figure class="foto-mural">
@@ -448,20 +518,13 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cafetzin.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Cafetzin.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
+<section class="venta-final" aria-labelledby="cz-final-titulo">
+  <div class="wrap">
+    <h2 id="cz-final-titulo">El neón ya está prendido.</h2>
+    <p>Pasa por un café a la barra o escribe para apartar tu mesa. Si vienes en grupo, avísanos y te guardamos el espacio.</p>
+    <div class="venta-acciones">
+      <a class="venta-final-btn" href="https://wa.me/527971301245">Escribir por WhatsApp</a>
+      <a class="venta-final-btn venta-final-btn--linea" href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537">Cómo llegar</a>
     </div>
   </div>
 </section>
@@ -488,6 +551,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Cafetzin","url":"https://demos.pulselat.online/cafetzin/","image":"https://demos.pulselat.online/cafetzin/img/hero.jpg","telephone":"+527971301245","priceRange":"$","servesCuisine":"Chapatas, café y cocina de barrio","address":{"@type":"PostalAddress","streetAddress":"Calz. de Guadalupe 537","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07810","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"362"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

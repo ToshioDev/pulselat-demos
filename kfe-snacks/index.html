@@ -241,6 +241,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -340,23 +341,66 @@
   <p class="nota">Precios tal como están impresos en los tableros al armar esta muestra; pueden cambiar. También hay ensaladas y snacks fuera de carta: pregunta por lo del día al 833 803 5302.</p>
 </div></section>
 
-<section class="combos" id="pedido" data-anim><div class="wrap combos-grid">
-  <div>
-    <div class="cabeza" style="margin-bottom:18px">
-      <h2 class="serif">Combos de la casa.</h2>
+<section class="combos" id="pedido" data-anim><div class="wrap">
+  <div class="combos-grid">
+    <div>
+      <div class="cabeza" style="margin-bottom:18px">
+        <h2 class="serif">Combos de la casa.</h2>
+      </div>
+      <p>En la barra hay una cartelera de <strong>combos del desayuno</strong>: desayuno clásico, bagel norteño, chilaquiles y frappé. Cambian con la temporada y no se publican en línea, así que pídelos directo.</p>
+      <p>Si vienes por antojo de algo que no está en la carta, pregunta: aquí se prepara al momento y muchas veces se puede resolver.</p>
+      <ol class="pasos">
+        <li><div><b>Manda el pedido por WhatsApp</b><small>Al 833 803 5302, con lo que quieres y la hora en que pasas.</small></div></li>
+        <li><div><b>Recoge o pide entrega</b><small>Hay entregas a domicilio en la zona; pregunta por el costo según tu colonia.</small></div></li>
+        <li><div><b>Pasa por tu pedido</b><small>Av. Montevideo 525, local A. Abierto hasta las 9 p.m.</small></div></li>
+      </ol>
     </div>
-    <p>En la barra hay una cartelera de <strong>combos del desayuno</strong>: desayuno clásico, bagel norteño, chilaquiles y frappé. Cambian con la temporada y no se publican en línea, así que pídelos directo.</p>
-    <p>Si vienes por antojo de algo que no está en la carta, pregunta: aquí se prepara al momento y muchas veces se puede resolver.</p>
-    <ol class="pasos">
-      <li><div><b>Manda el pedido por WhatsApp</b><small>Al 833 803 5302, con lo que quieres y la hora en que pasas.</small></div></li>
-      <li><div><b>Recoge o pide entrega</b><small>Hay entregas a domicilio en la zona; pregunta por el costo según tu colonia.</small></div></li>
-      <li><div><b>Pasa por tu pedido</b><small>Av. Montevideo 525, local A. Abierto hasta las 9 p.m.</small></div></li>
-    </ol>
+    <figure class="combo-foto">
+      <img src="fotos/frappe.jpg" alt="Malteada de K-fé Snacks con crema batida, barquillo y popotes, con la calcomanía del negocio">
+      <figcaption>Malteada de la casa · $85</figcaption>
+    </figure>
   </div>
-  <figure class="combo-foto">
-    <img src="fotos/frappe.jpg" alt="Malteada de K-fé Snacks con crema batida, barquillo y popotes, con la calcomanía del negocio">
-    <figcaption>Malteada de la casa · $85</figcaption>
-  </figure>
+  <form class="venta-form venta-form--suelto" data-venta data-wa="528338035302" data-cafe="K-fé Snacks" data-asunto="un pedido con entrega o para recoger" novalidate>
+    <p class="venta-form-titulo">Arma tu pedido</p>
+    <p class="venta-error" role="alert" hidden></p>
+    <div class="campo">
+      <label for="kf-nombre">Tu nombre</label>
+      <input id="kf-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+    </div>
+    <div class="campo">
+      <label for="kf-pedido">Qué vas a pedir</label>
+      <textarea id="kf-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. dos crepas dulces, un capuchino y una malteada."></textarea>
+    </div>
+    <div class="campo">
+      <label for="kf-modo">Entrega o recoger</label>
+      <select id="kf-modo" name="modo" data-campo data-label="Entrega" required>
+        <option value="">Elige una opción</option>
+        <option>Entrega a domicilio</option>
+        <option>Recojo en el local</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="kf-direccion">Colonia y dirección <span aria-hidden="true">· solo para entrega</span></label>
+      <input id="kf-direccion" name="direccion" data-campo data-label="Dirección" placeholder="Colonia, calle y número">
+    </div>
+    <div class="campo">
+      <label for="kf-cuando">¿Para cuándo?</label>
+      <select id="kf-cuando" name="cuando" data-campo data-label="Hora" required>
+        <option value="">Elige un horario</option>
+        <option>Lo antes posible</option>
+        <option>En la mañana</option>
+        <option>Al mediodía</option>
+        <option>Por la tarde o noche</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="kf-nota">Nota <span aria-hidden="true">· opcional</span></label>
+      <input id="kf-nota" name="nota" data-campo data-label="Nota" placeholder="Sin crema, para oficina, etc.">
+    </div>
+    <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
+    <p class="venta-legal">No se cobra nada en esta página. El costo de entrega y el total se confirman en el chat.</p>
+    <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+  </form>
 </div></section>
 
 <section id="local" data-anim><div class="wrap">
@@ -424,24 +468,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20K-f%C3%A9%20Snacks.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20K-f%C3%A9%20Snacks.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><img class="logo-pie logo-pie-radio" src="img/logo.png" alt="" aria-hidden="true">K-fé Snacks · Av. Montevideo 525, San Bartolo</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -464,6 +490,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"K-fé Snacks","url":"https://demos.pulselat.online/kfe-snacks/","image":"https://demos.pulselat.online/kfe-snacks/fotos/interior.jpg","telephone":"+528338035302","priceRange":"$","servesCuisine":"Crepas, chilaquiles y café","address":{"@type":"PostalAddress","streetAddress":"Av. Montevideo 525, local A, San Bartolo Atepehuacán","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07730","addressCountry":"MX"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

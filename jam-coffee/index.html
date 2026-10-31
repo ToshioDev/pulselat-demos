@@ -239,6 +239,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -249,7 +250,7 @@
     <img class="marca-escribir marca-hover" src="img/logo-claro.png" alt="JAM Coffee">
   </a>
   <div class="enlaces nav-escritorio">
-    <a href="#agenda">En vivo</a><a href="#carta">Set list</a><a href="#sala">La sala</a><a href="#visita">Visítanos</a>
+    <a href="#agenda">En vivo</a><a href="#carta">Set list</a><a href="#aparta">Apartar</a><a href="#sala">La sala</a><a href="#visita">Visítanos</a>
   </div>
   <a class="nav-wa wa-barra" href="https://wa.me/525663630016">WhatsApp</a>
   <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
@@ -263,9 +264,10 @@
   <nav class="menu-movil-nav" aria-label="Menú del sitio">
     <a href="#agenda"><span>01</span> En vivo</a>
     <a href="#carta"><span>02</span> Set list</a>
-    <a href="#sala"><span>03</span> La sala</a>
-    <a href="#dudas"><span>04</span> Dudas</a>
-    <a href="#visita"><span>05</span> Visítanos</a>
+    <a href="#aparta"><span>03</span> Apartar</a>
+    <a href="#sala"><span>04</span> La sala</a>
+    <a href="#dudas"><span>05</span> Dudas</a>
+    <a href="#visita"><span>06</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/525663630016">Escribir por WhatsApp</a>
@@ -343,7 +345,72 @@
         <div class="pista-cancion"><span class="n">12</span><span class="t">Eventos y música<small>Pregunta por fechas y trovadores</small></span><span class="p">Cartelera</span></div>
       </div>
     </div>
-    <p class="nota">La barra no publica precios en línea. Los de esta muestra se confirman en el local y se actualizan cuando el negocio reclame el sitio: ahí se cargan la carta completa, precios y fotos propias.</p>
+    <p class="nota">La barra no publica precios en línea. Los de esta muestra se confirman en el local; la carta completa, los precios y las fotos propias se cargan cuando el negocio comparte su información.</p>
+  </div>
+</div></section>
+
+<section class="venta" id="aparta" aria-labelledby="jm-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Trova, mesas y pedidos</div>
+      <h2 id="jm-venta-titulo">Aparta lugar<br>para la trova.</h2>
+      <p class="venta-lead">Los sábados la trova empieza al mediodía y las mesas largas se llenan. Avisa cuántos vienen, pregunta por el evento del mes o pide para llevar y recoge en la barra.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige qué necesitas</strong><span>Mesa para la trova, pedido para llevar o información del evento.</span></div></li>
+        <li><b>02</b><div><strong>La barra te contesta</strong><span>Confirma el espacio, el tiempo del pedido y la cartelera del sábado.</span></div></li>
+        <li><b>03</b><div><strong>Llega a Vallejo</strong><span>Nte. 27-A 5440, junto al muro de ladrillo y el neón.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Espresso tonic <em>· el que recomienda el barista</em></span><b class="sin-precio">De la barra</b></li>
+          <li><span>Molletes <em>· pan, frijoles y queso gratinado</em></span><b class="sin-precio">De la cocina</b></li>
+          <li><span>Postre del día <em>· pregunta qué hay en el mostrador</em></span><b class="sin-precio">Del día</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Trova los sábados desde el mediodía; la cartelera cambia cada mes y se publica en <a href="https://www.instagram.com/jamcoffee.26/" target="_blank" rel="noopener">@jamcoffee.26</a>. La barra cierra a las 10 p.m. y los precios se confirman en el local.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="525663630016" data-cafe="JAM Coffee" data-asunto="apartar mesa o hacer un pedido" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="jm-nombre">Tu nombre</label>
+          <input id="jm-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="jm-tipo">Qué necesitas</label>
+          <select id="jm-tipo" name="tipo" data-campo data-label="Tipo" required>
+            <option value="">Elige una opción</option>
+            <option>Mesa para la trova</option>
+            <option>Pedido para llevar</option>
+            <option>Información de un evento</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="jm-personas">Para cuántas personas</label>
+          <select id="jm-personas" name="personas" data-campo data-label="Personas" required>
+            <option value="">Elige cuántos son</option>
+            <option>1 a 2</option>
+            <option>3 a 4</option>
+            <option>5 a 8</option>
+            <option>Más de 8</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="jm-cuando">Día y hora</label>
+          <input id="jm-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. sábado a la 1 pm">
+        </div>
+        <div class="campo">
+          <label for="jm-nota">Nota <span aria-hidden="true">· opcional</span></label>
+          <input id="jm-nota" name="nota" data-campo data-label="Nota" placeholder="Junto al escenario, cumpleaños, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525663630016">WhatsApp 56 6363 0016</a> · <a href="tel:+525663630016">Llamar</a></p>
+    </div>
   </div>
 </div></section>
 
@@ -416,24 +483,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20JAM%20Coffee.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20JAM%20Coffee.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><img class="logo-pie" src="img/logo-claro.png" alt="" aria-hidden="true">JAM Coffee · Nte. 27-A 5440, Vallejo</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -456,6 +505,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"JAM Coffee","url":"https://demos.pulselat.online/jam-coffee/","image":"https://demos.pulselat.online/jam-coffee/fotos/neon.jpg","telephone":"+525663630016","priceRange":"$","servesCuisine":"Café y desayunos","sameAs":["https://www.instagram.com/jamcoffee.26/"],"address":{"@type":"PostalAddress","streetAddress":"Nte. 27-A 5440, Nueva Vallejo II Secc","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07750","addressCountry":"MX"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 

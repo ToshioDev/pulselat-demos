@@ -297,6 +297,7 @@
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
 </head>
 <body>
 
@@ -316,6 +317,7 @@
   <nav class="nav nav-escritorio">
     <a href="#terraza">La terraza</a>
     <a href="#barra">La barra</a>
+    <a href="#aparta">Apartar</a>
     <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
@@ -331,8 +333,9 @@
   <nav class="menu-movil-nav" aria-label="Menú del sitio">
     <a href="#terraza"><span>01</span> La terraza</a>
     <a href="#barra"><span>02</span> La barra</a>
-    <a href="#dudas"><span>03</span> Dudas</a>
-    <a href="#visita"><span>04</span> Visítanos</a>
+    <a href="#aparta"><span>03</span> Apartar</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
   </nav>
   <div class="menu-movil-pie">
     <a class="menu-movil-cta" href="https://wa.me/525519287031">Pedir por WhatsApp</a>
@@ -425,6 +428,71 @@
   </div>
 </div></section>
 
+<section class="venta" id="aparta" aria-labelledby="ea-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Terraza y pedidos</div>
+      <h2 id="ea-venta-titulo">Guarda tu mesa<br>bajo los focos.</h2>
+      <p class="venta-lead">La terraza se llena cuando se prenden los focos. Avisa cuántos vienen y a qué hora; si prefieres, pide para llevar y recoge en Barranquilla 138.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Dinos qué necesitas</strong><span>Mesa en la terraza, pedido para llevar o las dos cosas.</span></div></li>
+        <li><b>02</b><div><strong>La barra te contesta</strong><span>Confirma el espacio, el tiempo del pedido y lo que haya del día.</span></div></li>
+        <li><b>03</b><div><strong>Llega a la esquina</strong><span>Barranquilla 138, Lindavista Nte., entre plantas y macetas.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera vez</p>
+        <ul>
+          <li><span>Espresso <em>· solo, cortado o doble</em></span><b class="sin-precio">De la casa</b></li>
+          <li><span>Molletes <em>· frijoles, queso y pico de gallo</em></span><b class="sin-precio">Caliente</b></li>
+          <li><span>Sándwich de pollo <em>· manchego u Oaxaca</em></span><b class="sin-precio">A elegir</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Hay mesas adentro y afuera; los precios y lo del día se confirman en la barra. Para grupos conviene avisar con tiempo, sobre todo al atardecer.</p>
+    </div>
+    <div class="venta-caja">
+      <form class="venta-form" data-venta data-wa="525519287031" data-cafe="Espresso Amor" data-asunto="apartar espacio en la terraza o hacer un pedido" novalidate>
+        <p class="venta-form-titulo">Arma tu mensaje</p>
+        <p class="venta-error" role="alert" hidden></p>
+        <div class="campo">
+          <label for="ea-nombre">Tu nombre</label>
+          <input id="ea-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="ea-tipo">Qué necesitas</label>
+          <select id="ea-tipo" name="tipo" data-campo data-label="Tipo" required>
+            <option value="">Elige una opción</option>
+            <option>Mesa en la terraza</option>
+            <option>Pedido para llevar</option>
+            <option>Mesa y pedido</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ea-personas">Para cuántas personas</label>
+          <select id="ea-personas" name="personas" data-campo data-label="Personas" required>
+            <option value="">Elige cuántos son</option>
+            <option>1 a 2</option>
+            <option>3 a 4</option>
+            <option>5 a 8</option>
+            <option>Más de 8</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ea-cuando">Día y hora</label>
+          <input id="ea-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. hoy a las 7 pm">
+        </div>
+        <div class="campo">
+          <label for="ea-nota">Nota <span aria-hidden="true">· opcional</span></label>
+          <input id="ea-nota" name="nota" data-campo data-label="Nota" placeholder="Con perro, cumpleaños, etc.">
+        </div>
+        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
+        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
+        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525519287031">WhatsApp 55 1928 7031</a> · <a href="tel:+525519287031">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
 <section class="dudas" id="dudas" data-anim><div class="wrap">
   <div class="dudas-cabeza">
     <div class="dudas-kicker">Antes de venir</div>
@@ -484,24 +552,6 @@
   </div>
 </div></section>
 
-<section class="rc" id="reclamo" aria-labelledby="rc-titulo">
-  <div class="rc-wrap">
-    <div class="rc-copy">
-      <p class="rc-kicker">Sitio de muestra · Pulse LAT</p>
-      <h2 id="rc-titulo">¿Este sitio es tuyo?</h2>
-      <p>Lo armamos con información pública de tu negocio para mostrarte cómo se vería tu marca en línea. Reclámalo y lo administras tú —menú, precios, fotos y horarios—, o lo terminamos con tu información real y tu dominio.</p>
-    </div>
-    <div class="rc-acciones">
-      <a class="rc-btn rc-btn-solid" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Espresso%20Amor.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">Reclamar este sitio</a>
-      <a class="rc-btn" href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Espresso%20Amor.%20Quiero%20agregar%20mi%20informaci%C3%B3n%20real%20al%20sitio." target="_blank" rel="noopener">Agregar mi información real</a>
-      <a class="rc-tel" href="tel:+522296500422">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
-        <span>Llámanos</span> <b>+52 229 650 0422</b>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer><div class="wrap">
   <span><img class="logo-pie logo-pie-radio" src="img/logo.png" alt="" aria-hidden="true">Espresso Amor · Barranquilla 138, Lindavista Nte.</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
@@ -528,6 +578,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Espresso Amor","url":"https://demos.pulselat.online/espresso-amor/","image":"https://demos.pulselat.online/espresso-amor/img/hero.jpg","telephone":"+525519287031","priceRange":"$","servesCuisine":"Café, molletes y sándwiches","address":{"@type":"PostalAddress","streetAddress":"Barranquilla 138","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"760"}}
 </script>
+<script src="../assets/venta.js" defer></script>
 <script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
