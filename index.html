@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demos · Pulse LAT</title>
+<meta name="description" content="Índice de ocho maquetas de cafeterías en Lindavista y alrededores, hechas desde su letrero, su carta y su colonia.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/">
+<meta property="og:title" content="Demos · Pulse LAT">
+<meta property="og:description" content="Ocho cafeterías de barrio, ocho sitios propios. Busca por nombre, colonia o antojo.">
+<meta property="og:image" content="https://demos.pulselat.online/thumbs/jam-coffee.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#f4efe6; --papel-2:#fbf7ef; --tinta:#16130f;
+    --cuerpo:#4e463b; --humo:#6b6357; --senal:#d9502b;
+    --linea:rgba(22,19,15,.16); --linea-fuerte:rgba(22,19,15,.42);
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif:"Instrument Serif",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  [hidden]{display:none!important}
+  body{background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);padding:10px 16px;z-index:100}
+  .skip:focus{left:12px;top:12px}
+
+  .top{background:var(--tinta);color:var(--papel)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
+  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,230,.58)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(244,239,230,.5);padding-bottom:2px;transition:border-color .2s,color .2s}
+  .top-wa:hover{color:#fff;border-color:var(--senal)}
+
+  .intro{padding:clamp(46px,7vw,92px) 0 clamp(30px,4vw,48px)}
+  .intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:clamp(28px,5vw,72px);align-items:end}
+  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
+  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8.6vw,112px);line-height:.9;letter-spacing:-.025em;margin:20px 0 24px;max-width:12ch}
+  h1 em{font-style:italic;color:var(--senal)}
+  .lead{max-width:54ch;font-size:clamp(16px,1.4vw,19px);color:var(--cuerpo)}
+
+  .tecnica{list-style:none;border-top:1px solid var(--linea-fuerte)}
+  .tecnica li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--linea)}
+  .tecnica span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+  .tecnica b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1}
+
+  .buscador{position:sticky;top:0;z-index:30;background:rgba(244,239,230,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea-fuerte)}
+  .buscador .wrap{display:grid;grid-template-columns:minmax(280px,430px) minmax(0,1fr);align-items:center;gap:16px;padding:13px 0}
+  .campo{display:flex;align-items:center;gap:9px;border:1px solid var(--linea-fuerte);background:var(--papel-2);padding-left:13px}
+  .campo:focus-within{border-color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+  .campo>svg{flex:none;width:16px;height:16px;color:var(--humo)}
+  .campo input{flex:1;min-width:0;border:0;background:transparent;padding:12px 0;font:500 15px/1.2 "Archivo",sans-serif;color:var(--tinta);outline:none}
+  .campo input::placeholder{color:#8a8275;font-weight:400}
+  .campo input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+  .atajo{font-family:var(--mono);font-size:10.5px;color:var(--humo);border:1px solid var(--linea);padding:2px 7px;margin-right:9px}
+  .limpiar{border:0;background:transparent;color:var(--humo);font-size:20px;line-height:1;padding:4px 11px 7px;cursor:pointer}
+  .limpiar:hover{color:var(--senal)}
+  .barra-filtros{display:flex;align-items:center;gap:12px;min-width:0}
+  .filtros{display:flex;flex:1;align-items:center;gap:7px;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent)}
+  .filtros::-webkit-scrollbar{display:none}
+  .chip{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 11px;border:1px solid var(--linea-fuerte);background:transparent;color:var(--cuerpo);cursor:pointer;white-space:nowrap;transition:.18s}
+  .chip:hover{border-color:var(--tinta);color:var(--tinta)}
+  .chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+  .chip:focus-visible{outline:2px solid var(--senal);outline-offset:2px}
+  .cuenta{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+  .aviso{grid-column:1/-1;font-size:12px;color:var(--humo);padding-bottom:8px}
+
+  .rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,38px);padding:clamp(28px,4vw,48px) 0 clamp(56px,8vw,96px)}
+  .ficha{display:block;border:1px solid var(--linea);background:var(--papel-2);transition:border-color .25s,transform .25s,box-shadow .25s}
+  .ficha:hover{border-color:var(--tinta);box-shadow:0 18px 40px rgba(22,19,15,.07)}
+  .ficha:focus-visible{outline:2px solid var(--senal);outline-offset:4px}
+  .foto{position:relative;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--linea);background:#ddd6c9}
+  .foto img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.002);transition:transform .7s cubic-bezier(.22,1,.36,1)}
+  .ficha:hover .foto img{transform:scale(1.04)}
+  .num{position:absolute;top:13px;left:13px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;background:var(--papel);padding:5px 9px}
+  .cuerpo{padding:21px clamp(18px,2.4vw,26px) 19px}
+  .titular{display:flex;align-items:center;gap:14px;min-width:0}
+  .marca-chip{width:48px;height:48px;flex:none;display:grid;place-items:center;overflow:hidden;background:#211c15;border:1px solid rgba(255,255,255,.16)}
+  .marca-chip img{width:100%;height:100%;object-fit:contain;padding:4px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1;letter-spacing:-.01em}
+  .zona{margin-top:5px;font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--humo)}
+  .desc{margin:16px 0 18px;font-size:14.5px;line-height:1.55;color:var(--cuerpo);max-width:46ch}
+  .pie{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-top:1px solid var(--linea);padding-top:13px}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;list-style:none}
+  .tags li{font-family:var(--mono);font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--humo);border:1px solid var(--linea);padding:3px 7px}
+  .ver{display:flex;align-items:center;gap:7px;flex:none;font-size:12px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+  .ver svg{transition:transform .25s ease}
+  .ficha:hover .ver svg{transform:translateX(4px)}
+
+  .vacio{max-width:58ch;padding:clamp(40px,6vw,70px) 0 clamp(70px,8vw,100px)}
+  .vacio h2{font-size:clamp(34px,5vw,56px);line-height:1;margin:16px 0 14px}
+  .vacio p{color:var(--cuerpo)}
+  .vacio .btn{margin-top:24px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;background:var(--tinta);color:var(--papel);font:600 13px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--senal)}
+  .btn:focus-visible{outline:2px solid var(--senal);outline-offset:3px}
+
+  .cierre{background:var(--tinta);color:var(--papel);padding:clamp(56px,8vw,96px) 0 0}
+  .cierre h2{font-family:var(--serif);font-size:clamp(38px,6vw,76px);line-height:.95;letter-spacing:-.02em;max-width:16ch;margin:18px 0 18px}
+  .cierre h2 em{font-style:italic;color:var(--senal)}
+  .cierre p{max-width:52ch;color:rgba(244,239,230,.68)}
+  .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px}
+  .btn-wa{background:var(--senal);color:#fff}
+  .btn-wa:hover{background:#ee6a45}
+  .alt{font-size:13px;border-bottom:1px solid rgba(244,239,230,.42);padding-bottom:2px;color:rgba(244,239,230,.82)}
+  .alt:hover{border-color:var(--senal);color:#fff}
+  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(46px,6vw,78px);padding:20px 0;border-top:1px solid rgba(244,239,230,.16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.5)}
+
+  @media (max-width:900px){
+    .intro .wrap{grid-template-columns:1fr}
+    .tecnica{display:none}
+    .buscador .wrap{grid-template-columns:1fr;gap:10px;padding:11px 0}
+    .rejilla{grid-template-columns:1fr}
+    .cuenta{padding-left:2px}
+    .estado{display:none}
+  }
+  @media (max-width:520px){
+    .wrap{width:calc(100% - 32px)}
+    .top .wrap{height:50px}
+    .marca-top{font-size:10px;letter-spacing:.18em}
+    .top-wa{font-size:9.5px}
+    .campo input{font-size:16px}
+    .atajo{display:none}
+    .intro{padding-top:40px}
+    h1{font-size:clamp(40px,11.4vw,60px);max-width:none}
+    .cuerpo{padding:18px 16px 17px}
+    .marca-chip{width:42px;height:42px}
+    .pie{flex-direction:column;align-items:flex-start;gap:12px}
+    .pie-pagina{font-size:9px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#indice">Saltar al índice</a>
+
+<div class="top">
+  <div class="wrap">
+    <span class="marca-top"><i></i>Pulse LAT</span>
+    <span class="estado">Índice de demos · CDMX</span>
+    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20el%20%C3%ADndice%20de%20demos%20y%20quiero%20uno%20para%20mi%20caf%C3%A9.">WhatsApp</a>
+  </div>
+</div>
+
+<header class="intro">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Lindavista y alrededores · 01—08</p>
+      <h1>Cafeterías con<br><em>sitio propio.</em></h1>
+      <p class="lead">Ocho maquetas hechas desde su letrero, su carta y su colonia. Busca por nombre, calle o antojo: cada una tiene su propia voz, no la misma plantilla con otro color.</p>
+    </div>
+    <ul class="tecnica" aria-label="Resumen">
+      <li><span>Demos</span><b>08</b></li>
+      <li><span>Isotipos reales</span><b>07</b></li>
+      <li><span>Colonias</span><b>05</b></li>
+    </ul>
+  </div>
+</header>
+
+<section class="buscador" aria-label="Buscar y filtrar demos">
+  <div class="wrap">
+    <div class="campo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+      <label class="sr" for="q">Buscar demos</label>
+      <input id="q" type="search" placeholder="Nombre, colonia o antojo…" autocomplete="off" enterkeyhint="search">
+      <span class="atajo" aria-hidden="true">/</span>
+      <button class="limpiar" id="limpiar" type="button" aria-label="Limpiar búsqueda" hidden>×</button>
+    </div>
+    <div class="barra-filtros">
+      <div class="filtros" role="group" aria-label="Filtros rápidos">
+        <button class="chip" type="button" data-chip="todos" aria-pressed="true">Todos</button>
+        <button class="chip" type="button" data-chip="terraza" aria-pressed="false">Terraza</button>
+        <button class="chip" type="button" data-chip="desayunos" aria-pressed="false">Desayunos</button>
+        <button class="chip" type="button" data-chip="dulce" aria-pressed="false">Antojo dulce</button>
+        <button class="chip" type="button" data-chip="musica" aria-pressed="false">Música</button>
+        <button class="chip" type="button" data-chip="tarde" aria-pressed="false">Hasta tarde</button>
+      </div>
+      <p class="cuenta" id="cuenta" aria-live="polite">8 demos</p>
+    </div>
+    <noscript><p class="aviso">El buscador necesita JavaScript. Los ocho demos están abajo y todos abren con un clic.</p></noscript>
+  </div>
+</section>
+
+<main id="indice">
+  <div class="wrap">
+    <div class="rejilla">
+
+      <a class="ficha" href="al-grano/" data-tags="terraza desayunos" data-buscar="al grano calz azcapotzalco 1248 lindavista gam terraza cafe cafeteria desayuno comida baguette flores follaje reposteria postres para llevar">
+        <figure class="foto">
+          <img src="thumbs/al-grano.jpg" alt="Vista previa del sitio de Al Grano" width="1280" height="960">
+          <span class="num">01</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="al-grano/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>Al Grano</h2><p class="zona">Lindavista · Calz. Azcapotzalco 1248</p></div>
+          </div>
+          <p class="desc">Terraza con follaje, café de la mañana y comida a media tarde.</p>
+          <div class="pie">
+            <ul class="tags"><li>Terraza</li><li>Café</li><li>Flores</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="vistalinda/" data-tags="desayunos dulce" data-buscar="vistalinda sierravista 133 lindavista cafe cafeteria punta del cielo desayuno sincronizadas combos frappe malteada menu kids panaderia">
+        <figure class="foto">
+          <img src="thumbs/vistalinda.jpg" alt="Vista previa del sitio de Vistalinda" width="1280" height="960">
+          <span class="num">02</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="vistalinda/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>Vistalinda</h2><p class="zona">Lindavista · Sierravista 133</p></div>
+          </div>
+          <p class="desc">Café Punta del Cielo, desayunos hasta las 12 y combos con nombre propio.</p>
+          <div class="pie">
+            <ul class="tags"><li>Desayunos</li><li>Malteadas</li><li>Menú kids</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="tahara/" data-tags="desayunos dulce" data-buscar="tahara insurgentes norte 1894 lindavista cafe cafeteria especialidad chiapas guerrero pan dulce chilaquiles vitrina desayuno">
+        <figure class="foto">
+          <img src="thumbs/tahara.jpg" alt="Vista previa del sitio de Tahara" width="1280" height="960">
+          <span class="num">03</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="tahara/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>Tahara</h2><p class="zona">Lindavista · Insurgentes Norte 1894</p></div>
+          </div>
+          <p class="desc">Café de especialidad de Chiapas, pan dulce en vitrina y chilaquiles.</p>
+          <div class="pie">
+            <ul class="tags"><li>Especialidad</li><li>Pan dulce</li><li>Chilaquiles</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="espresso-amor/" data-tags="terraza" data-buscar="espresso amor barranquilla 138 lindavista norte cafe cafeteria terraza plantas luces mollete sandwich desayuno">
+        <figure class="foto">
+          <img src="thumbs/espresso-amor.jpg" alt="Vista previa del sitio de Espresso Amor" width="1280" height="960">
+          <span class="num">04</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="espresso-amor/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>Espresso Amor</h2><p class="zona">Lindavista Nte. · Barranquilla 138</p></div>
+          </div>
+          <p class="desc">Café, molletes y sándwiches en una terraza con plantas y luces.</p>
+          <div class="pie">
+            <ul class="tags"><li>Terraza</li><li>Plantas</li><li>Sándwiches</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="cafetzin/" data-tags="tarde" data-buscar="cafetzin calz de guadalupe 537 estrella cafe cafeteria chapata mollete pasta neon noche tarde sandwich postre para llevar">
+        <figure class="foto">
+          <img src="thumbs/cafetzin.jpg" alt="Vista previa del sitio de Cafetzin" width="1280" height="960">
+          <span class="num">05</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="cafetzin/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>Cafetzin</h2><p class="zona">Estrella · Calz. de Guadalupe 537</p></div>
+          </div>
+          <p class="desc">Chapatas, molletes, pasta y café; neón encendido hasta la noche.</p>
+          <div class="pie">
+            <ul class="tags"><li>Neón</li><li>Chapatas</li><li>Hasta tarde</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="cultura/" data-tags="desayunos" data-buscar="cultura ideas y cafe ing carlos daza 202 guadalupe insurgentes cafe cafeteria libros pizarron cafe de olla comida corrida desayuno trabajar">
+        <figure class="foto">
+          <img src="thumbs/cultura.jpg" alt="Vista previa del sitio de Cultura, Ideas &amp; Café" width="1280" height="960">
+          <span class="num">06</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <div><h2>Cultura</h2><p class="zona">Guadalupe Insurgentes · Ing. Carlos Daza 202 · identidad tipográfica</p></div>
+          </div>
+          <p class="desc">Sándwiches, crepas y café de olla con pizarrones escritos a mano.</p>
+          <div class="pie">
+            <ul class="tags"><li>Libros</li><li>Café de olla</li><li>Comida corrida</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="jam-coffee/" data-tags="musica tarde" data-buscar="jam coffee av montevideo nte 27-a vallejo cafe cafeteria musica en vivo trova mollete neon ladrillo concierto">
+        <figure class="foto">
+          <img src="thumbs/jam-coffee.jpg" alt="Vista previa del sitio de JAM Coffee" width="1280" height="960" loading="lazy">
+          <span class="num">07</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="jam-coffee/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>JAM Coffee</h2><p class="zona">Vallejo · Av. Montevideo esq. Nte. 27-A</p></div>
+          </div>
+          <p class="desc">Café de barra, molletes y trova sobre el muro de ladrillo.</p>
+          <div class="pie">
+            <ul class="tags"><li>Música en vivo</li><li>Molletes</li><li>Neón</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="ficha" href="kfe-snacks/" data-tags="dulce" data-buscar="k fe kfe snacks av montevideo 525 san bartolo cafe cafeteria crepa hotcake chilaquil malteada dulce postre entrega domicilio">
+        <figure class="foto">
+          <img src="thumbs/kfe-snacks.jpg" alt="Vista previa del sitio de K-fé Snacks" width="1280" height="960" loading="lazy">
+          <span class="num">08</span>
+        </figure>
+        <div class="cuerpo">
+          <div class="titular">
+            <span class="marca-chip"><img src="kfe-snacks/img/logo.png" alt="" loading="lazy"></span>
+            <div><h2>K-fé Snacks</h2><p class="zona">San Bartolo · Av. Montevideo 525</p></div>
+          </div>
+          <p class="desc">Crepas, mini hotcakes y chilaquiles; malteadas para la tarde.</p>
+          <div class="pie">
+            <ul class="tags"><li>Crepas</li><li>Hotcakes</li><li>Chilaquiles</li></ul>
+            <span class="ver">Ver demo <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="vacio" id="vacio" hidden>
+      <p class="kicker">Sin resultados</p>
+      <h2>No hay café para «<span id="vacio-q"></span>».</h2>
+      <p>Prueba con «terraza», «desayunos» o el nombre de una colonia.</p>
+      <button class="btn" id="reset" type="button">Quitar filtros</button>
+    </div>
+  </div>
+</main>
+
+<footer class="cierre">
+  <div class="wrap">
+    <p class="kicker">Pulse LAT · Lindavista</p>
+    <h2>¿Tienes un café? Te armamos uno <em>así.</em></h2>
+    <p>Maqueta, menú y WhatsApp listos para recibir pedidos. Sin plantillas: tu letrero y tu carta mandan.</p>
+    <div class="acciones">
+      <a class="btn btn-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20el%20%C3%ADndice%20de%20demos%20y%20quiero%20uno%20para%20mi%20caf%C3%A9.">Hablar por WhatsApp
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+      </a>
+      <a class="alt" href="https://pulselat.online">pulselat.online</a>
+    </div>
+    <div class="pie-pagina">
+      <span>Pulse LAT · maquetas de demostración</span>
+      <span>Lindavista, CDMX · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const q = document.getElementById('q');
+  const cards = Array.from(document.querySelectorAll('.ficha'));
+  const cuenta = document.getElementById('cuenta');
+  const vacio = document.getElementById('vacio');
+  const vacioQ = document.getElementById('vacio-q');
+  const limpiar = document.getElementById('limpiar');
+  const atajo = document.querySelector('.atajo');
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const reset = document.getElementById('reset');
+  const rejilla = document.querySelector('.rejilla');
+  let filtro = 'todos';
+
+  const normal = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  function aplicar() {
+    const texto = normal(q.value.trim());
+    let visibles = 0;
+    cards.forEach(card => {
+      const coincideTexto = !texto || card.dataset.buscar.includes(texto);
+      const coincideChip = filtro === 'todos' || card.dataset.tags.split(' ').includes(filtro);
+      const ver = coincideTexto && coincideChip;
+      card.hidden = !ver;
+      if (ver) visibles++;
+    });
+    cuenta.textContent = visibles === 1 ? '1 demo' : visibles + ' demos';
+    rejilla.hidden = visibles === 0;
+    vacio.hidden = visibles !== 0;
+    vacioQ.textContent = q.value.trim();
+    limpiar.hidden = q.value === '';
+    atajo.hidden = q.value !== '';
+  }
+
+  q.addEventListener('input', aplicar);
+
+  limpiar.addEventListener('click', () => {
+    q.value = '';
+    q.focus();
+    aplicar();
+  });
+
+  chips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtro = btn.dataset.chip;
+      chips.forEach(x => x.setAttribute('aria-pressed', String(x === btn)));
+      aplicar();
+    });
+  });
+
+  reset.addEventListener('click', () => {
+    q.value = '';
+    filtro = 'todos';
+    chips.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.chip === 'todos')));
+    aplicar();
+    q.focus();
+  });
+
+  document.addEventListener('keydown', e => {
+    const activo = document.activeElement.tagName;
+    if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(activo)) {
+      e.preventDefault();
+      q.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === q) {
+      q.value = '';
+      aplicar();
+    }
+  });
+
+  aplicar();
+})();
+</script>
+</body>
+</html>
