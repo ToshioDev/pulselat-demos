@@ -37,6 +37,22 @@
     --rc-float-bg:#0a4743;
     --rc-float-fg:#f8f3e9;
     --rc-float-acc:#9ad6c5;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--tenue);
+    --as-linea:var(--linea);
+    --as-acento:var(--verde);
+    --as-acento-tinta:var(--papel);
+    --as-tarjeta:rgba(248,243,233,.6);
+    --as-panel:var(--verde-osc);
+    --as-panel-tinta:var(--papel);
+    --as-panel-tenue:rgba(248,243,233,.74);
+    --as-panel-linea:rgba(248,243,233,.24);
+    --as-panel-acento:var(--menta);
+    --as-panel-acento-tinta:var(--verde-osc);
+    --as-display:"Jost",system-ui,sans-serif;
+    --as-display-weight:500;
+    --as-display-ls:-.015em;
+    --as-body:"Instrument Sans",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -57,14 +73,14 @@
   .wa:hover{background:var(--verde);color:var(--papel)}
 
   /* hero */
-  header{padding:76px 0 0;text-align:center;position:relative;overflow:hidden}
-  header .knot-fondo{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:min(300px,64vw);height:auto;opacity:.16;pointer-events:none}
+  header{padding:76px 0 0;position:relative;overflow:hidden}
+  header .knot-fondo{position:absolute;top:-46px;right:2%;width:min(300px,52vw);height:auto;opacity:.16;pointer-events:none}
   header .wrap{position:relative}
   .kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--verde);margin-bottom:20px}
-  h1{font-size:clamp(40px,5.6vw,74px);max-width:20ch;margin:0 auto}
+  h1{font-size:clamp(40px,5.6vw,74px);max-width:20ch}
   h1 em{font-style:normal;color:var(--verde)}
-  .lead{margin:24px auto 0;max-width:54ch;font-size:17px;color:var(--tenue)}
-  .acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+  .lead{margin:24px 0 0;max-width:54ch;font-size:17px;color:var(--tenue)}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;border:1px solid var(--verde);transition:.2s}
   .btn-solido{background:var(--verde);color:var(--papel)}
   .btn-solido:hover{background:var(--verde-osc);border-color:var(--verde-osc)}
@@ -200,19 +216,41 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <nav><div class="wrap">
   <a class="logo" href="#inicio">
     <img class="marca-entra marca-hover" src="img/logo-verde.png" alt="Tahara">
     <b>Tahara</b>
   </a>
-  <div class="enlaces">
-    <a href="#cafe">El café</a><a href="#pizarron">El pizarrón</a><a href="#vitrina">La vitrina</a><a href="#visita">Visítanos</a>
+  <div class="enlaces nav-escritorio">
+    <a href="#cafe">El café</a><a href="#pizarron">El pizarrón</a><a href="#vitrina">La vitrina</a><a href="#dudas">Dudas</a><a href="#visita">Visítanos</a>
   </div>
-  <a class="wa" href="https://wa.me/525573032487">WhatsApp</a>
+  <a class="wa wa-barra" href="https://wa.me/525573032487">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Tahara</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#cafe"><span>01</span> El café</a>
+    <a href="#pizarron"><span>02</span> El pizarrón</a>
+    <a href="#vitrina"><span>03</span> La vitrina</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525573032487">Pedir por WhatsApp</a>
+    <p>Insurgentes Norte 1894-2, Lindavista.<br>Café de especialidad, pan dulce y mesas de afuera.</p>
+  </div>
+</div>
 
 <header id="inicio">
   <img class="knot-fondo marca-giro" src="img/logo-verde.png" alt="" aria-hidden="true">
@@ -329,6 +367,31 @@
   </div>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, escribe al WhatsApp de la barra: 55 7303 2487.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Qué café sirven?</summary><p>Café de especialidad tostado en Guerrero y preparado al momento en la barra: espresso, flat white, americano, capuccino y lattes.</p></details>
+      <details><summary>¿Puedo quedarme a trabajar con la laptop?</summary><p>Sí. Hay mesas adentro y cuatro mesas afuera con sombra por la mañana; el café se sirve para quedarse o para llevar.</p></details>
+      <details><summary>¿Hay pan dulce todo el día?</summary><p>La vitrina se llena cada día con conchas, orejas, cuernitos y piezas de temporada. Se acaba, así que si vienes por la tarde conviene preguntar qué quedó.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí. El café va en vaso de cartón con manga de papel y el pan dulce se aparta hasta agotar la charola del día. Pide por <a href="https://wa.me/525573032487">WhatsApp</a>.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Las bebidas tienen precio de pizarrón. Los platillos de cocina se escriben cada día: pregunta qué hay y cuánto cuesta al llegar.</p></details>
+      <details><summary>¿Cómo llego y a qué hora abren?</summary><p>Estamos en Insurgentes Norte 1894-2, esquina, Lindavista. Lun–jue 7:00–21:30, vie 7:00–22:00, sáb 7:00–20:00 y dom 8:00–15:00. También puedes revisar la <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Lindavista+Tahara+Insurgentes+Norte+1894">ficha de Google Maps</a>.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.4</b><span>de 5 en Google<br>255 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos de Lindavista califican el café de especialidad, el pan dulce y la mesa junto a la ventana. La ficha de Google es la fuente.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Lindavista+Tahara+Insurgentes+Norte+1894" target="_blank" rel="noopener">Leer las reseñas</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="display">Nos vemos en la esquina.</h2>
@@ -395,6 +458,10 @@
   }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Tahara","url":"https://demos.pulselat.online/tahara/","image":"https://demos.pulselat.online/tahara/fotos/barra.jpg","telephone":"+525573032487","priceRange":"$","servesCuisine":"Café de especialidad y pan dulce","address":{"@type":"PostalAddress","streetAddress":"Insurgentes Norte 1894-2","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"07:00","closes":"21:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"15:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"255"}}
+</script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

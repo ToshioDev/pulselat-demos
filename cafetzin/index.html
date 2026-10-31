@@ -41,6 +41,23 @@
     --rc-float-bg:#0f0d0e;
     --rc-float-fg:#f0f5ff;
     --rc-float-acc:#ffb066;
+    --as-tinta:var(--texto);
+    --as-tenue:var(--humo);
+    --as-linea:var(--linea);
+    --as-acento:var(--ambar);
+    --as-acento-tinta:var(--noche);
+    --as-tarjeta:rgba(23,19,21,.72);
+    --as-panel:#0a090a;
+    --as-panel-tinta:var(--neon);
+    --as-panel-tenue:rgba(240,245,255,.68);
+    --as-panel-linea:rgba(240,245,255,.2);
+    --as-panel-acento:var(--rojo);
+    --as-panel-acento-tinta:#fff;
+    --as-display:"Big Shoulders Display",Impact,sans-serif;
+    --as-display-weight:800;
+    --as-display-ls:.05em;
+    --as-display-transform:uppercase;
+    --as-body:"Space Grotesk",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -239,23 +256,45 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
 
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
 <div class="top"><div class="wrap">
-  <a class="firma" href="#barra">
+  <a class="firma" href="#inicio">
     <img class="marca-brillo marca-hover" src="img/logo.png" alt="" aria-hidden="true">
     <span>Cafetzin</span>
   </a>
-  <nav class="nav">
+  <nav class="nav nav-escritorio">
     <a href="#barra">La barra</a>
     <a href="#esquina">La esquina</a>
+    <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
-  <a class="btn btn-rojo" href="https://wa.me/527971301245"><span>Pedir</span> WhatsApp</a>
+  <a class="btn btn-rojo wa-barra" href="https://wa.me/527971301245"><span>Pedir</span> WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></div>
 
-<header class="hero">
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Cafetzin</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#barra"><span>01</span> La barra</a>
+    <a href="#esquina"><span>02</span> La esquina</a>
+    <a href="#dudas"><span>03</span> Dudas</a>
+    <a href="#visita"><span>04</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/527971301245">Pedir por WhatsApp</a>
+    <p>Calz. de Guadalupe 537, Col. Estrella.<br>Chapatas, molletes, pasta y café de barra.</p>
+  </div>
+</div>
+
+<header class="hero" id="inicio">
   <div class="fondo"><img src="img/hero.jpg" alt="Fachada de Cafetzin de noche, con letrero de neón y plantas en la banqueta"></div>
   <div class="wrap">
     <div>
@@ -364,6 +403,31 @@
   </figure>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, escribe al WhatsApp de la barra: 797 130 1245.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Qué hay en la carta?</summary><p>Chapatas, chilaquiles, enchiladas, molletes, pasta y ensaladas; café caliente y postres. También hay omelettes, croissants salados, bebidas frías y smoothies fuera de carta.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí. Manda el pedido por <a href="https://wa.me/527971301245">WhatsApp</a> y pasa por él a la barra sobre Calz. de Guadalupe.</p></details>
+      <details><summary>¿Se puede apartar mesa?</summary><p>Sí. Escríbenos por WhatsApp con el día, la hora y cuántos van; el local aparta mesa para grupos.</p></details>
+      <details><summary>¿Hay mesas afuera?</summary><p>Sí. Hay plantas en la entrada, murales en la pared y mesas en la banqueta para ver pasar la calle; el neón se prende al caer la noche.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Los precios publicados vienen de la app de reparto y en la barra pueden cambiar. Pregunta por lo del día al 797 130 1245.</p></details>
+      <details><summary>¿Cómo llego y a qué hora abren?</summary><p>Estamos en Calz. de Guadalupe 537, Col. Estrella, Gustavo A. Madero. El horario cambia, así que revisa la <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537">ficha de Google Maps</a> antes de salir.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.8</b><span>de 5 en Google<br>362 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos de la Col. Estrella califican las chapatas, el café y el letrero de la esquina. La ficha de Google es la fuente.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Cafetzin+Calz+de+Guadalupe+537" target="_blank" rel="noopener">Leer las reseñas</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" class="visita" data-anim><div class="wrap">
   <div class="grid">
     <div>
@@ -422,8 +486,9 @@
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Cafetzin","image":"https://demos.pulselat.online/cafetzin/img/hero.jpg","telephone":"+527971301245","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calz. de Guadalupe 537","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07810","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"362"}}
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Cafetzin","url":"https://demos.pulselat.online/cafetzin/","image":"https://demos.pulselat.online/cafetzin/img/hero.jpg","telephone":"+527971301245","priceRange":"$","servesCuisine":"Chapatas, café y cocina de barrio","address":{"@type":"PostalAddress","streetAddress":"Calz. de Guadalupe 537","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07810","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"362"}}
 </script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

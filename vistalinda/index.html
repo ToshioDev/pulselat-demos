@@ -24,7 +24,7 @@
     --oliva-suave:#c3cb9a;
     --kids:#e6edc7;
     --linea:rgba(34,37,27,.18);
-    --tenue:rgba(34,37,27,.62);
+    --tenue:rgba(34,37,27,.68);
     --rc-bg:#22251b;
     --rc-fg:#f5f1e4;
     --rc-acc:#c3cb9a;
@@ -37,6 +37,22 @@
     --rc-float-bg:#22251b;
     --rc-float-fg:#f5f1e4;
     --rc-float-acc:#c3cb9a;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--tenue);
+    --as-linea:var(--linea);
+    --as-acento:var(--oliva-osc);
+    --as-acento-tinta:var(--papel);
+    --as-tarjeta:rgba(245,241,228,.55);
+    --as-panel:var(--oliva-osc);
+    --as-panel-tinta:var(--papel);
+    --as-panel-tenue:rgba(245,241,228,.74);
+    --as-panel-linea:rgba(245,241,228,.24);
+    --as-panel-acento:var(--oliva-suave);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Cormorant Garamond",Georgia,serif;
+    --as-display-weight:500;
+    --as-display-ls:0em;
+    --as-body:"Karla",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -52,11 +68,14 @@
   .serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.06;letter-spacing:-.005em}
 
   /* barra superior */
-  .top{border-bottom:1px solid var(--linea);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
-  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:11px 28px;color:var(--tenue)}
+  .top{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--linea);background:rgba(245,241,228,.94);backdrop-filter:blur(10px);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:11px 28px;min-height:64px;color:var(--tenue)}
   .top b{font-weight:500;color:var(--tinta)}
   .top .punto{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--oliva);margin-right:8px;vertical-align:1px}
   .top a:hover{color:var(--oliva-osc)}
+  .top .nav{display:flex;align-items:center;gap:22px}
+  .top .nav a{padding:8px 0;letter-spacing:.16em}
+  .top .nav a:hover{color:var(--oliva-osc)}
   .firma{display:flex;align-items:center;gap:10px;color:var(--oliva-osc)}
   .firma img{width:42px;height:42px;object-fit:contain;flex:none}
   .firma span{font-family:"Cormorant Garamond",serif;font-size:17px;letter-spacing:.04em;text-transform:none;color:var(--tinta)}
@@ -115,12 +134,22 @@
 
   /* combos */
   .combos{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-  .grid-combos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-  .combo{border:1px solid var(--oliva);padding:22px 18px 20px;display:flex;flex-direction:column;gap:10px;background:rgba(245,241,228,.55)}
-  .combo h3{font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:500;letter-spacing:.02em}
-  .combo ul{list-style:none;font-size:13px;color:var(--tenue);line-height:1.65;flex:1}
-  .precio-oval{align-self:flex-start;background:var(--oliva-osc);color:var(--papel);font-family:"Cormorant Garamond",serif;font-size:19px;padding:5px 16px;border-radius:999px}
-  .combo.destacado{border-width:1px;box-shadow:6px 6px 0 rgba(119,133,75,.16)}
+  .combos-lienzo{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(24px,4vw,52px);align-items:stretch}
+  .combo-principal{position:relative;display:flex;flex-direction:column;gap:15px;padding:clamp(28px,3.4vw,40px);background:var(--oliva-osc);color:var(--papel)}
+  .combo-principal::after{content:"";position:absolute;inset:9px;border:1px solid rgba(245,241,228,.22);pointer-events:none}
+  .combo-etiqueta{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--oliva-suave)}
+  .combo-principal h3{font-family:"Cormorant Garamond",serif;font-size:clamp(38px,4.8vw,58px);font-weight:500;line-height:.95;letter-spacing:-.01em}
+  .combo-principal p{max-width:32ch;font-size:14px;line-height:1.65;color:rgba(245,241,228,.8)}
+  .combo-precio{margin-top:auto;display:flex;align-items:baseline;gap:12px;padding-top:16px;border-top:1px solid rgba(245,241,228,.24)}
+  .combo-precio b{font-family:"Cormorant Garamond",serif;font-size:clamp(46px,5vw,66px);font-weight:500;line-height:.85}
+  .combo-precio span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,228,.66)}
+  .combos-lista{display:grid;align-content:start}
+  .combos-lista .combo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;align-items:baseline;padding:19px 0;border-bottom:1px solid var(--linea)}
+  .combos-lista .combo:first-child{border-top:1px solid var(--linea)}
+  .combos-lista h3{grid-column:1;grid-row:1;font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:500;letter-spacing:.01em;line-height:1.1}
+  .combos-lista p{grid-column:1;grid-row:2;font-size:13px;line-height:1.55;color:var(--tenue)}
+  .combos-lista .precio-oval{grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:end}
+  .precio-oval{background:var(--oliva-osc);color:var(--papel);font-family:"Cormorant Garamond",serif;font-size:19px;padding:5px 16px;border-radius:999px;white-space:nowrap}
 
   /* kids */
   .kids{background:var(--kids);border-top:1px solid rgba(119,133,75,.35);border-bottom:1px solid rgba(119,133,75,.35)}
@@ -188,16 +217,17 @@
   .vis .carta>div:nth-child(3) .barra-menu{transition-delay:.2s}
   .vis .carta>div:nth-child(4) .barra-menu{transition-delay:.3s}
 
-  .combo{opacity:1;transform:none}
-  .vis .combo{animation:combo-entra .7s cubic-bezier(.22,1,.36,1) both}
-  .vis .combo:nth-child(2){animation-delay:.06s}
-  .vis .combo:nth-child(3){animation-delay:.12s}
-  .vis .combo:nth-child(4){animation-delay:.18s}
-  .vis .combo:nth-child(5){animation-delay:.24s}
+  .combo,.combo-principal{opacity:1;transform:none}
+  .vis .combo,.vis .combo-principal{animation:combo-entra .7s cubic-bezier(.22,1,.36,1) both}
+  .vis .combo-principal{animation-delay:.04s}
+  .vis .combo:nth-child(1){animation-delay:.1s}
+  .vis .combo:nth-child(2){animation-delay:.16s}
+  .vis .combo:nth-child(3){animation-delay:.22s}
+  .vis .combo:nth-child(4){animation-delay:.28s}
   @keyframes combo-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
-    .draw path,.wm-ln>span,.marco img,.barra-menu,.combo,.cabeza::after{
+    .draw path,.wm-ln>span,.marco img,.barra-menu,.combo,.combo-principal,.cabeza::after{
       animation:none!important;transition:none!important;transform:none!important;
       opacity:1!important;stroke-dashoffset:0!important;clip-path:none!important
     }
@@ -209,13 +239,12 @@
     .sello{right:8px;bottom:-16px;width:96px;height:96px;font-size:9px}
     .carta{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
     .kids-grid{grid-template-columns:1fr}
-    .grid-combos{grid-template-columns:repeat(2,1fr)}
+    .combos-lienzo{grid-template-columns:1fr}
     .visita{grid-template-columns:1fr;gap:44px}
     section{padding:66px 0}
     .top .oculto{display:none}
   }
   @media (max-width:560px){
-    .grid-combos{grid-template-columns:1fr}
     .carta{grid-template-columns:1fr;gap:34px}
     .wrap{padding:0 20px}
     .hero{padding:52px 0}
@@ -224,19 +253,46 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
 
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
 <div class="top"><div class="wrap">
-  <a class="firma" href="#carta">
+  <a class="firma" href="#inicio">
     <img class="marca-entra marca-hover" src="img/taza.png" alt="Vistalinda cafetería">
     <span>Vistalinda</span>
   </a>
-  <span class="oculto"><span class="punto"></span><b>Abierto hoy</b> · 7:50 a 19:00</span>
-  <a href="https://wa.me/525582313313">WhatsApp 55 8231 3313</a>
+  <nav class="nav nav-escritorio" aria-label="Secciones del sitio">
+    <a href="#carta">La carta</a>
+    <a href="#combos">Combos</a>
+    <a href="#dudas">Dudas</a>
+    <a href="#visita">Visítanos</a>
+  </nav>
+  <span class="oculto">Lun–vie 7:50–19:00 · Sáb 8:00–16:00</span>
+  <a class="wa-barra" href="https://wa.me/525582313313">WhatsApp 55 8231 3313</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></div>
 
-<header class="hero"><div class="wrap">
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Vistalinda</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#carta"><span>01</span> La carta</a>
+    <a href="#combos"><span>02</span> Combos</a>
+    <a href="#dudas"><span>03</span> Dudas</a>
+    <a href="#visita"><span>04</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525582313313">Pedir por WhatsApp</a>
+    <p>Sierravista 133, Lindavista.<br>Desayunos de 8:00 a 12:00; domingo cerrado.</p>
+  </div>
+</div>
+
+<header class="hero" id="inicio"><div class="wrap">
   <div>
     <div class="eyebrow">Cafetería de barrio · Lindavista, CDMX</div>
     <h1 class="serif wm"><span class="wm-ln"><span>A las ocho</span></span><span class="wm-ln"><span>se prende</span></span><span class="wm-ln"><span><em>la plancha.</em></span></span></h1>
@@ -335,36 +391,39 @@
   </div>
 </div></section>
 
-<section class="combos" data-anim><div class="wrap">
+<section class="combos" id="combos" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="serif">Combos que ya<br>tienen nombre.</h2>
-    <p>Cinco maneras de comer completo; hay uno para cada antojo.</p>
+    <p>Uno de la casa y cuatro más para elegir según el hambre que traigas.</p>
   </div>
-  <div class="grid-combos">
-    <div class="combo">
-      <h3>Arequipa</h3>
-      <ul><li>Baguette clásico</li><li>Latte chico</li></ul>
-      <div class="precio-oval">$105</div>
-    </div>
-    <div class="combo">
-      <h3>Managua</h3>
-      <ul><li>Baguette clásico</li><li>Papas a la francesa</li><li>Refresco</li></ul>
-      <div class="precio-oval">$140</div>
-    </div>
-    <div class="combo">
-      <h3>Riobamba</h3>
-      <ul><li>Boneless BBQ</li><li>Papas gajo</li><li>Malteada 400 ml</li></ul>
-      <div class="precio-oval">$155</div>
-    </div>
-    <div class="combo destacado">
+  <div class="combos-lienzo">
+    <article class="combo-principal">
+      <span class="combo-etiqueta">El de la casa</span>
       <h3>Lindavista</h3>
-      <ul><li>Croissant clásico</li><li>Capuccino chico</li></ul>
-      <div class="precio-oval">$99</div>
-    </div>
-    <div class="combo">
-      <h3>Cali</h3>
-      <ul><li>Dedos de queso</li><li>Papas a la francesa</li><li>Frappé de tu elección</li></ul>
-      <div class="precio-oval">$180</div>
+      <p>Croissant clásico y capuccino chico. El combo de media mañana: pan recién horneado y café Punta del Cielo.</p>
+      <div class="combo-precio"><b>$99</b><span>combo completo</span></div>
+    </article>
+    <div class="combos-lista">
+      <article class="combo">
+        <h3>Arequipa</h3>
+        <p>Baguette clásico + latte chico</p>
+        <span class="precio-oval">$105</span>
+      </article>
+      <article class="combo">
+        <h3>Managua</h3>
+        <p>Baguette clásico + papas a la francesa + refresco</p>
+        <span class="precio-oval">$140</span>
+      </article>
+      <article class="combo">
+        <h3>Riobamba</h3>
+        <p>Boneless BBQ + papas gajo + malteada 400 ml</p>
+        <span class="precio-oval">$155</span>
+      </article>
+      <article class="combo">
+        <h3>Cali</h3>
+        <p>Dedos de queso + papas a la francesa + frappé de tu elección</p>
+        <span class="precio-oval">$180</span>
+      </article>
     </div>
   </div>
 </div></section>
@@ -390,6 +449,31 @@
       <div class="fila"><div class="n">Refresco</div><div class="p"></div><div class="precio">$25</div></div>
       <div class="fila"><div class="n">Agua natural</div><div class="p"></div><div class="precio">$15</div></div>
     </div>
+  </div>
+</div></section>
+
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, escribe al WhatsApp del mostrador: 55 8231 3313.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿A qué hora sirven desayunos?</summary><p>De 8:00 a 12:00, de lunes a sábado. Después de esa hora sigue la comida y la carta completa hasta el cierre.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí, incluidos los combos completos. Manda el pedido por <a href="https://wa.me/525582313313">WhatsApp</a> y pasa por él sin esperar.</p></details>
+      <details><summary>¿Hay menú para niños?</summary><p>Sí. Nuggets, hot dog, dedos de queso, molletes junior y waffles en porciones chicas; también se pueden pedir para llevar.</p></details>
+      <details><summary>¿Dónde puedo estacionarme?</summary><p>El local está sobre Sierravista 133, a dos calles de Plaza Lindavista. El estacionamiento es en la calle, como en toda la colonia.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Son los del menú impreso del local y pueden cambiar. Pregunta por lo del día al llegar o por WhatsApp.</p></details>
+      <details><summary>¿Cómo llego y qué días abren?</summary><p>Lunes a viernes de 7:50 a 19:00; sábado de 8:00 a 16:00; domingo cerrado. Estamos en Sierravista 133, Lindavista. También puedes revisar la <a href="https://www.google.com/maps/search/?api=1&amp;query=Vistalinda+cafeter%C3%ADa+Sierravista+133">ficha de Google Maps</a>.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.7</b><span>de 5 en Google<br>Lindavista, CDMX</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos de Lindavista califican el desayuno, los combos y el café Punta del Cielo. La ficha de Google es la fuente.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Vistalinda+cafeter%C3%ADa+Sierravista+133" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
   </div>
 </div></section>
 
@@ -468,6 +552,10 @@
   }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Vistalinda cafetería","url":"https://demos.pulselat.online/vistalinda/","image":"https://demos.pulselat.online/vistalinda/fotos/fachada.jpg","telephone":"+525582313313","priceRange":"$","servesCuisine":"Café y desayunos","address":{"@type":"PostalAddress","streetAddress":"Sierravista 133","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:50","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}]}
+</script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

@@ -41,6 +41,22 @@
     --rc-float-bg:#141b2a;
     --rc-float-fg:#f4ead8;
     --rc-float-acc:#cbb183;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--humo);
+    --as-linea:var(--linea);
+    --as-acento:#925a38;
+    --as-acento-tinta:var(--papel);
+    --as-tarjeta:rgba(244,234,216,.42);
+    --as-panel:var(--tinta);
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(244,234,216,.68);
+    --as-panel-linea:rgba(244,234,216,.18);
+    --as-panel-acento:var(--oro-2);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Fraunces",Georgia,serif;
+    --as-display-weight:500;
+    --as-display-ls:-.012em;
+    --as-body:"DM Sans",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -224,19 +240,41 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="K-fé Snacks">
     <img class="marca-sello marca-hover" src="img/logo.png" alt="K-fé Snacks">
     <b>K-fé<em>Snacks</em></b>
   </a>
-  <div class="enlaces">
+  <div class="enlaces nav-escritorio">
     <a href="#carta">La carta</a><a href="#pedido">Cómo pedir</a><a href="#local">El local</a><a href="#visita">Visítanos</a>
   </div>
-  <a class="nav-wa" href="https://wa.me/528338035302">WhatsApp</a>
+  <a class="nav-wa wa-barra" href="https://wa.me/528338035302">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">K-fé Snacks</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#carta"><span>01</span> La carta</a>
+    <a href="#pedido"><span>02</span> Cómo pedir</a>
+    <a href="#local"><span>03</span> El local</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/528338035302">Pedir por WhatsApp</a>
+    <p>Av. Montevideo 525, local A · San Bartolo<br>Entrega a domicilio en la zona; pregunta por el costo.</p>
+  </div>
+</div>
 
 <header id="inicio">
   <div class="wrap hero">
@@ -333,6 +371,30 @@
   </div>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de pedir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, el WhatsApp del mostrador está abierto: 833 803 5302.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Hacen entregas a domicilio?</summary><p>Sí, en la zona de San Bartolo y alrededores. El costo depende de tu colonia; se confirma al <a href="https://wa.me/528338035302">mandar el pedido</a>.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí. Café, crepas y malteadas van en vaso sellado. Pide por WhatsApp y pasa por tu pedido a Av. Montevideo 525, local A.</p></details>
+      <details><summary>¿Los combos del desayuno están publicados?</summary><p>No. Cambian con la temporada y se anuncian en la cartelera de la barra. Pregunta por los del día al 833 803 5302.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Son los que están impresos en los tableros del local y pueden cambiar. También hay ensaladas y snacks fuera de carta.</p></details>
+      <details><summary>¿A qué hora cierran y cómo llego?</summary><p>El local cierra a las 9 p.m. todos los días. Estamos sobre Av. Montevideo, en San Bartolo Atepehuacán; revisa la <a href="https://www.google.com/maps/search/?api=1&amp;query=K+f%C3%A9+snacks+Av+Montevideo+525">ficha de Google Maps</a> antes de salir.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.8</b><span>de 5 en Google<br>San Bartolo Atepehuacán</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>La calificación reúne a quienes pasan por crepas, chilaquiles y café de barra sobre Montevideo.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=K+f%C3%A9+snacks+Av+Montevideo+525" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="serif">Aquí, sobre Montevideo.</h2>
@@ -399,6 +461,10 @@
   }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"K-fé Snacks","url":"https://demos.pulselat.online/kfe-snacks/","image":"https://demos.pulselat.online/kfe-snacks/fotos/interior.jpg","telephone":"+528338035302","priceRange":"$","servesCuisine":"Crepas, chilaquiles y café","address":{"@type":"PostalAddress","streetAddress":"Av. Montevideo 525, local A, San Bartolo Atepehuacán","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07730","addressCountry":"MX"}}
+</script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

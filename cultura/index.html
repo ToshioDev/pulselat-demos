@@ -40,6 +40,22 @@
     --rc-float-bg:#7a2e1d;
     --rc-float-fg:#fcf4e3;
     --rc-float-acc:#c2cc63;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--gris);
+    --as-linea:var(--linea);
+    --as-acento:var(--teja-osc);
+    --as-acento-tinta:var(--crema);
+    --as-tarjeta:rgba(252,244,227,.5);
+    --as-panel:var(--teja-osc);
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(252,244,227,.76);
+    --as-panel-linea:rgba(252,244,227,.26);
+    --as-panel-acento:var(--lima);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Newsreader",Georgia,serif;
+    --as-display-weight:400;
+    --as-display-ls:-.015em;
+    --as-body:"Work Sans",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -240,6 +256,7 @@
     .hero .wrap{grid-template-columns:1fr;gap:48px}
     .pila{max-width:420px;margin:0 auto}
     .nav{display:none}
+    .barra-sup .oculto{display:none}
     .local{grid-template-columns:1fr;gap:48px}
     .local .texto{order:2}
     .visita .grid{grid-template-columns:1fr;gap:44px}
@@ -257,19 +274,24 @@
     .cinta-foto{left:12px;bottom:180px;width:86px}
     .acciones .btn{flex:1;justify-content:center}
     .hechos{grid-template-columns:1fr;gap:14px}
-    .barra-sup .oculto{display:none}
+    .barra-sup .sup-dir{display:none}
+    .barra-sup .wrap{justify-content:center;min-height:30px}
+    .barra-sup span,.barra-sup a{white-space:nowrap}
     .barra .btn span{display:none}
     .barra .btn{padding:10px 14px}
     .firma .lock b{font-size:24px}
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
 
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
 <div class="barra-sup"><div class="wrap">
   <span class="oculto">Café de barrio · <b>Guadalupe Insurgentes</b></span>
-  <span>Ing. Carlos Daza 202 · Lindavista, CDMX</span>
+  <span class="sup-dir">Ing. Carlos Daza 202 · Lindavista, CDMX</span>
   <a href="https://wa.me/525590370545">WhatsApp 55 9037 0545</a>
 </div></div>
 
@@ -277,15 +299,34 @@
   <a class="firma" href="#menu">
     <span class="lock"><b>Cultura</b><span>Ideas &amp; café</span></span>
   </a>
-  <nav class="nav">
+  <nav class="nav nav-escritorio">
     <a href="#menu">El menú</a>
     <a href="#local">El local</a>
+    <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
-  <a class="btn btn-solido" href="https://wa.me/525590370545"><span>Pedir</span> WhatsApp</a>
+  <a class="btn btn-solido wa-barra" href="https://wa.me/525590370545"><span>Pedir</span> WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></div>
 
-<header class="hero"><div class="wrap">
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Cultura</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#menu"><span>01</span> El menú</a>
+    <a href="#local"><span>02</span> El local</a>
+    <a href="#dudas"><span>03</span> Dudas</a>
+    <a href="#visita"><span>04</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525590370545">Pedir por WhatsApp</a>
+    <p>Ing. Carlos Daza 202, Guadalupe Insurgentes.<br>Pizarrones escritos a mano y mesa para quedarse.</p>
+  </div>
+</div>
+
+<header class="hero" id="inicio"><div class="wrap">
   <div>
     <div class="kicker">Cafetería · Guadalupe Insurgentes</div>
     <h1 class="serif wm"><span class="wm-ln"><span>Café, ideas y</span></span><span class="wm-ln"><span><em>una mesa libre.</em></span></span></h1>
@@ -398,6 +439,30 @@
   </div>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, escribe al WhatsApp del local: 55 9037 0545.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Qué hay en la carta?</summary><p>Desayunos, sándwiches, crepas y café. La carta completa está escrita en los pizarrones de la pared; lo del día se pregunta al llegar.</p></details>
+      <details><summary>¿Se puede pedir para llevar?</summary><p>Sí. Manda el pedido por <a href="https://wa.me/525590370545">WhatsApp</a> y pasa por él al local sobre Ing. Carlos Daza.</p></details>
+      <details><summary>¿Es un lugar para quedarse a trabajar o leer?</summary><p>Sí. Hay mesas adentro y en la banqueta, cuadros en las paredes y la barra al centro. El café se sirve sin prisa.</p></details>
+      <details><summary>¿Los precios están publicados?</summary><p>La carta y los precios viven en la pizarra del local y pueden cambiar. Pregunta por WhatsApp o en la barra por lo del día.</p></details>
+      <details><summary>¿Cómo llego y a qué hora abren?</summary><p>Estamos en Ing. Carlos Daza 202, Guadalupe Insurgentes, a unos minutos de Plaza Lindavista. Revisa la <a href="https://www.google.com/maps/search/?api=1&amp;query=Cultura+Ideas+y+Caf%C3%A9+Ing+Carlos+Daza+202">ficha de Google Maps</a> para el horario de hoy.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.3</b><span>de 5 en Google<br>532 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos de Guadalupe Insurgentes califican el café, los desayunos y el ambiente de barrio. La ficha de Google es la fuente.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cultura+Ideas+y+Caf%C3%A9+Ing+Carlos+Daza+202" target="_blank" rel="noopener">Leer las reseñas</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" class="visita" data-anim><div class="wrap">
   <div class="grid">
     <div>
@@ -469,8 +534,9 @@
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cultura, Ideas & Café","image":"https://demos.pulselat.online/cultura/img/hero.jpg","telephone":"+525590370545","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Ing. Carlos Daza 202","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07870","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"532"}}
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cultura, Ideas & Café","url":"https://demos.pulselat.online/cultura/","image":"https://demos.pulselat.online/cultura/img/hero.jpg","telephone":"+525590370545","priceRange":"$","servesCuisine":"Café, desayunos y sándwiches","address":{"@type":"PostalAddress","streetAddress":"Ing. Carlos Daza 202","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07870","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"532"}}
 </script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

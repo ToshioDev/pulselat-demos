@@ -39,6 +39,23 @@
     --rc-float-bg:#14100e;
     --rc-float-fg:#eed5bb;
     --rc-float-acc:#ffc06a;
+    --as-tinta:var(--crema);
+    --as-tenue:rgba(238,213,187,.7);
+    --as-linea:var(--linea);
+    --as-acento:var(--neon);
+    --as-acento-tinta:var(--tinta);
+    --as-tarjeta:rgba(238,213,187,.04);
+    --as-panel:#13100d;
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(238,213,187,.66);
+    --as-panel-linea:rgba(238,213,187,.18);
+    --as-panel-acento:var(--neon);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Anton",Impact,sans-serif;
+    --as-display-weight:400;
+    --as-display-ls:.02em;
+    --as-display-transform:uppercase;
+    --as-body:"Manrope",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -221,18 +238,40 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="JAM Coffee">
     <img class="marca-escribir marca-hover" src="img/logo-claro.png" alt="JAM Coffee">
   </a>
-  <div class="enlaces">
+  <div class="enlaces nav-escritorio">
     <a href="#agenda">En vivo</a><a href="#carta">Set list</a><a href="#sala">La sala</a><a href="#visita">Visítanos</a>
   </div>
-  <a class="nav-wa" href="https://wa.me/525663630016">WhatsApp</a>
+  <a class="nav-wa wa-barra" href="https://wa.me/525663630016">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">JAM Coffee</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#agenda"><span>01</span> En vivo</a>
+    <a href="#carta"><span>02</span> Set list</a>
+    <a href="#sala"><span>03</span> La sala</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525663630016">Escribir por WhatsApp</a>
+    <p>Nte. 27-A 5440 · Nueva Vallejo II Secc<br>Trova los sábados; cartelera en Instagram.</p>
+  </div>
+</div>
 
 <header id="inicio">
   <img src="fotos/neon.jpg" alt="Muro de ladrillo de JAM Coffee con el letrero de neón encendido y la guitarra del escenario">
@@ -324,6 +363,30 @@
   </div>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>La barra, la música y los pedidos, resueltos sin rodeos. Para lo demás, el WhatsApp está abierto.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Cuándo hay música en vivo?</summary><p>Los sábados se arma la trova desde el mediodía, con voz y guitarra. La cartelera del mes se publica en <a href="https://www.instagram.com/jamcoffee.26/">Instagram</a>.</p></details>
+      <details><summary>¿Se puede venir a trabajar entre semana?</summary><p>Sí. Hay mesas de madera junto al escenario y sillones al fondo; entre semana la música va de fondo.</p></details>
+      <details><summary>¿Se puede pedir para llevar?</summary><p>Sí, café y comida. Manda el pedido por <a href="https://wa.me/525663630016">WhatsApp</a> y pasa por él a la barra.</p></details>
+      <details><summary>¿Cómo aparto mesa o pregunto por un evento?</summary><p>Escribe por WhatsApp al <a href="https://wa.me/525663630016">56 6363 0016</a>. Para grupos conviene avisar con tiempo, sobre todo en fin de semana.</p></details>
+      <details><summary>¿Dónde están y a qué hora cierran?</summary><p>En Nte. 27-A 5440, Nueva Vallejo II Secc. La barra cierra a las 10 p.m.; revisa la <a href="https://www.google.com/maps/search/?api=1&amp;query=JAM+Coffee+Nte+27-A+5440+Nueva+Vallejo">ficha de Google Maps</a> por cambios de horario.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>5.0</b><span>de 5 en Google<br>Cafetería en Vallejo</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>La ficha reúne las calificaciones de quienes han pasado por la barra, el escenario y el futbolito.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=JAM+Coffee+Nte+27-A+5440+Nueva+Vallejo" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="cartel">En la esquina<br>de Vallejo.</h2>
@@ -390,6 +453,10 @@
   }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"JAM Coffee","url":"https://demos.pulselat.online/jam-coffee/","image":"https://demos.pulselat.online/jam-coffee/fotos/neon.jpg","telephone":"+525663630016","priceRange":"$","servesCuisine":"Café y desayunos","sameAs":["https://www.instagram.com/jamcoffee.26/"],"address":{"@type":"PostalAddress","streetAddress":"Nte. 27-A 5440, Nueva Vallejo II Secc","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07750","addressCountry":"MX"}}
+</script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

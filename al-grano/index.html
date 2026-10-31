@@ -37,6 +37,22 @@
     --rc-float-bg:#0f1411;
     --rc-float-fg:#f3ece2;
     --rc-float-acc:#ffb45c;
+    --as-tinta:var(--crema);
+    --as-tenue:rgba(243,236,226,.72);
+    --as-linea:var(--linea);
+    --as-acento:var(--cempa);
+    --as-acento-tinta:#12100c;
+    --as-tarjeta:rgba(243,236,226,.04);
+    --as-panel:#0d120f;
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(243,236,226,.66);
+    --as-panel-linea:rgba(243,236,226,.18);
+    --as-panel-acento:var(--cempa);
+    --as-panel-acento-tinta:#12100c;
+    --as-display:"Bricolage Grotesque",system-ui,sans-serif;
+    --as-display-weight:700;
+    --as-display-ls:-.035em;
+    --as-body:"Instrument Sans",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -180,18 +196,39 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="Al Grano">
     <img class="marca-entra marca-hover" src="img/logo.png" alt="Al Grano">
   </a>
-  <div class="enlaces">
+  <div class="enlaces nav-escritorio">
     <a href="#terraza">La terraza</a><a href="#carta">La carta</a><a href="#visita">Visítanos</a>
   </div>
-  <a class="nav-wa" href="https://wa.me/52555866556">WhatsApp</a>
+  <a class="nav-wa wa-barra" href="https://wa.me/52555866556">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Al Grano</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#terraza"><span>01</span> La terraza</a>
+    <a href="#carta"><span>02</span> La carta</a>
+    <a href="#dudas"><span>03</span> Dudas</a>
+    <a href="#visita"><span>04</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/52555866556">Pedir por WhatsApp</a>
+    <p>Calz. Azcapotzalco 1248 · Lindavista<br>Abierto los siete días; horario del día en Google Maps.</p>
+  </div>
+</div>
 
 <header id="inicio">
   <img src="fotos/foto1.jpg" alt="Terraza de Al Grano con muros de follaje, guías de cempasúchil y focos">
@@ -380,6 +417,30 @@
   </div>
 </div></section>
 
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Respuestas concretas para no llegar con dudas. Si falta algo, el WhatsApp de la barra está abierto.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Se puede pedir para llevar?</summary><p>Sí, el menú completo. Manda tu pedido por <a href="https://wa.me/52555866556">WhatsApp</a> y pasa por él a la barra.</p></details>
+      <details><summary>¿La terraza está abierta todo el año?</summary><p>Sí. Las mesas de afuera están bajo el follaje y los focos; también hay espacio adentro si llueve.</p></details>
+      <details><summary>¿Cómo aparto mesa para un grupo?</summary><p>No hay reservación formal, pero puedes escribir por WhatsApp para avisar cuántos van y a qué hora.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Son los del menú del local y pueden cambiar. Lo que no aparece se pregunta en la barra; también hay opciones del día.</p></details>
+      <details><summary>¿Cómo llego y a qué hora abren?</summary><p>Estamos en Calz. Azcapotzalco 1248, Lindavista. El horario puede cambiar, así que conviene revisar la <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Grano+Calz+Azcapotzalco+1248+Lindavista">ficha de Google Maps</a> antes de salir.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.5</b><span>de 5 en Google<br>1,379 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos y visitantes califican la terraza, el café de olla y los desayunos. La ficha de Google es la fuente de la calificación.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Al+Grano+Calz+Azcapotzalco+1248+Lindavista" target="_blank" rel="noopener">Leer las reseñas</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
 <section id="visita" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="grotesca">Aquí, en la Calzada.</h2>
@@ -447,6 +508,10 @@
   }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Al Grano","url":"https://demos.pulselat.online/al-grano/","image":"https://demos.pulselat.online/al-grano/fotos/foto1.jpg","telephone":"+52555866556","priceRange":"$","servesCuisine":"Café y desayunos","address":{"@type":"PostalAddress","streetAddress":"Calz. Azcapotzalco 1248","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07730","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"1379"}}
+</script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">

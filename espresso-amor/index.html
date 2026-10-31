@@ -43,6 +43,23 @@
     --rc-float-bg:#14110c;
     --rc-float-fg:#f2e7d2;
     --rc-float-acc:#f2c68d;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--gris);
+    --as-linea:var(--linea);
+    --as-acento:var(--teja-osc);
+    --as-acento-tinta:var(--crema);
+    --as-tarjeta:rgba(251,244,230,.55);
+    --as-panel:#14110c;
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(242,231,210,.7);
+    --as-panel-linea:rgba(242,231,210,.22);
+    --as-panel-acento:var(--ambar);
+    --as-panel-acento-tinta:var(--negro);
+    --as-display:"Instrument Serif",Georgia,serif;
+    --as-display-weight:400;
+    --as-display-style:italic;
+    --as-display-ls:.005em;
+    --as-body:"Archivo",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -251,6 +268,8 @@
     .emblema{top:-42px;right:20px;width:94px;height:94px}
     .hero{padding:96px 0 62px;min-height:560px}
     .hero .wrap{padding-right:20px}
+    .top .wrap{gap:12px;min-height:30px;font-size:9px;letter-spacing:.12em}
+    .top span,.top a{white-space:nowrap}
     h1{font-size:38px}
     .acciones .btn{flex:1;justify-content:center}
     section{padding:66px 0}
@@ -277,12 +296,15 @@
   }
 </style>
 <link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
 </head>
 <body>
 
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
 <div class="top"><div class="wrap">
   <span class="oculto">Lindavista Nte. · CDMX</span>
-  <span><b>4.8 en Google</b> · 760 reseñas</span>
+  <span><b>4.8 en Google</b></span>
   <a href="https://wa.me/525519287031">WhatsApp 55 1928 7031</a>
 </div></div>
 
@@ -291,13 +313,32 @@
     <img class="firma-emblema marca-sello" src="img/logo.png" alt="">
     <span class="firma-txt"><b>Espresso Amor</b><span>Cafetería · Lindavista Nte.</span></span>
   </a>
-  <nav class="nav">
+  <nav class="nav nav-escritorio">
     <a href="#terraza">La terraza</a>
     <a href="#barra">La barra</a>
+    <a href="#dudas">Dudas</a>
     <a href="#visita">Visítanos</a>
   </nav>
-  <a class="btn btn-solido" href="https://wa.me/525519287031"><span>Pedir</span> WhatsApp</a>
+  <a class="btn btn-solido wa-barra" href="https://wa.me/525519287031"><span>Pedir</span> WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
 </div></div>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Espresso Amor</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#terraza"><span>01</span> La terraza</a>
+    <a href="#barra"><span>02</span> La barra</a>
+    <a href="#dudas"><span>03</span> Dudas</a>
+    <a href="#visita"><span>04</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525519287031">Pedir por WhatsApp</a>
+    <p>Barranquilla 138, Lindavista Nte.<br>Terraza con plantas, café de barra y pedidos para llevar.</p>
+  </div>
+</div>
 
 <div class="lona" aria-label="Cafetería">
   <div class="wrap">
@@ -307,7 +348,7 @@
   </div>
 </div>
 
-<header class="hero">
+<header class="hero" id="inicio">
   <div class="hero-fondo"><img src="img/terraza.jpg" alt="Terraza de Espresso Amor con plantas, focos y mesas ocupadas de noche"></div>
   <div class="emblema" aria-hidden="true">
     <img class="marca-sello" src="img/logo.png" alt="">
@@ -381,6 +422,30 @@
       <div class="renglon"><div><b>Sándwich de pollo</b><small>Con queso Oaxaca.</small></div><span class="punto">a elegir</span></div>
       <p class="nota-menu" style="margin-top:24px">Lo que se ve en la barra es lo que hay. Pregunta por lo que se acabe de preparar.</p>
     </div>
+  </div>
+</div></section>
+
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Respuestas cortas para llegar sin vueltas. Si falta algo, escribe al WhatsApp de la barra: 55 1928 7031.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí, el menú completo. Manda el pedido por <a href="https://wa.me/525519287031">WhatsApp</a> y pasa por él a la barra.</p></details>
+      <details><summary>¿Se puede estar en la terraza?</summary><p>Sí. Hay mesas afuera entre macetas de madera y palmas, y también espacio adentro. Los focos se prenden al atardecer.</p></details>
+      <details><summary>¿Cómo aparto mesa para un grupo?</summary><p>No hay reservación formal, pero puedes escribir por WhatsApp para avisar cuántos van y a qué hora llegan.</p></details>
+      <details><summary>¿Hay precios publicados?</summary><p>El menú es corto: café, molletes y sándwiches. Los precios y lo del día se confirman en la barra.</p></details>
+      <details><summary>¿Cómo llego y a qué hora abren?</summary><p>Estamos en Barranquilla 138, Lindavista Nte. El horario cambia, así que conviene revisar la <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Espresso+Amor+Barranquilla+138">ficha de Google Maps</a> antes de salir.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.8</b><span>de 5 en Google<br>760 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Vecinos de Lindavista Nte. califican la terraza, el café y la atención de la esquina. La ficha de Google es la fuente.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafeter%C3%ADa+Espresso+Amor+Barranquilla+138" target="_blank" rel="noopener">Leer las reseñas</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
   </div>
 </div></section>
 
@@ -461,8 +526,9 @@
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Espresso Amor","image":"https://demos.pulselat.online/espresso-amor/img/hero.jpg","telephone":"+525519287031","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Barranquilla 138","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"760"}}
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Cafetería Espresso Amor","url":"https://demos.pulselat.online/espresso-amor/","image":"https://demos.pulselat.online/espresso-amor/img/hero.jpg","telephone":"+525519287031","priceRange":"$","servesCuisine":"Café, molletes y sándwiches","address":{"@type":"PostalAddress","streetAddress":"Barranquilla 138","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07300","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"760"}}
 </script>
+<script src="../assets/antislop.js" defer></script>
 <script src="../assets/reclamo.js" defer></script>
 
 <aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
