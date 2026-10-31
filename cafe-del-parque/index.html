@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Café Del Parque · café de barrio en San Bartolo</title>
+<meta name="description" content="Dos tazas, una mesa y la esquina del parque. Café de la casa, desayunos y pan dulce en Salvatierra y Buenavista, San Bartolo Atepehuacan.">
+<meta property="og:title" content="Café Del Parque · el café de la esquina">
+<meta property="og:description" content="Capuchino de canela, café de olla, chilaquiles y pan dulce. Pide por WhatsApp en San Bartolo Atepehuacan.">
+<meta property="og:image" content="https://demos.pulselat.online/cafe-del-parque/fotos/casa.jpg">
+<meta property="og:url" content="https://demos.pulselat.online/cafe-del-parque/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/reclamo.css">
+<style>
+  :root{
+    --crema:#f3ecdc;
+    --crema-2:#ece1cc;
+    --bosque:#15241b;
+    --bosque-2:#1c3025;
+    --tinta:#19271e;
+    --tenue:rgba(25,39,30,.66);
+    --linea:rgba(25,39,30,.16);
+    --canela:#b4693c;
+    --canela-oscura:#8e4a26;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--tenue);
+    --as-linea:var(--linea);
+    --as-acento:var(--canela);
+    --as-acento-tinta:#fff8ec;
+    --as-tarjeta:rgba(25,39,30,.035);
+    --as-radio:2px;
+    --as-panel:var(--bosque);
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(243,236,220,.7);
+    --as-panel-linea:rgba(243,236,220,.18);
+    --as-panel-acento:#d6a374;
+    --as-panel-acento-tinta:var(--bosque);
+    --as-display:"Fraunces",Georgia,serif;
+    --as-display-weight:500;
+    --as-display-style:normal;
+    --as-display-ls:-.02em;
+    --as-body:"Karla",system-ui,sans-serif;
+    --rc-bg:var(--bosque);
+    --rc-fg:var(--crema);
+    --rc-acc:#d6a374;
+    --rc-acc-fg:var(--bosque);
+    --rc-line:rgba(243,236,220,.18);
+    --rc-tenue:rgba(243,236,220,.7);
+    --rc-display:var(--as-display);
+    --rc-display-weight:500;
+    --rc-float-bg:var(--bosque);
+    --rc-float-fg:var(--crema);
+    --rc-float-acc:#d6a374;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--crema);color:var(--tinta);font-family:var(--as-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 30px}
+  .display{font-family:var(--as-display);font-weight:500;letter-spacing:-.02em;line-height:.98}
+  .italica{font-style:italic;font-weight:400}
+
+  nav{position:fixed;inset:0 0 auto;z-index:40;background:rgba(243,236,220,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+  .marca{display:flex;align-items:center;gap:11px;min-height:44px}
+  .marca svg{width:30px;height:30px;flex:none;color:var(--canela)}
+  .marca span{font-family:var(--as-display);font-size:19px;font-weight:500;letter-spacing:-.025em;line-height:1}
+  .marca span b{font-weight:400;font-style:italic}
+  .enlaces{display:flex;gap:26px;font-size:12.5px;color:var(--tenue);letter-spacing:.01em}
+  .enlaces a{position:relative;padding:4px 0}
+  .enlaces a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--canela);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  .enlaces a:hover::after{transform:scaleX(1)}
+  .nav-wa{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--tinta);font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;transition:background .2s,color .2s}
+  .nav-wa:hover{background:var(--tinta);color:var(--crema)}
+
+  header{padding:118px 0 0;position:relative;overflow:hidden}
+  .hero{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(30px,5vw,68px);align-items:end}
+  .hero-copia{padding-bottom:clamp(30px,5vw,58px);position:relative;z-index:2}
+  .eyebrow{display:flex;align-items:center;gap:11px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--canela-oscura);margin-bottom:22px}
+  .eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+  h1{font-family:var(--as-display);font-size:clamp(46px,6.7vw,92px);font-weight:500;line-height:.96;letter-spacing:-.035em;max-width:13ch}
+  h1 em{font-style:italic;font-weight:400;color:var(--canela-oscura)}
+  .lead{margin-top:24px;max-width:43ch;font-size:16.5px;line-height:1.65;color:var(--tenue)}
+  .acciones{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border:1px solid transparent;font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:background .2s,color .2s,transform .2s}
+  .btn-solido{background:var(--bosque);color:var(--crema)}
+  .btn-solido:hover{background:var(--canela-oscura)}
+  .btn-linea{border-color:var(--linea);color:var(--tinta)}
+  .btn-linea:hover{border-color:var(--tinta);background:rgba(25,39,30,.04)}
+  .btn:active{transform:translateY(1px)}
+  .hoy{display:flex;align-items:center;gap:9px;margin-top:24px;font-size:12px;color:var(--tenue)}
+  .hoy i{width:7px;height:7px;border-radius:50%;background:#4d7c45;box-shadow:0 0 0 4px rgba(77,124,69,.12);font-style:normal}
+  .hero-foto{position:relative;min-height:clamp(420px,64vh,660px);background:var(--bosque)}
+  .hero-foto>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+  .hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,36,27,.02) 40%,rgba(21,36,27,.56) 100%)}
+  .hero-sello{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:26px}
+  .hero-sello p{font-family:var(--as-display);font-size:clamp(20px,2.3vw,29px);line-height:1.05;color:var(--crema);letter-spacing:-.02em;max-width:11ch}
+  .hero-sello span{flex:none;text-align:right;font-size:9.5px;line-height:1.6;letter-spacing:.17em;text-transform:uppercase;color:rgba(243,236,220,.78)}
+  .hero-foto .orilla{position:absolute;top:18px;right:18px;z-index:2;width:42px;height:42px;border:1px solid rgba(243,236,220,.55);border-radius:50%;display:grid;place-items:center;color:var(--crema);font-family:var(--as-display);font-size:10px;font-style:italic}
+
+  .banda{margin-top:0;background:var(--canela);color:#fff7eb;overflow:hidden;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .banda .pista{display:flex;width:max-content;animation:correr 32s linear infinite}
+  .banda span{display:block;padding:11px 0;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+  .banda span+span::before{content:"·";padding:0 22px;opacity:.55}
+  @keyframes correr{to{transform:translateX(-50%)}}
+
+  section{padding:clamp(64px,9vw,104px) 0}
+  .kicker{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--canela-oscura)}
+  .kicker::before{content:"";width:26px;height:1px;background:currentColor}
+  .cabeza{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:42px;padding-bottom:18px;border-bottom:1px solid var(--linea)}
+  .cabeza h2{font-family:var(--as-display);font-weight:500;font-size:clamp(34px,4.6vw,58px);line-height:1.02;letter-spacing:-.03em;max-width:20ch}
+  .cabeza p{max-width:35ch;font-size:13.5px;line-height:1.65;color:var(--tenue)}
+
+  .historia{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(34px,6vw,80px);align-items:center}
+  .historia-foto{position:relative;padding:0 0 0 28px}
+  .historia-foto::before{content:"";position:absolute;left:0;top:34px;bottom:34px;width:1px;background:var(--linea)}
+  .historia-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.92) contrast(.97)}
+  .historia-foto figcaption{position:absolute;left:28px;right:0;bottom:0;padding:38px 18px 16px;background:linear-gradient(0deg,rgba(21,36,27,.8),rgba(21,36,27,0));color:var(--crema);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+  .historia h2{font-family:var(--as-display);font-weight:500;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
+  .historia p{margin-top:18px;max-width:46ch;font-size:15.5px;line-height:1.75;color:var(--tenue)}
+  .rituales{list-style:none;margin-top:30px;border-top:1px solid var(--linea)}
+  .rituales li{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea);align-items:start}
+  .rituales b{font-family:var(--as-display);font-weight:500;font-size:16px;color:var(--canela-oscura);font-style:italic}
+  .rituales strong{display:block;font-size:13.5px;font-weight:700;line-height:1.35}
+  .rituales span{display:block;margin-top:2px;font-size:12.5px;line-height:1.55;color:var(--tenue)}
+  .mesa-parejas{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:36px}
+  .mesa-parejas article{background:var(--crema);padding:20px}
+  .mesa-parejas small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--canela-oscura)}
+  .mesa-parejas h3{font-family:var(--as-display);font-weight:500;font-size:21px;line-height:1.08;letter-spacing:-.02em;margin-top:6px}
+  .mesa-parejas p{margin-top:7px;font-size:12.5px;line-height:1.55;color:var(--tenue)}
+
+  .carta{background:var(--crema-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .carta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px}
+  .carta-col h3{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--canela);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--canela-oscura)}
+  .carta-col h3 span{font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:none;color:var(--tenue)}
+  .plato{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 0;border-bottom:1px solid rgba(25,39,30,.1)}
+  .plato b{font-size:15px;line-height:1.35;font-weight:700}
+  .plato span{grid-column:1;font-size:12px;line-height:1.5;color:var(--tenue)}
+  .plato em{grid-column:2;grid-row:1 / span 2;align-self:center;font-style:normal;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--canela-oscura);white-space:nowrap}
+  .carta-nota{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;padding-top:18px;border-top:1px solid var(--linea);font-size:12px;line-height:1.6;color:var(--tenue)}
+  .carta-nota a{color:var(--tinta);border-bottom:1px solid var(--canela);padding-bottom:1px;font-weight:600}
+
+  .dudas{background:var(--crema)}
+  .dudas-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .google-card{border-color:var(--linea);background:rgba(25,39,30,.035)}
+
+  .visita-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:start}
+  .dato{padding:19px 0;border-bottom:1px solid var(--linea)}
+  .dato:first-child{padding-top:0}
+  .dato h3{font-size:9.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--canela-oscura);margin-bottom:6px}
+  .dato p{font-size:17px;line-height:1.5}
+  .dato a{border-bottom:1px solid rgba(25,39,30,.3)}
+  .dato small{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:var(--tenue)}
+  .horario{display:flex;justify-content:space-between;gap:18px;padding:10px 0;font-size:14px;border-bottom:1px solid rgba(25,39,30,.09);color:var(--tenue)}
+  .horario b{font-weight:600;color:var(--tinta)}
+  .mapa{position:relative;margin-top:26px;border:1px solid var(--linea);background:var(--bosque);overflow:hidden}
+  .mapa img{width:100%;height:230px;object-fit:cover;opacity:.82;filter:saturate(.7)}
+  .mapa a{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;min-height:42px;padding:0 16px;background:var(--crema);color:var(--tinta);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+  .cierre{background:var(--bosque);color:var(--crema);padding:clamp(64px,9vw,104px) 0;text-align:center}
+  .cierre .kicker{justify-content:center;color:#d6a374}
+  .cierre h2{font-family:var(--as-display);font-weight:500;font-size:clamp(38px,5.5vw,70px);line-height:1.02;letter-spacing:-.03em;max-width:18ch;margin:0 auto;text-wrap:balance}
+  .cierre p{max-width:44ch;margin:18px auto 0;font-size:14.5px;line-height:1.7;color:rgba(243,236,220,.72)}
+  .cierre .acciones{justify-content:center}
+  .cierre .btn-solido{background:#d6a374;color:var(--bosque)}
+  .cierre .btn-solido:hover{background:var(--crema)}
+  .cierre .btn-linea{border-color:rgba(243,236,220,.3);color:var(--crema)}
+  .cierre .btn-linea:hover{background:rgba(243,236,220,.07)}
+
+  footer{border-top:1px solid var(--linea);padding:26px 0;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero-copia .eyebrow,.hero-copia h1,.hero-copia .lead,.hero-copia .acciones,.hero-copia .hoy{animation:subir .9s cubic-bezier(.22,1,.36,1) both}
+    .hero-copia h1{animation-delay:.08s}
+    .hero-copia .lead{animation-delay:.16s}
+    .hero-copia .acciones{animation-delay:.24s}
+    .hero-copia .hoy{animation-delay:.32s}
+    .hero-foto{animation:aparecer 1.2s cubic-bezier(.22,1,.36,1) both}
+    @keyframes subir{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes aparecer{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .banda .pista{animation:none;flex-wrap:wrap;width:auto}
+  }
+  @media (max-width:1000px){
+    .hero{grid-template-columns:1fr;gap:0}
+    .hero-copia{padding-bottom:36px}
+    .hero-foto{min-height:54vh}
+    .historia{grid-template-columns:1fr;gap:32px}
+    .historia-foto{max-width:520px;padding-left:20px}
+    .carta-grid{grid-template-columns:1fr 1fr;gap:34px}
+    .carta-col:last-child{grid-column:1 / -1}
+    .visita-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:900px){
+    .enlaces{display:none}
+    .dudas-grid{grid-template-columns:1fr}
+    header{padding-top:96px}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px}
+    h1{font-size:clamp(43px,12.5vw,60px)}
+    .lead{font-size:15.5px}
+    .hero-foto{min-height:46vh}
+    .hero-sello{padding:18px}
+    .carta-grid{grid-template-columns:1fr;gap:32px}
+    .carta-col:last-child{grid-column:auto}
+    .mesa-parejas{grid-template-columns:1fr}
+    .btn{flex:1 1 100%}
+    .cabeza h2{font-size:clamp(32px,9vw,44px)}
+    .cabeza p{max-width:none}
+    .historia p{font-size:15px}
+    .cierre h2{font-size:clamp(34px,10vw,48px)}
+    .banda span{font-size:9.5px}
+  }
+</style>
+<link rel="stylesheet" href="../assets/motion.css">
+<link rel="stylesheet" href="../assets/antislop.css">
+<link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
+</head>
+<body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
+<nav><div class="wrap">
+  <a class="marca" href="#inicio" aria-label="Café Del Parque">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 13h13v5.5A6.5 6.5 0 0 1 14.5 25h0A6.5 6.5 0 0 1 8 18.5V13Z"/><path d="M21 14.5h2.4a3.1 3.1 0 0 1 0 6.2H21"/><path d="M6 28h17"/><path d="M12 9c-1.2-1.4 1.2-2.4 0-4.2M16.5 9c-1.2-1.4 1.2-2.4 0-4.2"/></svg>
+    <span>Café <b>del</b> Parque</span>
+  </a>
+  <div class="enlaces nav-escritorio">
+    <a href="#casa">La casa</a><a href="#carta">La carta</a><a href="#pide">Arma tu mesa</a><a href="#dudas">Dudas</a><a href="#visita">Visítanos</a>
+  </div>
+  <a class="nav-wa wa-barra" href="https://wa.me/527752289737">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
+</div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Café del Parque</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#casa"><span>01</span> La casa</a>
+    <a href="#carta"><span>02</span> La carta</a>
+    <a href="#pide"><span>03</span> Arma tu mesa</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/527752289737">Escribir por WhatsApp</a>
+    <p>Salvatierra y Buenavista<br>San Bartolo Atepehuacan, 07730</p>
+  </div>
+</div>
+
+<header id="inicio">
+  <div class="wrap hero">
+    <div class="hero-copia">
+      <div class="eyebrow">Cafetería de barrio · San Bartolo</div>
+      <h1>El café sabe mejor cuando <em>se comparte.</em></h1>
+      <p class="lead">Dos tazas, una mesa y la esquina del parque. Café de la casa, desayunos y pan dulce en Salvatierra y Buenavista.</p>
+      <div class="acciones">
+        <a class="btn btn-solido" href="#carta">Ver la carta</a>
+        <a class="btn btn-linea" href="https://wa.me/527752289737">Pedir por WhatsApp</a>
+      </div>
+      <p class="hoy"><i aria-hidden="true"></i>Abierto hoy hasta las 5 p.m. · 4.5 en Google</p>
+    </div>
+    <figure class="hero-foto">
+      <img src="fotos/casa.jpg" alt="Dos capuchinos con espuma y canela servidos en la mesa de Café Del Parque" fetchpriority="high">
+      <span class="orilla" aria-hidden="true">cdp</span>
+      <figcaption class="hero-sello">
+        <p>Dos tazas.<br>Una mesa.</p>
+        <span>Salvatierra y Buenavista<br>San Bartolo Atepehuacan</span>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="banda" aria-hidden="true"><div class="pista">
+  <span>Capuchino de canela</span><span>Café de olla</span><span>Chilaquiles</span><span>Molletes</span><span>Pan dulce</span><span>Jugo verde</span><span>Para llevar</span>
+  <span>Capuchino de canela</span><span>Café de olla</span><span>Chilaquiles</span><span>Molletes</span><span>Pan dulce</span><span>Jugo verde</span><span>Para llevar</span>
+</div></div>
+
+<section id="casa"><div class="wrap historia">
+  <figure class="historia-foto">
+    <img src="fotos/detalle.jpg" alt="Detalle de un capuchino con canela en la barra de Café Del Parque" loading="lazy">
+    <figcaption>La taza de la casa · canela al centro</figcaption>
+  </figure>
+  <div>
+    <div class="kicker">La casa</div>
+    <h2>Un café de barrio, sin prisa.</h2>
+    <p>En la esquina de Salvatierra y Buenavista, el café se sirve con leche espumada y una línea de canela. No hay prisa: la mesa se comparte, el pan sale del mostrador y el parque queda a unos pasos.</p>
+    <p>Ven por la mañana por un capuchino y una concha, o al mediodía por chilaquiles y un jugo. También hay lugar para hacer la tarde: café de olla, pan dulce y la sobremesa.</p>
+    <ul class="rituales">
+      <li><b>01</b><div><strong>La taza de la mañana</strong><span>Capuchino de canela o café de olla, recién hecho.</span></div></li>
+      <li><b>02</b><div><strong>La mesa larga</strong><span>Para venir con alguien, o con la laptop y quedarse un rato.</span></div></li>
+      <li><b>03</b><div><strong>El pan del día</strong><span>Lo que haya en el mostrador: concha, cuernito, panqué.</span></div></li>
+    </ul>
+    <div class="mesa-parejas" aria-label="Sugerencias para compartir">
+      <article><small>Para la mañana</small><h3>Dos capuchinos y una concha.</h3><p>La mesa empieza aquí. La canela va encima, sin preguntar.</p></article>
+      <article><small>Para el mediodía</small><h3>Chilaquiles y dos aguas.</h3><p>Verdes o rojos, con el pan dulce para cerrar.</p></article>
+    </div>
+  </div>
+</div></section>
+
+<section class="carta" id="carta"><div class="wrap">
+  <div class="cabeza">
+    <h2>La carta de la mesa.</h2>
+    <p>Café, desayunos y lo que hay en el mostrador. Los precios se confirman en barra.</p>
+  </div>
+  <div class="carta-grid">
+    <div class="carta-col">
+      <h3>De la barra <span>caliente y frío</span></h3>
+      <div class="plato"><b>Capuchino de canela</b><span>Leche espumada y canela molida.</span><em>En barra</em></div>
+      <div class="plato"><b>Latte de la casa</b><span>Suave, para acompañar el pan.</span><em>En barra</em></div>
+      <div class="plato"><b>Café de olla</b><span>Con piloncillo y canela.</span><em>En barra</em></div>
+      <div class="plato"><b>Espresso</b><span>Corto y directo.</span><em>En barra</em></div>
+      <div class="plato"><b>Chocolate</b><span>Caliente, con leche.</span><em>En barra</em></div>
+      <div class="plato"><b>Té e infusiones</b><span>Pregunta por los sabores del día.</span><em>En barra</em></div>
+    </div>
+    <div class="carta-col">
+      <h3>De la cocina <span>desayuno y comida</span></h3>
+      <div class="plato"><b>Chilaquiles</b><span>Verdes o rojos; con huevo o pollo.</span><em>En barra</em></div>
+      <div class="plato"><b>Molletes</b><span>Con jamón, chorizo o vegetariano.</span><em>En barra</em></div>
+      <div class="plato"><b>Sándwich del parque</b><span>Pollo, jamón o vegetariano.</span><em>En barra</em></div>
+      <div class="plato"><b>Huevos al gusto</b><span>Con lo que pidas de la cocina.</span><em>En barra</em></div>
+      <div class="plato"><b>Hotcakes</b><span>Con mantequilla y miel.</span><em>En barra</em></div>
+      <div class="plato"><b>Fruta de temporada</b><span>Cortada al momento.</span><em>En barra</em></div>
+    </div>
+    <div class="carta-col">
+      <h3>Del mostrador <span>para llevar</span></h3>
+      <div class="plato"><b>Pan dulce del día</b><span>Concha, cuernito o panqué.</span><em>En vitrina</em></div>
+      <div class="plato"><b>Jugo verde</b><span>Nopal, piña, apio y limón.</span><em>En barra</em></div>
+      <div class="plato"><b>Jugo de naranja</b><span>Recién exprimido.</span><em>En barra</em></div>
+      <div class="plato"><b>Agua fresca</b><span>Pregunta por el sabor del día.</span><em>En barra</em></div>
+      <div class="plato"><b>Gelatina</b><span>Del refrigerador.</span><em>En vitrina</em></div>
+      <div class="plato"><b>Café para llevar</b><span>Tu taza, tu camino.</span><em>En barra</em></div>
+    </div>
+  </div>
+  <p class="carta-nota"><span>Esta carta es una muestra de la casa. Los precios y el pan del día se confirman al pedir.</span><a href="https://wa.me/527752289737">Preguntar por WhatsApp →</a></p>
+</div></section>
+
+<section class="venta" id="pide" aria-labelledby="cdp-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Pedido directo</div>
+      <h2 id="cdp-venta-titulo">Arma tu mesa<br>y te la apartamos.</h2>
+      <p class="venta-lead">Elige lo que quieres, toca + y mándanos la comanda. Si vienes con alguien, dinos cuántos son; si pasas por el café, avísanos a qué hora.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige de la carta</strong><span>Capuchino, chilaquiles, pan dulce o lo que se antoje.</span></div></li>
+        <li><b>02</b><div><strong>Mándanos la comanda</strong><span>El mensaje sale armado a WhatsApp con cantidades y opciones.</span></div></li>
+        <li><b>03</b><div><strong>Pasa por la esquina</strong><span>Salvatierra y Buenavista, San Bartolo Atepehuacan.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Para la primera visita</p>
+        <ul>
+          <li><span>Capuchino de canela <em>· la taza de la casa</em></span><b class="sin-precio">A cotizar</b></li>
+          <li><span>Chilaquiles <em>· verdes o rojos</em></span><b class="sin-precio">A cotizar</b></li>
+          <li><span>Pan dulce del día <em>· de la vitrina</em></span><b class="sin-precio">A cotizar</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Los precios se confirman en el chat antes de preparar el pedido. Para grupos de 5 o más, avisa con un poco de tiempo. <a href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Del+Parque+Salvatierra+y+Buenavista+San+Bartolo+Atepehuacan" target="_blank" rel="noopener">Ver la ficha en Google Maps</a>.</p>
+    </div>
+    <div class="venta-caja">
+      <div class="carrito" data-carrito data-wa="527752289737" data-cafe="Café Del Parque" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Tu mesa</p>
+          <span class="carrito-comanda">Comanda</span>
+        </div>
+        <p class="carrito-intro">Elige variante y toca +. El total se arma solo y el mensaje sale con tu comanda.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Capuchino de canela" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Capuchino de canela</h3>
+                <p class="carrito-item-desc">Leche espumada y canela molida.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de capuchinos de canela">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un capuchino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un capuchino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación del capuchino">
+              <button type="button" data-variante data-nombre-variante="Clásico" aria-pressed="true">Clásico</button>
+              <button type="button" data-variante data-nombre-variante="Con canela">Con canela</button>
+              <button type="button" data-variante data-nombre-variante="Con chocolate">Con chocolate</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Café de olla" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Café de olla</h3>
+                <p class="carrito-item-desc">Con piloncillo y canela.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de café de olla">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un café de olla">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un café de olla">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del café de olla">
+              <button type="button" data-variante data-nombre-variante="Chico" aria-pressed="true">Chico</button>
+              <button type="button" data-variante data-nombre-variante="Grande">Grande</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chilaquiles" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquiles</h3>
+                <p class="carrito-item-desc">Verdes o rojos; con huevo o pollo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de los chilaquiles">
+              <button type="button" data-variante data-nombre-variante="Verdes con huevo" aria-pressed="true">Verdes con huevo</button>
+              <button type="button" data-variante data-nombre-variante="Rojos con huevo">Rojos con huevo</button>
+              <button type="button" data-variante data-nombre-variante="Verdes con pollo">Verdes con pollo</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">Con jamón, chorizo o vegetariano.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de los molletes">
+              <button type="button" data-variante data-nombre-variante="Con jamón" aria-pressed="true">Jamón</button>
+              <button type="button" data-variante data-nombre-variante="Con chorizo">Chorizo</button>
+              <button type="button" data-variante data-nombre-variante="Vegetarianos">Vegetariano</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Sándwich del parque" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Sándwich del parque</h3>
+                <p class="carrito-item-desc">Para comer aquí o llevar.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de sándwiches">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un sándwich">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un sándwich">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación del sándwich">
+              <button type="button" data-variante data-nombre-variante="De pollo" aria-pressed="true">Pollo</button>
+              <button type="button" data-variante data-nombre-variante="De jamón">Jamón</button>
+              <button type="button" data-variante data-nombre-variante="Vegetariano">Vegetariano</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Pan dulce del día" data-precio="" data-precio-texto="En vitrina">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Pan dulce del día</h3>
+                <p class="carrito-item-desc">Concha, cuernito o panqué.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de pan dulce">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un pan dulce">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un pan dulce">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En vitrina</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Jugo" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Jugo</h3>
+                <p class="carrito-item-desc">Verde o de naranja, recién hecho.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de jugos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un jugo">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un jugo">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Sabor del jugo">
+              <button type="button" data-variante data-nombre-variante="Verde" aria-pressed="true">Verde</button>
+              <button type="button" data-variante data-nombre-variante="De naranja">Naranja</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cdp-modo">Dónde te esperamos</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cdp-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">En el local</button>
+              <button type="button" data-modo-opcion>Para llevar</button>
+              <button type="button" data-modo-opcion>Mesa de afuera</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cdp-hora">¿A qué hora?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cdp-hora" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Ahora</button>
+              <button type="button" data-hora-opcion>20–30 min</button>
+              <button type="button" data-hora-opcion>Más tarde</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cdp-personas">Cuántos son</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cdp-personas" data-grupo="Personas">
+              <button type="button" data-opcion aria-pressed="true">1</button>
+              <button type="button" data-opcion>2</button>
+              <button type="button" data-opcion>3 a 4</button>
+              <button type="button" data-opcion>5 o más</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar mesa</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
+        </div>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. La barra confirma precios, horario y mesa en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/527752289737">WhatsApp 775 228 9737</a> · <a href="tel:+527752289737">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="dudas" id="dudas"><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>La mesa, el pan y el café, resueltos sin rodeos. Para lo demás, el WhatsApp está abierto.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Se puede pedir para llevar?</summary><p>Sí. Arma la comanda en esta página o escríbenos por <a href="https://wa.me/527752289737">WhatsApp</a> y pasa por la barra a la hora que acuerdes.</p></details>
+      <details><summary>¿Tienen opciones vegetarianas?</summary><p>Hay molletes y sándwich vegetarianos. Para chilaquiles o huevos, pide la versión sin proteína animal al armar tu pedido.</p></details>
+      <details><summary>¿Hay lugar para grupos?</summary><p>La mesa se comparte. Para 5 personas o más, avísanos por WhatsApp y te decimos cómo acomodarnos.</p></details>
+      <details><summary>¿Cuál es el horario?</summary><p>Hoy la casa cierra a las 5 p.m. El horario cambia entre semana y fin de semana; confírmalo por <a href="https://wa.me/527752289737">WhatsApp</a> o en la <a href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Del+Parque+Salvatierra+y+Buenavista+San+Bartolo+Atepehuacan">ficha de Google Maps</a>.</p></details>
+      <details><summary>¿Dónde están exactamente?</summary><p>En Salvatierra y Buenavista, San Bartolo Atepehuacan, 07730. A unos minutos caminando del Metrobús Lindavista–Vallejo.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.5</b><span>de 5 en Google<br>más de 100 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Una cafetería de barrio con buena compañía: café, desayunos y pan dulce en San Bartolo.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Del+Parque+Salvatierra+y+Buenavista+San+Bartolo+Atepehuacan" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
+<section id="visita"><div class="wrap">
+  <div class="cabeza">
+    <h2>La esquina del parque.</h2>
+    <p>Salvatierra y Buenavista, San Bartolo Atepehuacan. A unos pasos del Metrobús Lindavista–Vallejo.</p>
+  </div>
+  <div class="visita-grid">
+    <div>
+      <div class="dato"><h3>Dirección</h3><p>Salvatierra y Buenavista<br>San Bartolo Atepehuacan, 07730<br>Gustavo A. Madero, CDMX</p></div>
+      <div class="dato"><h3>WhatsApp y llamadas</h3><p><a href="https://wa.me/527752289737">775 228 9737</a></p></div>
+      <div class="dato"><h3>Pedidos</h3><p><a href="#pide">Arma tu comanda aquí →</a><small>Para llevar, mesa o grupo.</small></p></div>
+      <div class="dato" style="border:none"><h3>Cómo llegar</h3><p><a href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Del+Parque+Salvatierra+y+Buenavista+San+Bartolo+Atepehuacan">Abrir en Google Maps →</a></p></div>
+    </div>
+    <div>
+      <div class="dato" style="padding-top:0"><h3>Horario de hoy</h3></div>
+      <div class="horario"><b>Hoy</b><span>Hasta las 5 p.m.</span></div>
+      <div class="horario"><b>Mañana y fin de semana</b><span>Confirma por WhatsApp</span></div>
+      <div class="horario"><b>Pedidos para llevar</b><span>Durante el horario</span></div>
+      <div class="mapa">
+        <img src="fotos/casa.jpg" alt="" aria-hidden="true" loading="lazy">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Del+Parque+Salvatierra+y+Buenavista+San+Bartolo+Atepehuacan" target="_blank" rel="noopener">Ver el mapa →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cierre"><div class="wrap">
+  <div class="kicker">Nos vemos en la mesa</div>
+  <h2>La mesa ya está puesta.</h2>
+  <p>Escríbenos para pedir, apartar una mesa o saber qué pan salió hoy. La casa está en la esquina de siempre.</p>
+  <div class="acciones">
+    <a class="btn btn-solido" href="https://wa.me/527752289737">Escribir por WhatsApp</a>
+    <a class="btn btn-linea" href="#carta">Ver la carta</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Café Del Parque · Salvatierra y Buenavista, San Bartolo</span>
+  <span>Muestra de Pulse LAT · pulselat.online</span>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Café Del Parque","url":"https://demos.pulselat.online/cafe-del-parque/","image":"https://demos.pulselat.online/cafe-del-parque/fotos/casa.jpg","telephone":"+527752289737","priceRange":"$","servesCuisine":"Café, desayunos y pan dulce","address":{"@type":"PostalAddress","streetAddress":"Salvatierra y Buenavista, San Bartolo Atepehuacan","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07730","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"123"}}
+</script>
+<script src="../assets/venta.js" defer></script>
+<script src="../assets/antislop.js" defer></script>
+<script src="../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Caf%C3%A9%20Del%20Parque.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
+
+</body>
+</html>

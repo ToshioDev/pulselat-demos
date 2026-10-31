@@ -218,6 +218,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -391,35 +392,170 @@
       <p class="venta-nota">Todos los días desde las 7:00. El pan dulce se aparta hasta agotar la charola; los talleres se anuncian en <a href="https://www.instagram.com/tahara.cafe/" target="_blank" rel="noopener">@tahara.cafe</a>.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="525573032487" data-cafe="Tahara" data-asunto="hacer un pedido o preguntar por los talleres" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="th-nombre">Tu nombre</label>
-          <input id="th-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="525573032487" data-cafe="Tahara" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu pedido</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="th-tema">Qué necesitas</label>
-          <select id="th-tema" name="tema" data-campo data-label="Tema" required>
-            <option value="">Elige una opción</option>
-            <option>Un pedido para llevar</option>
-            <option>Información de talleres</option>
-            <option>Apartar una mesa</option>
-            <option>Otra consulta</option>
-          </select>
+        <p class="carrito-intro">Elige tamaño y toca +. Lo que va en vitrina se cotiza con la barra según lo que haya ese día.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Flat white" data-precio="55">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Flat white</h3>
+                <p class="carrito-item-desc">Café de Chiapas con leche vaporizada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de flat white">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un flat white">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un flat white">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$55</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Americano" data-precio="46">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Americano</h3>
+                <p class="carrito-item-desc">Espresso alargado.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de americanos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un americano">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un americano">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$46</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del americano">
+              <button type="button" data-variante data-nombre-variante="Chico" data-precio="46" aria-pressed="true">Chico <b>$46</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="53">Grande <b>$53</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Capuccino" data-precio="57">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Capuccino</h3>
+                <p class="carrito-item-desc">Espuma fina, sin azúcar añadida.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de capuccinos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un capuccino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un capuccino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$57</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del capuccino">
+              <button type="button" data-variante data-nombre-variante="Chico" data-precio="57" aria-pressed="true">Chico <b>$57</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="67">Grande <b>$67</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Matcha latte" data-precio="67">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Matcha latte</h3>
+                <p class="carrito-item-desc">Frío o caliente.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de matcha latte">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un matcha latte">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un matcha latte">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$67</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del matcha latte">
+              <button type="button" data-variante data-nombre-variante="Chico" data-precio="67" aria-pressed="true">Chico <b>$67</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="77">Grande <b>$77</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Pan dulce del día" data-precio="">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Pan dulce del día</h3>
+                <p class="carrito-item-desc">Conchas, orejas, cuernitos y piezas de temporada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de pan dulce">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un pan dulce">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un pan dulce">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>Precio del día</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chilaquiles verdes" data-precio="">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquiles verdes</h3>
+                <p class="carrito-item-desc">Con queso fresco; la cocina los escribe cada día.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles verdes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles verdes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles verdes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>Precio del día</span>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="th-detalle">Cuéntanos más</label>
-          <textarea id="th-detalle" name="detalle" data-campo data-label="Detalle" required placeholder="Ej. dos flat white, cuatro conchas y una oreja; o el taller de la semana."></textarea>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="th-modo">Cómo lo quieres</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="th-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Para llevar</button>
+              <button type="button" data-modo-opcion>Mesa</button>
+              <button type="button" data-modo-opcion>Vitrina del día</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="th-cuando">¿Para cuándo?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="th-cuando" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Hoy, lo antes posible</button>
+              <button type="button" data-hora-opcion>Hoy, más tarde</button>
+              <button type="button" data-hora-opcion>Mañana</button>
+              <button type="button" data-hora-opcion>Esta semana</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="th-extra">También me interesa</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="th-extra" data-grupo="También">
+              <button type="button" data-opcion aria-pressed="true">Solo el pedido</button>
+              <button type="button" data-opcion>Un taller</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="th-cuando">Para cuándo <span aria-hidden="true">· opcional</span></label>
-          <input id="th-cuando" name="cuando" data-campo data-label="Cuándo" placeholder="Hoy en la tarde, el sábado, etc.">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. El pedido, la mesa o el lugar del taller se confirman en el chat.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. Tahara confirma disponibilidad, precio del día y talleres en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525573032487">WhatsApp 55 7303 2487</a> · <a href="tel:+525573032487">Llamar</a></p>
     </div>
   </div>

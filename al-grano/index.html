@@ -198,6 +198,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -441,36 +442,168 @@
     </div>
 
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="52555866556" data-cafe="Al Grano" data-asunto="un pedido para llevar" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-form-intro">Se abre WhatsApp con el pedido escrito; solo das enviar.</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="ag-nombre">Tu nombre</label>
-          <input id="ag-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="52555866556" data-cafe="Al Grano" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu pedido</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="ag-pedido">Qué vas a pedir</label>
-          <textarea id="ag-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. dos chilaquiles con huevo, un café de olla y una limonada."></textarea>
+        <p class="carrito-intro">Toca + en lo que se te antoje y el total se arma solo. Al final se abre WhatsApp con tu comanda escrita.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Chilaquiles" data-precio="88">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquiles</h3>
+                <p class="carrito-item-desc">Verdes o rojos, con la proteína que elijas.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un pedido de chilaquiles">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un pedido de chilaquiles">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$88</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Proteína de los chilaquiles">
+              <button type="button" data-variante data-nombre-variante="Sencillos" data-precio="88" aria-pressed="true">Sencillos <b>$88</b></button>
+              <button type="button" data-variante data-nombre-variante="Con huevo" data-precio="118">Con huevo <b>$118</b></button>
+              <button type="button" data-variante data-nombre-variante="Con chorizo" data-precio="118">Con chorizo <b>$118</b></button>
+              <button type="button" data-variante data-nombre-variante="Con cochinita" data-precio="148">Cochinita <b>$148</b></button>
+              <button type="button" data-variante data-nombre-variante="Con pechuga" data-precio="158">Pechuga <b>$158</b></button>
+              <button type="button" data-variante data-nombre-variante="Con arrachera" data-precio="188">Arrachera <b>$188</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chilaquilocas" data-precio="85">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquilocas</h3>
+                <p class="carrito-item-desc">La mezcla de la casa, con café de olla incluido.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquilocas">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un pedido de chilaquilocas">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un pedido de chilaquilocas">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$85</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de las chilaquilocas">
+              <button type="button" data-variante data-nombre-variante="Sencillas" data-precio="85" aria-pressed="true">Sencillas <b>$85</b></button>
+              <button type="button" data-variante data-nombre-variante="Con chorizo" data-precio="108">Chorizo <b>$108</b></button>
+              <button type="button" data-variante data-nombre-variante="Con bistec" data-precio="128">Bistec <b>$128</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Omelette cuatro quesos" data-precio="168">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Omelette cuatro quesos</h3>
+                <p class="carrito-item-desc">Con pan y ensalada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de omelette cuatro quesos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un omelette cuatro quesos">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un omelette cuatro quesos">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$168</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Pan francés" data-precio="132">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Pan francés</h3>
+                <p class="carrito-item-desc">Con fruta de la temporada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de pan francés">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un pan francés">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un pan francés">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$132</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Café de olla" data-precio="35">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Café de olla</h3>
+                <p class="carrito-item-desc">Con canela y piloncillo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de café de olla">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un café de olla">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un café de olla">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$35</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Jugo de naranja" data-precio="48">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Jugo de naranja</h3>
+                <p class="carrito-item-desc">Recién exprimido.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de jugo de naranja">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un jugo de naranja">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un jugo de naranja">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$48</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del jugo de naranja">
+              <button type="button" data-variante data-nombre-variante="500 ml" data-precio="48" aria-pressed="true">500 ml <b>$48</b></button>
+              <button type="button" data-variante data-nombre-variante="1 litro" data-precio="88">1 L <b>$88</b></button>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="ag-cuando">¿Para cuándo?</label>
-          <select id="ag-cuando" name="cuando" data-campo data-label="Hora" required>
-            <option value="">Elige una opción</option>
-            <option>Lo antes posible</option>
-            <option>En 20 a 30 minutos</option>
-            <option>En una hora</option>
-            <option>Para más tarde; lo acordamos</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="ag-modo">Cómo lo quieres</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="ag-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Para llevar</button>
+              <button type="button" data-modo-opcion>Terraza</button>
+              <button type="button" data-modo-opcion>Oficina</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="ag-hora">¿Para cuándo?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="ag-hora" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Lo antes posible</button>
+              <button type="button" data-hora-opcion>20–30 min</button>
+              <button type="button" data-hora-opcion>En una hora</button>
+              <button type="button" data-hora-opcion>Más tarde</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="ag-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="ag-nota" name="nota" data-campo data-label="Nota" placeholder="Sin cebolla, para oficina, etc.">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada aquí. El café confirma disponibilidad, total y horario por WhatsApp.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada aquí. El café confirma disponibilidad, total y horario por WhatsApp.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/52555866556" target="_blank" rel="noopener">WhatsApp 55 5586 6556</a> · <a href="tel:+52555866556">Llamar</a></p>
     </div>
   </div>

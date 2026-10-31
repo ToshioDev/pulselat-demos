@@ -241,6 +241,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -329,7 +330,7 @@
         <div class="pista-cancion"><span class="n">01</span><span class="t">Espresso<small>Doble shot de la casa</small></span><span class="p precio">$30</span></div>
         <div class="pista-cancion"><span class="n">02</span><span class="t">Espresso doble<small>El doble, sin rodeos</small></span><span class="p precio">$35</span></div>
         <div class="pista-cancion"><span class="n">03</span><span class="t">Americano<small>Espresso alargado con agua caliente</small></span><span class="p precio">$40</span></div>
-        <div class="pista-cancion"><span class="n">04</span><span class="t">Latte / Capuccino<small>Leche vaporizada; con sabor, $65</small></span><span class="p precio">$55</span></div>
+        <div class="pista-cancion"><span class="n">04</span><span class="t">Latte / Capuccino<small>Leche vaporizada; el capuccino con sabor, $65</small></span><span class="p precio">$55</span></div>
         <div class="pista-cancion"><span class="n">05</span><span class="t">Chocolate con leche<small>Para los que vienen por lo dulce</small></span><span class="p precio">$50</span></div>
         <div class="pista-cancion"><span class="n">06</span><span class="t">Té Chai Latte<small>Sucio, con espresso, $85</small></span><span class="p precio">$75</span></div>
       </div>
@@ -352,7 +353,7 @@
         <div class="pista-cancion"><span class="n">18</span><span class="t">Waffle<small>Lechera, Nutella o miel</small></span><span class="p precio">$60</span></div>
       </div>
     </div>
-    <p class="nota">También: té $35, tisana $60, Té Chai $65, refresco $35, Boing $25, agua $7, Monster $45 y cerveza $40. El americano completo —waffle, tocino, huevos, fruta y café— cuesta $150, igual que los ensambles. Del mostrador: flan napolitano $45, pastel individual $75 y pan de dulce $30. Precios de la carta publicada por JAM Coffee.</p>
+    <p class="nota">También: té $35, tisana $60, Té Chai $65, refresco $35, Boing $25, agua $7, Monster $45 y cerveza $40. El americano completo —waffle, tocino, huevos, fruta y café— cuesta $150, igual que los ensambles, y el bagel $80. Del mostrador: flan napolitano $45, pastel individual $75, roll $50, pan de dulce $30 y miniatura $15. Precios de la carta publicada por JAM Coffee.</p>
   </div>
 </div></section>
 
@@ -378,44 +379,224 @@
       <p class="venta-nota">Trova los sábados desde el mediodía; la cartelera cambia cada mes y se publica en <a href="https://www.instagram.com/jamcoffee.26/" target="_blank" rel="noopener">@jamcoffee.26</a>. La barra cierra a las 10 p.m. Los precios son los de la carta vigente de JAM Coffee.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="525663630016" data-cafe="JAM Coffee" data-asunto="apartar mesa o hacer un pedido" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="jm-nombre">Tu nombre</label>
-          <input id="jm-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="525663630016" data-cafe="JAM Coffee" data-verbo="apartado">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu visita</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="jm-tipo">Qué necesitas</label>
-          <select id="jm-tipo" name="tipo" data-campo data-label="Tipo" required>
-            <option value="">Elige una opción</option>
-            <option>Mesa para la trova</option>
-            <option>Pedido para llevar</option>
-            <option>Información de un evento</option>
-          </select>
+        <p class="carrito-intro">Elige variante y toca +. El total se arma solo y el mensaje sale con tu comanda y tu mesa.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Huevos al gusto" data-precio="100">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Huevos al gusto</h3>
+                <p class="carrito-item-desc">Como los quieras, con la proteína que elijas.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de huevos al gusto">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un plato de huevos">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un plato de huevos">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$100</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Proteína de los huevos">
+              <button type="button" data-variante data-nombre-variante="Al gusto" data-precio="100" aria-pressed="true">Al gusto <b>$100</b></button>
+              <button type="button" data-variante data-nombre-variante="Con jamón" data-precio="120">Jamón <b>$120</b></button>
+              <button type="button" data-variante data-nombre-variante="Con salchicha" data-precio="120">Salchicha <b>$120</b></button>
+              <button type="button" data-variante data-nombre-variante="Con tocino" data-precio="120">Tocino <b>$120</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chilaquiles" data-precio="100">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquiles</h3>
+                <p class="carrito-item-desc">Verdes o rojos, con la proteína que elijas.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$100</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Proteína de los chilaquiles">
+              <button type="button" data-variante data-nombre-variante="Sencillos" data-precio="100" aria-pressed="true">Sencillos <b>$100</b></button>
+              <button type="button" data-variante data-nombre-variante="Con 2 huevos" data-precio="115">2 huevos <b>$115</b></button>
+              <button type="button" data-variante data-nombre-variante="Con pollo" data-precio="125">Pollo <b>$125</b></button>
+              <button type="button" data-variante data-nombre-variante="Con bistec" data-precio="140">Bistec <b>$140</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="90">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">3 piezas de jamón, salchicha o tocino.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$90</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Proteína de los molletes">
+              <button type="button" data-variante data-nombre-variante="Con jamón" data-precio="90" aria-pressed="true">Jamón <b>$90</b></button>
+              <button type="button" data-variante data-nombre-variante="Con salchicha" data-precio="90">Salchicha <b>$90</b></button>
+              <button type="button" data-variante data-nombre-variante="Con tocino" data-precio="90">Tocino <b>$90</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Ensalada" data-precio="90">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Ensalada</h3>
+                <p class="carrito-item-desc">Fresca, para acompañar o comer sola.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de ensaladas">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar una ensalada">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir una ensalada">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$90</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de la ensalada">
+              <button type="button" data-variante data-nombre-variante="Sencilla" data-precio="90" aria-pressed="true">Sencilla <b>$90</b></button>
+              <button type="button" data-variante data-nombre-variante="Combinada" data-precio="100">Combinada <b>$100</b></button>
+              <button type="button" data-variante data-nombre-variante="Con atún" data-precio="110">Atún <b>$110</b></button>
+              <button type="button" data-variante data-nombre-variante="Con pollo" data-precio="110">Pollo <b>$110</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Latte o capuccino" data-precio="55">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Latte o capuccino</h3>
+                <p class="carrito-item-desc">De barra, con leche vaporizada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de latte o capuccino">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un latte o capuccino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un latte o capuccino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$55</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Sabor del latte o capuccino">
+              <button type="button" data-variante data-nombre-variante="Clásico" data-precio="55" aria-pressed="true">Clásico <b>$55</b></button>
+              <button type="button" data-variante data-nombre-variante="Capuccino con sabor" data-precio="65">Capuccino con sabor <b>$65</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Cold Brew" data-precio="50">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Cold Brew</h3>
+                <p class="carrito-item-desc">Extracción en frío; elige cómo lo tomas.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de cold brew">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un cold brew">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un cold brew">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$50</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación del cold brew">
+              <button type="button" data-variante data-nombre-variante="Natural" data-precio="50" aria-pressed="true">Natural <b>$50</b></button>
+              <button type="button" data-variante data-nombre-variante="Latte" data-precio="55">Latte <b>$55</b></button>
+              <button type="button" data-variante data-nombre-variante="Con sabor" data-precio="65">Con sabor <b>$65</b></button>
+              <button type="button" data-variante data-nombre-variante="Tónic" data-precio="65">Tónic <b>$65</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Waffle" data-precio="60">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Waffle</h3>
+                <p class="carrito-item-desc">Lechera, Nutella o miel.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de waffles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un waffle">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un waffle">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$60</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Topping del waffle">
+              <button type="button" data-variante data-nombre-variante="Con lechera" data-precio="60" aria-pressed="true">Lechera <b>$60</b></button>
+              <button type="button" data-variante data-nombre-variante="Con Nutella" data-precio="60">Nutella <b>$60</b></button>
+              <button type="button" data-variante data-nombre-variante="Con miel" data-precio="60">Miel <b>$60</b></button>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="jm-personas">Para cuántas personas</label>
-          <select id="jm-personas" name="personas" data-campo data-label="Personas" required>
-            <option value="">Elige cuántos son</option>
-            <option>1 a 2</option>
-            <option>3 a 4</option>
-            <option>5 a 8</option>
-            <option>Más de 8</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="jm-modo">Dónde te acomodas</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="jm-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Barra</button>
+              <button type="button" data-modo-opcion>Mesa</button>
+              <button type="button" data-modo-opcion>Terraza</button>
+              <button type="button" data-modo-opcion>Para llevar</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="jm-cuando">¿Cuándo vienes?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="jm-cuando" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Ahora</button>
+              <button type="button" data-hora-opcion>20–30 min</button>
+              <button type="button" data-hora-opcion>En una hora</button>
+              <button type="button" data-hora-opcion>Para la trova</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="jm-personas">Cuántos son</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="jm-personas" data-grupo="Personas">
+              <button type="button" data-opcion aria-pressed="true">1 a 2</button>
+              <button type="button" data-opcion>3 a 4</button>
+              <button type="button" data-opcion>5 a 8</button>
+              <button type="button" data-opcion>Más de 8</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="jm-extra">La ocasión</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="jm-extra" data-grupo="Ocasión">
+              <button type="button" data-opcion aria-pressed="true">Solo venir</button>
+              <button type="button" data-opcion>Trova del sábado</button>
+              <button type="button" data-opcion>Cumpleaños</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="jm-cuando">Día y hora</label>
-          <input id="jm-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. sábado a la 1 pm">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar visita</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <div class="campo">
-          <label for="jm-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="jm-nota" name="nota" data-campo data-label="Nota" placeholder="Junto al escenario, cumpleaños, etc.">
-        </div>
-        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar apartado por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. JAM confirma mesa, pedido y cartelera en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525663630016">WhatsApp 56 6363 0016</a> · <a href="tel:+525663630016">Llamar</a></p>
     </div>
   </div>

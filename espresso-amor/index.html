@@ -298,6 +298,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -450,44 +451,135 @@
       <p class="venta-nota">Hay mesas adentro y afuera; los precios y lo del día se confirman en la barra. Para grupos conviene avisar con tiempo, sobre todo al atardecer.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="525519287031" data-cafe="Espresso Amor" data-asunto="apartar espacio en la terraza o hacer un pedido" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="ea-nombre">Tu nombre</label>
-          <input id="ea-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="525519287031" data-cafe="Espresso Amor" data-verbo="apartado">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu visita</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="ea-tipo">Qué necesitas</label>
-          <select id="ea-tipo" name="tipo" data-campo data-label="Tipo" required>
-            <option value="">Elige una opción</option>
-            <option>Mesa en la terraza</option>
-            <option>Pedido para llevar</option>
-            <option>Mesa y pedido</option>
-          </select>
+        <p class="carrito-intro">Suma lo que quieres, elige mesa y hora, y el mensaje se arma solo. Los precios se confirman en la barra.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Espresso" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Espresso</h3>
+                <p class="carrito-item-desc">Solo, cortado o doble.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de espresso">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un espresso">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un espresso">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación del espresso">
+              <button type="button" data-variante data-nombre-variante="Solo" data-precio="" aria-pressed="true">Solo</button>
+              <button type="button" data-variante data-nombre-variante="Cortado" data-precio="">Cortado</button>
+              <button type="button" data-variante data-nombre-variante="Doble" data-precio="">Doble</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">Frijoles, queso y pico de gallo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Sándwich de pollo" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Sándwich de pollo</h3>
+                <p class="carrito-item-desc">Con queso manchego u Oaxaca.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de sándwich de pollo">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un sándwich de pollo">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un sándwich de pollo">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Queso del sándwich">
+              <button type="button" data-variante data-nombre-variante="Con manchego" data-precio="" aria-pressed="true">Manchego</button>
+              <button type="button" data-variante data-nombre-variante="Con queso Oaxaca" data-precio="">Oaxaca</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Pieza del día" data-precio="" data-precio-texto="En barra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Pieza del día</h3>
+                <p class="carrito-item-desc">Pregunta qué salió del horno.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de piezas del día">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar una pieza del día">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir una pieza del día">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En barra</span>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="ea-personas">Para cuántas personas</label>
-          <select id="ea-personas" name="personas" data-campo data-label="Personas" required>
-            <option value="">Elige cuántos son</option>
-            <option>1 a 2</option>
-            <option>3 a 4</option>
-            <option>5 a 8</option>
-            <option>Más de 8</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="ea-modo">Dónde te acomodas</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="ea-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Terraza</button>
+              <button type="button" data-modo-opcion>Adentro</button>
+              <button type="button" data-modo-opcion>Para llevar</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="ea-cuando">¿Cuándo vienes?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="ea-cuando" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Hoy, 6 pm</button>
+              <button type="button" data-hora-opcion>Hoy, 8 pm</button>
+              <button type="button" data-hora-opcion>Mañana</button>
+              <button type="button" data-hora-opcion>Otro día</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="ea-personas">Cuántos son</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="ea-personas" data-grupo="Personas">
+              <button type="button" data-opcion aria-pressed="true">1 a 2</button>
+              <button type="button" data-opcion>3 a 4</button>
+              <button type="button" data-opcion>5 a 8</button>
+              <button type="button" data-opcion>Más de 8</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="ea-cuando">Día y hora</label>
-          <input id="ea-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. hoy a las 7 pm">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar visita</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <div class="campo">
-          <label for="ea-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="ea-nota" name="nota" data-campo data-label="Nota" placeholder="Con perro, cumpleaños, etc.">
-        </div>
-        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar apartado por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. La barra confirma espacio, disponibilidad y precios en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525519287031">WhatsApp 55 1928 7031</a> · <a href="tel:+525519287031">Llamar</a></p>
     </div>
   </div>

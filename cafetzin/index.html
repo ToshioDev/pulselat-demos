@@ -260,6 +260,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -407,44 +408,169 @@
       <p class="venta-nota">Los precios vienen de la app de reparto y en la barra pueden cambiar. También hay omelettes, croissants salados, bebidas frías y postres; el reparto corre por Uber Eats.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="527971301245" data-cafe="Cafetzin" data-asunto="apartar una mesa o hacer un pedido" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="cz-nombre">Tu nombre</label>
-          <input id="cz-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="527971301245" data-cafe="Cafetzin" data-verbo="apartado">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu visita</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="cz-tipo">Qué necesitas</label>
-          <select id="cz-tipo" name="tipo" data-campo data-label="Tipo" required>
-            <option value="">Elige una opción</option>
-            <option>Mesa para grupo</option>
-            <option>Pedido para llevar</option>
-            <option>Mesa y pedido</option>
-          </select>
+        <p class="carrito-intro">Suma lo que quieres comer, elige mesa y hora, y el mensaje se arma solo. La barra confirma por WhatsApp.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Chilaquiles verdes" data-precio="102">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaquiles verdes</h3>
+                <p class="carrito-item-desc">Con crema, queso y cebolla.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles verdes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles verdes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles verdes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$102</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chilaqueso" data-precio="129">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chilaqueso</h3>
+                <p class="carrito-item-desc">La versión con queso gratinado.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaqueso">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un chilaqueso">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un chilaqueso">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$129</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Chapata" data-precio="129">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Chapata</h3>
+                <p class="carrito-item-desc">Elige la preparación que se te antoje.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de chapatas">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar una chapata">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir una chapata">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$129</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de la chapata">
+              <button type="button" data-variante data-nombre-variante="Tradicional" data-precio="129" aria-pressed="true">Tradicional <b>$129</b></button>
+              <button type="button" data-variante data-nombre-variante="Norteño" data-precio="129">Norteño <b>$129</b></button>
+              <button type="button" data-variante data-nombre-variante="Tzoalli" data-precio="130">Tzoalli <b>$130</b></button>
+              <button type="button" data-variante data-nombre-variante="Queso de cabra" data-precio="137">Queso de cabra <b>$137</b></button>
+              <button type="button" data-variante data-nombre-variante="Mediterráneo" data-precio="150">Mediterráneo <b>$150</b></button>
+              <button type="button" data-variante data-nombre-variante="Bravo" data-precio="150">Bravo <b>$150</b></button>
+              <button type="button" data-variante data-nombre-variante="Oliva" data-precio="195">Oliva <b>$195</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="98">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">Cuatro piezas con frijoles, queso y pico de gallo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$98</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Lavanda latte" data-precio="93">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Lavanda latte</h3>
+                <p class="carrito-item-desc">La bebida de la casa, fría o caliente.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de lavanda latte">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un lavanda latte">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un lavanda latte">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$93</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Waffles" data-precio="86">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Waffles</h3>
+                <p class="carrito-item-desc">Para cerrar la visita.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de waffles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un waffle">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un waffle">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$86</span>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="cz-personas">Para cuántas personas</label>
-          <select id="cz-personas" name="personas" data-campo data-label="Personas" required>
-            <option value="">Elige cuántos son</option>
-            <option>1 a 2</option>
-            <option>3 a 4</option>
-            <option>5 a 8</option>
-            <option>Más de 8</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cz-modo">Mesa o para llevar</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cz-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Mesa para 2</button>
+              <button type="button" data-modo-opcion>Mesa para 4</button>
+              <button type="button" data-modo-opcion>Mesa para 6+</button>
+              <button type="button" data-modo-opcion>Para llevar</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cz-cuando">¿Cuándo vienes?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cz-cuando" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Hoy, 6 pm</button>
+              <button type="button" data-hora-opcion>Hoy, 8 pm</button>
+              <button type="button" data-hora-opcion>Mañana</button>
+              <button type="button" data-hora-opcion>Otro día</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cz-extra">La ocasión</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cz-extra" data-grupo="Ocasión">
+              <button type="button" data-opcion aria-pressed="true">Solo venir</button>
+              <button type="button" data-opcion>Cumpleaños</button>
+              <button type="button" data-opcion>Grupo grande</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="cz-cuando">Día y hora</label>
-          <input id="cz-cuando" name="cuando" data-campo data-label="Día y hora" required placeholder="Ej. viernes a las 8 pm">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar visita</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <div class="campo">
-          <label for="cz-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="cz-nota" name="nota" data-campo data-label="Nota" placeholder="Cumpleaños, mesa afuera, etc.">
-        </div>
-        <button class="venta-btn" type="submit">Enviar por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. La mesa o el pedido se confirman en el chat.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar apartado por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. Cafetzin confirma mesa, pedido y horario en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/527971301245">WhatsApp 797 130 1245</a> · <a href="tel:+527971301245">Llamar</a></p>
     </div>
   </div>

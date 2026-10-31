@@ -255,6 +255,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -477,35 +478,161 @@
       <p class="venta-nota">Lunes a viernes de 7:50 a 19:00; sábado de 8:00 a 16:00. Los combos completos también van para llevar y el pan depende de la hornada del día.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="525582313313" data-cafe="Vistalinda" data-asunto="un pedido para llevar" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="vl-nombre">Tu nombre</label>
-          <input id="vl-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="525582313313" data-cafe="Vistalinda" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu pedido</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="vl-pedido">Qué vas a pedir</label>
-          <textarea id="vl-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. un combo Lindavista, dos molletes y un capuccino grande."></textarea>
+        <p class="carrito-intro">Toca + en lo que se te antoje y el total se arma solo. Al final se abre WhatsApp con tu comanda escrita.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Combo Lindavista" data-precio="99">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Combo Lindavista</h3>
+                <p class="carrito-item-desc">Croissant de mantequilla y capuccino chico.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de combo Lindavista">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un combo Lindavista">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un combo Lindavista">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$99</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="100">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">Con café americano chico incluido.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$100</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Sándwich de pollo" data-precio="120">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Sándwich de pollo</h3>
+                <p class="carrito-item-desc">En pan de la casa, con ensalada.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de sándwich de pollo">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un sándwich de pollo">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un sándwich de pollo">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$120</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Capuccino" data-precio="55">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Capuccino</h3>
+                <p class="carrito-item-desc">Clásico o con sabor de la casa.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de capuccino">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un capuccino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un capuccino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$55</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño y sabor del capuccino">
+              <button type="button" data-variante data-nombre-variante="Chico, clásico" data-precio="55" aria-pressed="true">Chico <b>$55</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande, clásico" data-precio="60">Grande <b>$60</b></button>
+              <button type="button" data-variante data-nombre-variante="Chico, con sabor" data-precio="59">Chico con sabor <b>$59</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande, con sabor" data-precio="65">Grande con sabor <b>$65</b></button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Waffle" data-precio="75">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Waffle</h3>
+                <p class="carrito-item-desc">Con fruta y lechera.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de waffles">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un waffle">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un waffle">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$75</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Frappé" data-precio="70">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Frappé</h3>
+                <p class="carrito-item-desc">Frío, espeso y con crema.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de frappés">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un frappé">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un frappé">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$70</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del frappé">
+              <button type="button" data-variante data-nombre-variante="Regular" data-precio="70" aria-pressed="true">Regular <b>$70</b></button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="75">Grande <b>$75</b></button>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="vl-cuando">¿A qué hora pasas?</label>
-          <select id="vl-cuando" name="cuando" data-campo data-label="Hora" required>
-            <option value="">Elige un horario</option>
-            <option>Lo antes posible</option>
-            <option>En la mañana, antes de las 12</option>
-            <option>Al mediodía</option>
-            <option>Por la tarde</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="vl-modo">Cómo lo quieres</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="vl-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Para llevar</button>
+              <button type="button" data-modo-opcion>Mesa de afuera</button>
+              <button type="button" data-modo-opcion>Oficina</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="vl-hora">¿A qué hora pasas?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="vl-hora" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Lo antes posible</button>
+              <button type="button" data-hora-opcion>En la mañana</button>
+              <button type="button" data-hora-opcion>Al mediodía</button>
+              <button type="button" data-hora-opcion>Por la tarde</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="vl-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="vl-nota" name="nota" data-campo data-label="Nota" placeholder="Sin azúcar, para oficina, etc.">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. El pedido se confirma en el chat y se paga al recogerlo.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. El pedido se confirma en el chat y se paga al recogerlo.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525582313313">WhatsApp 55 8231 3313</a> · <a href="tel:+525582313313">Llamar</a></p>
     </div>
   </div>

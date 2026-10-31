@@ -242,6 +242,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -360,47 +361,137 @@
       <figcaption>Malteada de la casa · $85</figcaption>
     </figure>
   </div>
-  <form class="venta-form venta-form--suelto" data-venta data-wa="528338035302" data-cafe="K-fé Snacks" data-asunto="un pedido con entrega o para recoger" novalidate>
-    <p class="venta-form-titulo">Arma tu pedido</p>
-    <p class="venta-error" role="alert" hidden></p>
-    <div class="campo">
-      <label for="kf-nombre">Tu nombre</label>
-      <input id="kf-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+  <div class="carrito carrito--suelto" data-carrito data-wa="528338035302" data-cafe="K-fé Snacks" data-verbo="pedido">
+    <div class="carrito-cabeza">
+      <p class="carrito-titulo">Arma tu pedido</p>
+      <span class="carrito-comanda">Comanda</span>
     </div>
-    <div class="campo">
-      <label for="kf-pedido">Qué vas a pedir</label>
-      <textarea id="kf-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. dos crepas dulces, un capuchino y una malteada."></textarea>
+    <p class="carrito-intro">Toca + en lo que se te antoje y el total se arma solo. El mensaje sale con tu comanda, entrega o recojo y la hora.</p>
+    <div class="carrito-lista">
+      <article class="carrito-item" data-item data-nombre="Crepas dulces" data-precio="65">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Crepas dulces</h3>
+            <p class="carrito-item-desc">Con el dulce de la casa.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de crepas dulces">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas crepas dulces">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas crepas dulces">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$65</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Crepas saladas" data-precio="60">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Crepas saladas</h3>
+            <p class="carrito-item-desc">Con queso y lo que pidas de la barra.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de crepas saladas">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas crepas saladas">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas crepas saladas">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$60</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Mini hotcakes" data-precio="60">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Mini hotcakes</h3>
+            <p class="carrito-item-desc">Para compartir o para ti solo.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de mini hotcakes">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos mini hotcakes">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos mini hotcakes">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$60</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Chilaquiles" data-precio="85">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Chilaquiles</h3>
+            <p class="carrito-item-desc">Con crema, queso y cebolla.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$85</span>
+          </div>
+        </div>
+        <div class="carrito-variantes" role="group" aria-label="Proteína de los chilaquiles">
+          <button type="button" data-variante data-nombre-variante="Con pollo" data-precio="85" aria-pressed="true">Pollo <b>$85</b></button>
+          <button type="button" data-variante data-nombre-variante="Con bistec" data-precio="100">Bistec <b>$100</b></button>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Malteada" data-precio="85">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Malteada</h3>
+            <p class="carrito-item-desc">La de la casa, con crema batida.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de malteadas">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar una malteada">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir una malteada">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$85</span>
+          </div>
+        </div>
+      </article>
     </div>
-    <div class="campo">
-      <label for="kf-modo">Entrega o recoger</label>
-      <select id="kf-modo" name="modo" data-campo data-label="Entrega" required>
-        <option value="">Elige una opción</option>
-        <option>Entrega a domicilio</option>
-        <option>Recojo en el local</option>
-      </select>
+
+    <div class="carrito-chips">
+      <div class="carrito-grupo">
+        <p class="carrito-etiqueta" id="kf-modo">Entrega o recojo</p>
+        <div class="carrito-chips-fila" role="group" aria-labelledby="kf-modo" data-modo>
+          <button type="button" data-modo-opcion aria-pressed="true">Recojo en el local</button>
+          <button type="button" data-modo-opcion>Entrega a domicilio</button>
+        </div>
+      </div>
+      <div class="carrito-grupo">
+        <p class="carrito-etiqueta" id="kf-cuando">¿Para cuándo?</p>
+        <div class="carrito-chips-fila" role="group" aria-labelledby="kf-cuando" data-hora>
+          <button type="button" data-hora-opcion aria-pressed="true">Lo antes posible</button>
+          <button type="button" data-hora-opcion>En la mañana</button>
+          <button type="button" data-hora-opcion>Al mediodía</button>
+          <button type="button" data-hora-opcion>Tarde o noche</button>
+        </div>
+      </div>
     </div>
-    <div class="campo">
-      <label for="kf-direccion">Colonia y dirección <span aria-hidden="true">· solo para entrega</span></label>
-      <input id="kf-direccion" name="direccion" data-campo data-label="Dirección" placeholder="Colonia, calle y número">
+
+    <div class="carrito-resumen" role="status" aria-live="polite">
+      <div>
+        <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+        <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+      </div>
+      <div class="carrito-resumen-total">
+        <span class="carrito-etiqueta">Total</span>
+        <b class="carrito-total" data-total>$0</b>
+      </div>
     </div>
-    <div class="campo">
-      <label for="kf-cuando">¿Para cuándo?</label>
-      <select id="kf-cuando" name="cuando" data-campo data-label="Hora" required>
-        <option value="">Elige un horario</option>
-        <option>Lo antes posible</option>
-        <option>En la mañana</option>
-        <option>Al mediodía</option>
-        <option>Por la tarde o noche</option>
-      </select>
-    </div>
-    <div class="campo">
-      <label for="kf-nota">Nota <span aria-hidden="true">· opcional</span></label>
-      <input id="kf-nota" name="nota" data-campo data-label="Nota" placeholder="Sin crema, para oficina, etc.">
-    </div>
-    <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
-    <p class="venta-legal">No se cobra nada en esta página. El costo de entrega y el total se confirman en el chat.</p>
-    <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-  </form>
+
+    <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+    <p class="carrito-legal">No se cobra nada aquí. El costo de entrega, la dirección y el total se confirman en el chat.</p>
+    <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+  </div>
 </div></section>
 
 <section id="local" data-anim><div class="wrap">

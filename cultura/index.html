@@ -285,6 +285,7 @@
 <link rel="stylesheet" href="../assets/motion.css">
 <link rel="stylesheet" href="../assets/antislop.css">
 <link rel="stylesheet" href="../assets/venta.css">
+<link rel="stylesheet" href="../assets/pedido.css">
 </head>
 <body>
 
@@ -443,35 +444,180 @@
       <p class="venta-nota">Los precios viven en la pizarra del local y cambian con el menú del día. Si vienes en grupo, avísanos: el local es pequeño y conviene guardar la mesa.</p>
     </div>
     <div class="venta-caja">
-      <form class="venta-form" data-venta data-wa="525590370545" data-cafe="Cultura" data-asunto="un pedido para llevar" novalidate>
-        <p class="venta-form-titulo">Arma tu mensaje</p>
-        <p class="venta-error" role="alert" hidden></p>
-        <div class="campo">
-          <label for="cu-nombre">Tu nombre</label>
-          <input id="cu-nombre" name="nombre" data-campo autocomplete="name" required placeholder="Cómo te llamas">
+      <div class="carrito" data-carrito data-wa="525590370545" data-cafe="Cultura" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Arma tu pedido</p>
+          <span class="carrito-comanda">Comanda</span>
         </div>
-        <div class="campo">
-          <label for="cu-pedido">Qué vas a pedir</label>
-          <textarea id="cu-pedido" name="pedido" data-campo data-label="Pedido" required placeholder="Ej. dos molletes tradicionales, un capuchino y una naranjada."></textarea>
+        <p class="carrito-intro">Elige de la pizarra y toca +. La barra contesta con lo que hay hoy y el precio antes de prepararlo.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Molletes tradicionales" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes tradicionales</h3>
+                <p class="carrito-item-desc">Frijoles, queso y pico de gallo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes tradicionales">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes tradicionales">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes tradicionales">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes especiales" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes especiales</h3>
+                <p class="carrito-item-desc">La versión de la casa, con lo que haya hoy.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de molletes especiales">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos molletes especiales">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos molletes especiales">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Sincronizadas" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Sincronizadas</h3>
+                <p class="carrito-item-desc">Para empezar o para compartir.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de sincronizadas">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas sincronizadas">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas sincronizadas">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Sándwich de jamón serrano" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Sándwich de jamón serrano</h3>
+                <p class="carrito-item-desc">De la carta, en pan de la casa.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de sándwiches de jamón serrano">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un sándwich de jamón serrano">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un sándwich de jamón serrano">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Crepas dulces" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Crepas dulces</h3>
+                <p class="carrito-item-desc">El cierre dulce de la pizarra.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de crepas dulces">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas crepas dulces">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas crepas dulces">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Capuchino" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Capuchino</h3>
+                <p class="carrito-item-desc">De la barra, caliente.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de capuchinos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un capuchino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un capuchino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Naranjada" data-precio="" data-precio-texto="En pizarra">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Naranjada</h3>
+                <p class="carrito-item-desc">Fresca, natural o mineral.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de naranjadas">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar una naranjada">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir una naranjada">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>En pizarra</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Preparación de la naranjada">
+              <button type="button" data-variante data-nombre-variante="Natural" data-precio="" data-precio-texto="En pizarra" aria-pressed="true">Natural</button>
+              <button type="button" data-variante data-nombre-variante="Mineral" data-precio="" data-precio-texto="En pizarra">Mineral</button>
+            </div>
+          </article>
         </div>
-        <div class="campo">
-          <label for="cu-cuando">¿A qué hora pasas?</label>
-          <select id="cu-cuando" name="cuando" data-campo data-label="Hora" required>
-            <option value="">Elige un horario</option>
-            <option>Lo antes posible</option>
-            <option>En la mañana</option>
-            <option>Al mediodía</option>
-            <option>Por la tarde</option>
-          </select>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cu-modo">Cómo lo quieres</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cu-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Para llevar</button>
+              <button type="button" data-modo-opcion>Mesa</button>
+              <button type="button" data-modo-opcion>Oficina</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cu-cuando">¿A qué hora pasas?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cu-cuando" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Lo antes posible</button>
+              <button type="button" data-hora-opcion>En la mañana</button>
+              <button type="button" data-hora-opcion>Al mediodía</button>
+              <button type="button" data-hora-opcion>Por la tarde</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="cu-personas">Cuántos son</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="cu-personas" data-grupo="Personas">
+              <button type="button" data-opcion aria-pressed="true">1 a 2</button>
+              <button type="button" data-opcion>3 a 4</button>
+              <button type="button" data-opcion>5 o más</button>
+            </div>
+          </div>
         </div>
-        <div class="campo">
-          <label for="cu-nota">Nota <span aria-hidden="true">· opcional</span></label>
-          <input id="cu-nota" name="nota" data-campo data-label="Nota" placeholder="Sin cebolla, mesa para grupo, etc.">
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
         </div>
-        <button class="venta-btn" type="submit">Enviar pedido por WhatsApp</button>
-        <p class="venta-legal">No se cobra nada en esta página. El precio del día y el pedido se confirman en el chat.</p>
-        <p class="venta-aviso" role="status" aria-live="polite" hidden></p>
-      </form>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. Cultura confirma el precio del día y el horario en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
       <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525590370545">WhatsApp 55 9037 0545</a> · <a href="tel:+525590370545">Llamar</a></p>
     </div>
   </div>
