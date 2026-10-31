@@ -54,7 +54,7 @@
   nav{position:fixed;inset:0 0 auto;z-index:30;padding:14px 0;background:rgba(251,245,234,.94);border-bottom:1px solid var(--linea);backdrop-filter:blur(8px)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .marca{display:flex;align-items:center;gap:11px}
-  .marca svg{width:34px;height:34px;color:var(--tinta);flex:none}
+  .marca img{width:40px;height:40px;object-fit:cover;border-radius:50%;flex:none}
   .marca b{font-family:"Fraunces",Georgia,serif;font-size:20px;font-weight:500;line-height:.9;letter-spacing:-.01em}
   .marca b em{font-family:"Parisienne",cursive;font-style:normal;font-size:16px;color:var(--cobre);display:block;margin-top:1px}
   .enlaces{display:flex;gap:26px;font-size:13px;color:rgba(20,27,42,.7)}
@@ -66,7 +66,7 @@
     radial-gradient(90% 70% at 85% 0%,rgba(180,150,100,.16),transparent 60%),
     radial-gradient(70% 60% at 0% 100%,rgba(192,125,108,.1),transparent 65%),var(--papel)}
   .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
-  .sello{width:clamp(120px,13vw,168px);height:auto;color:var(--tinta);margin-bottom:26px}
+  .sello{width:clamp(120px,13vw,168px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:26px}
   .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cobre);margin-bottom:16px}
   .eyebrow i{display:block;width:28px;height:1px;background:var(--oro);font-style:normal}
   h1{font-size:clamp(38px,5.4vw,74px);max-width:14ch}
@@ -163,16 +163,6 @@
   .draw.on path:nth-child(4){animation-delay:.22s}
   .draw.on path:nth-child(5){animation-delay:.28s}
   .draw.on path:nth-child(6){animation-delay:.34s}
-  .sello.draw path{animation:dibujar 1.4s cubic-bezier(.3,.7,.2,1) forwards}
-  .sello.draw path:nth-child(2){animation-delay:.08s}
-  .sello.draw path:nth-child(3){animation-delay:.16s}
-  .sello.draw path:nth-child(4){animation-delay:.24s}
-  .sello.draw path:nth-child(5){animation-delay:.3s}
-  .sello.draw path:nth-child(6){animation-delay:.36s}
-  .sello.draw path:nth-child(7){animation-delay:.42s}
-  .sello.draw path:nth-child(8){animation-delay:.48s}
-  .sello.draw path:nth-child(9){animation-delay:.54s}
-  .sello.draw path:nth-child(10){animation-delay:.6s}
   @keyframes dibujar{to{stroke-dashoffset:0}}
   .latido{transform-box:fill-box;transform-origin:center;animation:latido 4.2s ease-in-out infinite}
   @keyframes latido{0%,100%{transform:scale(1)}45%{transform:scale(1.12)}55%{transform:scale(1.06)}}
@@ -236,15 +226,7 @@
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="K-fé Snacks">
-    <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle pathLength="1" cx="60" cy="60" r="55"/>
-      <path pathLength="1" d="M40 58h34v12a13 13 0 0 1-13 13H53a13 13 0 0 1-13-13Z"/>
-      <path pathLength="1" d="M74 62h6a7 7 0 0 1 0 14h-6"/>
-      <path pathLength="1" d="M34 89h46"/>
-      <path pathLength="1" d="M57 46c0-6 8-6 8 0 0 4-8 9-8 9s-8-5-8-9c0-6 8-6 8 0"/>
-      <path pathLength="1" d="M30 44c-5 14-5 28 1 40"/>
-      <path pathLength="1" d="M90 44c5 14 5 28-1 40"/>
-    </svg>
+    <img src="img/logo.png" alt="K-fé Snacks">
     <b>K-fé<em>Snacks</em></b>
   </a>
   <div class="enlaces">
@@ -256,18 +238,7 @@
 <header id="inicio">
   <div class="wrap hero">
     <div>
-      <svg class="sello draw" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Emblema de K-fé Snacks">
-        <circle pathLength="1" cx="60" cy="60" r="55"/>
-        <circle pathLength="1" cx="60" cy="60" r="48" stroke-width=".8" opacity=".55"/>
-        <path pathLength="1" d="M40 58h34v12a13 13 0 0 1-13 13H53a13 13 0 0 1-13-13Z"/>
-        <path pathLength="1" d="M74 62h6a7 7 0 0 1 0 14h-6"/>
-        <path pathLength="1" d="M34 89h46"/>
-        <path class="latido" pathLength="1" d="M57 46c0-6 8-6 8 0 0 4-8 9-8 9s-8-5-8-9c0-6 8-6 8 0"/>
-        <path pathLength="1" d="M30 44c-5 14-5 28 1 40"/>
-        <path pathLength="1" d="M24 52c4-1 7-4 8-8-4 0-7 3-8 8Z"/>
-        <path pathLength="1" d="M90 44c5 14 5 28-1 40"/>
-        <path pathLength="1" d="M96 52c-4-1-7-4-8-8 4 0 7 3 8 8Z"/>
-      </svg>
+      <img class="sello" src="img/logo.png" alt="Emblema de K-fé Snacks">
       <div class="eyebrow"><i></i>Av. Montevideo 525 · San Bartolo</div>
       <h1 class="serif wm"><span class="wm-ln"><span>Momentos <em>dulces,</em></span></span><span class="wm-ln"><span>recuerdos felices.</span></span></h1>
       <p class="lead">Crepas, mini hotcakes y chilaquiles recién hechos; café de barra y malteadas para la tarde. Pedidos por WhatsApp y entrega a domicilio.</p>
@@ -378,9 +349,6 @@
 </div></section>
 
 <section class="cierre"><div class="wrap">
-  <svg class="agua" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <circle cx="60" cy="60" r="55"/><path d="M40 58h34v12a13 13 0 0 1-13 13H53a13 13 0 0 1-13-13Z"/><path d="M57 46c0-6 8-6 8 0 0 4-8 9-8 9s-8-5-8-9c0-6 8-6 8 0"/>
-  </svg>
   <h2 class="serif">Tu lugar favorito<br>te espera.</h2>
   <p>Escríbenos por WhatsApp para pedir, preguntar por los combos del día o apartar tu pedido.</p>
   <div class="acciones">

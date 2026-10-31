@@ -52,9 +52,7 @@
   nav{position:fixed;inset:0 0 auto;z-index:30;padding:16px 0;background:linear-gradient(180deg,rgba(20,16,14,.94),rgba(20,16,14,0))}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:22px}
   .marca{display:flex;align-items:center;gap:12px}
-  .marca svg{width:36px;height:36px;color:var(--neon);flex:none}
-  .marca b{font-family:"Anton",Impact,sans-serif;font-size:20px;font-weight:400;line-height:.8;letter-spacing:.03em;text-transform:uppercase}
-  .marca b em{font-family:"Yellowtail",cursive;font-style:normal;font-size:19px;letter-spacing:0;display:block;color:var(--caramelo);text-transform:none;margin-top:2px}
+  .marca img{height:50px;width:auto;flex:none;border-radius:2px}
   .enlaces{display:flex;gap:26px;font-size:13px;letter-spacing:.02em;color:rgba(238,213,187,.74)}
   .enlaces a:hover{color:var(--neon)}
   .nav-wa{border:1px solid var(--neon);color:var(--neon);padding:9px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
@@ -225,15 +223,7 @@
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="JAM Coffee">
-    <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle pathLength="1" cx="60" cy="60" r="55"/>
-      <path pathLength="1" d="M26 88 60 26l34 62"/>
-      <path pathLength="1" d="M42 70h36"/>
-      <path pathLength="1" d="M82 64c9 0 15 7 12 15-2 6-11 7-14 2-3-4 1-9 6-8 3 1 4 4 3 6"/>
-      <path pathLength="1" d="M44 34c-3-4 0-7 1-10"/>
-      <path pathLength="1" d="M76 34c-3-4 0-7 1-10"/>
-    </svg>
-    <b>JAM<em>coffee</em></b>
+    <img src="img/logo.png" alt="JAM Coffee">
   </a>
   <div class="enlaces">
     <a href="#agenda">En vivo</a><a href="#carta">Set list</a><a href="#sala">La sala</a><a href="#visita">Visítanos</a>

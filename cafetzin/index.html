@@ -61,7 +61,7 @@
   .top{position:sticky;top:0;z-index:20;background:rgba(15,13,14,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
   .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:66px}
   .firma{display:flex;align-items:center;gap:12px;color:var(--neon)}
-  .firma svg{width:32px;height:32px;filter:drop-shadow(0 0 7px rgba(185,198,238,.55))}
+  .firma img{height:38px;width:auto;filter:drop-shadow(0 0 7px rgba(185,198,238,.55))}
   .firma span{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:23px;letter-spacing:.2em;text-transform:uppercase;line-height:1}
   .nav{display:flex;gap:26px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
   .nav a:hover{color:var(--neon)}
@@ -86,7 +86,7 @@
   .letrero::before{left:12px}
   .letrero::after{right:12px}
   .marca-arriba{display:flex;align-items:center;gap:14px;margin-bottom:16px;color:var(--neon)}
-  .marca-arriba svg{width:68px;height:68px;flex:none;filter:drop-shadow(0 0 9px rgba(185,198,238,.5))}
+  .marca-arriba img{height:68px;width:auto;flex:none;filter:drop-shadow(0 0 9px rgba(185,198,238,.5))}
   .marca-arriba div{font-size:10px;letter-spacing:.22em;text-transform:uppercase;line-height:1.7;color:var(--neon-2)}
   .marca-arriba b{display:block;color:var(--neon);font-weight:500}
   h1{font-size:clamp(62px,9.4vw,124px);color:#fff;text-shadow:0 0 4px rgba(255,255,255,.95),0 0 16px rgba(200,214,255,.7),0 0 44px rgba(130,158,255,.45),0 0 94px rgba(255,0,38,.16)}
@@ -228,7 +228,7 @@
     .hero{padding:56px 0 62px;min-height:0}
     .letrero{padding:26px 22px 24px}
     h1{font-size:58px}
-    .marca-arriba svg{width:44px;height:44px}
+    .marca-arriba img{height:44px}
     .acciones .btn{flex:1;justify-content:center}
     .hechos{grid-template-columns:1fr;gap:16px}
     .hecho b{font-size:26px}
@@ -242,20 +242,7 @@
 
 <div class="top"><div class="wrap">
   <a class="firma" href="#barra">
-    <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path pathLength="1" d="M24 52h58a8 8 0 0 1 8 8v26a12 12 0 0 1-12 12H28a12 12 0 0 1-12-12V60a8 8 0 0 1 8-8Z"/>
-      <path pathLength="1" d="M34 52V42h9v-8h9"/>
-      <path pathLength="1" d="M72 52V42h-9v-8h-9"/>
-      <path pathLength="1" d="M57 34V22"/>
-      <path pathLength="1" d="M57 28c-6 0-10-4-10-10 6 0 10 4 10 10Z"/>
-      <path pathLength="1" d="M57 28c6 0 10-4 10-10-6 0-10 4-10 10Z"/>
-      <path pathLength="1" d="M31 66h14M59 66h14"/>
-      <path pathLength="1" d="M31 72c4 3 10 3 14 0M59 72c4 3 10 3 14 0"/>
-      <path pathLength="1" d="M52 58v12M44 74h16l-8 9-8-9Z"/>
-      <path pathLength="1" d="M20 92h64"/>
-      <path pathLength="1" d="M26 92c4 7 10 7 14 0 4 7 10 7 14 0 4 7 10 7 14 0 4 7 8 6 12 0"/>
-      <path pathLength="1" d="M90 62c8 0 13 5 13 12s-5 10-10 10-9-4-9-8 3-7 7-7 6 3 6 6"/>
-    </svg>
+    <img src="img/logo.png" alt="" aria-hidden="true">
     <span>Cafetzin</span>
   </a>
   <nav class="nav">
@@ -272,20 +259,7 @@
     <div>
       <div class="letrero">
         <div class="marca-arriba">
-          <svg class="draw on" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path pathLength="1" d="M24 52h58a8 8 0 0 1 8 8v26a12 12 0 0 1-12 12H28a12 12 0 0 1-12-12V60a8 8 0 0 1 8-8Z"/>
-            <path pathLength="1" d="M34 52V42h9v-8h9"/>
-            <path pathLength="1" d="M72 52V42h-9v-8h-9"/>
-            <path pathLength="1" d="M57 34V22"/>
-            <path pathLength="1" d="M57 28c-6 0-10-4-10-10 6 0 10 4 10 10Z"/>
-            <path pathLength="1" d="M57 28c6 0 10-4 10-10-6 0-10 4-10 10Z"/>
-            <path pathLength="1" d="M31 66h14M59 66h14"/>
-            <path pathLength="1" d="M31 72c4 3 10 3 14 0M59 72c4 3 10 3 14 0"/>
-            <path pathLength="1" d="M52 58v12M44 74h16l-8 9-8-9Z"/>
-            <path pathLength="1" d="M20 92h64"/>
-            <path pathLength="1" d="M26 92c4 7 10 7 14 0 4 7 10 7 14 0 4 7 10 7 14 0 4 7 8 6 12 0"/>
-            <path pathLength="1" d="M90 62c8 0 13 5 13 12s-5 10-10 10-9-4-9-8 3-7 7-7 6 3 6 6"/>
-          </svg>
+          <img src="img/logo.png" alt="" aria-hidden="true">
           <div>cafetería de barrio<b>Col. Estrella · Lindavista</b></div>
         </div>
         <h1 class="display wm"><span class="wm-ln"><span>Cafetzin</span></span></h1>

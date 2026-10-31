@@ -1,2 +1,3 @@
 *.png
+!**/img/logo.png
 .playwright-cli/
