@@ -128,6 +128,7 @@
   .pista-cancion .t{font-size:15px;line-height:1.35;color:var(--crema)}
   .pista-cancion .t small{display:block;margin-top:2px;font-size:11.5px;line-height:1.45;color:var(--humo)}
   .pista-cancion .p{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--caramelo);white-space:nowrap}
+  .pista-cancion .p.precio{font-size:12px;letter-spacing:.02em;text-transform:none;color:var(--neon);font-variant-numeric:tabular-nums}
   .nota{font-size:12.5px;line-height:1.6;color:var(--humo);margin-top:28px;max-width:76ch}
 
   .sala{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:8px}
@@ -303,7 +304,7 @@
       <h2 class="cartel">Se toca<br>en vivo.</h2>
     </div>
     <p>El muro de ladrillo no es decorado: tiene escenario, micrófono y teclado. Los sábados se arma la trova con voz y guitarra, y el resto de la semana la música va de fondo mientras se trabaja o se platica.</p>
-    <p>Si vienes por el café, pide el espresso tonic —el barista lo recomienda— y quédate un rato en la barra.</p>
+    <p>Si vienes por el café, pide el cold brew tónico y quédate un rato en la barra.</p>
     <ul class="cartelera">
       <li><b>Sábado</b><div>Trova latinoamericana<small>Voz y guitarra desde el mediodía. La cartelera cambia cada mes.</small></div><em>12:00 pm</em></li>
       <li><b>En vivo</b><div>Música de la casa<small>Guitarra, teclado y micrófono abierto al escenario.</small></div><em>Todo el día</em></li>
@@ -315,7 +316,7 @@
 <section class="setlist" id="carta" data-anim><div class="wrap">
   <div class="cabeza">
     <h2 class="cartel">La carta<br>es un set list.</h2>
-    <p>Lo que suena en la barra: café, algo para almorzar y lo dulce. Precios en barra.</p>
+    <p>Lo que suena en la barra: café, algo para almorzar y lo dulce. Precios de la carta vigente.</p>
   </div>
   <div class="programa">
     <div class="sello">
@@ -325,27 +326,33 @@
     <div class="lados">
       <div class="lado">
         <h4>Lado A · Café de barra <span>caliente</span></h4>
-        <div class="pista-cancion"><span class="n">01</span><span class="t">Espresso<small>Doble shot de la casa</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">02</span><span class="t">Americano<small>Espresso alargado con agua caliente</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">03</span><span class="t">Capuchino<small>Leche vaporizada y espuma</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">04</span><span class="t">Latte<small>Más leche, mismo café</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">05</span><span class="t">Espresso tonic<small>El que recomienda el barista</small></span><span class="p">En barra</span></div>
+        <div class="pista-cancion"><span class="n">01</span><span class="t">Espresso<small>Doble shot de la casa</small></span><span class="p precio">$30</span></div>
+        <div class="pista-cancion"><span class="n">02</span><span class="t">Espresso doble<small>El doble, sin rodeos</small></span><span class="p precio">$35</span></div>
+        <div class="pista-cancion"><span class="n">03</span><span class="t">Americano<small>Espresso alargado con agua caliente</small></span><span class="p precio">$40</span></div>
+        <div class="pista-cancion"><span class="n">04</span><span class="t">Latte / Capuccino<small>Leche vaporizada; con sabor, $65</small></span><span class="p precio">$55</span></div>
+        <div class="pista-cancion"><span class="n">05</span><span class="t">Chocolate con leche<small>Para los que vienen por lo dulce</small></span><span class="p precio">$50</span></div>
+        <div class="pista-cancion"><span class="n">06</span><span class="t">Té Chai Latte<small>Sucio, con espresso, $85</small></span><span class="p precio">$75</span></div>
       </div>
       <div class="lado">
         <h4>Lado B · Para almorzar <span>de la cocina</span></h4>
-        <div class="pista-cancion"><span class="n">06</span><span class="t">Molletes<small>Pan, frijoles y queso gratinado</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">07</span><span class="t">Combos para almorzar<small>Plato fuerte con café; cambian por día</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">08</span><span class="t">Snacks de la casa<small>Para picar mientras suena la música</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">09</span><span class="t">Postres del día<small>Pregunta qué hay en el mostrador</small></span><span class="p">En barra</span></div>
+        <div class="pista-cancion"><span class="n">07</span><span class="t">Huevos al gusto<small>Con jamón, salchicha o tocino, $120</small></span><span class="p precio">$100</span></div>
+        <div class="pista-cancion"><span class="n">08</span><span class="t">Chilaquiles<small>Con huevo $115 · pollo $125 · bistec $140</small></span><span class="p precio">$100</span></div>
+        <div class="pista-cancion"><span class="n">09</span><span class="t">Hot Dog XL<small>Salchicha jumbo, tocino y queso manchego</small></span><span class="p precio">$80</span></div>
+        <div class="pista-cancion"><span class="n">10</span><span class="t">Cuernito<small>Jamón, salchicha y tocino</small></span><span class="p precio">$80</span></div>
+        <div class="pista-cancion"><span class="n">11</span><span class="t">Molletes<small>3 piezas de jamón, salchicha o tocino</small></span><span class="p precio">$90</span></div>
+        <div class="pista-cancion"><span class="n">12</span><span class="t">Ensalada<small>Combinada $100 · con atún o pollo $110</small></span><span class="p precio">$90</span></div>
       </div>
       <div class="lado">
-        <h4>Lado C · La barra <span>para llevar</span></h4>
-        <div class="pista-cancion"><span class="n">10</span><span class="t">Café para llevar<small>Vaso de cartón, tapa y portavasos</small></span><span class="p">En barra</span></div>
-        <div class="pista-cancion"><span class="n">11</span><span class="t">Pedidos por WhatsApp<small>Se apartan y pasas por ellos</small></span><span class="p">Al momento</span></div>
-        <div class="pista-cancion"><span class="n">12</span><span class="t">Eventos y música<small>Pregunta por fechas y trovadores</small></span><span class="p">Cartelera</span></div>
+        <h4>Lado C · Frío y dulce <span>barra y mostrador</span></h4>
+        <div class="pista-cancion"><span class="n">13</span><span class="t">Cold Brew<small>Extracción en frío</small></span><span class="p precio">$50</span></div>
+        <div class="pista-cancion"><span class="n">14</span><span class="t">Cold Brew Latte<small>Con leche; con sabor, $65</small></span><span class="p precio">$55</span></div>
+        <div class="pista-cancion"><span class="n">15</span><span class="t">Cold Brew Tónic<small>La recomendación de la barra</small></span><span class="p precio">$65</span></div>
+        <div class="pista-cancion"><span class="n">16</span><span class="t">Frappe<small>Frío y espeso</small></span><span class="p precio">$70</span></div>
+        <div class="pista-cancion"><span class="n">17</span><span class="t">Smoothie<small>De la licuadora</small></span><span class="p precio">$60</span></div>
+        <div class="pista-cancion"><span class="n">18</span><span class="t">Waffle<small>Lechera, Nutella o miel</small></span><span class="p precio">$60</span></div>
       </div>
     </div>
-    <p class="nota">La barra no publica precios en línea. Los de esta muestra se confirman en el local; la carta completa, los precios y las fotos propias se cargan cuando el negocio comparte su información.</p>
+    <p class="nota">También: té $35, tisana $60, Té Chai $65, refresco $35, Boing $25, agua $7, Monster $45 y cerveza $40. El americano completo —waffle, tocino, huevos, fruta y café— cuesta $150, igual que los ensambles. Del mostrador: flan napolitano $45, pastel individual $75 y pan de dulce $30. Precios de la carta publicada por JAM Coffee.</p>
   </div>
 </div></section>
 
@@ -363,12 +370,12 @@
       <div class="venta-destacados">
         <p class="venta-sub">Para la primera vez</p>
         <ul>
-          <li><span>Espresso tonic <em>· el que recomienda el barista</em></span><b class="sin-precio">De la barra</b></li>
-          <li><span>Molletes <em>· pan, frijoles y queso gratinado</em></span><b class="sin-precio">De la cocina</b></li>
-          <li><span>Postre del día <em>· pregunta qué hay en el mostrador</em></span><b class="sin-precio">Del día</b></li>
+          <li><span>Cold Brew Tónic <em>· la recomendación de la barra</em></span><b>$65</b></li>
+          <li><span>Molletes <em>· 3 piezas de jamón, salchicha o tocino</em></span><b>$90</b></li>
+          <li><span>Waffle <em>· lechera, Nutella o miel</em></span><b>$60</b></li>
         </ul>
       </div>
-      <p class="venta-nota">Trova los sábados desde el mediodía; la cartelera cambia cada mes y se publica en <a href="https://www.instagram.com/jamcoffee.26/" target="_blank" rel="noopener">@jamcoffee.26</a>. La barra cierra a las 10 p.m. y los precios se confirman en el local.</p>
+      <p class="venta-nota">Trova los sábados desde el mediodía; la cartelera cambia cada mes y se publica en <a href="https://www.instagram.com/jamcoffee.26/" target="_blank" rel="noopener">@jamcoffee.26</a>. La barra cierra a las 10 p.m. Los precios son los de la carta vigente de JAM Coffee.</p>
     </div>
     <div class="venta-caja">
       <form class="venta-form" data-venta data-wa="525663630016" data-cafe="JAM Coffee" data-asunto="apartar mesa o hacer un pedido" novalidate>
