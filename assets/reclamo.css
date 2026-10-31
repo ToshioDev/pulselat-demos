@@ -68,7 +68,7 @@
   text-transform:var(--rc-display-transform,none);
   text-wrap:balance;
 }
-.rc-copy p{
+.rc-copy p:not(.rc-kicker){
   max-width:54ch;
   margin:0;
   font-size:14.5px;
