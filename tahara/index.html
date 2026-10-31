@@ -132,6 +132,7 @@
   .cierre h2{font-size:clamp(32px,4.4vw,54px);max-width:22ch;margin:0 auto 16px}
   .cierre p{color:var(--tenue);max-width:46ch;margin:0 auto 30px}
   .cierre .acciones{justify-content:center}
+  .cierre-logo{display:block;width:auto;height:64px;margin:0 auto 24px}
 
   footer{padding:34px 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);border-top:1px solid var(--linea)}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
@@ -160,13 +161,14 @@
   .js .fotos img:nth-child(3){animation-delay:.82s}
   @keyframes foto-entrar{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
 
-  .tablero,.lista li,.franja div{opacity:0;transform:translateY(12px)}
-  .vis .tablero,.vis .lista li,.vis .franja div{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
-  .vis .lista li:nth-child(2){transition-delay:.08s}
-  .vis .lista li:nth-child(3){transition-delay:.16s}
-  .vis .lista li:nth-child(4){transition-delay:.24s}
-  .vis .franja div:nth-child(2){transition-delay:.1s}
-  .vis .franja div:nth-child(3){transition-delay:.2s}
+  .tablero,.lista li,.franja div{opacity:1;transform:none}
+  .vis .tablero,.vis .lista li,.vis .franja div{animation:tablero-entra .8s cubic-bezier(.22,1,.36,1) both}
+  .vis .lista li:nth-child(2){animation-delay:.08s}
+  .vis .lista li:nth-child(3){animation-delay:.16s}
+  .vis .lista li:nth-child(4){animation-delay:.24s}
+  .vis .franja div:nth-child(2){animation-delay:.1s}
+  .vis .franja div:nth-child(3){animation-delay:.2s}
+  @keyframes tablero-entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
     .draw path,.wm-ln>span,.fotos img,.tablero,.lista li,.franja div{
@@ -197,12 +199,13 @@
     .logo b{font-size:16px;letter-spacing:.28em}
   }
 </style>
+<link rel="stylesheet" href="../assets/motion.css">
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="logo" href="#inicio">
-    <img src="img/logo-verde.png" alt="Tahara">
+    <img class="marca-entra marca-hover" src="img/logo-verde.png" alt="Tahara">
     <b>Tahara</b>
   </a>
   <div class="enlaces">
@@ -212,7 +215,7 @@
 </div></nav>
 
 <header id="inicio">
-  <img class="knot-fondo" src="img/logo-verde.png" alt="" aria-hidden="true">
+  <img class="knot-fondo marca-giro" src="img/logo-verde.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="kicker">Insurgentes Norte 1894 · Lindavista</div>
     <h1 class="display wm"><span class="wm-ln"><span>Café de Chiapas,</span></span><span class="wm-ln"><span>pan dulce del día</span></span><span class="wm-ln"><span><em>y la mesa de siempre.</em></span></span></h1>
@@ -348,6 +351,7 @@
 </div></section>
 
 <section class="cierre"><div class="wrap">
+  <img class="cierre-logo marca-flota" src="img/logo-verde.png" alt="Tahara">
   <h2 class="display">¿Nos vemos hoy?</h2>
   <p>Escríbenos por WhatsApp para apartar mesa, preguntar por el pan del día o pedir café para llevar.</p>
   <div class="acciones">
@@ -375,7 +379,7 @@
 </section>
 
 <footer><div class="wrap">
-  <span>Tahara · Insurgentes Norte 1894, Lindavista</span>
+  <span><img class="logo-pie" src="img/logo-verde.png" alt="" aria-hidden="true">Tahara · Insurgentes Norte 1894, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
 
@@ -388,7 +392,7 @@
     es.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script src="../assets/reclamo.js" defer></script>

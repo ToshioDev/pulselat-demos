@@ -111,7 +111,9 @@
   .dato a{border-bottom:1px solid rgba(243,236,226,.3)}
   .horario{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-size:14.5px;border-bottom:1px solid rgba(243,236,226,.1);color:rgba(243,236,226,.82)}
 
-  .cierre{background:var(--verde);text-align:center;padding:100px 0}
+  .cierre{background:var(--verde);text-align:center;padding:100px 0;position:relative;overflow:hidden}
+  .cierre>.logo-agua{left:50%;top:50%;transform:translate(-50%,-50%);height:min(360px,46vw);opacity:.13}
+  .cierre .wrap{position:relative;z-index:1}
   .cierre h2{font-size:clamp(34px,4.8vw,60px);max-width:22ch;margin:0 auto 16px}
   .cierre p{color:rgba(243,236,226,.75);max-width:44ch;margin:0 auto 30px}
   .cierre .acciones{justify-content:center}
@@ -143,8 +145,9 @@
   .cabeza::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--linea);transform:scaleX(0);transform-origin:left}
   .vis .cabeza::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.22,1,.36,1)}
 
-  .platillo,.horario,.dato{opacity:0;transform:translateY(10px)}
-  .vis .platillo,.vis .horario,.vis .dato{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+  .platillo,.horario,.dato{opacity:1;transform:none}
+  .vis .platillo,.vis .horario,.vis .dato{animation:subir-platillo .6s cubic-bezier(.22,1,.36,1) both}
+  @keyframes subir-platillo{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
     .wm-ln>span,.draw path,.platillo,.horario,.dato,header img{
@@ -176,12 +179,13 @@
     .cinta .wrap{justify-content:center}
   }
 </style>
+<link rel="stylesheet" href="../assets/motion.css">
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="Al Grano">
-    <img src="img/logo.png" alt="Al Grano">
+    <img class="marca-entra marca-hover" src="img/logo.png" alt="Al Grano">
   </a>
   <div class="enlaces">
     <a href="#terraza">La terraza</a><a href="#carta">La carta</a><a href="#visita">Visítanos</a>
@@ -396,7 +400,9 @@
   </div>
 </div></section>
 
-<section class="cierre"><div class="wrap">
+<section class="cierre">
+  <div class="logo-agua marca-flota" aria-hidden="true"><img src="img/logo.png" alt=""></div>
+  <div class="wrap">
   <h2 class="grotesca">¿Nos vemos en la terraza?</h2>
   <p>Escríbenos por WhatsApp para apartar mesa, pedir para llevar o preguntar qué hay hoy.</p>
   <div class="acciones">
@@ -424,7 +430,7 @@
 </section>
 
 <footer><div class="wrap">
-  <span>Al Grano · Calz. Azcapotzalco 1248, Lindavista</span>
+  <span><img class="logo-pie" src="img/logo.png" alt="" aria-hidden="true">Al Grano · Calz. Azcapotzalco 1248, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
 
@@ -438,7 +444,7 @@
     es.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script src="../assets/reclamo.js" defer></script>

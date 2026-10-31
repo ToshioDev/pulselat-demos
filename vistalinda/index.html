@@ -58,7 +58,7 @@
   .top .punto{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--oliva);margin-right:8px;vertical-align:1px}
   .top a:hover{color:var(--oliva-osc)}
   .firma{display:flex;align-items:center;gap:10px;color:var(--oliva-osc)}
-  .firma img{width:40px;height:40px;object-fit:cover;border-radius:2px;flex:none}
+  .firma img{width:42px;height:42px;object-fit:contain;flex:none}
   .firma span{font-family:"Cormorant Garamond",serif;font-size:17px;letter-spacing:.04em;text-transform:none;color:var(--tinta)}
 
   /* hero */
@@ -145,6 +145,7 @@
   .cierre h2{font-size:clamp(34px,4.6vw,58px);max-width:24ch;margin:0 auto 18px}
   .cierre p{color:rgba(245,241,228,.72);max-width:46ch;margin:0 auto 32px;font-size:15.5px}
   .cierre .acciones{justify-content:center}
+  .cierre-logo{display:block;width:auto;height:84px;margin:0 auto 28px}
   .cierre .btn-solido{background:var(--papel);color:var(--oliva-osc);border-color:var(--papel)}
   .cierre .btn-solido:hover{background:transparent;color:var(--papel)}
   .cierre .btn-linea{border-color:rgba(245,241,228,.6)}
@@ -176,21 +177,24 @@
   .js .wm-ln:nth-child(3)>span{animation-delay:.36s}
   @keyframes wm-subir{to{transform:translateY(0);opacity:1}}
 
-  .marco.foto img{opacity:0;transform:scale(1.03)}
-  .marco.foto.vis img{opacity:1;transform:scale(1);transition:opacity .8s ease,transform 1.4s cubic-bezier(.22,1,.36,1)}
+  .marco.foto img{opacity:1;transform:none}
+  .marco.foto.vis img{animation:foto-vista .8s cubic-bezier(.22,1,.36,1) both}
+  @keyframes foto-vista{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 
-  .barra-menu{clip-path:inset(0 100% 0 0)}
-  .vis .barra-menu{clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.22,1,.36,1)}
+  .barra-menu{clip-path:none}
+  .vis .barra-menu{animation:barra-menu-entra .8s cubic-bezier(.22,1,.36,1) both}
+  @keyframes barra-menu-entra{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
   .vis .carta>div:nth-child(2) .barra-menu{transition-delay:.1s}
   .vis .carta>div:nth-child(3) .barra-menu{transition-delay:.2s}
   .vis .carta>div:nth-child(4) .barra-menu{transition-delay:.3s}
 
-  .combo{opacity:0;transform:translateY(10px)}
-  .vis .combo{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-  .vis .combo:nth-child(2){transition-delay:.06s}
-  .vis .combo:nth-child(3){transition-delay:.12s}
-  .vis .combo:nth-child(4){transition-delay:.18s}
-  .vis .combo:nth-child(5){transition-delay:.24s}
+  .combo{opacity:1;transform:none}
+  .vis .combo{animation:combo-entra .7s cubic-bezier(.22,1,.36,1) both}
+  .vis .combo:nth-child(2){animation-delay:.06s}
+  .vis .combo:nth-child(3){animation-delay:.12s}
+  .vis .combo:nth-child(4){animation-delay:.18s}
+  .vis .combo:nth-child(5){animation-delay:.24s}
+  @keyframes combo-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
     .draw path,.wm-ln>span,.marco img,.barra-menu,.combo,.cabeza::after{
@@ -219,12 +223,13 @@
     .btn{flex:1;justify-content:center}
   }
 </style>
+<link rel="stylesheet" href="../assets/motion.css">
 </head>
 <body>
 
 <div class="top"><div class="wrap">
   <a class="firma" href="#carta">
-    <img src="img/logo.png" alt="Vistalinda cafetería">
+    <img class="marca-entra marca-hover" src="img/taza.png" alt="Vistalinda cafetería">
     <span>Vistalinda</span>
   </a>
   <span class="oculto"><span class="punto"></span><b>Abierto hoy</b> · 7:50 a 19:00</span>
@@ -418,6 +423,7 @@
 </div></section>
 
 <section class="cierre"><div class="wrap">
+  <img class="cierre-logo marca-flota" src="img/logo.png" alt="Vistalinda">
   <h2 class="serif">Nos vemos a la hora<br>del desayuno.</h2>
   <p>Escríbenos para apartar mesa, preguntar por el pan del día o pedir para llevar.</p>
   <div class="acciones">
@@ -445,7 +451,7 @@
 </section>
 
 <footer><div class="wrap">
-  <span>Vistalinda cafetería · Sierravista 133, Lindavista</span>
+  <span><img class="logo-pie" src="img/taza.png" alt="" aria-hidden="true">Vistalinda cafetería · Sierravista 133, Lindavista</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
 
@@ -459,7 +465,7 @@
     es.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.22, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script src="../assets/reclamo.js" defer></script>

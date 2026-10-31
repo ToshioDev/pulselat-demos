@@ -1,0 +1,28 @@
+/* Animaciones de marca compartidas por las demos */
+@keyframes marca-entra{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes marca-flota{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@keyframes marca-latido{0%,100%{scale:1}50%{scale:1.018}}
+@keyframes marca-sello{0%,100%{rotate:-1.2deg}50%{rotate:1.2deg}}
+@keyframes marca-giro{to{rotate:360deg}}
+@keyframes marca-brillo{0%,100%{filter:drop-shadow(0 0 5px rgba(185,198,238,.35))}50%{filter:drop-shadow(0 0 14px rgba(185,198,238,.8))}}
+@keyframes marca-escribir{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes marca-trazo{from{scale:0 1}to{scale:1 1}}
+
+.marca-entra{animation:marca-entra .9s cubic-bezier(.22,1,.36,1) both}
+.marca-flota{animation:marca-flota 7s ease-in-out infinite}
+.marca-latido{animation:marca-latido 5.5s ease-in-out infinite}
+.marca-sello{animation:marca-sello 6s ease-in-out infinite}
+.marca-giro{animation:marca-giro 90s linear infinite}
+.marca-brillo{animation:marca-brillo 3.4s ease-in-out infinite alternate}
+.marca-escribir{animation:marca-escribir 1.25s cubic-bezier(.3,.7,.2,1) .25s both}
+.marca-hover{transition:transform .35s ease,filter .35s ease;transform-origin:center}
+a:hover>.marca-hover,a:focus-visible>.marca-hover{transform:scale(1.045)}
+
+.logo-agua{position:absolute;pointer-events:none;user-select:none;opacity:.09;z-index:0}
+.logo-agua img{height:100%;width:auto;display:block}
+.logo-pie{height:20px;width:auto;vertical-align:-5px;margin-right:9px;display:inline-block}
+.logo-pie-radio{border-radius:50%}
+
+@media (prefers-reduced-motion:reduce){
+  [class*="marca-"],.logo-agua{animation:none!important;transition:none!important;translate:none!important;rotate:none!important;scale:none!important;clip-path:none!important;filter:none!important}
+}

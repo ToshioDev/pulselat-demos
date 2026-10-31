@@ -138,6 +138,7 @@
 
   .cierre{background:var(--tinta);color:var(--crema);text-align:center;padding:92px 0;position:relative;overflow:hidden}
   .cierre .agua{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:300px;height:300px;color:rgba(180,150,100,.12);pointer-events:none}
+  .cierre>.logo-agua{right:4%;top:50%;transform:translateY(-50%);height:min(300px,40vw);opacity:.14}
   .cierre h2{font-size:clamp(30px,4.4vw,54px);max-width:22ch;margin:0 auto 14px;position:relative}
   .cierre p{color:rgba(244,234,216,.76);max-width:44ch;margin:0 auto 28px;position:relative}
   .cierre .acciones{justify-content:center;position:relative}
@@ -170,17 +171,18 @@
   .js .hero-foto img{animation:entrar 1.2s cubic-bezier(.22,1,.36,1) both}
   @keyframes entrar{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
 
-  .tablero,.renglon,.horario,.dato,.local figure,.pasos li{opacity:0;transform:translateY(10px)}
-  .vis .tablero,.vis .renglon,.vis .horario,.vis .dato,.vis .local figure,.vis .pasos li{opacity:1;transform:none;transition:opacity .55s ease,transform .6s cubic-bezier(.22,1,.36,1)}
-  .vis .tablero:nth-child(2){transition-delay:.1s}
-  .vis .tablero:nth-child(3){transition-delay:.2s}
-  .vis .renglon:nth-child(2){transition-delay:.05s}
-  .vis .renglon:nth-child(3){transition-delay:.1s}
-  .vis .renglon:nth-child(4){transition-delay:.15s}
-  .vis .renglon:nth-child(5){transition-delay:.2s}
-  .vis .renglon:nth-child(6){transition-delay:.25s}
-  .vis .pasos li:nth-child(2){transition-delay:.08s}
-  .vis .pasos li:nth-child(3){transition-delay:.16s}
+  .tablero,.renglon,.horario,.dato,.local figure,.pasos li{opacity:1;transform:none}
+  .vis .tablero,.vis .renglon,.vis .horario,.vis .dato,.vis .local figure,.vis .pasos li{animation:kfe-entra .6s cubic-bezier(.22,1,.36,1) both}
+  .vis .tablero:nth-child(2){animation-delay:.1s}
+  .vis .tablero:nth-child(3){animation-delay:.2s}
+  .vis .renglon:nth-child(2){animation-delay:.05s}
+  .vis .renglon:nth-child(3){animation-delay:.1s}
+  .vis .renglon:nth-child(4){animation-delay:.15s}
+  .vis .renglon:nth-child(5){animation-delay:.2s}
+  .vis .renglon:nth-child(6){animation-delay:.25s}
+  .vis .pasos li:nth-child(2){animation-delay:.08s}
+  .vis .pasos li:nth-child(3){animation-delay:.16s}
+  @keyframes kfe-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
     .wm-ln>span,.draw path,.tablero,.renglon,.horario,.dato,.local figure,.pasos li,.hero-foto img,.latido,.filete{
@@ -221,12 +223,13 @@
     .local figure:first-child{grid-column:auto}
   }
 </style>
+<link rel="stylesheet" href="../assets/motion.css">
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="K-fé Snacks">
-    <img src="img/logo.png" alt="K-fé Snacks">
+    <img class="marca-sello marca-hover" src="img/logo.png" alt="K-fé Snacks">
     <b>K-fé<em>Snacks</em></b>
   </a>
   <div class="enlaces">
@@ -238,7 +241,7 @@
 <header id="inicio">
   <div class="wrap hero">
     <div>
-      <img class="sello" src="img/logo.png" alt="Emblema de K-fé Snacks">
+      <img class="sello marca-latido" src="img/logo.png" alt="Emblema de K-fé Snacks">
       <div class="eyebrow"><i></i>Av. Montevideo 525 · San Bartolo</div>
       <h1 class="serif wm"><span class="wm-ln"><span>Momentos <em>dulces,</em></span></span><span class="wm-ln"><span>recuerdos felices.</span></span></h1>
       <p class="lead">Crepas, mini hotcakes y chilaquiles recién hechos; café de barra y malteadas para la tarde. Pedidos por WhatsApp y entrega a domicilio.</p>
@@ -348,7 +351,9 @@
   </div>
 </div></section>
 
-<section class="cierre"><div class="wrap">
+<section class="cierre">
+  <div class="logo-agua marca-flota" aria-hidden="true"><img src="img/logo.png" alt=""></div>
+  <div class="wrap">
   <h2 class="serif">Tu lugar favorito<br>te espera.</h2>
   <p>Escríbenos por WhatsApp para pedir, preguntar por los combos del día o apartar tu pedido.</p>
   <div class="acciones">
@@ -376,7 +381,7 @@
 </section>
 
 <footer><div class="wrap">
-  <span>K-fé Snacks · Av. Montevideo 525, San Bartolo</span>
+  <span><img class="logo-pie logo-pie-radio" src="img/logo.png" alt="" aria-hidden="true">K-fé Snacks · Av. Montevideo 525, San Bartolo</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
 
@@ -391,7 +396,7 @@
     es.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script src="../assets/reclamo.js" defer></script>

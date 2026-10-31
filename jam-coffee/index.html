@@ -52,7 +52,7 @@
   nav{position:fixed;inset:0 0 auto;z-index:30;padding:16px 0;background:linear-gradient(180deg,rgba(20,16,14,.94),rgba(20,16,14,0))}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:22px}
   .marca{display:flex;align-items:center;gap:12px}
-  .marca img{height:50px;width:auto;flex:none;border-radius:2px}
+  .marca img{height:52px;width:auto;flex:none}
   .enlaces{display:flex;gap:26px;font-size:13px;letter-spacing:.02em;color:rgba(238,213,187,.74)}
   .enlaces a:hover{color:var(--neon)}
   .nav-wa{border:1px solid var(--neon);color:var(--neon);padding:9px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
@@ -133,6 +133,7 @@
   .cierre h2{font-size:clamp(32px,4.6vw,58px);max-width:24ch;margin:0 auto 16px}
   .cierre p{color:rgba(238,213,187,.8);max-width:44ch;margin:0 auto 30px}
   .cierre .acciones{justify-content:center}
+  .cierre-logo{display:block;width:auto;height:66px;margin:0 auto 24px}
   .cierre .btn-solido{background:var(--crema);color:var(--tinta)}
   .cierre .btn-solido:hover{background:var(--neon)}
 
@@ -167,15 +168,16 @@
   .cabeza::after{content:"";display:block;margin-top:18px;height:1px;background:rgba(238,213,187,.3);transform:scaleX(0);transform-origin:left}
   .vis .cabeza::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.22,1,.36,1)}
 
-  .pista-cancion,.horario,.dato,.sala figure,.cartelera li{opacity:0;transform:translateY(10px)}
-  .vis .pista-cancion,.vis .horario,.vis .dato,.vis .sala figure,.vis .cartelera li{opacity:1;transform:none;transition:opacity .55s ease,transform .6s cubic-bezier(.22,1,.36,1)}
-  .vis .pista-cancion:nth-child(2){transition-delay:.06s}
-  .vis .pista-cancion:nth-child(3){transition-delay:.12s}
-  .vis .pista-cancion:nth-child(4){transition-delay:.18s}
-  .vis .pista-cancion:nth-child(5){transition-delay:.24s}
-  .vis .pista-cancion:nth-child(6){transition-delay:.3s}
-  .vis .cartelera li:nth-child(2){transition-delay:.08s}
-  .vis .cartelera li:nth-child(3){transition-delay:.16s}
+  .pista-cancion,.horario,.dato,.sala figure,.cartelera li{opacity:1;transform:none}
+  .vis .pista-cancion,.vis .horario,.vis .dato,.vis .sala figure,.vis .cartelera li{animation:jam-entra .6s cubic-bezier(.22,1,.36,1) both}
+  .vis .pista-cancion:nth-child(2){animation-delay:.06s}
+  .vis .pista-cancion:nth-child(3){animation-delay:.12s}
+  .vis .pista-cancion:nth-child(4){animation-delay:.18s}
+  .vis .pista-cancion:nth-child(5){animation-delay:.24s}
+  .vis .pista-cancion:nth-child(6){animation-delay:.3s}
+  .vis .cartelera li:nth-child(2){animation-delay:.08s}
+  .vis .cartelera li:nth-child(3){animation-delay:.16s}
+  @keyframes jam-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   @media (prefers-reduced-motion:reduce){
     .wm-ln>span,.draw path,.pista-cancion,.horario,.dato,.sala figure,.cartelera li,header img,h1 em{
@@ -218,12 +220,13 @@
     .sala figure:first-child img{aspect-ratio:4/3}
   }
 </style>
+<link rel="stylesheet" href="../assets/motion.css">
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="marca" href="#inicio" aria-label="JAM Coffee">
-    <img src="img/logo.png" alt="JAM Coffee">
+    <img class="marca-escribir marca-hover" src="img/logo-claro.png" alt="JAM Coffee">
   </a>
   <div class="enlaces">
     <a href="#agenda">En vivo</a><a href="#carta">Set list</a><a href="#sala">La sala</a><a href="#visita">Visítanos</a>
@@ -341,6 +344,7 @@
 </div></section>
 
 <section class="cierre"><div class="wrap">
+  <img class="cierre-logo marca-flota" src="img/logo-claro.png" alt="JAM Coffee">
   <h2 class="cartel">La buena música<br>sabe mejor con café.</h2>
   <p>Escríbenos para apartar mesa, preguntar por el evento del sábado o pedir para llevar.</p>
   <div class="acciones">
@@ -368,7 +372,7 @@
 </section>
 
 <footer><div class="wrap">
-  <span>JAM Coffee · Nte. 27-A 5440, Vallejo</span>
+  <span><img class="logo-pie" src="img/logo-claro.png" alt="" aria-hidden="true">JAM Coffee · Nte. 27-A 5440, Vallejo</span>
   <span>Muestra de Pulse LAT · pulselat.online</span>
 </div></footer>
 
@@ -383,7 +387,7 @@
     es.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
 </script>
 <script src="../assets/reclamo.js" defer></script>
