@@ -3,227 +3,311 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Línea de diseño de marca · Pulse LAT</title>
-<meta name="description" content="Ruta general de diseño de marca en el directorio de Pulse LAT: líneas gráficas extraídas de cada giro, mostradas en sus piezas reales.">
+<title>Líneas gráficas extraídas de los negocios · Pulse LAT</title>
+<meta name="description" content="Directorio de identidad: símbolo, paleta, tipografía, elementos y componentes de cada negocio levantado en los giros de Pulse LAT, extraídos de su demo real.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://demos.pulselat.online/marca/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://demos.pulselat.online/marca/">
-<meta property="og:title" content="Línea de diseño de marca · Pulse LAT">
-<meta property="og:description" content="Las líneas gráficas extraídas de cada giro, mostradas en sus piezas reales.">
+<meta property="og:title" content="Líneas gráficas extraídas de los negocios · Pulse LAT">
+<meta property="og:description" content="Directorio de identidad: símbolo, paleta, tipografía, elementos y componentes de cada negocio levantado en los giros de Pulse LAT, extraídos de su demo real.">
 <meta property="og:image" content="https://demos.pulselat.online/cafeterias/thumbs/xochipilli.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#16130f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'%3E%3C/rect%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'%3E%3C/rect%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --tinta:#16130f; --tinta-2:#1e1a15; --papel:#f4efe6;
-    --cuerpo:rgba(244,239,230,.72); --humo:rgba(244,239,230,.46);
-    --senal:#d9502b; --oro:#e2b455;
-    --linea:rgba(244,239,230,.16); --linea-fuerte:rgba(244,239,230,.34);
-    --mono:"IBM Plex Mono",ui-monospace,monospace;
-    --serif:"Instrument Serif",Georgia,serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  [hidden]{display:none!important}
-  body{background:var(--tinta);color:var(--papel);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
-  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--papel);color:var(--tinta);padding:10px 16px;z-index:100}
-  .skip:focus{left:12px;top:12px}
-
-  .top{border-bottom:1px solid var(--linea)}
-  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
-  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;transition:color .2s}
-  .marca-top:hover{color:#fff}
-  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
-  .miga{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
-  .miga a{border-bottom:1px solid var(--linea-fuerte);padding-bottom:1px;transition:color .2s,border-color .2s}
-  .miga a:hover{color:var(--papel);border-color:var(--senal)}
-  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px;transition:border-color .2s,color .2s}
-  .top-wa:hover{color:#fff;border-color:var(--senal)}
-
-  .intro{padding:clamp(46px,7vw,96px) 0 clamp(38px,5vw,64px)}
-  .intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:clamp(28px,5vw,72px);align-items:end}
-  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
-  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8.4vw,110px);line-height:.9;letter-spacing:-.025em;margin:20px 0 24px;max-width:11ch}
-  h1 em{font-style:italic;color:var(--oro)}
-  .lead{max-width:50ch;font-size:clamp(16px,1.4vw,19px);color:var(--cuerpo)}
-
-  .specimen{border:1px solid var(--linea-fuerte);padding:22px 22px 18px}
-  .specimen .alta{font-family:var(--serif);font-size:clamp(64px,9vw,104px);line-height:.86;letter-spacing:-.04em}
-  .specimen .alta i{color:var(--senal);font-style:italic}
-  .specimen .fila{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo)}
-  .specimen .escala{margin-top:14px;font-family:var(--serif);line-height:1.15;color:var(--cuerpo)}
-  .specimen .escala span{display:block}
-  .specimen .escala span:nth-child(1){font-size:30px;color:var(--papel)}
-  .specimen .escala span:nth-child(2){font-size:21px}
-  .specimen .escala span:nth-child(3){font-size:15px;font-family:"Archivo",sans-serif}
-  .specimen .escala .mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo);margin-top:8px}
-  .specimen .pastillas{display:flex;gap:5px;margin-top:16px}
-  .specimen .pastillas i{display:block;flex:1;height:30px}
-
-  .bloque{padding:clamp(38px,5.5vw,72px) 0;border-top:1px solid var(--linea)}
-  .bloque h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1;letter-spacing:-.02em;max-width:18ch}
-  .bloque .nota{margin-top:16px;max-width:56ch;color:var(--cuerpo);font-size:15.5px}
-  .bloque .nota a{color:var(--papel);border-bottom:1px solid var(--senal);padding-bottom:1px;transition:color .2s}
-  .bloque .nota a:hover{color:var(--senal)}
-  .lista{list-style:none;margin-top:30px;border-top:1px solid var(--linea-fuerte)}
-  .lista li{display:grid;grid-template-columns:62px minmax(0,22ch) minmax(0,1fr);gap:clamp(12px,2vw,26px);align-items:baseline;padding:19px 0;border-bottom:1px solid var(--linea)}
-  .lista em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal)}
-  .lista b{font-size:16px;font-weight:600;letter-spacing:-.005em;color:var(--papel)}
-  .lista p{font-size:14.5px;color:var(--cuerpo);max-width:62ch}
-
-  .piezas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:30px}
-  .pieza{grid-column:span 2;border:1px solid var(--linea);padding:16px;min-height:128px;display:flex;flex-direction:column;justify-content:space-between;background:var(--tinta-2)}
-  .pieza.grande{grid-column:span 3}
-  .pieza span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
-  .pieza b{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,40px);line-height:.98;letter-spacing:-.02em;color:var(--papel)}
-  .pieza.grande b{font-size:clamp(34px,4.4vw,58px)}
-
-  .estado{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(24px,4vw,56px);align-items:center;border:1px solid var(--linea-fuerte);padding:clamp(24px,3.4vw,40px);margin-top:30px;background:var(--tinta-2)}
-  .estado h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.02;letter-spacing:-.02em}
-  .estado p{margin-top:12px;color:var(--cuerpo);max-width:46ch;font-size:15px}
-  .colas{list-style:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--humo)}
-  .colas li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--linea)}
-  .colas li:first-child{border-top:1px solid var(--linea)}
-  .colas b{color:var(--papel);font-weight:500;letter-spacing:.06em}
-
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--senal);color:#fff;font:600 13px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:.2s}
-  .btn:hover{background:#ee6a45}
-  .btn:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
-  .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px}
-  .alt{font-size:13px;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px;color:var(--cuerpo)}
-  .alt:hover{border-color:var(--senal);color:#fff}
-
-  .cierre{border-top:1px solid var(--linea);padding:clamp(40px,6vw,72px) 0 0}
-  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:20px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
-  .pie-pagina a:hover{color:var(--papel)}
-
-  @media (max-width:960px){
-    .intro .wrap{grid-template-columns:1fr}
-    .specimen{max-width:520px}
-    .estado{grid-template-columns:1fr}
-    .piezas{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .pieza,.pieza.grande{grid-column:span 1}
-  }
-  @media (max-width:900px){
-    .miga{display:none}
-    .lista li{grid-template-columns:48px minmax(0,1fr)}
-    .lista p{grid-column:2}
-  }
-  @media (max-width:520px){
-    .wrap{width:calc(100% - 32px)}
-    .top .wrap{height:50px}
-    .marca-top{font-size:10px;letter-spacing:.18em}
-    .top-wa{font-size:9.5px}
-    .intro{padding-top:38px}
-    h1{font-size:clamp(40px,11.4vw,60px);max-width:none}
-    .piezas{grid-template-columns:1fr}
-    .pie-pagina{font-size:9px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
-    html{scroll-behavior:auto}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="marca.css">
 </head>
 <body>
-<a class="skip" href="#entregables">Saltar al contenido</a>
-
-<div class="top">
-  <div class="wrap">
-    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
-    <p class="miga"><a href="../">Giros</a> · Línea de marca</p>
-    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20me%20interesa%20una%20demo%20de%20dise%C3%B1o%20de%20marca%20de%20Pulse%20LAT.">WhatsApp</a>
-  </div>
-</div>
-
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="top"><div class="wrap">
+  <a class="marca-top" href=".."><i></i>Pulse LAT</a>
+  <p class="miga"><a href="../">Giros</a> · <span class="aqui">Marca</span></p>
+  <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20la%20l%C3%ADnea%20gr%C3%A1fica%20de%20mi%20negocio.">WhatsApp</a>
+</div></div>
+<main id="contenido">
 <header class="intro">
-  <div class="wrap">
+  <div class="wrap"><div class="dos">
     <div>
-      <p class="kicker">Línea gráfica transversal · en armaje</p>
-      <h1>Una marca,<br>vista en sus <em>cosas.</em></h1>
-      <p class="lead">Esta es la ruta general de todo lo gráfico. Aquí caen las líneas visuales extraídas de cada giro —cafeterías, belleza y los que vengan—, y se muestran en lo que el negocio usa de verdad: el letrero de la esquina, la bolsa del pedido, la carta de servicios, las portadas de redes. Ahí se ve si la identidad aguanta.</p>
+      <p class="kicker">Línea gráfica transversal · 16 marcas levantadas</p>
+      <h1>Dieciséis marcas,<br>cada una en su <em>armaje.</em></h1>
+      <p class="lead">Cada hoja de marca sale del negocio ya montado en su giro: el color, la tipografía y las piezas se leen del CSS con el que está construida su demo, no de un tablero de inspiración. Aquí está el muro completo; adentro, el símbolo con sus versiones, la paleta con funciones y contraste medido, la tipografía en espécimen, los elementos propios y los componentes ya pintados con esa marca.</p>
+      <ul class="tecnica">
+        <li><span>Marcas</span><b>16</b></li>
+        <li><span>Con logo real</span><b>07</b></li>
+        <li><span>Giros cubiertos</span><b>01</b></li>
+      </ul>
     </div>
-    <div class="specimen" aria-hidden="true">
-      <p class="alta">Aa <i>&amp;</i> 9</p>
-      <div class="escala"><span>Instrument Serif</span><span>Peso y color, no tamaño</span><span class="mono">Archivo · Plex Mono</span></div>
-      <div class="pastillas">
-        <i style="background:#d9502b"></i><i style="background:#e2b455"></i><i style="background:#f4efe6"></i><i style="background:#2b1a11"></i><i style="background:#15271d"></i>
-      </div>
-      <div class="fila"><span>Línea gráfica</span><span>CDMX · 2026</span></div>
-    </div>
+    <nav class="indices" aria-label="Índice rápido de marcas">
+      <p class="alta"><span>Índice del muro</span><em>16 hojas</em></p>
+      <ol><li><a href="xochipilli/"><i style="background:#c23f63"></i>Xochipilli Café<b>sím · 01</b></a></li><li><a href="al-grano/"><i style="background:#ef8a1f"></i>Al Grano<b>iso · 02</b></a></li><li><a href="cafetzin/"><i style="background:#ff0026"></i>Cafetzin<b>tipo · 03</b></a></li><li><a href="jam-coffee/"><i style="background:#ffc06a"></i>JAM Coffee<b>iso · 04</b></a></li><li><a href="tahara/"><i style="background:#0e5e58"></i>Tahara<b>tipo · 05</b></a></li><li><a href="vistalinda/"><i style="background:#77854b"></i>Vistalinda<b>tipo · 06</b></a></li><li><a href="espresso-amor/"><i style="background:#b23a2a"></i>Espresso Amor<b>tipo · 07</b></a></li><li><a href="kfe-snacks/"><i style="background:#a9714f"></i>K-fé Snacks<b>iso · 08</b></a></li><li><a href="cafe-del-parque/"><i style="background:#b4693c"></i>Café Del Parque<b>sím · 09</b></a></li><li><a href="chios/"><i style="background:#d4583c"></i>Chios Café<b>mono · 10</b></a></li><li><a href="cultura/"><i style="background:#a8422a"></i>Cultura, Ideas &amp;amp; Café<b>tipo · 11</b></a></li><li><a href="green-planet/"><i style="background:#4d7a3e"></i>Green Planet Cafetería<b>mono · 12</b></a></li><li><a href="el-carrito-rojo/"><i style="background:#c0272d"></i>El Carrito Rojo<b>mono · 13</b></a></li><li><a href="las-alondras/"><i style="background:#b4532a"></i>Las Alondras<b>mono · 14</b></a></li><li><a href="los-postres/"><i style="background:#c94a63"></i>Postres de Calderón<b>mono · 15</b></a></li><li><a href="tory/"><i style="background:#a97c22"></i>Tory Café<b>mono · 16</b></a></li></ol>
+    </nav>
+  </div>
+  <div class="swatches" style="height:34px;margin-top:26px"><i style="background:#ef8a1f" title="Al Grano · #ef8a1f"></i><i style="background:#b4693c" title="Café Del Parque · #b4693c"></i><i style="background:#ff0026" title="Cafetzin · #ff0026"></i><i style="background:#d4583c" title="Chios Café · #d4583c"></i><i style="background:#a8422a" title="Cultura, Ideas &amp;amp; Café · #a8422a"></i><i style="background:#c0272d" title="El Carrito Rojo · #c0272d"></i><i style="background:#b23a2a" title="Espresso Amor · #b23a2a"></i><i style="background:#4d7a3e" title="Green Planet Cafetería · #4d7a3e"></i><i style="background:#ffc06a" title="JAM Coffee · #ffc06a"></i><i style="background:#a9714f" title="K-fé Snacks · #a9714f"></i><i style="background:#b4532a" title="Las Alondras · #b4532a"></i><i style="background:#c94a63" title="Postres de Calderón · #c94a63"></i><i style="background:#0e5e58" title="Tahara · #0e5e58"></i><i style="background:#a97c22" title="Tory Café · #a97c22"></i><i style="background:#77854b" title="Vistalinda · #77854b"></i><i style="background:#c23f63" title="Xochipilli Café · #c23f63"></i></div>
+  <p class="aviso">En el muro, las marcas puramente tipográficas y los monogramas se muestran con la tipo del directorio, porque el archivo vectorial del logo no está descargado. La familia real de cada negocio va en su hoja, en el paso de tipografía.</p>
   </div>
 </header>
 
-<main id="entregables">
-  <section class="bloque">
-    <div class="wrap">
-      <h2>Qué lleva una demo de diseño de marca</h2>
-      <p class="nota">Cinco piezas, siempre en el mismo orden, para que el dueño pueda comparar opciones sin comparar tonterías. La línea sale del negocio ya levantado en su giro —del letrero, la carta o la lista de servicios— y por eso su ruta es <a href="../">/marca/</a>, la misma para todos los giros.</p>
-      <ol class="lista">
-        <li><em>01</em><b>Símbolo y sus versiones</b><p>Mark, versión vertical, versión en una línea y la marca sola en negativo. Se entrega con las tres prohibiciones de uso escritas en claro: nunca estirada, nunca con sombra, nunca sobre foto recargada.</p></li>
-        <li><em>02</em><b>Tipografía y escala</b><p>Dos familias como máximo: una con carácter para titulares y una de trabajo para texto. Se muestra la escala completa, del letrero a 4 metros hasta el pie de una ficha de 70&nbsp;mm.</p></li>
-        <li><em>03</em><b>Paleta con funciones</b><p>Base neutra, color de marca y un acento para llamar la acción. Cada color lleva su papel escrito: dónde manda, dónde acompaña y dónde está prohibido.</p></li>
-        <li><em>04</em><b>Carta o lista de servicios</b><p>Lo que se vende, con sus precios. En un café es la carta; en belleza, la lista de servicios con tiempo y cabina. Aquí es donde el diseño deja de ser muestra y se vuelve la herramienta con la que la gente decide, reserva o pide.</p></li>
-        <li><em>05</em><b>Aplicaciones y redes</b><p>Letrero, empaque para llevar, uniforme, sello y tarjetas, más las portadas circulares que la gente ve primero. La carta y la lista de servicios ya van armadas en la entrega anterior.</p></li>
-      </ol>
+<section class="controles"><div class="wrap">
+  <div class="fila">
+    <div class="buscador">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <label class="sr" for="q">Buscar marcas, colores o direcciones</label>
+      <input id="q" type="search" placeholder="Nombre, hex, calle, tipo de letra…" autocomplete="off">
+      <kbd>/</kbd>
     </div>
-  </section>
-
-  <section class="bloque" aria-labelledby="piezas">
-    <div class="wrap">
-      <h2 id="piezas">Las piezas que se ven en la demo</h2>
-      <div class="piezas">
-        <div class="pieza grande"><span>Aplicación 01</span><b>Letrero y<br>fachada</b></div>
-        <div class="pieza grande"><span>Aplicación 02</span><b>Bolsa y<br>vaso</b></div>
-        <div class="pieza"><span>Aplicación 03</span><b>Carta o<br>lista de servicios</b></div>
-        <div class="pieza"><span>Aplicación 04</span><b>Empaque<br>y sello</b></div>
-        <div class="pieza"><span>Aplicación 05</span><b>Portadas<br>de redes</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bloque">
-    <div class="wrap">
-      <h2>Estado de la línea</h2>
-      <div class="estado">
-        <div>
-          <h3>Aún sin demos publicadas.</h3>
-          <p>Esta carpeta se queda sin demos hasta tener la primera línea terminada: símbolo, paleta, tipos y sus aplicaciones montadas en una página propia. Sube aquí aunque el negocio haya salido de cafeterías, de belleza o de cualquier giro que se abra después.</p>
-          <div class="cta">
-            <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20una%20demo%20de%20dise%C3%B1o%20de%20marca%20para%20mi%20negocio.">Pedir una demo de marca
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
-            </a>
-            <a class="alt" href="../cafeterias/">Mientras tanto: ver las demos de cafeterías</a>
-          </div>
-        </div>
-        <ul class="colas" aria-label="Cola de armaje">
-          <li><span>Cafeterías · giro 01</span><b>Siguiente</b></li>
-          <li><span>Belleza · giro 02</span><b>40 fichas tomadas</b></li>
-          <li><span>Carta y lista de servicios</span><b>El paso que falta</b></li>
-          <li><span>Giros por abrir</span><b>Sin fecha</b></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="cierre">
-  <div class="wrap">
-    <div class="pie-pagina">
-      <span><a href="../">Pulse LAT</a> · maquetas de demostración</span>
-      <span>Lindavista, CDMX · 2026</span>
-    </div>
+    <button class="chip" type="button" id="limpiar">Quitar filtros</button>
   </div>
+  <div class="chips" role="group" aria-label="Filtrar por tipo de marca"><button class="chip" type="button" data-chip="todas" aria-pressed="true">Todas <em>16</em></button><button class="chip" type="button" data-chip="imagotipo" aria-pressed="false">imagotipo <em>3</em></button><button class="chip" type="button" data-chip="monograma" aria-pressed="false">monograma <em>6</em></button><button class="chip" type="button" data-chip="símbolo" aria-pressed="false">símbolo <em>2</em></button><button class="chip" type="button" data-chip="tipográfica" aria-pressed="false">tipográfica <em>5</em></button><button class="chip" type="button" data-chip="demo" aria-pressed="false">Con logo real <em>7</em></button></div>
+  <p class="cuenta" id="cuenta" aria-live="polite">16 hojas</p>
+  <div class="rejilla" id="rejilla"><a class="ficha" href="xochipilli/" data-buscar="xochipilli café café  papel papel 2 tinta tinta 2 rosa rosa oscuro lila símbolo escuadre #c23f63 instrument serif karla #f9f0ec #f1e0da #2c1526 #3f1f36 #c23f63 #9b2f4d #e6cfe0" data-tags="símbolo" style="--ac:#c23f63">
+  <div class="panel" style="background:#f9f0ec;color:#2c1526"><svg class="flor" style="color:#c23f63" width="64" height="64" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"> <path d="M60 96c0-18 0-34 0-52"/> <path d="M60 44c-6-10-6-20 0-28 6 8 6 18 0 28Z"/> <path d="M58 66c-14-4-24-13-28-26 14 1 24 8 30 20"/> <path d="M62 66c14-4 24-13 28-26-14 1-24 8-30 20"/> <path d="M56 84c-16-1-29-8-36-20 15-2 28 3 37 13"/> <path d="M64 84c16-1 29-8 36-20-15-2-28 3-37 13"/> <path d="M24 100c10-8 22-12 36-12s26 4 36 12"/> <path d="M32 100c8-5 17-7 28-7s20 2 28 7"/> </svg><span class="sr">Xochipilli Café</span></div>
+  <div class="cuerpo">
+    <h2>Xochipilli Café<span>01</span></h2>
+    <div class="swatches"><i style="background:#f9f0ec" title="Papel #f9f0ec"></i><i style="background:#f1e0da" title="Papel 2 #f1e0da"></i><i style="background:#2c1526" title="Tinta #2c1526"></i><i style="background:#3f1f36" title="Tinta 2 #3f1f36"></i><i style="background:#c23f63" title="Rosa #c23f63"></i><i style="background:#9b2f4d" title="Rosa oscuro #9b2f4d"></i></div>
+    <p class="datos"><b>símbolo</b> · escuadre</p>
+    <p class="datos">Instrument Serif · Karla</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="al-grano/" data-buscar="al grano cafeterias calz. azcapotzalco 1248, lindavista noche noche 2 verde follaje cempa cempa 2 crema humo imagotipo escuadre #ef8a1f bricolage grotesque instrument sans #111613 #161d19 #1f3d2b #2f5a3d #ef8a1f #ffb45c #f3ece2 #9aa79c" data-tags="imagotipo demo" style="--ac:#ef8a1f">
+  <div class="panel" style="background:#111613;color:#ffffff"><img src="../cafeterias/al-grano/img/logo.png" alt="Al Grano" loading="lazy"></div>
+  <div class="cuerpo">
+    <h2>Al Grano<span>02</span></h2>
+    <div class="swatches"><i style="background:#111613" title="Noche #111613"></i><i style="background:#161d19" title="Noche 2 #161d19"></i><i style="background:#1f3d2b" title="Verde #1f3d2b"></i><i style="background:#2f5a3d" title="Follaje #2f5a3d"></i><i style="background:#ef8a1f" title="Cempa #ef8a1f"></i><i style="background:#ffb45c" title="Cempa 2 #ffb45c"></i></div>
+    <p class="datos"><b>imagotipo</b> · escuadre</p>
+    <p class="datos">Bricolage Grotesque · Instrument Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="cafetzin/" data-buscar="cafetzin cafeterias calz. de guadalupe 537, col. estrella noche noche 2 neón neon 2 rojo ámbar follaje madera texto humo tipográfica escuadre #ff0026 big shoulders display space grotesk #0f0d0e #171315 #f0f5ff #b9c6ee #ff0026 #ffb066 #4b7c3a #8f5d3e #e6dfd9 #a2999b" data-tags="tipográfica demo" style="--ac:#ff0026">
+  <div class="panel" style="background:#0f0d0e;color:#ffffff"><span class="word">Cafetzin</span></div>
+  <div class="cuerpo">
+    <h2>Cafetzin<span>03</span></h2>
+    <div class="swatches"><i style="background:#0f0d0e" title="Noche #0f0d0e"></i><i style="background:#171315" title="Noche 2 #171315"></i><i style="background:#f0f5ff" title="Neón #f0f5ff"></i><i style="background:#b9c6ee" title="Neon 2 #b9c6ee"></i><i style="background:#ff0026" title="Rojo #ff0026"></i><i style="background:#ffb066" title="Ámbar #ffb066"></i></div>
+    <p class="datos"><b>tipográfica</b> · escuadre</p>
+    <p class="datos">Big Shoulders Display · Space Grotesk</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="jam-coffee/" data-buscar="jam coffee cafeterias nte. 27-a 5440, vallejo tinta tinta 2 ladrillo vino caramelo crema neón madera humo imagotipo escuadre #ffc06a anton manrope yellowtail #1c1714 #221a17 #6b3732 #7c2233 #c7a079 #eed5bb #ffc06a #8a5a3c #b7a393" data-tags="imagotipo demo" style="--ac:#ffc06a">
+  <div class="panel" style="background:#1c1714;color:#ffffff"><img src="../cafeterias/jam-coffee/img/logo-claro.png" alt="JAM Coffee" loading="lazy"></div>
+  <div class="cuerpo">
+    <h2>JAM Coffee<span>04</span></h2>
+    <div class="swatches"><i style="background:#1c1714" title="Tinta #1c1714"></i><i style="background:#221a17" title="Tinta 2 #221a17"></i><i style="background:#6b3732" title="Ladrillo #6b3732"></i><i style="background:#7c2233" title="Vino #7c2233"></i><i style="background:#c7a079" title="Caramelo #c7a079"></i><i style="background:#eed5bb" title="Crema #eed5bb"></i></div>
+    <p class="datos"><b>imagotipo</b> · escuadre</p>
+    <p class="datos">Anton · Manrope · Yellowtail</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="tahara/" data-buscar="tahara cafeterias insurgentes norte 1894, lindavista papel papel 2 tinta verde verde osc menta menta claro kraft tipográfica suave #0e5e58 jost instrument sans caveat #f8f3e9 #efe7d7 #101d1b #0e5e58 #0a4743 #9ad6c5 #d6eee5 #c9a77d" data-tags="tipográfica demo" style="--ac:#0e5e58">
+  <div class="panel" style="background:#f8f3e9;color:#101d1b"><span class="word">Tahara</span></div>
+  <div class="cuerpo">
+    <h2>Tahara<span>05</span></h2>
+    <div class="swatches"><i style="background:#f8f3e9" title="Papel #f8f3e9"></i><i style="background:#efe7d7" title="Papel 2 #efe7d7"></i><i style="background:#101d1b" title="Tinta #101d1b"></i><i style="background:#0e5e58" title="Verde #0e5e58"></i><i style="background:#0a4743" title="Verde osc #0a4743"></i><i style="background:#9ad6c5" title="Menta #9ad6c5"></i></div>
+    <p class="datos"><b>tipográfica</b> · suave</p>
+    <p class="datos">Jost · Instrument Sans · Caveat</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="vistalinda/" data-buscar="vistalinda cafeterias sierravista 133, lindavista papel papel 2 tinta oliva oliva osc oliva suave verde claro tipográfica escuadre #77854b cormorant garamond karla #f5f1e4 #ece6d3 #22251b #77854b #4c5730 #c3cb9a #e6edc7" data-tags="tipográfica demo" style="--ac:#77854b">
+  <div class="panel" style="background:#f5f1e4;color:#22251b"><span class="word">Vistalinda</span></div>
+  <div class="cuerpo">
+    <h2>Vistalinda<span>06</span></h2>
+    <div class="swatches"><i style="background:#f5f1e4" title="Papel #f5f1e4"></i><i style="background:#ece6d3" title="Papel 2 #ece6d3"></i><i style="background:#22251b" title="Tinta #22251b"></i><i style="background:#77854b" title="Oliva #77854b"></i><i style="background:#4c5730" title="Oliva osc #4c5730"></i><i style="background:#c3cb9a" title="Oliva suave #c3cb9a"></i></div>
+    <p class="datos"><b>tipográfica</b> · escuadre</p>
+    <p class="datos">Cormorant Garamond · Karla</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="espresso-amor/" data-buscar="espresso amor cafeterias barranquilla 138, lindavista nte. crema crema 2 crema 3 negro carbón teja teja osc verde verde claro ámbar rojo tinta gris tipográfica escuadre #b23a2a archivo instrument serif #f2e7d2 #e7d5b9 #fbf4e6 #1a1712 #2a251d #b5654a #8a4630 #4f6b3a #8aa06a #f2c68d #b23a2a #241f18 #6d6353" data-tags="tipográfica demo" style="--ac:#b23a2a">
+  <div class="panel" style="background:#f2e7d2;color:#1a1712"><span class="word">Espresso Amor</span></div>
+  <div class="cuerpo">
+    <h2>Espresso Amor<span>07</span></h2>
+    <div class="swatches"><i style="background:#f2e7d2" title="Crema #f2e7d2"></i><i style="background:#e7d5b9" title="Crema 2 #e7d5b9"></i><i style="background:#fbf4e6" title="Crema 3 #fbf4e6"></i><i style="background:#1a1712" title="Negro #1a1712"></i><i style="background:#2a251d" title="Carbón #2a251d"></i><i style="background:#b5654a" title="Teja #b5654a"></i></div>
+    <p class="datos"><b>tipográfica</b> · escuadre</p>
+    <p class="datos">Archivo · Instrument Serif</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="kfe-snacks/" data-buscar="k-fé snacks snacks av. montevideo 525, san bartolo tinta tinta 2 tinta 3 oro oro 2 crema papel cobre rosa madera humo imagotipo escuadre #a9714f dm sans fraunces parisienne #141b2a #101827 #182438 #b49664 #cbb183 #f4ead8 #fbf5ea #a9714f #c07d6c #8a6242 #6f6357" data-tags="imagotipo demo" style="--ac:#a9714f">
+  <div class="panel" style="background:#fbf5ea;color:#101827"><img src="../cafeterias/kfe-snacks/img/logo.png" alt="K-fé Snacks" loading="lazy"></div>
+  <div class="cuerpo">
+    <h2>K-fé Snacks<span>08</span></h2>
+    <div class="swatches"><i style="background:#141b2a" title="Tinta #141b2a"></i><i style="background:#101827" title="Tinta 2 #101827"></i><i style="background:#182438" title="Tinta 3 #182438"></i><i style="background:#b49664" title="Oro #b49664"></i><i style="background:#cbb183" title="Oro 2 #cbb183"></i><i style="background:#f4ead8" title="Crema #f4ead8"></i></div>
+    <p class="datos"><b>imagotipo</b> · escuadre</p>
+    <p class="datos">DM Sans · Fraunces · Parisienne</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="cafe-del-parque/" data-buscar="café del parque cafeterias  crema crema 2 bosque bosque 2 tinta canela canela oscura símbolo escuadre #b4693c fraunces karla #f3ecdc #ece1cc #15241b #1c3025 #19271e #b4693c #8e4a26" data-tags="símbolo" style="--ac:#b4693c">
+  <div class="panel" style="background:#f3ecdc;color:#15241b"><svg class="flor" style="color:#b4693c" width="64" height="64" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 13h13v5.5A6.5 6.5 0 0 1 14.5 25h0A6.5 6.5 0 0 1 8 18.5V13Z"/><path d="M21 14.5h2.4a3.1 3.1 0 0 1 0 6.2H21"/><path d="M6 28h17"/><path d="M12 9c-1.2-1.4 1.2-2.4 0-4.2M16.5 9c-1.2-1.4 1.2-2.4 0-4.2"/></svg><span class="sr">Café Del Parque</span></div>
+  <div class="cuerpo">
+    <h2>Café Del Parque<span>09</span></h2>
+    <div class="swatches"><i style="background:#f3ecdc" title="Crema #f3ecdc"></i><i style="background:#ece1cc" title="Crema 2 #ece1cc"></i><i style="background:#15241b" title="Bosque #15241b"></i><i style="background:#1c3025" title="Bosque 2 #1c3025"></i><i style="background:#19271e" title="Tinta #19271e"></i><i style="background:#b4693c" title="Canela #b4693c"></i></div>
+    <p class="datos"><b>símbolo</b> · escuadre</p>
+    <p class="datos">Fraunces · Karla</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="chios/" data-buscar="chios café café &amp;amp; barra  papel papel 2 tinta tinta 2 coral coral oscuro verde monograma escuadre #d4583c archivo public sans #f3f1e8 #e9e6d8 #13283b #1b3851 #d4583c #ab3f28 #476b4f" data-tags="monograma" style="--ac:#d4583c">
+  <div class="panel" style="background:#f3f1e8;color:#13283b"><span class="lock"><span class="mg" style="color:#d4583c">X</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>Chios Café<span>10</span></h2>
+    <div class="swatches"><i style="background:#f3f1e8" title="Papel #f3f1e8"></i><i style="background:#e9e6d8" title="Papel 2 #e9e6d8"></i><i style="background:#13283b" title="Tinta #13283b"></i><i style="background:#1b3851" title="Tinta 2 #1b3851"></i><i style="background:#d4583c" title="Coral #d4583c"></i><i style="background:#ab3f28" title="Coral oscuro #ab3f28"></i></div>
+    <p class="datos"><b>monograma</b> · escuadre</p>
+    <p class="datos">Archivo · Public Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="cultura/" data-buscar="cultura, ideas &amp;amp; café cafeterias la carta se escribe en la pizarra. pregunta qué hay hoy antes de sentarte. papel papel 2 crema tinta teja teja osc lima naranja salmón gris tipográfica escuadre #a8422a newsreader work sans #f3e3cd #e7d1b6 #fcf4e3 #241f19 #a8422a #7a2e1d #c2cc63 #e08a3c #d99a78 #6f6557" data-tags="tipográfica" style="--ac:#a8422a">
+  <div class="panel" style="background:#f3e3cd;color:#241f19"><span class="word">Cultura, Ideas &amp;amp; Café</span></div>
+  <div class="cuerpo">
+    <h2>Cultura, Ideas &amp;amp; Café<span>11</span></h2>
+    <div class="swatches"><i style="background:#f3e3cd" title="Papel #f3e3cd"></i><i style="background:#e7d1b6" title="Papel 2 #e7d1b6"></i><i style="background:#fcf4e3" title="Crema #fcf4e3"></i><i style="background:#241f19" title="Tinta #241f19"></i><i style="background:#a8422a" title="Teja #a8422a"></i><i style="background:#7a2e1d" title="Teja osc #7a2e1d"></i></div>
+    <p class="datos"><b>tipográfica</b> · escuadre</p>
+    <p class="datos">Newsreader · Work Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="green-planet/" data-buscar="green planet cafetería cafetería  papel papel 2 tinta tinta 2 hoja hoja oscuro lima monograma redondeado #4d7a3e dm sans space grotesk #f2f2e7 #e6e8d7 #15271d #20392b #4d7a3e #375a2c #d7e3ae" data-tags="monograma" style="--ac:#4d7a3e">
+  <div class="panel" style="background:#f2f2e7;color:#15271d"><span class="lock"><span class="mg" style="color:#4d7a3e">GP</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>Green Planet Cafetería<span>12</span></h2>
+    <div class="swatches"><i style="background:#f2f2e7" title="Papel #f2f2e7"></i><i style="background:#e6e8d7" title="Papel 2 #e6e8d7"></i><i style="background:#15271d" title="Tinta #15271d"></i><i style="background:#20392b" title="Tinta 2 #20392b"></i><i style="background:#4d7a3e" title="Hoja #4d7a3e"></i><i style="background:#375a2c" title="Hoja oscuro #375a2c"></i></div>
+    <p class="datos"><b>monograma</b> · redondeado</p>
+    <p class="datos">DM Sans · Space Grotesk</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="el-carrito-rojo/" data-buscar="el carrito rojo desayunos  papel papel 2 tinta tinta 2 rojo rojo oscuro crema monograma escuadre #c0272d bebas neue public sans #f7f0e1 #ede1c9 #211b18 #332925 #c0272d #8f1b20 #f7f0e1" data-tags="monograma" style="--ac:#c0272d">
+  <div class="panel" style="background:#f7f0e1;color:#211b18"><span class="lock"><span class="mg" style="color:#c0272d">CR</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>El Carrito Rojo<span>13</span></h2>
+    <div class="swatches"><i style="background:#f7f0e1" title="Papel #f7f0e1"></i><i style="background:#ede1c9" title="Papel 2 #ede1c9"></i><i style="background:#211b18" title="Tinta #211b18"></i><i style="background:#332925" title="Tinta 2 #332925"></i><i style="background:#c0272d" title="Rojo #c0272d"></i><i style="background:#8f1b20" title="Rojo oscuro #8f1b20"></i></div>
+    <p class="datos"><b>monograma</b> · escuadre</p>
+    <p class="datos">Bebas Neue · Public Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="las-alondras/" data-buscar="las alondras panadería &amp;amp; café  papel papel 2 tinta tinta 2 guayaba guayaba oscuro trigo monograma escuadre #b4532a dm sans newsreader #f7f0e4 #efe3d0 #2b1a11 #3d281b #b4532a #8b3d1d #c79a5b" data-tags="monograma" style="--ac:#b4532a">
+  <div class="panel" style="background:#f7f0e4;color:#2b1a11"><span class="lock"><span class="mg" style="color:#b4532a">LA</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>Las Alondras<span>14</span></h2>
+    <div class="swatches"><i style="background:#f7f0e4" title="Papel #f7f0e4"></i><i style="background:#efe3d0" title="Papel 2 #efe3d0"></i><i style="background:#2b1a11" title="Tinta #2b1a11"></i><i style="background:#3d281b" title="Tinta 2 #3d281b"></i><i style="background:#b4532a" title="Guayaba #b4532a"></i><i style="background:#8b3d1d" title="Guayaba oscuro #8b3d1d"></i></div>
+    <p class="datos"><b>monograma</b> · escuadre</p>
+    <p class="datos">DM Sans · Newsreader</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="los-postres/" data-buscar="postres de calderón dulce de noche  papel papel 2 noche noche 2 tinta fresa fresa oscuro caramelo monograma escuadre #c94a63 bagel fat one public sans #fbf3e7 #f1e2cd #1c1210 #2a1b17 #241611 #c94a63 #a33450 #daa25c" data-tags="monograma" style="--ac:#c94a63">
+  <div class="panel" style="background:#fbf3e7;color:#1c1210"><span class="lock"><span class="mg" style="color:#c94a63">PC</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>Postres de Calderón<span>15</span></h2>
+    <div class="swatches"><i style="background:#fbf3e7" title="Papel #fbf3e7"></i><i style="background:#f1e2cd" title="Papel 2 #f1e2cd"></i><i style="background:#1c1210" title="Noche #1c1210"></i><i style="background:#2a1b17" title="Noche 2 #2a1b17"></i><i style="background:#241611" title="Tinta #241611"></i><i style="background:#c94a63" title="Fresa #c94a63"></i></div>
+    <p class="datos"><b>monograma</b> · escuadre</p>
+    <p class="datos">Bagel Fat One · Public Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a>
+<a class="ficha" href="tory/" data-buscar="tory café cafetería · 128  papel papel 2 tinta tinta 2 mantequilla mantequilla oscuro monograma escuadre #a97c22 archivo black work sans #f7f0e0 #ece2cc #111c36 #1a2947 #e2b455 #a97c22" data-tags="monograma" style="--ac:#a97c22">
+  <div class="panel" style="background:#f7f0e0;color:#111c36"><span class="lock"><span class="mg" style="color:#a97c22">TC</span><span class="word"></span></span></div>
+  <div class="cuerpo">
+    <h2>Tory Café<span>16</span></h2>
+    <div class="swatches"><i style="background:#f7f0e0" title="Papel #f7f0e0"></i><i style="background:#ece2cc" title="Papel 2 #ece2cc"></i><i style="background:#111c36" title="Tinta #111c36"></i><i style="background:#1a2947" title="Tinta 2 #1a2947"></i><i style="background:#e2b455" title="Mantequilla #e2b455"></i><i style="background:#a97c22" title="Mantequilla oscuro #a97c22"></i></div>
+    <p class="datos"><b>monograma</b> · escuadre</p>
+    <p class="datos">Archivo Black · Work Sans</p>
+    <span class="abre">Hoja de marca <i aria-hidden="true">→</i></span>
+  </div>
+</a></div>
+  <div class="vacio" id="vacio" hidden>
+    <h3 id="vacio-t">Ninguna marca responde a «<span id="vacio-q"></span>».</h3>
+    <p id="vacio-d">Prueba con el nombre corto o con un hex: el buscador lee nombres, giros, direcciones y paletas.</p>
+    <button class="btn" type="button" id="limpiar-2" onclick="document.getElementById('limpiar').click()">Ver las 16 hojas</button>
+  </div>
+</div></section>
+
+<section class="bloque"><div class="wrap">
+  <h2 class="zocalo">Qué trae una hoja</h2>
+  <p class="nota">Cinco pasos, el mismo orden en todas, para que dos marcas del mismo giro se puedan comparar de verdad. La teoría de la línea está en <a href="propuesta/">/marca/propuesta/</a>; aquí solo hay piezas levantadas.</p>
+  <ol class="lista">
+    <li><em>01</em><b>Símbolo y versiones</b><p>Positivo, negativo, monocromo y la marca en una línea, con sus tres prohibiciones escritas.</p></li>
+    <li><em>02</em><b>Paleta con funciones</b><p>Cada color con su rol y su contraste medido contra su pareja: texto y acento sobre la base, superficies bajo la tinta. Lo que no alcanza 4.5 para texto se dice, no se disfraza.</p></li>
+    <li><em>03</em><b>Tipografía</b><p>Espécimen real de la familia de titulares y la de trabajo, con su escala del letrero al pie de ficha.</p></li>
+    <li><em>04</em><b>Elementos</b><p>Forma de las esquinas, filetes, sellos, vocabulario de piezas propias y su vocabulario de movimiento.</p></li>
+    <li><em>05</em><b>Componentes</b><p>Barra, botón, campo, chip, tarjeta y sello pintados con los variables de esa marca: la línea ya funcionando.</p></li>
+  </ol>
+</div></section>
+
+<section class="bloque"><div class="wrap">
+  <h2 class="zocalo">Cómo está la línea hoy</h2>
+  <div class="cola">
+    <div>
+      <h3>Dieciséis hojas de cafetería, belleza todavía en el aire.</h3>
+      <p>Todas las marcas de este muro vienen del giro 01. Belleza va a entrar con su primera demo terminada: 40 fichas de uñas, pestaña y spa ya están en <a href="../belleza/">/belleza/</a>, y de ahí salen las hojas. Ninguna marca se publica sin su demo abierta: si la demo no existe, la hoja tampoco.</p>
+      <div class="cta">
+        <a class="btn" href="propuesta/">Cómo se arma una línea gráfica</a>
+        <a class="alt" href="../cafeterias/">Ver los negocios del giro 01</a>
+      </div>
+    </div>
+    <ul class="colas" aria-label="Cola de armaje">
+      <li><span>Cafeterías · giro 01</span><b>16 hojas</b></li>
+      <li><span>Belleza · giro 02</span><b>40 fichas, 0 hojas</b></li>
+      <li><span>Logo real descargado</span><b>7 de 16</b></li>
+      <li><span>Giros por abrir</span><b>Sin fecha</b></li>
+    </ul>
+  </div>
+</div></section>
+</main>
+<footer class="cierre">
+    <div class="wrap"><div class="pie-pagina">
+  <span><a href="..">Pulse LAT</a> · línea de marca</span>
+  <span>Lindavista, CDMX · 2026</span>
+</div></div>
 </footer>
+<script>(function(){
+  var q=document.getElementById('q'),cuenta=document.getElementById('cuenta'),
+      vacio=document.getElementById('vacio'),rejilla=document.getElementById('rejilla'),
+      limpiar=document.getElementById('limpiar'),vacioQ=document.getElementById('vacio-q'),
+      chips=Array.prototype.slice.call(document.querySelectorAll('.chip')),
+      fichas=Array.prototype.slice.call(document.querySelectorAll('.ficha')),
+      normal=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')},
+      filtro='todas';
+  function aplicar(){
+    var texto=normal(q.value.trim()),visibles=0;
+    fichas.forEach(function(f){
+      var t=!texto||normal(f.getAttribute('data-buscar')).indexOf(texto)>-1,
+          c=filtro==='todas'||f.getAttribute('data-tags').split(' ').indexOf(filtro)>-1,
+          v=t&&c;
+      f.hidden=!v; if(v)visibles++;
+    });
+    cuenta.textContent=(texto||filtro!=='todas'?visibles:fichas.length)+' hojas';
+    var nada=fichas.length&&visibles===0;
+    rejilla.hidden=!nada; vacio.hidden=!nada;
+    if(!vacio.hidden){
+      var bruto=q.value.trim();
+      document.getElementById('vacio-t').textContent=bruto?'Ninguna marca responde a «'+bruto+'».':
+        filtro==='demo'?'Todas las hojas ya tienen demo abierta.':'Ninguna marca de ese tipo, todavía.';
+      document.getElementById('vacio-d').textContent=bruto?'Prueba con el nombre corto, la calle o el color: el buscador lee nombres, giros, direcciones y los hex de la paleta.'
+        :'Las líneas se abren por giro. Belleza todavía no tiene hoja: va después de su primera demo.';
+      vacioQ.textContent=bruto;
+    }
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(o){o.setAttribute('aria-pressed','false')});
+    ch.setAttribute('aria-pressed','true');filtro=ch.getAttribute('data-chip');aplicar();
+  })});
+  q.addEventListener('input',aplicar);
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='/'&&document.activeElement!==q){ev.preventDefault();q.focus();q.select()}
+    if(ev.key==='Escape'&&document.activeElement===q){q.value='';aplicar();q.blur()}
+  });
+  limpiar.addEventListener('click',function(){
+    chips.forEach(function(o){o.setAttribute('aria-pressed','false')});
+    chips[0].setAttribute('aria-pressed','true');filtro='todas';q.value='';aplicar();
+  });
+})();</script>
 </body>
 </html>
