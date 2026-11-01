@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tory Café · café y comanda exprés en la 128</title>
+<meta name="description" content="Café, frappés, bagels y molletes en Pte. 128 505, Sta Cruz de las Salinas. Pide con precios reales y recoge por WhatsApp.">
+<meta property="og:title" content="Tory Café · comanda exprés">
+<meta property="og:description" content="Café, frappés y comida en la 128. Pide por WhatsApp con tu comanda lista.">
+<meta property="og:image" content="https://demos.pulselat.online/cafeterias/tory/fotos/casa.jpg">
+<meta property="og:url" content="https://demos.pulselat.online/cafeterias/tory/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/reclamo.css">
+<style>
+  :root{
+    --papel:#f7f0e0;
+    --papel-2:#ece2cc;
+    --tinta:#111c36;
+    --tinta-2:#1a2947;
+    --tenue:rgba(17,28,54,.66);
+    --linea:rgba(17,28,54,.16);
+    --mantequilla:#e2b455;
+    --mantequilla-oscuro:#a97c22;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--tenue);
+    --as-linea:var(--linea);
+    --as-acento:var(--mantequilla-oscuro);
+    --as-acento-tinta:#fffaf0;
+    --as-tarjeta:rgba(17,28,54,.045);
+    --as-radio:2px;
+    --as-panel:var(--tinta);
+    --as-panel-tinta:var(--papel);
+    --as-panel-tenue:rgba(247,240,224,.7);
+    --as-panel-linea:rgba(247,240,224,.18);
+    --as-panel-acento:var(--mantequilla);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Archivo Black",Impact,sans-serif;
+    --as-display-weight:400;
+    --as-display-ls:-.03em;
+    --as-body:"Work Sans",system-ui,sans-serif;
+    --rc-bg:var(--tinta);
+    --rc-fg:var(--papel);
+    --rc-acc:var(--mantequilla);
+    --rc-acc-fg:var(--tinta);
+    --rc-line:rgba(247,240,224,.18);
+    --rc-tenue:rgba(247,240,224,.7);
+    --rc-display:var(--as-display);
+    --rc-display-weight:400;
+    --rc-float-bg:var(--tinta);
+    --rc-float-fg:var(--papel);
+    --rc-float-acc:var(--mantequilla);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--tinta);font-family:var(--as-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 30px}
+  .display{font-family:var(--as-display);font-weight:400;line-height:1}
+
+  nav{position:fixed;inset:0 0 auto;z-index:40;background:rgba(247,240,224,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+  .marca{display:flex;align-items:center;gap:11px;min-height:44px}
+  .marca-mark{display:grid;place-items:center;width:40px;height:40px;background:var(--tinta);color:var(--mantequilla);font-family:var(--as-display);font-size:13px;letter-spacing:-.04em;flex:none}
+  .marca span{font-family:var(--as-display);font-weight:400;font-size:17px;letter-spacing:-.03em;line-height:1.05;text-transform:uppercase}
+  .marca small{display:block;margin-top:3px;font-family:var(--as-body);font-size:8.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue)}
+  .enlaces{display:flex;gap:25px;font-size:12.5px;color:var(--tenue)}
+  .enlaces a{position:relative;padding:4px 0}
+  .enlaces a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--mantequilla);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  .enlaces a:hover::after{transform:scaleX(1)}
+  .nav-wa{display:inline-flex;align-items:center;min-height:44px;padding:0 17px;background:var(--tinta);color:var(--papel);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
+  .nav-wa:hover{background:var(--mantequilla);color:var(--tinta)}
+
+  header{position:relative;background:var(--tinta);color:var(--papel);padding:116px 0 0;overflow:hidden}
+  header::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(247,240,224,.035) 0 1px,transparent 1px 46px);pointer-events:none}
+  .hero{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(30px,5vw,64px);align-items:end}
+  .hero-texto{padding-bottom:clamp(46px,7vw,84px)}
+  .eyebrow{display:flex;align-items:center;gap:11px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mantequilla);margin-bottom:20px}
+  .eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+  h1{font-family:var(--as-display);font-weight:400;font-size:clamp(42px,6.4vw,88px);line-height:.94;letter-spacing:-.04em;max-width:13ch;text-transform:uppercase}
+  h1 em{font-style:normal;color:var(--mantequilla)}
+  .lead{margin-top:22px;max-width:44ch;font-size:16px;line-height:1.7;color:rgba(247,240,224,.8)}
+  .acciones{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border:1px solid transparent;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:background .2s,color .2s,transform .2s}
+  .btn-solido{background:var(--mantequilla);color:var(--tinta)}
+  .btn-solido:hover{background:var(--papel)}
+  .btn-linea{border-color:rgba(247,240,224,.42);color:var(--papel)}
+  .btn-linea:hover{background:rgba(247,240,224,.1)}
+  .btn:active{transform:translateY(1px)}
+  .hero-datos{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,240,224,.7)}
+  .hero-datos span{display:flex;align-items:center;gap:8px}
+  .hero-datos i{width:5px;height:5px;background:var(--mantequilla);border-radius:50%;font-style:normal}
+
+  .fachada{position:relative;margin-bottom:clamp(40px,6vw,64px)}
+  .fachada img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.92) saturate(.9);border:8px solid var(--papel)}
+  .fachada::after{content:"";position:absolute;inset:8px;border:1px solid rgba(226,180,85,.5);pointer-events:none}
+  .stamp{position:absolute;right:-14px;top:-20px;background:var(--mantequilla);color:var(--tinta);padding:9px 13px;font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;line-height:1.5;text-align:center;transform:rotate(3deg)}
+  .stamp b{display:block;font-family:var(--as-display);font-size:19px;letter-spacing:-.02em}
+
+  .tira{background:var(--mantequilla);color:var(--tinta);overflow:hidden}
+  .tira .pista{display:flex;width:max-content;animation:correr 30s linear infinite}
+  .tira span{display:block;padding:11px 0;font-family:var(--as-display);font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+  .tira span+span::before{content:"/";padding:0 20px;opacity:.5}
+  @keyframes correr{to{transform:translateX(-50%)}}
+
+  section{padding:clamp(64px,8.5vw,100px) 0}
+  .cabeza{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;padding-bottom:18px;border-bottom:1px solid var(--linea)}
+  .cabeza h2{font-family:var(--as-display);font-weight:400;font-size:clamp(32px,4.5vw,56px);line-height:1;letter-spacing:-.04em;max-width:20ch;text-transform:uppercase}
+  .cabeza p{max-width:36ch;font-size:13.5px;line-height:1.65;color:var(--tenue)}
+  .kicker{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mantequilla-oscuro)}
+  .kicker::before{content:"";width:26px;height:1px;background:currentColor}
+
+  .comanda-seccion{background:var(--tinta);color:var(--papel);position:relative;overflow:hidden}
+  .comanda-seccion .cabeza{border-color:rgba(247,240,224,.2)}
+  .comanda-seccion .cabeza h2{color:var(--papel)}
+  .comanda-seccion .cabeza p{color:rgba(247,240,224,.64)}
+  .comanda-seccion .kicker{color:var(--mantequilla)}
+  .comanda-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(30px,5vw,66px);align-items:start}
+  .comanda-texto h3{font-family:var(--as-display);font-weight:400;font-size:clamp(28px,3.4vw,42px);line-height:1.02;letter-spacing:-.03em;text-transform:uppercase}
+  .comanda-texto p{margin-top:16px;font-size:14.5px;line-height:1.75;color:rgba(247,240,224,.64);max-width:38ch}
+  .comanda-datos{list-style:none;margin-top:28px;border-top:1px solid rgba(247,240,224,.2)}
+  .comanda-datos li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(247,240,224,.2);font-size:12px}
+  .comanda-datos b{font-family:var(--as-display);font-weight:400;font-size:11px;letter-spacing:.06em;color:var(--mantequilla)}
+  .comanda-datos span{color:rgba(247,240,224,.64);text-align:right}
+  .comanda-texto .btn{margin-top:26px}
+
+  .ticket{position:relative;background:#fcf6e8;color:var(--tinta);padding:30px 30px 26px;box-shadow:0 30px 70px -34px rgba(0,0,0,.75);max-width:620px;width:100%;margin-left:auto}
+  .ticket::before,.ticket::after{content:"";position:absolute;left:0;right:0;height:10px;background-image:radial-gradient(circle at 6px 0,transparent 0 5px,#fcf6e8 5.5px);background-size:12px 10px;background-repeat:repeat-x}
+  .ticket::before{top:-9px;transform:rotate(180deg)}
+  .ticket::after{bottom:-9px}
+  .ticket-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-bottom:14px;border-bottom:2px solid var(--tinta)}
+  .ticket-top b{font-family:var(--as-display);font-size:22px;letter-spacing:-.03em;line-height:1;text-transform:uppercase}
+  .ticket-top span{display:block;margin-top:5px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+  .ticket-folio{text-align:right;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+  .ticket-folio b{display:block;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:16px;letter-spacing:0;color:var(--tinta);margin-top:2px}
+  .ticket-bloque{padding-top:14px}
+  .ticket-bloque h4{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--as-display);font-size:11px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta)}
+  .ticket-bloque h4 span{font-family:var(--as-body);font-size:8px;font-weight:700;letter-spacing:.12em;color:var(--mantequilla-oscuro)}
+  .renglon{display:grid;grid-template-columns:minmax(0,1fr) 46px 46px;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dotted rgba(17,28,54,.24);font-size:12.5px}
+  .renglon span{line-height:1.35}
+  .renglon b{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:11.5px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+  .ticket-total{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:16px;padding-top:12px;border-top:2px solid var(--tinta);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .ticket-total b{font-family:var(--as-display);font-weight:400;font-size:15px;letter-spacing:-.01em}
+  .ticket-pie{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(17,28,54,.35);font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--tenue);display:flex;justify-content:space-between;gap:12px}
+  .ticket-pie span:last-child{text-align:right}
+
+  .barra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(32px,5.5vw,74px);align-items:center}
+  .barra figure{position:relative}
+  .barra img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.95)}
+  .barra figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tenue)}
+  .barra h2{font-family:var(--as-display);font-weight:400;font-size:clamp(32px,4.3vw,52px);line-height:1;letter-spacing:-.04em;text-transform:uppercase;max-width:15ch}
+  .barra p{margin-top:16px;max-width:46ch;font-size:15px;line-height:1.75;color:var(--tenue)}
+  .barra-datos{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;margin-top:26px;border-top:1px solid var(--linea)}
+  .dato-barra{padding:14px 0;border-bottom:1px solid var(--linea)}
+  .dato-barra b{display:block;font-family:var(--as-display);font-size:12px;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+  .dato-barra span{display:block;margin-top:3px;font-size:11.5px;line-height:1.5;color:var(--tenue)}
+
+  .carta{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .carta-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px}
+  .carta-col h3{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:2px solid var(--tinta);font-family:var(--as-display);font-size:12px;font-weight:400;letter-spacing:.03em;text-transform:uppercase}
+  .carta-col h3 span{font-family:var(--as-body);font-size:8.5px;font-weight:600;letter-spacing:.12em;text-transform:none;color:var(--tenue)}
+  .plato{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 16px;padding:11px 0;border-bottom:1px solid rgba(17,28,54,.1)}
+  .plato b{font-size:14px;line-height:1.35;font-weight:600}
+  .plato span{grid-column:1;font-size:11.5px;line-height:1.5;color:var(--tenue)}
+  .plato em{grid-column:2;grid-row:1 / span 2;align-self:center;font-style:normal;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:11px;color:var(--tinta);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .carta-nota{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;padding-top:18px;border-top:1px solid var(--linea);font-size:12px;line-height:1.6;color:var(--tenue)}
+  .carta-nota a{color:var(--tinta);border-bottom:1px solid var(--mantequilla-oscuro);padding-bottom:1px;font-weight:600}
+
+  .dudas-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+
+  .visita-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:start}
+  .dato{padding:19px 0;border-bottom:1px solid var(--linea)}
+  .dato:first-child{padding-top:0}
+  .dato h3{font-size:9.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--mantequilla-oscuro);margin-bottom:6px}
+  .dato p{font-size:16px;line-height:1.55}
+  .dato a{border-bottom:1px solid rgba(17,28,54,.3)}
+  .dato small{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:var(--tenue)}
+  .horario{display:flex;justify-content:space-between;gap:18px;padding:10px 0;font-size:14px;border-bottom:1px solid rgba(17,28,54,.1);color:var(--tenue)}
+  .horario b{font-weight:600;color:var(--tinta)}
+  .mapa{position:relative;margin-top:26px;border:1px solid var(--linea);overflow:hidden;background:var(--tinta)}
+  .mapa img{width:100%;height:220px;object-fit:cover;filter:brightness(.8) saturate(.85)}
+  .mapa a{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;min-height:42px;padding:0 16px;background:var(--papel);color:var(--tinta);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+
+  .cierre{background:var(--mantequilla);color:var(--tinta);padding:clamp(64px,8.5vw,100px) 0;text-align:center}
+  .cierre .kicker{justify-content:center;color:rgba(17,28,54,.6)}
+  .cierre h2{font-family:var(--as-display);font-weight:400;font-size:clamp(36px,5.3vw,70px);line-height:.98;letter-spacing:-.045em;max-width:19ch;margin:0 auto;text-transform:uppercase;text-wrap:balance}
+  .cierre p{max-width:45ch;margin:18px auto 0;font-size:14.5px;line-height:1.7;color:rgba(17,28,54,.72)}
+  .cierre .acciones{justify-content:center}
+  .cierre .btn-solido{background:var(--tinta);color:var(--papel)}
+  .cierre .btn-solido:hover{background:var(--papel);color:var(--tinta)}
+  .cierre .btn-linea{border-color:rgba(17,28,54,.35);color:var(--tinta)}
+  .cierre .btn-linea:hover{background:rgba(17,28,54,.07)}
+
+  footer{border-top:1px solid var(--linea);padding:26px 0;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--tenue)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+  @media (prefers-reduced-motion:no-preference){
+    header .eyebrow,header h1,header .lead,header .acciones,header .hero-datos,.fachada{animation:subir .9s cubic-bezier(.22,1,.36,1) both}
+    header h1{animation-delay:.07s}
+    header .lead{animation-delay:.14s}
+    header .acciones{animation-delay:.21s}
+    header .hero-datos{animation-delay:.28s}
+    .fachada{animation-delay:.12s}
+    @keyframes subir{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  }
+  @media (prefers-reduced-motion:reduce){.tira .pista{animation:none;flex-wrap:wrap;width:auto}}
+  @media (max-width:1000px){
+    .hero{grid-template-columns:1fr;gap:30px}
+    .hero-texto{padding-bottom:0}
+    .fachada{max-width:560px;margin-bottom:44px}
+    .comanda-grid{grid-template-columns:1fr;gap:38px}
+    .comanda-texto{max-width:600px}
+    .ticket{margin:0 auto}
+    .barra{grid-template-columns:1fr;gap:32px}
+    .barra figure{order:2}
+    .carta-grid{grid-template-columns:1fr 1fr;gap:34px}
+    .visita-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:900px){
+    .enlaces{display:none}
+    .dudas-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px}
+    h1{font-size:clamp(38px,10.8vw,54px)}
+    .lead{font-size:15.5px}
+    header{padding-top:102px}
+    nav .wrap{min-height:66px}
+    .marca small{display:none}
+    .marca span{font-size:14.5px}
+    .comanda-datos li{flex-direction:column;gap:3px}
+    .comanda-datos span{text-align:left}
+    .ticket{padding:24px 18px 20px}
+    .renglon{grid-template-columns:minmax(0,1fr) 40px 40px;font-size:12px}
+    .renglon b{font-size:10.5px}
+    .carta-grid{grid-template-columns:1fr;gap:30px}
+    .btn{flex:1 1 100%}
+    .cabeza h2{font-size:clamp(30px,8.6vw,42px)}
+    .cierre h2{font-size:clamp(32px,9.4vw,48px)}
+    .barra-datos{grid-template-columns:1fr}
+  }
+</style>
+<link rel="stylesheet" href="../../assets/motion.css">
+<link rel="stylesheet" href="../../assets/antislop.css">
+<link rel="stylesheet" href="../../assets/venta.css">
+<link rel="stylesheet" href="../../assets/pedido.css">
+</head>
+<body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
+<nav><div class="wrap">
+  <a class="marca" href="#inicio" aria-label="Tory Café">
+    <span class="marca-mark" aria-hidden="true">TC</span>
+    <span>Tory Café<small>Cafetería · 128</small></span>
+  </a>
+  <div class="enlaces nav-escritorio">
+    <a href="#comanda">La comanda</a><a href="#barra">La barra</a><a href="#carta">La carta</a><a href="#pide">Pide</a><a href="#visita">Visítanos</a>
+  </div>
+  <a class="nav-wa wa-barra" href="https://wa.me/525539043098">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
+</div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Tory Café</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#comanda"><span>01</span> La comanda</a>
+    <a href="#barra"><span>02</span> La barra</a>
+    <a href="#carta"><span>03</span> La carta</a>
+    <a href="#pide"><span>04</span> Pide</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/525539043098">Escribir por WhatsApp</a>
+    <p>Pte. 128 505<br>Sta Cruz de las Salinas, 02340</p>
+  </div>
+</div>
+
+<header id="inicio"><div class="wrap hero">
+  <div class="hero-texto">
+    <div class="eyebrow">Pte. 128 505 · Sta Cruz de las Salinas</div>
+    <h1>El café de la 128, <em>sin fila</em>.</h1>
+    <p class="lead">Café, frappés, bagels y molletes con precios claros. Pide desde aquí y recoge con tu comanda lista en la barra.</p>
+    <div class="acciones">
+      <a class="btn btn-solido" href="#pide">Armar mi comanda</a>
+      <a class="btn btn-linea" href="#carta">Ver la carta</a>
+    </div>
+    <div class="hero-datos">
+      <span><i aria-hidden="true"></i>4.3 en Google · 7 reseñas</span>
+      <span><i aria-hidden="true"></i>Lun–Vie desde 8 a.m.</span>
+      <span><i aria-hidden="true"></i>Precios en la carta</span>
+    </div>
+  </div>
+  <div class="fachada">
+    <div class="stamp">Comanda<b>EXPRÉS</b>Pte. 128</div>
+    <img src="fotos/casa.jpg" alt="Fachada de Tory Café con su letrero negro y la barra al fondo" fetchpriority="high">
+  </div>
+</div></header>
+
+<div class="tira" aria-hidden="true"><div class="pista">
+  <span>Café caliente</span><span>Frappés</span><span>Bagels</span><span>Molletes</span><span>Waffles</span><span>Smoothies</span><span>Carajillo</span>
+  <span>Café caliente</span><span>Frappés</span><span>Bagels</span><span>Molletes</span><span>Waffles</span><span>Smoothies</span><span>Carajillo</span>
+</div></div>
+
+<section class="comanda-seccion" id="comanda"><div class="wrap">
+  <div class="cabeza">
+    <div>
+      <div class="kicker">La firma de la casa</div>
+      <h2>Tu comanda,<br>impresa y lista.</h2>
+    </div>
+    <p>Tory tiene una carta larga: café, frío, comida y postre. Aquí cabe en un solo ticket, con precios chico y grande a la vista.</p>
+  </div>
+  <div class="comanda-grid">
+    <div class="comanda-texto">
+      <h3>Menos preguntar, más pedir.</h3>
+      <p>La comanda es la carta completa de Tory convertida en ticket: cada renglón trae su precio y su tamaño. Así sabes cuánto vas a pagar antes de pedir.</p>
+      <ul class="comanda-datos">
+        <li><b>CAFÉ</b><span>Caliente y frío</span></li>
+        <li><b>FRAPPÉS</b><span>Más de 15 sabores</span></li>
+        <li><b>COMIDA</b><span>Bagels, molletes y más</span></li>
+        <li><b>ANTOJO</b><span>Waffles y repostería</span></li>
+      </ul>
+      <a class="btn btn-solido" href="#pide">Pedir con esta carta</a>
+    </div>
+
+    <div class="ticket" aria-label="Carta de Tory Café en formato de comanda">
+      <div class="ticket-top">
+        <div><b>Tory Café</b><span>Pte. 128 505 · Sta Cruz de las Salinas<br>@tory_cafet · 55 3904 3098</span></div>
+        <div class="ticket-folio">Comanda<b>0028</b></div>
+      </div>
+      <div class="ticket-bloque">
+        <h4>Café caliente <span>CH / GD</span></h4>
+        <div class="renglon"><span>Americano</span><b>$30</b><b>$60</b></div>
+        <div class="renglon"><span>Capuccino</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Latte</span><b>$50</b><b>$35</b></div>
+        <div class="renglon"><span>Moka</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Chocolate caliente</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Matcha caliente</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Chai caliente</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Caramel caliente</span><b>$50</b><b>$60</b></div>
+        <div class="renglon"><span>Chocomalva</span><b>$60</b><b>—</b></div>
+      </div>
+      <div class="ticket-bloque">
+        <h4>Frío <span>GD</span></h4>
+        <div class="renglon"><span>Americano frío</span><b>$45</b><b></b></div>
+        <div class="renglon"><span>Capuchino frío</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Latte frío</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Matcha frío</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Chocolate frío</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Strawberry cream frío</span><b>$60</b><b></b></div>
+      </div>
+      <div class="ticket-bloque">
+        <h4>Carajillo <span>GD</span></h4>
+        <div class="renglon"><span>De Baylis</span><b>$110</b><b></b></div>
+        <div class="renglon"><span>De Conejito</span><b>$115</b><b></b></div>
+        <div class="renglon"><span>Tradicional</span><b>$110</b><b></b></div>
+      </div>
+      <div class="ticket-bloque">
+        <h4>Frappés <span>GD</span></h4>
+        <div class="renglon"><span>Caramelo · matcha · moka · Nutella</span><b>$70</b><b></b></div>
+        <div class="renglon"><span>Oreo · Ferrero · Baileys · Rompope</span><b>$75</b><b></b></div>
+      </div>
+      <div class="ticket-bloque">
+        <h4>Comida <span>precio</span></h4>
+        <div class="renglon"><span>Molletes 2 piezas</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Molletes 4 piezas</span><b>$90</b><b></b></div>
+        <div class="renglon"><span>Bagel 3 quesos</span><b>$80</b><b></b></div>
+        <div class="renglon"><span>Bagel pechuga de pollo</span><b>$100</b><b></b></div>
+        <div class="renglon"><span>Chapata pechuga</span><b>$116</b><b></b></div>
+        <div class="renglon"><span>Cuernito Nutella</span><b>$60</b><b></b></div>
+        <div class="renglon"><span>Ensalada</span><b>$60</b><b></b></div>
+      </div>
+      <div class="ticket-total"><span>Comanda lista para WhatsApp</span><b>Pide abajo</b></div>
+      <div class="ticket-pie"><span>Precios de la carta de Tory Café</span><span>Gracias por tu visita</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="barra"><div class="wrap">
+  <div class="cabeza">
+    <div>
+      <div class="kicker">La barra</div>
+      <h2>Café de barrio,<br>carta larga.</h2>
+    </div>
+    <p>Una cafetería de la 128 con barra, vitrina y mesas. Lo mismo para un café rápido que para una comida completa.</p>
+  </div>
+  <div class="barra">
+    <div>
+      <h2>Lo que sea la hora,<br>hay algo en la barra.</h2>
+      <p>Tory abre desde las 8: café para empezar, bagels y molletes para la comida, y frappés para la tarde. La carta es amplia porque el barrio pide de todo.</p>
+      <p>Si no sabes qué pedir, empieza por un capuccino y un bagel de tres quesos. Es la combinación que mejor resume la casa.</p>
+      <div class="barra-datos">
+        <div class="dato-barra"><b>Lun–Vie</b><span>8:00 a 20:00</span></div>
+        <div class="dato-barra"><b>Sábado</b><span>8:00 a 16:00</span></div>
+        <div class="dato-barra"><b>Instagram</b><span><a href="https://instagram.com/tory_cafet" target="_blank" rel="noopener">@tory_cafet →</a></span></div>
+        <div class="dato-barra"><b>Pedidos</b><span>Para llevar y en mesa</span></div>
+      </div>
+    </div>
+    <figure>
+      <img src="fotos/detalle.jpg" alt="Interior de Tory Café con vitrina y barra de madera" loading="lazy">
+      <figcaption><span>La barra de Tory</span><span>Pte. 128</span></figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="carta" id="carta"><div class="wrap">
+  <div class="cabeza">
+    <h2>La carta, en corto.</h2>
+    <p>Una selección de la comanda. La carta completa con todos los sabores está en el ticket de arriba.</p>
+  </div>
+  <div class="carta-grid">
+    <div class="carta-col">
+      <h3>Café <span>CH / GD</span></h3>
+      <div class="plato"><b>Americano</b><span>Espresso alargado.</span><em>$30 / $60</em></div>
+      <div class="plato"><b>Capuccino</b><span>Leche vaporizada.</span><em>$50 / $60</em></div>
+      <div class="plato"><b>Latte</b><span>Suave, largo.</span><em>$50 / $35</em></div>
+      <div class="plato"><b>Moka</b><span>Chocolate y café.</span><em>$50 / $60</em></div>
+      <div class="plato"><b>Matcha caliente</b><span>Batido a mano.</span><em>$50 / $60</em></div>
+      <div class="plato"><b>Chocolate caliente</b><span>Con leche.</span><em>$50 / $60</em></div>
+    </div>
+    <div class="carta-col">
+      <h3>Frío <span>GD</span></h3>
+      <div class="plato"><b>Capuchino frío</b><span>Leche y hielo.</span><em>$60</em></div>
+      <div class="plato"><b>Latte frío</b><span>Espresso y leche.</span><em>$60</em></div>
+      <div class="plato"><b>Frappé</b><span>15 sabores o más.</span><em>$70–75</em></div>
+      <div class="plato"><b>Carajillo</b><span>Baylis, Conejito o tradicional.</span><em>$110–115</em></div>
+      <div class="plato"><b>Smoothie</b><span>Base agua, fruta y hielo.</span><em>$70</em></div>
+      <div class="plato"><b>Soda italiana</b><span>Fresa, mango, limón.</span><em>$65</em></div>
+    </div>
+    <div class="carta-col">
+      <h3>Comida <span>precio</span></h3>
+      <div class="plato"><b>Molletes 2 piezas</b><span>Jamón, chorizo, pepperoni o piña.</span><em>$60</em></div>
+      <div class="plato"><b>Molletes 4 piezas</b><span>Mismo relleno, doble porción.</span><em>$90</em></div>
+      <div class="plato"><b>Bagel 3 quesos</b><span>Manchego, gouda y philadelphia.</span><em>$80</em></div>
+      <div class="plato"><b>Bagel pechuga</b><span>Pollo, queso, lechuga y jitomate.</span><em>$100</em></div>
+      <div class="plato"><b>Chapata pechuga</b><span>Con papas y salsa a elegir.</span><em>$116</em></div>
+      <div class="plato"><b>Cuernito Nutella</b><span>Philadelphia y Nutella.</span><em>$60</em></div>
+    </div>
+  </div>
+  <p class="carta-nota"><span>Precios tomados de la carta de Tory Café. La disponibilidad puede cambiar.</span><a href="https://wa.me/525539043098">Preguntar qué hay hoy →</a></p>
+</div></section>
+
+<section class="venta" id="pide" aria-labelledby="tc-venta-titulo"><div class="wrap">
+  <div class="venta-grid">
+    <div>
+      <div class="venta-kicker">Comanda exprés</div>
+      <h2 id="tc-venta-titulo">Pide con precios<br>a la vista.</h2>
+      <p class="venta-lead">Elige tamaño y sabor; el total se calcula solo. La comanda sale a WhatsApp con todo y la recoges en barra.</p>
+      <ol class="venta-pasos">
+        <li><b>01</b><div><strong>Elige de la carta</strong><span>Capuccino, frappé, bagel o molletes.</span></div></li>
+        <li><b>02</b><div><strong>Manda la comanda</strong><span>Sale con precios, tamaños y total.</span></div></li>
+        <li><b>03</b><div><strong>Recoge en barra</strong><span>Pte. 128 505, Sta Cruz de las Salinas.</span></div></li>
+      </ol>
+      <div class="venta-destacados">
+        <p class="venta-sub">Lo que más se pide</p>
+        <ul>
+          <li><span>Capuccino <em>· chico $50 / grande $60</em></span><b>$50</b></li>
+          <li><span>Bagel 3 quesos <em>· con papas</em></span><b>$80</b></li>
+          <li><span>Frappé <em>· desde $70</em></span><b>$70</b></li>
+        </ul>
+      </div>
+      <p class="venta-nota">Los precios son los de la carta de Tory Café. Si un producto se agota, te lo avisamos en el chat antes de preparar. Pedidos de 4 piezas o más, avisa con 20 minutos. <a href="https://www.google.com/maps/search/?api=1&amp;query=Tory+Caf%C3%A9+Pte.+128+505+Sta+Cruz+de+las+Salinas" target="_blank" rel="noopener">Ver la ficha en Google Maps</a>.</p>
+    </div>
+    <div class="venta-caja">
+      <div class="carrito" data-carrito data-wa="525539043098" data-cafe="Tory Café" data-verbo="pedido">
+        <div class="carrito-cabeza">
+          <p class="carrito-titulo">Tu comanda</p>
+          <span class="carrito-comanda">Folio 0028</span>
+        </div>
+        <p class="carrito-intro">Toca + en lo que quieras. El mensaje sale con tamaño, sabor y total.</p>
+        <div class="carrito-lista">
+          <article class="carrito-item" data-item data-nombre="Capuccino" data-precio="50">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Capuccino</h3>
+                <p class="carrito-item-desc">Leche vaporizada y espuma.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de capuccinos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un capuccino">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un capuccino">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$50</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del capuccino">
+              <button type="button" data-variante data-nombre-variante="Chico" data-precio="50" aria-pressed="true">Chico · $50</button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="60">Grande · $60</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Americano" data-precio="30">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Americano</h3>
+                <p class="carrito-item-desc">Espresso alargado.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de americanos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un americano">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un americano">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$30</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño del americano">
+              <button type="button" data-variante data-nombre-variante="Chico" data-precio="30" aria-pressed="true">Chico · $30</button>
+              <button type="button" data-variante data-nombre-variante="Grande" data-precio="60">Grande · $60</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Frappé" data-precio="70">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Frappé</h3>
+                <p class="carrito-item-desc">Base de leche y hielo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de frappés">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un frappé">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un frappé">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$70</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Sabor del frappé">
+              <button type="button" data-variante data-nombre-variante="Caramelo" aria-pressed="true">Caramelo · $70</button>
+              <button type="button" data-variante data-nombre-variante="Matcha">Matcha · $70</button>
+              <button type="button" data-variante data-nombre-variante="Oreo" data-precio="75">Oreo · $75</button>
+              <button type="button" data-variante data-nombre-variante="Ferrero" data-precio="75">Ferrero · $75</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Carajillo" data-precio="110">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Carajillo</h3>
+                <p class="carrito-item-desc">Café con licor, servido en barra.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de carajillos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un carajillo">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un carajillo">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$110</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tipo de carajillo">
+              <button type="button" data-variante data-nombre-variante="Baylis" aria-pressed="true">Baylis · $110</button>
+              <button type="button" data-variante data-nombre-variante="Conejito" data-precio="115">Conejito · $115</button>
+              <button type="button" data-variante data-nombre-variante="Tradicional">Tradicional · $110</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Bagel" data-precio="80">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Bagel</h3>
+                <p class="carrito-item-desc">Acompañado de papas.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de bagels">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un bagel">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un bagel">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$80</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tipo de bagel">
+              <button type="button" data-variante data-nombre-variante="3 quesos" aria-pressed="true">3 quesos · $80</button>
+              <button type="button" data-variante data-nombre-variante="Finas hierbas">Finas hierbas · $80</button>
+              <button type="button" data-variante data-nombre-variante="Pechuga de pollo" data-precio="100">Pechuga · $100</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Molletes" data-precio="60">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Molletes</h3>
+                <p class="carrito-item-desc">Jamón de pavo, queso y pico de gallo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de órdenes de molletes">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar una orden de molletes">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir una orden de molletes">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$60</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Tamaño de los molletes">
+              <button type="button" data-variante data-nombre-variante="2 piezas" aria-pressed="true">2 piezas · $60</button>
+              <button type="button" data-variante data-nombre-variante="4 piezas" data-precio="90">4 piezas · $90</button>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Cuernito Nutella" data-precio="60">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Cuernito Nutella</h3>
+                <p class="carrito-item-desc">Philadelphia y Nutella.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de cuernitos">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un cuernito">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un cuernito">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$60</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carrito-item" data-item data-nombre="Smoothie" data-precio="70">
+            <div class="carrito-item-fila">
+              <div>
+                <h3 class="carrito-item-nombre">Smoothie</h3>
+                <p class="carrito-item-desc">Base agua, fruta y hielo.</p>
+              </div>
+              <div class="carrito-item-compra">
+                <div class="carrito-stepper" role="group" aria-label="Cantidad de smoothies">
+                  <button class="carrito-paso" type="button" data-menos aria-label="Quitar un smoothie">−</button>
+                  <span class="carrito-cantidad" data-cantidad>0</span>
+                  <button class="carrito-paso" type="button" data-mas aria-label="Añadir un smoothie">+</button>
+                </div>
+                <span class="carrito-item-precio" data-precio-item>$70</span>
+              </div>
+            </div>
+            <div class="carrito-variantes" role="group" aria-label="Sabor del smoothie">
+              <button type="button" data-variante data-nombre-variante="Fresa" aria-pressed="true">Fresa</button>
+              <button type="button" data-variante data-nombre-variante="Mango">Mango</button>
+              <button type="button" data-variante data-nombre-variante="Frutos rojos">Frutos rojos</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="carrito-chips">
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="tc-modo">Cómo lo quieres</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="tc-modo" data-modo>
+              <button type="button" data-modo-opcion aria-pressed="true">Para llevar</button>
+              <button type="button" data-modo-opcion>En mesa</button>
+              <button type="button" data-modo-opcion>Pedido de oficina</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="tc-hora">¿A qué hora?</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="tc-hora" data-hora>
+              <button type="button" data-hora-opcion aria-pressed="true">Ahora</button>
+              <button type="button" data-hora-opcion>En 15 min</button>
+              <button type="button" data-hora-opcion>Más tarde</button>
+            </div>
+          </div>
+          <div class="carrito-grupo">
+            <p class="carrito-etiqueta" id="tc-personas">Cuántas personas</p>
+            <div class="carrito-chips-fila" role="group" aria-labelledby="tc-personas" data-grupo="Personas">
+              <button type="button" data-opcion aria-pressed="true">1</button>
+              <button type="button" data-opcion>2 a 3</button>
+              <button type="button" data-opcion>4 a 6</button>
+              <button type="button" data-opcion>Más de 6</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carrito-resumen" role="status" aria-live="polite">
+          <div>
+            <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+            <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar comanda</button>
+          </div>
+          <div class="carrito-resumen-total">
+            <span class="carrito-etiqueta">Total</span>
+            <b class="carrito-total" data-total>$0</b>
+          </div>
+        </div>
+
+        <button class="carrito-cta" type="button" data-enviar disabled>Enviar comanda por WhatsApp</button>
+        <p class="carrito-legal">No se cobra nada en esta página. La barra confirma disponibilidad y hora en el chat.</p>
+        <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+      </div>
+      <p class="venta-directo">¿Prefieres escribir directo? <a href="https://wa.me/525539043098">WhatsApp 55 3904 3098</a> · <a href="tel:+525539043098">Llamar</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="dudas" id="dudas"><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de venir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Precios, horarios y pedidos, resueltos sin rodeos.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Los precios son los de la carta?</summary><p>Sí. Tomamos los precios de la carta de Tory Café. Si algo cambia o se agota, te lo confirmamos por <a href="https://wa.me/525539043098">WhatsApp</a> antes de preparar.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí. Arma tu comanda aquí o manda mensaje por <a href="https://wa.me/525539043098">WhatsApp</a>; la recoges en barra.</p></details>
+      <details><summary>¿Tienen opciones sin café?</summary><p>Sí: chocolate, matcha, chai, smoothies, sodas italianas y aguas. También hay repostería y comida.</p></details>
+      <details><summary>¿Cuál es el horario?</summary><p>Lunes a viernes de 8 a 20 h y sábado de 8 a 16 h. Si hay cambios, se confirman por <a href="https://instagram.com/tory_cafet" target="_blank" rel="noopener">Instagram</a> o por <a href="https://wa.me/525539043098">WhatsApp</a>.</p></details>
+      <details><summary>¿Dónde están?</summary><p>En Pte. 128 505, Sta Cruz de las Salinas, Azcapotzalco, 02340, cerca del Metrobús Instituto del Petróleo.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.3</b><span>de 5 en Google<br>7 reseñas</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>Una cafetería de la 128 con carta amplia: café, frappés, bagels y molletes a precio de barrio.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Tory+Caf%C3%A9+Pte.+128+505+Sta+Cruz+de+las+Salinas" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
+<section id="visita"><div class="wrap">
+  <div class="cabeza">
+    <h2>En la 128, Salinas.</h2>
+    <p>Sta Cruz de las Salinas, cerca del Metrobús Instituto del Petróleo.</p>
+  </div>
+  <div class="visita-grid">
+    <div>
+      <div class="dato"><h3>Dirección</h3><p>Pte. 128 505<br>Sta Cruz de las Salinas, 02340<br>Azcapotzalco, CDMX</p></div>
+      <div class="dato"><h3>WhatsApp y llamadas</h3><p><a href="https://wa.me/525539043098">55 3904 3098</a></p></div>
+      <div class="dato"><h3>Comandas</h3><p><a href="#pide">Arma tu comanda aquí →</a><small>Para llevar, en mesa o para la oficina.</small></p></div>
+      <div class="dato" style="border:none"><h3>Instagram</h3><p><a href="https://instagram.com/tory_cafet" target="_blank" rel="noopener">@tory_cafet →</a></p></div>
+    </div>
+    <div>
+      <div class="dato" style="padding-top:0"><h3>Horario</h3></div>
+      <div class="horario"><b>Lunes a viernes</b><span>8:00 a 20:00</span></div>
+      <div class="horario"><b>Sábado</b><span>8:00 a 16:00</span></div>
+      <div class="horario"><b>Domingo</b><span>Consultar por WhatsApp</span></div>
+      <div class="horario"><b>Comanda</b><span>Se confirma en el chat</span></div>
+      <div class="mapa">
+        <img src="fotos/casa.jpg" alt="" aria-hidden="true" loading="lazy">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Tory+Caf%C3%A9+Pte.+128+505+Sta+Cruz+de+las+Salinas" target="_blank" rel="noopener">Ver el mapa →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cierre"><div class="wrap">
+  <div class="kicker">Comanda exprés</div>
+  <h2>Tu comanda ya está lista. Solo falta mandarla.</h2>
+  <p>Elige, manda y recoge en barra. Así de simple es el café de la 128.</p>
+  <div class="acciones">
+    <a class="btn btn-solido" href="https://wa.me/525539043098">Escribir por WhatsApp</a>
+    <a class="btn btn-linea" href="#carta">Ver la carta</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Tory Café · Pte. 128 505, Sta Cruz de las Salinas</span>
+  <span>Muestra de Pulse LAT · pulselat.online</span>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Tory Café","url":"https://demos.pulselat.online/cafeterias/tory/","image":"https://demos.pulselat.online/cafeterias/tory/fotos/casa.jpg","telephone":"+525539043098","priceRange":"$","servesCuisine":"Café, frappés, bagels y molletes","sameAs":["https://instagram.com/tory_cafet"],"address":{"@type":"PostalAddress","streetAddress":"Pte. 128 505, Sta Cruz de las Salinas","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"02340","addressCountry":"MX"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"7"}}
+</script>
+<script src="../../assets/venta.js" defer></script>
+<script src="../../assets/antislop.js" defer></script>
+<script src="../../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20Tory%20Caf%C3%A9.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
+
+</body>
+</html>

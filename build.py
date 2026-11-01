@@ -308,7 +308,7 @@ def render(slug, c):
         platillos=platillos,
         **p,
     )
-    target = BASE / slug
+    target = BASE / "cafeterias" / slug
     target.mkdir(parents=True, exist_ok=True)
     (target / "index.html").write_text(html, encoding="utf-8")
     return target

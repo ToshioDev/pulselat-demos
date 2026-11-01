@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Línea de diseño de marca · Pulse LAT</title>
+<meta name="description" content="Ruta general de diseño de marca en el directorio de Pulse LAT: líneas gráficas extraídas de cada giro, mostradas en sus piezas reales.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/marca/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/marca/">
+<meta property="og:title" content="Línea de diseño de marca · Pulse LAT">
+<meta property="og:description" content="Las líneas gráficas extraídas de cada giro, mostradas en sus piezas reales.">
+<meta property="og:image" content="https://demos.pulselat.online/cafeterias/thumbs/xochipilli.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#16130f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#16130f; --tinta-2:#1e1a15; --papel:#f4efe6;
+    --cuerpo:rgba(244,239,230,.72); --humo:rgba(244,239,230,.46);
+    --senal:#d9502b; --oro:#e2b455;
+    --linea:rgba(244,239,230,.16); --linea-fuerte:rgba(244,239,230,.34);
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif:"Instrument Serif",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  [hidden]{display:none!important}
+  body{background:var(--tinta);color:var(--papel);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--papel);color:var(--tinta);padding:10px 16px;z-index:100}
+  .skip:focus{left:12px;top:12px}
+
+  .top{border-bottom:1px solid var(--linea)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;transition:color .2s}
+  .marca-top:hover{color:#fff}
+  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
+  .miga{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
+  .miga a{border-bottom:1px solid var(--linea-fuerte);padding-bottom:1px;transition:color .2s,border-color .2s}
+  .miga a:hover{color:var(--papel);border-color:var(--senal)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px;transition:border-color .2s,color .2s}
+  .top-wa:hover{color:#fff;border-color:var(--senal)}
+
+  .intro{padding:clamp(46px,7vw,96px) 0 clamp(38px,5vw,64px)}
+  .intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:clamp(28px,5vw,72px);align-items:end}
+  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
+  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8.4vw,110px);line-height:.9;letter-spacing:-.025em;margin:20px 0 24px;max-width:11ch}
+  h1 em{font-style:italic;color:var(--oro)}
+  .lead{max-width:50ch;font-size:clamp(16px,1.4vw,19px);color:var(--cuerpo)}
+
+  .specimen{border:1px solid var(--linea-fuerte);padding:22px 22px 18px}
+  .specimen .alta{font-family:var(--serif);font-size:clamp(64px,9vw,104px);line-height:.86;letter-spacing:-.04em}
+  .specimen .alta i{color:var(--senal);font-style:italic}
+  .specimen .fila{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo)}
+  .specimen .escala{margin-top:14px;font-family:var(--serif);line-height:1.15;color:var(--cuerpo)}
+  .specimen .escala span{display:block}
+  .specimen .escala span:nth-child(1){font-size:30px;color:var(--papel)}
+  .specimen .escala span:nth-child(2){font-size:21px}
+  .specimen .escala span:nth-child(3){font-size:15px;font-family:"Archivo",sans-serif}
+  .specimen .escala .mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo);margin-top:8px}
+  .specimen .pastillas{display:flex;gap:5px;margin-top:16px}
+  .specimen .pastillas i{display:block;flex:1;height:30px}
+
+  .bloque{padding:clamp(38px,5.5vw,72px) 0;border-top:1px solid var(--linea)}
+  .bloque h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1;letter-spacing:-.02em;max-width:18ch}
+  .bloque .nota{margin-top:16px;max-width:56ch;color:var(--cuerpo);font-size:15.5px}
+  .bloque .nota a{color:var(--papel);border-bottom:1px solid var(--senal);padding-bottom:1px;transition:color .2s}
+  .bloque .nota a:hover{color:var(--senal)}
+  .lista{list-style:none;margin-top:30px;border-top:1px solid var(--linea-fuerte)}
+  .lista li{display:grid;grid-template-columns:62px minmax(0,22ch) minmax(0,1fr);gap:clamp(12px,2vw,26px);align-items:baseline;padding:19px 0;border-bottom:1px solid var(--linea)}
+  .lista em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal)}
+  .lista b{font-size:16px;font-weight:600;letter-spacing:-.005em;color:var(--papel)}
+  .lista p{font-size:14.5px;color:var(--cuerpo);max-width:62ch}
+
+  .piezas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:30px}
+  .pieza{grid-column:span 2;border:1px solid var(--linea);padding:16px;min-height:128px;display:flex;flex-direction:column;justify-content:space-between;background:var(--tinta-2)}
+  .pieza.grande{grid-column:span 3}
+  .pieza span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+  .pieza b{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,40px);line-height:.98;letter-spacing:-.02em;color:var(--papel)}
+  .pieza.grande b{font-size:clamp(34px,4.4vw,58px)}
+
+  .estado{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(24px,4vw,56px);align-items:center;border:1px solid var(--linea-fuerte);padding:clamp(24px,3.4vw,40px);margin-top:30px;background:var(--tinta-2)}
+  .estado h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.02;letter-spacing:-.02em}
+  .estado p{margin-top:12px;color:var(--cuerpo);max-width:46ch;font-size:15px}
+  .colas{list-style:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--humo)}
+  .colas li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--linea)}
+  .colas li:first-child{border-top:1px solid var(--linea)}
+  .colas b{color:var(--papel);font-weight:500;letter-spacing:.06em}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--senal);color:#fff;font:600 13px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:.2s}
+  .btn:hover{background:#ee6a45}
+  .btn:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+  .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px}
+  .alt{font-size:13px;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px;color:var(--cuerpo)}
+  .alt:hover{border-color:var(--senal);color:#fff}
+
+  .cierre{border-top:1px solid var(--linea);padding:clamp(40px,6vw,72px) 0 0}
+  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:20px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+  .pie-pagina a:hover{color:var(--papel)}
+
+  @media (max-width:960px){
+    .intro .wrap{grid-template-columns:1fr}
+    .specimen{max-width:520px}
+    .estado{grid-template-columns:1fr}
+    .piezas{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pieza,.pieza.grande{grid-column:span 1}
+  }
+  @media (max-width:900px){
+    .miga{display:none}
+    .lista li{grid-template-columns:48px minmax(0,1fr)}
+    .lista p{grid-column:2}
+  }
+  @media (max-width:520px){
+    .wrap{width:calc(100% - 32px)}
+    .top .wrap{height:50px}
+    .marca-top{font-size:10px;letter-spacing:.18em}
+    .top-wa{font-size:9.5px}
+    .intro{padding-top:38px}
+    h1{font-size:clamp(40px,11.4vw,60px);max-width:none}
+    .piezas{grid-template-columns:1fr}
+    .pie-pagina{font-size:9px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#entregables">Saltar al contenido</a>
+
+<div class="top">
+  <div class="wrap">
+    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
+    <p class="miga"><a href="../">Giros</a> · Línea de marca</p>
+    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20me%20interesa%20una%20demo%20de%20dise%C3%B1o%20de%20marca%20de%20Pulse%20LAT.">WhatsApp</a>
+  </div>
+</div>
+
+<header class="intro">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Línea gráfica transversal · en armaje</p>
+      <h1>Una marca,<br>vista en sus <em>cosas.</em></h1>
+      <p class="lead">Esta es la ruta general de todo lo gráfico. Aquí caen las líneas visuales extraídas de cada giro —cafeterías, belleza y los que vengan—, y se muestran en lo que el negocio usa de verdad: el letrero de la esquina, la bolsa del pedido, la carta de servicios, las portadas de redes. Ahí se ve si la identidad aguanta.</p>
+    </div>
+    <div class="specimen" aria-hidden="true">
+      <p class="alta">Aa <i>&amp;</i> 9</p>
+      <div class="escala"><span>Instrument Serif</span><span>Peso y color, no tamaño</span><span class="mono">Archivo · Plex Mono</span></div>
+      <div class="pastillas">
+        <i style="background:#d9502b"></i><i style="background:#e2b455"></i><i style="background:#f4efe6"></i><i style="background:#2b1a11"></i><i style="background:#15271d"></i>
+      </div>
+      <div class="fila"><span>Línea gráfica</span><span>CDMX · 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<main id="entregables">
+  <section class="bloque">
+    <div class="wrap">
+      <h2>Qué lleva una demo de diseño de marca</h2>
+      <p class="nota">Cinco piezas, siempre en el mismo orden, para que el dueño pueda comparar opciones sin comparar tonterías. La línea sale del negocio ya levantado en su giro —del letrero, la carta o la lista de servicios— y por eso su ruta es <a href="../">/marca/</a>, la misma para todos los giros.</p>
+      <ol class="lista">
+        <li><em>01</em><b>Símbolo y sus versiones</b><p>Mark, versión vertical, versión en una línea y la marca sola en negativo. Se entrega con las tres prohibiciones de uso escritas en claro: nunca estirada, nunca con sombra, nunca sobre foto recargada.</p></li>
+        <li><em>02</em><b>Tipografía y escala</b><p>Dos familias como máximo: una con carácter para titulares y una de trabajo para texto. Se muestra la escala completa, del letrero a 4 metros hasta el pie de una ficha de 70&nbsp;mm.</p></li>
+        <li><em>03</em><b>Paleta con funciones</b><p>Base neutra, color de marca y un acento para llamar la acción. Cada color lleva su papel escrito: dónde manda, dónde acompaña y dónde está prohibido.</p></li>
+        <li><em>04</em><b>Carta o lista de servicios</b><p>Lo que se vende, con sus precios. En un café es la carta; en belleza, la lista de servicios con tiempo y cabina. Aquí es donde el diseño deja de ser muestra y se vuelve la herramienta con la que la gente decide, reserva o pide.</p></li>
+        <li><em>05</em><b>Aplicaciones y redes</b><p>Letrero, empaque para llevar, uniforme, sello y tarjetas, más las portadas circulares que la gente ve primero. La carta y la lista de servicios ya van armadas en la entrega anterior.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloque" aria-labelledby="piezas">
+    <div class="wrap">
+      <h2 id="piezas">Las piezas que se ven en la demo</h2>
+      <div class="piezas">
+        <div class="pieza grande"><span>Aplicación 01</span><b>Letrero y<br>fachada</b></div>
+        <div class="pieza grande"><span>Aplicación 02</span><b>Bolsa y<br>vaso</b></div>
+        <div class="pieza"><span>Aplicación 03</span><b>Carta o<br>lista de servicios</b></div>
+        <div class="pieza"><span>Aplicación 04</span><b>Empaque<br>y sello</b></div>
+        <div class="pieza"><span>Aplicación 05</span><b>Portadas<br>de redes</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="wrap">
+      <h2>Estado de la línea</h2>
+      <div class="estado">
+        <div>
+          <h3>Aún sin demos publicadas.</h3>
+          <p>Esta carpeta se queda sin demos hasta tener la primera línea terminada: símbolo, paleta, tipos y sus aplicaciones montadas en una página propia. Sube aquí aunque el negocio haya salido de cafeterías, de belleza o de cualquier giro que se abra después.</p>
+          <div class="cta">
+            <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20una%20demo%20de%20dise%C3%B1o%20de%20marca%20para%20mi%20negocio.">Pedir una demo de marca
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+            </a>
+            <a class="alt" href="../cafeterias/">Mientras tanto: ver las demos de cafeterías</a>
+          </div>
+        </div>
+        <ul class="colas" aria-label="Cola de armaje">
+          <li><span>Cafeterías · giro 01</span><b>Siguiente</b></li>
+          <li><span>Belleza · giro 02</span><b>40 fichas tomadas</b></li>
+          <li><span>Carta y lista de servicios</span><b>El paso que falta</b></li>
+          <li><span>Giros por abrir</span><b>Sin fecha</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="cierre">
+  <div class="wrap">
+    <div class="pie-pagina">
+      <span><a href="../">Pulse LAT</a> · maquetas de demostración</span>
+      <span>Lindavista, CDMX · 2026</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

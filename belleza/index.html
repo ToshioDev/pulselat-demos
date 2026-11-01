@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levantamiento de belleza · Pulse LAT</title>
+<meta name="description" content="Giro 02 del directorio Pulse LAT: locales de uñas, pestañas, cejas y spa de Lindavista, Vallejo y San Bartolo, levantados uno por uno antes de montar su demo.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/belleza/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/belleza/">
+<meta property="og:title" content="Levantamiento de belleza · Pulse LAT">
+<meta property="og:description" content="Uñas, pestañas, cejas y spa de la zona, levantados local por local. Las demos suben conforme cada local cierra.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#f4efe6; --papel-2:#fbf7ef; --tinta:#16130f;
+    --cuerpo:#4e463b; --humo:#6b6357; --senal:#d9502b;
+    --linea:rgba(22,19,15,.16); --linea-fuerte:rgba(22,19,15,.42);
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif:"Instrument Serif",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  [hidden]{display:none!important}
+  body{background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);padding:10px 16px;z-index:100}
+  .skip:focus{left:12px;top:12px}
+
+  .top{background:var(--tinta);color:var(--papel)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;transition:color .2s}
+  .marca-top:hover{color:#fff}
+  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
+  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,230,.58)}
+  .estado a{border-bottom:1px solid rgba(244,239,230,.28);transition:color .2s,border-color .2s}
+  .estado a:hover{color:var(--papel);border-color:var(--senal)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(244,239,230,.5);padding-bottom:2px;transition:border-color .2s,color .2s}
+  .top-wa:hover{color:#fff;border-color:var(--senal)}
+
+  .intro{padding:clamp(46px,7vw,92px) 0 clamp(30px,4vw,48px)}
+  .intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:clamp(28px,5vw,72px);align-items:end}
+  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
+  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8.6vw,112px);line-height:.9;letter-spacing:-.025em;margin:20px 0 24px;max-width:15ch}
+  h1 em{font-style:italic;color:var(--senal)}
+  .lead{max-width:54ch;font-size:clamp(16px,1.4vw,19px);color:var(--cuerpo)}
+  .tecnica{list-style:none;border-top:1px solid var(--linea-fuerte)}
+  .tecnica li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--linea)}
+  .tecnica span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+  .tecnica b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1}
+
+  .buscador{position:sticky;top:0;z-index:30;background:rgba(244,239,230,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea-fuerte)}
+  .buscador .wrap{display:grid;grid-template-columns:minmax(280px,430px) minmax(0,1fr);align-items:center;gap:16px;padding:13px 0}
+  .campo{display:flex;align-items:center;gap:9px;border:1px solid var(--linea-fuerte);background:var(--papel-2);padding-left:13px}
+  .campo:focus-within{border-color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+  .campo>svg{flex:none;width:16px;height:16px;color:var(--humo)}
+  .campo input{flex:1;min-width:0;border:0;background:transparent;padding:12px 0;font:500 15px/1.2 "Archivo",sans-serif;color:var(--tinta);outline:none}
+  .campo input::placeholder{color:#8a8275;font-weight:400}
+  .campo input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+  .atajo{font-family:var(--mono);font-size:10.5px;color:var(--humo);border:1px solid var(--linea);padding:2px 7px;margin-right:9px}
+  .limpiar{border:0;background:transparent;color:var(--humo);font-size:20px;line-height:1;padding:4px 11px 7px;cursor:pointer}
+  .limpiar:hover{color:var(--senal)}
+  .barra-filtros{display:flex;align-items:center;gap:12px;min-width:0}
+  .filtros{display:flex;flex:1;align-items:center;gap:7px;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent)}
+  .filtros::-webkit-scrollbar{display:none}
+  .chip{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 11px;border:1px solid var(--linea-fuerte);background:transparent;color:var(--cuerpo);cursor:pointer;white-space:nowrap;transition:.18s}
+  .chip:hover{border-color:var(--tinta);color:var(--tinta)}
+  .chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+  .chip:focus-visible{outline:2px solid var(--senal);outline-offset:2px}
+  .cuenta{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+
+  .rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,22px);padding:clamp(28px,4vw,44px) 0 clamp(48px,7vw,80px)}
+  .ficha{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--linea);background:var(--papel-2);padding:18px clamp(16px,2vw,22px)}
+  .ficha:hover{border-color:var(--tinta)}
+  .ficha.demo{border-color:var(--linea-fuerte)}
+  .num{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--senal);flex:none;padding-top:3px;min-width:26px}
+  .fc{min-width:0;flex:1}
+  .fh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .fh h2{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.1vw,29px);line-height:1.05;letter-spacing:-.01em}
+  .nota{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo);white-space:nowrap}
+  .nota.ok{color:var(--senal)}
+  .fserv{margin-top:4px;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--humo)}
+  .fd{margin-top:11px;font-size:14px;color:var(--cuerpo);line-height:1.5}
+  .fpie{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:13px;padding-top:12px;border-top:1px solid var(--linea)}
+  .dato{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--humo)}
+  .dato b{color:var(--tinta);font-weight:500}
+  .lnk{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px;transition:.2s;white-space:nowrap}
+  .lnk:hover{color:var(--senal);border-color:var(--senal)}
+  .lnk svg{transition:transform .25s}
+  .lnk:hover svg{transform:translateX(3px)}
+
+  .intro-dos{display:grid;grid-template-columns:minmax(0,1fr) 268px;gap:clamp(28px,5vw,72px);align-items:start;padding-top:clamp(26px,3.4vw,44px);margin-top:clamp(26px,3.4vw,44px);border-top:1px solid var(--linea-fuerte)}
+  .callejero{border:1px solid var(--linea);background:var(--papel-2);padding:2px 15px 14px}
+  .callejero .kicker{margin-bottom:10px}
+  .callejero ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+  .callejero li{font-family:var(--mono);font-size:10px;letter-spacing:.01em;color:var(--cuerpo);padding:5px 0;border-bottom:1px solid var(--linea)}
+  .callejero li:nth-last-child(-n+2){border-bottom:0}
+  .callejero .nota{grid-column:1/-1;border:0;padding:9px 0 0;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--humo);white-space:normal;line-height:1.5}
+  .servicios{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea-fuerte)}
+  .servicios li{padding:15px 0;border-bottom:1px solid var(--linea)}
+  .servicios li:last-child{border-bottom:0}
+  .servicios em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal)}
+  .servicios b{font-family:var(--serif);font-weight:400;font-size:clamp(21px,1.9vw,26px);line-height:1.15;letter-spacing:-.01em;display:block;margin:6px 0 16px}
+  #fichas{scroll-margin-top:calc(var(--nav) + 26px)}
+
+  .criterios{border-top:1px solid var(--linea-fuerte);padding:clamp(30px,4vw,46px) 0 clamp(40px,6vw,70px)}
+  .criterios h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.02em}
+  .criterios ol{list-style:none;margin-top:24px;border-top:1px solid var(--linea)}
+  .criterios li{display:grid;grid-template-columns:56px minmax(0,20ch) minmax(0,1fr);gap:clamp(12px,2vw,26px);align-items:baseline;padding:16px 0;border-bottom:1px solid var(--linea)}
+  .criterios em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal)}
+  .criterios b{font-size:15px;font-weight:600}
+  .criterios p{font-size:14.5px;color:var(--cuerpo);max-width:64ch}
+
+  .aviso{border:1px solid var(--linea-fuerte);background:var(--papel-2);padding:18px clamp(16px,2vw,22px);margin-bottom:clamp(20px,3vw,32px);font-size:14.5px;color:var(--cuerpo);max-width:none}
+  .aviso b{color:var(--tinta)}
+
+  .cierre{background:var(--tinta);color:var(--papel);padding:clamp(50px,7vw,86px) 0 0}
+  .cierre h2{font-family:var(--serif);font-size:clamp(34px,5.4vw,66px);line-height:.98;letter-spacing:-.02em;max-width:17ch;margin:18px 0 18px}
+  .cierre h2 em{font-style:italic;color:var(--senal)}
+  .cierre p{max-width:52ch;color:rgba(244,239,230,.68)}
+  .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;background:var(--senal);color:#fff;font:600 13px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:.2s}
+  .btn:hover{background:#ee6a45}
+  .btn:focus-visible{outline:2px solid var(--senal);outline-offset:3px}
+  .alt{font-size:13px;border-bottom:1px solid rgba(244,239,230,.42);padding-bottom:2px;color:rgba(244,239,230,.82)}
+  .alt:hover{border-color:var(--senal);color:#fff}
+  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(40px,6vw,70px);padding:20px 0;border-top:1px solid rgba(244,239,230,.16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.5)}
+  .pie-pagina a:hover{color:var(--papel);border-bottom:1px solid var(--senal)}
+
+  @media (max-width:900px){
+    .intro .wrap,.intro-dos{grid-template-columns:1fr}
+    .intro-dos{gap:26px}
+    .tecnica{display:none}
+    .buscador .wrap{grid-template-columns:1fr;gap:10px;padding:11px 0}
+    .rejilla{grid-template-columns:1fr}
+    .cuenta{padding-left:2px}
+    .estado{display:none}
+    .criterios li{grid-template-columns:44px minmax(0,1fr)}
+    .criterios p{grid-column:2}
+  }
+  @media (max-width:520px){
+    .wrap{width:calc(100% - 32px)}
+    .top .wrap{height:50px}
+    .marca-top{font-size:10px;letter-spacing:.18em}
+    .top-wa{font-size:9.5px}
+    .campo input{font-size:16px}
+    .atajo{display:none}
+    .intro{padding-top:40px}
+    h1{font-size:clamp(40px,11.4vw,60px);max-width:14ch}
+    #fichas{scroll-margin-top:calc(var(--nav) + 14px)}
+    .callejero ul{grid-template-columns:1fr}
+    .callejero li{border-bottom:0;padding:4px 0}
+    .ficha{gap:12px;padding:16px 15px}
+    .lnk{margin-left:0}
+    .criterios li{padding:14px 0}
+    .criterios b{font-size:14.5px}
+    .cierre p{max-width:0}
+    .cuenta{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .pie-pagina{font-size:9px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#indice">Saltar al índice</a>
+
+<div class="top">
+  <div class="wrap">
+    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
+    <span class="estado"><a href="../">Giros</a> · Belleza y cuidado personal</span>
+    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20el%20levantamiento%20de%20belleza%20de%20Pulse%20LAT%20y%20quiero%20una%20demo%20para%20mi%20local.">WhatsApp</a>
+  </div>
+</div>
+
+<header class="intro">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Giro 02 · levantamiento en curso</p>
+      <h1>Uñas, pestañas<br>y una <em>agenda.</em></h1>
+      <p class="lead">Se está levantando local por local sobre Av. Montevideo, Buenavista, Riobamba y las calles de Lindavista y San Bartolo. Cada demo se arma con la lista de servicios real del estudio, sus tiempos y la cita entrando directo al WhatsApp de quien atiende.</p>
+    </div>
+    <ul class="tecnica" aria-label="Resumen del levantamiento">
+      <li><span>Locales</span><b>40</b></li>
+      <li><span>Con teléfono</span><b>40</b></li>
+      <li><span>Demos</span><b>00</b></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="intro-dos">
+      <div>
+        <p class="kicker">Cómo se arma una demo de belleza</p>
+        <ol class="servicios">
+          <li><em>01</em><b>Lista de servicios, no catálogo</b><p>Se toma lo que el estudio hace todos los días —el armado, el relleno, el retiro, las volumen que pide la clienta— y se escribe con los nombres que ya usan. Lo que no se hace, no se ofrece.</p></li>
+          <li><em>02</em><b>Tiempo y cabina por servicio</b><p>Cada servicio lleva su duración y su modalidad: cabina, sillón o domicilio. Sin el tiempo, el cliente no agenda; sin la modalidad, el estudio pierde el día.</p></li>
+          <li><em>03</em><b>Cita al WhatsApp de quien atiende</b><p>El pedido no es un formulario: arma el servicio, la fecha y el horario, y sale directo al número del estudio. Se confirma ahí, con la misma persona que trabaja.</p></li>
+        </ol>
+      </div>
+      <aside class="callejero" aria-label="Calles y plazas del levantamiento">
+        <p class="kicker">Por dónde se está yendo</p>
+        <ul>
+          <li>Av. Montevideo 363</li>
+          <li>Plaza Lindavista</li>
+          <li>Azcapotzalco–La Villa</li>
+          <li>Colector 13</li>
+          <li>Riobamba 734–740</li>
+          <li>Buenavista 124–227</li>
+          <li>Matanzas 905–914</li>
+          <li>Norte 23-A</li>
+          <li>Callao 668</li>
+          <li>Latacunga 812</li>
+          <li>Recife 655</li>
+          <li>Eje Central 681</li>
+          <li class="nota">27 en Lindavista · 4 en San Bartolo · 3 en Magdalena</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section class="buscador" aria-label="Buscar y filtrar locales">
+  <div class="wrap">
+    <div class="campo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+      <label class="sr" for="q">Buscar locales</label>
+      <input id="q" type="search" placeholder="Nombre, calle o servicio…" autocomplete="off" enterkeyhint="search">
+      <span class="atajo" aria-hidden="true">/</span>
+      <button class="limpiar" id="limpiar" type="button" aria-label="Limpiar búsqueda" hidden>×</button>
+    </div>
+    <div class="barra-filtros">
+      <div class="filtros" role="group" aria-label="Filtros por servicio">
+        <button class="chip" type="button" data-chip="todos" aria-pressed="true">Todos</button>
+        <button class="chip" type="button" data-chip="unas" aria-pressed="false">Uñas</button>
+        <button class="chip" type="button" data-chip="pestana" aria-pressed="false">Pestañas y cejas</button>
+        <button class="chip" type="button" data-chip="spa" aria-pressed="false">Spa y masaje</button>
+        <button class="chip" type="button" data-chip="facial" aria-pressed="false">Faciales</button>
+        <button class="chip" type="button" data-chip="pelo" aria-pressed="false">Pelo</button>
+        <button class="chip" type="button" data-chip="demo" aria-pressed="false">Con demo</button>
+      </div>
+      <p class="cuenta" id="cuenta" aria-live="polite">40 fichas</p>
+    </div>
+  </div>
+</section>
+
+<main id="indice">
+  <div class="wrap">
+    <p class="aviso"><b>Qué estás viendo.</b> Esta lista es el levantamiento, no las demos: nombre, servicio, dirección, calificación y teléfono públicos de cada local. La maqueta se arma cuando el dueño confirma precios y horarios; entonces su ficha deja de ser dato y se vuelve sitio.</p>
+    <div class="rejilla" id="rejilla">
+<!--FICHAS-->
+      <article class="ficha" data-tags="facial" data-buscar="leonora studio | lindavista centro de estética ·  · av. montevideo 363-local 118 av. montevideo 363-local 118, lindavista sur, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">01</span>
+        <div class="fc">
+          <div class="fh"><h2>Leonora Studio | Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Av. Montevideo 363-local 118, Lindavista Sur</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 2,700 reseñas</span>
+            <span class="dato">Tel <b>55 7577 8358</b></span>
+            <span class="dato">10 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Leonora+Studio+%7C+Lindavista/data=!4m7!3m6!1s0x85d1f9acfe0dd67d:0xf3a7755cc4402a0c!8m2!3d19.4920883!4d-99.133728!16s%2Fg%2F11tchz2mfj!19sChIJfdYN_qz50YURDCpAxFx1p_M" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="get spa lindavista spa de día ·  · coquimbo 775 coquimbo 775, lindavista nte., gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">02</span>
+        <div class="fc">
+          <div class="fh"><h2>Get Spa Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa de día · Spa y masaje</p>
+          <p class="fd">Coquimbo 775, Lindavista Nte.</p>
+          <div class="fpie">
+            <span class="dato"><b>4.6</b> · 2,568 reseñas</span>
+            <span class="dato">Tel <b>55 5119 6195</b></span>
+            <span class="dato">870 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Get+Spa+Lindavista/data=!4m7!3m6!1s0x85d1f9a2fa40ec3b:0x73ba96368c426266!8m2!3d19.4901861!4d-99.1255277!16s%2Fg%2F11cnbmn65x!19sChIJO-xA-qL50YURZmJCjDaWunM" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="greñitas lindavista centro de estética ·  · colector 13 # 270 ls01 colector 13 # 270 ls01, magdalena de las salinas, gustavo a. madero, 07760 cdmx metrobús san bartolo estética general">
+        <span class="num">03</span>
+        <div class="fc">
+          <div class="fh"><h2>GREÑITAS LINDAVISTA</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">COLECTOR 13 # 270 LS01, Magdalena de las Salinas</p>
+          <div class="fpie">
+            <span class="dato"><b>4.3</b> · 617 reseñas</span>
+            <span class="dato">Tel <b>55 5119 9652</b></span>
+            <span class="dato">660 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/GRE%C3%91ITAS+LINDAVISTA/data=!4m7!3m6!1s0x85d1f9a5e9c50419:0x64b93644daa82f45!8m2!3d19.4864479!4d-99.1316234!16s%2Fg%2F1td2h7lk!19sChIJGQTF6aX50YURRS-o2kQ2uWQ" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pelo" data-buscar="the barber&#x27;s spa lindavista barbería ·  · plaza lindavista, 2ndo piso, av. montevideo 363-loc 324 plaza lindavista, 2ndo piso, av. montevideo 363-loc 324, lindavista sur, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pelo y barbería">
+        <span class="num">04</span>
+        <div class="fc">
+          <div class="fh"><h2>The Barber's Spa Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pelo y barbería</p>
+          <p class="fd">Plaza Lindavista, 2ndo piso</p>
+          <div class="fpie">
+            <span class="dato"><b>4.5</b> · 467 reseñas</span>
+            <span class="dato">Tel <b>55 9277 4495</b></span>
+            <span class="dato">30 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/The+Barber%27s+Spa+Lindavista/data=!4m7!3m6!1s0x85d1f9a54307476f:0xb0e870c4d57b1662!8m2!3d19.4917956!4d-99.1336813!16s%2Fg%2F11c440p08f!19sChIJb0cHQ6X50YURYhZ71cRw6LA" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="stilisimo centro de estética · av. montevideo 363-loc 318 av. montevideo 363-loc 318, lindavista sur, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">05</span>
+        <div class="fc">
+          <div class="fh"><h2>Stilisimo</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Av. Montevideo 363-Loc 318, Lindavista Sur</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 426 reseñas</span>
+            <span class="dato">Tel <b>55 5586 3963</b></span>
+            <span class="dato">30 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Stilisimo/data=!4m7!3m6!1s0x85d1f9a3c8128709:0x98a22d9c836fe330!8m2!3d19.4919685!4d-99.1338133!16s%2Fg%2F1tg3bfvl!19sChIJCYcSyKP50YURMONvg5wtopg" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="nailkery lindavista cdmx salón de manicura y pedicura ·  · calzada azcapotzalco la villa esquina con eten lindavista calzada azcapotzalco la villa esquina con eten lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">06</span>
+        <div class="fc">
+          <div class="fh"><h2>Nailkery Lindavista CDMX</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Calzada Azcapotzalco La Villa esquina con Eten Lindavista, Gustavo A. Madero</p>
+          <div class="fpie">
+            <span class="dato"><b>4.2</b> · 394 reseñas</span>
+            <span class="dato">Tel <b>55 7156 7840</b></span>
+            <span class="dato">580 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Nailkery+Lindavista+CDMX/data=!4m7!3m6!1s0x85d1fffcf4847017:0x6d0815eced0109fc!8m2!3d19.4910993!4d-99.1390003!16s%2Fg%2F11gdh1fyns!19sChIJF3CE9Pz_0YUR_AkB7ewVCG0" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="uñas con ángel - sucursal plaza lindavista centro de estética · av. montevideo 363 av. montevideo 363, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">07</span>
+        <div class="fc">
+          <div class="fh"><h2>Uñas Con Ángel - Sucursal Plaza Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Av. Montevideo 363, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 264 reseñas</span>
+            <span class="dato">Tel <b>55 4086 5739</b></span>
+            <span class="dato">50 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/U%C3%B1as+Con+%C3%81ngel+-+Sucursal+Plaza+Lindavista/data=!4m7!3m6!1s0x85d1f93a3fae4af3:0xe71854cd716edc49!8m2!3d19.4925098!4d-99.1335519!16s%2Fg%2F11t_pw8m2r!19sChIJ80quPzr50YURSdxucc1UGOc" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pelo" data-buscar="barbería 737 barbería · buenavista 124 buenavista 124, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pelo y barbería">
+        <span class="num">08</span>
+        <div class="fc">
+          <div class="fh"><h2>BARBERÍA 737</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pelo y barbería</p>
+          <p class="fd">Buenavista 124, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.9</b> · 257 reseñas</span>
+            <span class="dato">Tel <b>55 1560 7864</b></span>
+            <span class="dato">620 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/BARBER%C3%8DA+737/data=!4m7!3m6!1s0x85d1f90005ebe2ff:0xc0aff78024bd3761!8m2!3d19.4911048!4d-99.1278078!16s%2Fg%2F11ydwf278q!19sChIJ_-LrBQD50YURYTe9JID3r8A" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="divya centro de estética ·  · colector 13 280 colector 13 280, magdalena de las salinas, gustavo a. madero, 07760 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">09</span>
+        <div class="fc">
+          <div class="fh"><h2>Divya</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Colector 13 280, Magdalena de las Salinas</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 221 reseñas</span>
+            <span class="dato">Tel <b>56 5976 7626</b></span>
+            <span class="dato">650 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Divya/data=!4m7!3m6!1s0x85d1f9a683dc20fd:0x363ce69f8d5d51bd!8m2!3d19.4864952!4d-99.1316564!16s%2Fg%2F11g6ntrz9c!19sChIJ_SDcg6b50YURvVFdjZ_mPDY" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pelo" data-buscar="poliplaza barberia barbería · billar, c. manuel luis stampa billar, c. manuel luis stampa, nueva industrial vallejo, gustavo a. madero, 07700 cdmx metrobús lindavista-vallejo pelo y barbería">
+        <span class="num">10</span>
+        <div class="fc">
+          <div class="fh"><h2>POLIPLAZA BARBERIA</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pelo y barbería</p>
+          <p class="fd">BILLAR, C. Manuel Luis Stampa</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 215 reseñas</span>
+            <span class="dato">Tel <b>96 2466 1856</b></span>
+            <span class="dato">1630 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/POLIPLAZA+BARBERIA/data=!4m7!3m6!1s0x85d1f9b7a321ba71:0x67207d0473bc8913!8m2!3d19.4993306!4d-99.1470684!16s%2Fg%2F11z9n1zhm4!19sChIJcboho7f50YURE4m8cwR9IGc" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="naailslindavistalux salón de manicura y pedicura · apaseo el alto 39 apaseo el alto 39, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">11</span>
+        <div class="fc">
+          <div class="fh"><h2>NaailsLindavistaLux</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Apaseo El Alto 39, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 204 reseñas</span>
+            <span class="dato">Tel <b>55 2511 0143</b></span>
+            <span class="dato">730 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/NaailsLindavistaLux/data=!4m7!3m6!1s0x85d1f9a5ca0872d5:0xa069b1c9816186f5!8m2!3d19.4900027!4d-99.140233!16s%2Fg%2F11c60j4q3z!19sChIJ1XIIyqX50YUR9YZhgcmxaaA" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="nüva spa lindavista spa · matanzas 914 matanzas 914, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">12</span>
+        <div class="fc">
+          <div class="fh"><h2>NÜVA SPA LINDAVISTA</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y masaje</p>
+          <p class="fd">Matanzas 914, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.9</b> · 197 reseñas</span>
+            <span class="dato">Tel <b>55 4799 6402</b></span>
+            <span class="dato">830 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/N%C3%9CVA+SPA+LINDAVISTA/data=!4m7!3m6!1s0x85d1f9f2d2a99651:0x11ecc79b8c635edf!8m2!3d19.4968793!4d-99.1275519!16s%2Fg%2F11zfmy4n07!19sChIJUZap0vL50YUR315jjJvH7BE" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="reduinfinity® lindavista spa y gimnasio · riobamba 737 placita riobamaba riobamba 737 placita riobamaba, lindavista, gustavo a. madero, 07300 cdmx metrobús san bartolo spa y masaje">
+        <span class="num">13</span>
+        <div class="fc">
+          <div class="fh"><h2>Reduinfinity® Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y gimnasio · Spa y masaje</p>
+          <p class="fd">Riobamba 737 Placita Riobamaba, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 186 reseñas</span>
+            <span class="dato">Tel <b>55 8989 1254</b></span>
+            <span class="dato">680 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Reduinfinity%C2%AE+Lindavista/data=!4m7!3m6!1s0x85d1f95d5f3256bf:0x2a3ecbb3f2dd912!8m2!3d19.489856!4d-99.1275646!16s%2Fg%2F11v0x21h8y!19sChIJv1YyX1350YUREtktP7vsowI" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="depilación con cera, depilady rouse centro de estética ·  · norte 23-a 58 norte 23-a 58, lindavista vallejo iii secc, gustavo a. madero, 07750 ciudad de méxico, cdmx metrobús montevideo faciales y piel">
+        <span class="num">14</span>
+        <div class="fc">
+          <div class="fh"><h2>Depilación con cera, Depilady Rouse</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Faciales y piel</p>
+          <p class="fd">Norte 23-A 58, Lindavista Vallejo III Secc</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 159 reseñas</span>
+            <span class="dato">Tel <b>55 2498 8186</b></span>
+            <span class="dato">1610 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Depilaci%C3%B3n+con+cera,+Depilady+Rouse/data=!4m7!3m6!1s0x85d1f84da2ee97c1:0x1e178fc899f8d40!8m2!3d19.493151!4d-99.1489607!16s%2Fg%2F11c45lrs3c!19sChIJwZfuok340YURQI2fifx44QE" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="samsara spa spa · nte. 25-a 48 nte. 25-a 48, lindavista vallejo iii secc, gustavo a. madero, 07750 ciudad de méxico, cdmx metrobús lindavista-vallejo spa y masaje">
+        <span class="num">15</span>
+        <div class="fc">
+          <div class="fh"><h2>Samsara Spa</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y masaje</p>
+          <p class="fd">Nte. 25-A 48, Lindavista Vallejo III Secc</p>
+          <div class="fpie">
+            <span class="dato"><b>4.8</b> · 155 reseñas</span>
+            <span class="dato">Tel <b>55 3879 3321</b></span>
+            <span class="dato">1720 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Samsara+Spa/data=!4m7!3m6!1s0x85d1f9a269526009:0xe26532e69cde1074!8m2!3d19.4931062!4d-99.1500236!16s%2Fg%2F1txnpt87!19sChIJCWBSaaL50YURdBDenOYyZeI" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="d-uñas | encuentro fortuna salón de manicura y pedicura · centro comercial encuentro fortuna, av fortuna 334-loc sc21 centro comercial encuentro fortuna, av fortuna 334-loc sc21, magdalena de las salinas, gustavo a. madero, 07760 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">16</span>
+        <div class="fc">
+          <div class="fh"><h2>d-uñas | Encuentro Fortuna</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Centro Comercial Encuentro Fortuna, Av Fortuna 334-Loc SC21</p>
+          <div class="fpie">
+            <span class="dato"><b>4.3</b> · 141 reseñas</span>
+            <span class="dato">Tel <b>56 3030 5045</b></span>
+            <span class="dato">870 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/d-u%C3%B1as+%7C+Encuentro+Fortuna/data=!4m7!3m6!1s0x85d1f9a64e6f5f6b:0x66040ce30c1afb75!8m2!3d19.4842717!4d-99.1327146!16s%2Fg%2F11g9dqy3tr!19sChIJa19vTqb50YURdfsaDOMMBGY" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="studio kap&#x27;s centro de estética ·  · lindavista 350 lindavista 350, lindavista nte., gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">17</span>
+        <div class="fc">
+          <div class="fh"><h2>studio KAP'S</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Lindavista 350, Lindavista Nte.</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 131 reseñas</span>
+            <span class="dato">Tel <b>55 8589 3557</b></span>
+            <span class="dato">610 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/studio+KAP%27S/data=!4m7!3m6!1s0x85d1f9bb94105d43:0xf7d6ccabb538581a!8m2!3d19.4965164!4d-99.1301694!16s%2Fg%2F1pty_n5zg!19sChIJQ10QlLv50YURGlg4tavM1vc" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="bellicenter centro de estética · lindavista av lindavista av, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">18</span>
+        <div class="fc">
+          <div class="fh"><h2>Bellicenter</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Lindavista Av, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.2</b> · 125 reseñas</span>
+            <span class="dato">Tel <b>55 6501 0321</b></span>
+            <span class="dato">650 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Bellicenter/data=!4m7!3m6!1s0x85d1f9ee163ee2e9:0x42a008a77da78072!8m2!3d19.4952129!4d-99.1283378!16s%2Fg%2F1ptvzt42v!19sChIJ6eI-Fu750YURcoCnfacIoEI" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="paxia centro de relajación &amp; spa de autor spa de día ·  · c. riobamba 740 c. riobamba 740, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">19</span>
+        <div class="fc">
+          <div class="fh"><h2>PAXIA Centro de relajación &amp; Spa de autor</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa de día · Spa y masaje</p>
+          <p class="fd">C. Riobamba 740, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 111 reseñas</span>
+            <span class="dato">Tel <b>55 5754 6784</b></span>
+            <span class="dato">630 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/PAXIA+Centro+de+relajaci%C3%B3n+%26+Spa+de+autor/data=!4m7!3m6!1s0x85d1f9af5fa460a1:0x878b7f3a2f83f992!8m2!3d19.4899723!4d-99.1279969!16s%2Fg%2F1tdcb4df!19sChIJoWCkX6_50YURkvmDLzp_i4c" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="estética &quot;sharon&quot; centro de estética · calz. azcapotzalco - la villa 666 calz. azcapotzalco - la villa 666, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">20</span>
+        <div class="fc">
+          <div class="fh"><h2>Estética "Sharon"</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Calz. Azcapotzalco - La Villa 666, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.5</b> · 107 reseñas</span>
+            <span class="dato">Tel <b>55 1604 7459</b></span>
+            <span class="dato">560 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Est%C3%A9tica+%22Sharon%22/data=!4m7!3m6!1s0x85d1f9ae17aa50fd:0x1eb2fb5fc427bb1e!8m2!3d19.4911453!4d-99.1388959!16s%2Fg%2F11ddwv3p5l!19sChIJ_VCqF6750YURHrsnxF_7sh4" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="tus lindas uñas - lindavista salón de manicura y pedicura · callao 668 callao 668, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">21</span>
+        <div class="fc">
+          <div class="fh"><h2>Tus Lindas Uñas - Lindavista</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Callao 668, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 106 reseñas</span>
+            <span class="dato">Tel <b>55 6559 0574</b></span>
+            <span class="dato">840 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Tus+Lindas+U%C3%B1as+-+Lindavista/data=!4m7!3m6!1s0x85d1f97d23c82955:0x8456525c62ff3264!8m2!3d19.4868562!4d-99.1278226!16s%2Fg%2F11sq9tqf31!19sChIJVSnII3350YURZDL_YlxSVoQ" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pelo" data-buscar="estética / barberia glamour barbería · san bartolo s/n san bartolo s/n, san bartolo atepehuacan, gustavo a. madero, 07730 ciudad de méxico, cdmx metrobús san bartolo pelo y barbería">
+        <span class="num">22</span>
+        <div class="fc">
+          <div class="fh"><h2>Estética / Barberia Glamour</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pelo y barbería</p>
+          <p class="fd">San Bartolo s/n, San Bartolo Atepehuacan</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 106 reseñas</span>
+            <span class="dato">Tel <b>55 3733 8558</b></span>
+            <span class="dato">630 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Est%C3%A9tica+%2F+Barberia+Glamour/data=!4m7!3m6!1s0x85d1f9471b191f95:0xade1bfcb2f17352a!8m2!3d19.4918976!4d-99.1395811!16s%2Fg%2F11h0cvfnqz!19sChIJlR8ZG0f50YURKjUXL8u_4a0" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="spa essence concept spa ·  · salaverry 914-interior 108 salaverry 914-interior 108, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">23</span>
+        <div class="fc">
+          <div class="fh"><h2>SPA ESSENCE CONCEPT</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y masaje</p>
+          <p class="fd">Salaverry 914-interior 108, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 89 reseñas</span>
+            <span class="dato">Tel <b>55 4584 1996</b></span>
+            <span class="dato">880 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/SPA+ESSENCE+CONCEPT/data=!4m7!3m6!1s0x85d1f9471b553031:0x8be551b72ab85290!8m2!3d19.4989231!4d-99.1294668!16s%2Fg%2F11tp486d7g!19sChIJMTBVG0f50YURkFK4KrdR5Ys" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="salon m &amp; o centro de estética · manizales 740 manizales 740, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">24</span>
+        <div class="fc">
+          <div class="fh"><h2>SALON M &amp; O</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Manizales 740, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.6</b> · 88 reseñas</span>
+            <span class="dato">Tel <b>55 5829 5592</b></span>
+            <span class="dato">160 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/SALON+M+%26+O/data=!4m7!3m6!1s0x85d1f0af5cf678fd:0x64e650b351b6b980!8m2!3d19.4930081!4d-99.1323912!16s%2Fg%2F11c2j2rt71!19sChIJ_Xj2XK_w0YURgLm2UbNQ5mQ" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="studio lbs, estética y maquillaje centro de estética · latacunga 812 latacunga 812, lindavista nte., gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">25</span>
+        <div class="fc">
+          <div class="fh"><h2>Studio LBS, Estética y Maquillaje</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Latacunga 812, Lindavista Nte.</p>
+          <div class="fpie">
+            <span class="dato"><b>4.9</b> · 88 reseñas</span>
+            <span class="dato">Tel <b>55 9326 4723</b></span>
+            <span class="dato">690 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Studio+LBS,+Est%C3%A9tica+y+Maquillaje/data=!4m7!3m6!1s0x85d1f95b0632f903:0x4c5e8f1abb60e0cf!8m2!3d19.4922306!4d-99.1270459!16s%2Fg%2F11kc8rxt9p!19sChIJA_kyBlv50YURz-BguxqPXkw" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="maisha beauty spa spa y gimnasio · buenavista 227 buenavista 227, lindavista nte., gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">26</span>
+        <div class="fc">
+          <div class="fh"><h2>Maisha Beauty Spa</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y gimnasio · Spa y masaje</p>
+          <p class="fd">Buenavista 227, Lindavista Nte.</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 75 reseñas</span>
+            <span class="dato">Tel <b>55 4536 5243</b></span>
+            <span class="dato">340 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Maisha+Beauty+Spa/data=!4m7!3m6!1s0x85d1f9525a947b49:0xfdc9cb7735bda768!8m2!3d19.4939123!4d-99.1310638!16s%2Fg%2F11vjsgrlc3!19sChIJSXuUWlL50YURaKe9NXfLyf0" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="spa" data-buscar="blossoms nails spa spa ·  · matanzas 905-loc f matanzas 905-loc f, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo spa y masaje">
+        <span class="num">27</span>
+        <div class="fc">
+          <div class="fh"><h2>Blossoms Nails Spa</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Spa y masaje</p>
+          <p class="fd">Matanzas 905-Loc F, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.5</b> · 55 reseñas</span>
+            <span class="dato">Tel <b>55 6382 8051</b></span>
+            <span class="dato">840 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Blossoms+Nails+Spa/data=!4m7!3m6!1s0x85d1f9bc413a8c1d:0x58b75a7ee7e3bb08!8m2!3d19.496807!4d-99.12732!16s%2Fg%2F11c45jrd6h!19sChIJHYw6Qbz50YURCLvj535at1g" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="lima nani beauty studio salón de manicura y pedicura · recife 655 recife 655, lindavista, gustavo a. madero, 07730 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">28</span>
+        <div class="fc">
+          <div class="fh"><h2>Lima Nani Beauty Studio</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Recife 655, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 52 reseñas</span>
+            <span class="dato">Tel <b>55 7865 6205</b></span>
+            <span class="dato">480 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Lima+Nani+Beauty+Studio/data=!4m7!3m6!1s0x85d1f9dfdb6c3f1d:0x91ec4dff61549233!8m2!3d19.4906998!4d-99.137973!16s%2Fg%2F11l741nllv!19sChIJHT9s29_50YURM5JUYf9N7JE" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="möön lashes lindavista centro de estética · calz. azcapotzalco - la villa 666-loc 11 calz. azcapotzalco - la villa 666-loc 11, san bartolo atepehuacan, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pestañas y cejas">
+        <span class="num">29</span>
+        <div class="fc">
+          <div class="fh"><h2>MÖÖN LASHES LINDAVISTA</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Calz. Azcapotzalco - La Villa 666-Loc 11, San Bartolo Atepehuacan</p>
+          <div class="fpie">
+            <span class="dato"><b>4.7</b> · 51 reseñas</span>
+            <span class="dato">Tel <b>55 8094 3187</b></span>
+            <span class="dato">590 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/M%C3%96%C3%96N+LASHES+LINDAVISTA/data=!4m7!3m6!1s0x85d1f9ae17478545:0x83340aee26256ad7!8m2!3d19.4911506!4d-99.1391018!16s%2Fg%2F11g9g0504d!19sChIJRYVHF6750YUR12olJu4KNIM" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="skin beauty bar esteticista facial · sucursal valle dorado calle atenas #196 col. valle dorado tlalnepantla de baz, cp 54023 estado de méxico, sucursal lindavista, trujillo 668 trujillo 668, sucursal lindavista, gustavo a. madero metrobús san bartolo faciales y piel">
+        <span class="num">30</span>
+        <div class="fc">
+          <div class="fh"><h2>Skin Beauty Bar</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Faciales y piel</p>
+          <p class="fd">Trujillo 668, sucursal Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.9</b> · 51 reseñas</span>
+            <span class="dato">Tel <b>55 7452 5497</b></span>
+            <span class="dato">200 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Skin+Beauty+Bar/data=!4m7!3m6!1s0x85d21d2cdecd3b97:0xd7079779fddabefb!8m2!3d19.4906407!4d-99.1348182!16s%2Fg%2F11jsfc041k!19sChIJlzvN3iwd0oUR-77a_XmXB9c" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="aphrodite beauty centro de estética · av. montevideo 619-a av. montevideo 619-a, lindavista, gustavo a. madero, 07700 ciudad de méxico, cdmx metrobús instituto del petróleo estética general">
+        <span class="num">31</span>
+        <div class="fc">
+          <div class="fh"><h2>Aphrodite Beauty</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Av. Montevideo 619-A, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 43 reseñas</span>
+            <span class="dato">Tel <b>55 6144 4200</b></span>
+            <span class="dato">1150 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Aphrodite+Beauty/data=!4m7!3m6!1s0x85d1f9c463513e43:0xe25397f5f211954f!8m2!3d19.4931846!4d-99.1445453!16s%2Fg%2F11jt0rlfzb!19sChIJQz5RY8T50YURT5UR8vWXU-I" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="isla glam estudio uñas y pestañas centro de estética · eje central lázaro cárdenas 681 eje central lázaro cárdenas 681, san bartolo atepehuacan, gustavo a. madero, 07730 ciudad de méxico, cdmx metrobús lindavista-vallejo pestañas y cejas">
+        <span class="num">32</span>
+        <div class="fc">
+          <div class="fh"><h2>Isla Glam Estudio Uñas y Pestañas</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Eje Central Lázaro Cárdenas 681, San Bartolo Atepehuacan</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 42 reseñas</span>
+            <span class="dato">Tel <b>55 7798 7989</b></span>
+            <span class="dato">1450 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Isla+Glam+Estudio+U%C3%B1as+y+Pesta%C3%B1as/data=!4m7!3m6!1s0x85d1f9a2d06df5ff:0x5472e5f78f7b9874!8m2!3d19.4959884!4d-99.1468119!16s%2Fg%2F11y7t3c6yx!19sChIJ__Vt0KL50YURdJh7j_flclQ" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="facial" data-buscar="seda salon centro de estética · calz. azcapotzalco - la villa 666-loc 11 calz. azcapotzalco - la villa 666-loc 11, san bartolo atepehuacan, gustavo a. madero, 07730 ciudad de méxico, cdmx metrobús san bartolo estética general">
+        <span class="num">33</span>
+        <div class="fc">
+          <div class="fh"><h2>Seda Salon</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Estética general</p>
+          <p class="fd">Calz. Azcapotzalco - La Villa 666-Loc 11, San Bartolo Atepehuacan</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 38 reseñas</span>
+            <span class="dato">Tel <b>56 5911 5214</b></span>
+            <span class="dato">590 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Seda+Salon/data=!4m7!3m6!1s0x85d1f97d78ce4a69:0xf530a07b5f9fea5f!8m2!3d19.4911506!4d-99.1391018!16s%2Fg%2F11z2j_d31g!19sChIJaUrOeH350YURX-qfX3ugMPU" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="rose nails centro de estética · av instituto politécnico nacional 2023-int 302 av instituto politécnico nacional 2023-int 302, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">34</span>
+        <div class="fc">
+          <div class="fh"><h2>Rose Nails</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Av Instituto Politécnico Nacional 2023-int 302, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 36 reseñas</span>
+            <span class="dato">Tel <b>56 1708 9657</b></span>
+            <span class="dato">860 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Rose+Nails/data=!4m7!3m6!1s0x85d1f94c23ce7d8d:0x673e93f5b9ec64fd!8m2!3d19.4996256!4d-99.1316185!16s%2Fg%2F11lg2vnbfx!19sChIJjX3OI0z50YUR_WTsufWTPmc" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="tavira studio nails | lashes salón de manicura y pedicura · cuzco 902 cuzco 902, lindavista nte., gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">35</span>
+        <div class="fc">
+          <div class="fh"><h2>Tavira Studio Nails | Lashes</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Cuzco 902, Lindavista Nte.</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 29 reseñas</span>
+            <span class="dato">Tel <b>56 6476 5107</b></span>
+            <span class="dato">850 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Tavira+Studio+Nails+%7C+Lashes/data=!4m7!3m6!1s0x85d1f911f963a365:0x55eaf265aa15f57f!8m2!3d19.4959875!4d-99.1265814!16s%2Fg%2F11zy048ly4!19sChIJZaNj-RH50YURf_UVqmXy6lU" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="unas" data-buscar="home nail studio centro de estética · montiel 262 montiel 262, lindavista sur, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo uñas y pedicura">
+        <span class="num">36</span>
+        <div class="fc">
+          <div class="fh"><h2>Home Nail Studio</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Uñas y pedicura</p>
+          <p class="fd">Montiel 262, Lindavista Sur</p>
+          <div class="fpie">
+            <span class="dato"><b>4.6</b> · 26 reseñas</span>
+            <span class="dato">Tel <b>55 2473 8052</b></span>
+            <span class="dato">770 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Home+Nail+Studio/data=!4m7!3m6!1s0x85d1f917897dffa5:0x384e1acfb1a3b194!8m2!3d19.4875297!4d-99.1280401!16s%2Fg%2F11scm8c4by!19sChIJpf99iRf50YURlLGjsc8aTjg" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="cils lashes - extensiones de pestañas centro de estética · managua 811 managua 811, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pestañas y cejas">
+        <span class="num">37</span>
+        <div class="fc">
+          <div class="fh"><h2>Cils Lashes - Extensiones de pestañas</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Managua 811, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>4.4</b> · 22 reseñas</span>
+            <span class="dato">Tel <b>55 8530 7171</b></span>
+            <span class="dato">450 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Cils+Lashes+-+Extensiones+de+pesta%C3%B1as/data=!4m7!3m6!1s0x85d1f9a2cddf6579:0xc614b614b05428a4!8m2!3d19.4943544!4d-99.1300593!16s%2Fg%2F11gbzn3pj9!19sChIJeWXfzaL50YURpChUsBS2FMY" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="luma lash &amp; brows studio centro de estética · buenavista 215 buenavista 215, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pestañas y cejas">
+        <span class="num">38</span>
+        <div class="fc">
+          <div class="fh"><h2>Luma Lash &amp; Brows Studio</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Buenavista 215, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 15 reseñas</span>
+            <span class="dato">Tel <b>55 4778 2177</b></span>
+            <span class="dato">340 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Luma+Lash+%26+Brows+Studio/data=!4m7!3m6!1s0x85d1f990b2322f25:0xd76a9bdbc66cad53!8m2!3d19.4935439!4d-99.1307226!16s%2Fg%2F11ss6gtrkq!19sChIJJS8yspD50YURU61sxtubatc" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="liaa beauty bar salón de pestañas · av ricarte 456 av ricarte 456, churubusco tepeyac, gustavo a. madero, 07730 ciudad de méxico, cdmx metrobús instituto del petróleo pestañas y cejas">
+        <span class="num">39</span>
+        <div class="fc">
+          <div class="fh"><h2>Liaa Beauty Bar</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Av Ricarte 456, Churubusco Tepeyac</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 10 reseñas</span>
+            <span class="dato">Tel <b>55 1690 8687</b></span>
+            <span class="dato">560 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Liaa+Beauty+Bar/data=!4m7!3m6!1s0x85d1f91e38de540b:0x55411de23a47a817!8m2!3d19.4887764!4d-99.1376592!16s%2Fg%2F11ltkvng7s!19sChIJC1TeOB750YURF6hHOuIdQVU" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="ficha" data-tags="pestana" data-buscar="hello beauty lashes &amp; nails salón de pestañas · av. montevideo 186 a av. montevideo 186 a, lindavista, gustavo a. madero, 07300 ciudad de méxico, cdmx metrobús san bartolo pestañas y cejas">
+        <span class="num">40</span>
+        <div class="fc">
+          <div class="fh"><h2>Hello Beauty Lashes &amp; Nails</h2><span class="nota">Teléfono público</span></div>
+          <p class="fserv">Pestañas y cejas</p>
+          <p class="fd">Av. Montevideo 186 a, Lindavista</p>
+          <div class="fpie">
+            <span class="dato"><b>5.0</b> · 10 reseñas</span>
+            <span class="dato">Tel <b>55 7666 0346</b></span>
+            <span class="dato">760 m de Plaza Lindavista</span>
+            <a class="lnk" href="https://www.google.com/maps/place/Hello+Beauty+Lashes+%26+Nails/data=!4m7!3m6!1s0x85d1f90055ac881d:0xa274efd878d8b5e9!8m2!3d19.4883015!4d-99.1275075!16s%2Fg%2F11xg3w0s2k!19sChIJHYisVQD50YUR6bXYeNjvdKI" target="_blank" rel="noopener nofollow">Ver ficha en Maps <svg width="15" height="10" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+<!--/FICHAS-->
+    </div>
+
+    <div class="vacio" id="vacio" hidden>
+      <p class="kicker">Sin resultados</p>
+      <h2 id="vacio-t" style="font-size:clamp(30px,4.6vw,52px);line-height:1;margin:14px 0 12px">No hay local para esa búsqueda.</h2>
+      <p id="vacio-d" style="color:var(--cuerpo)">Prueba con «uñas», «pestañas», «spa» o una calle de la zona.</p>
+      <button class="btn" id="reset" type="button" style="margin-top:22px;background:var(--tinta)">Quitar filtros</button>
+    </div>
+  </div>
+
+  <section class="criterios">
+    <div class="wrap">
+      <h2>Cómo se elige un local para demo</h2>
+      <ol>
+        <li><em>01</em><b>Existe y atiende</b><p>Dirección física en la zona, teléfono público y horario estable. Los que sólo viven en un perfil de Instagram quedan fuera hasta que se pueda confirmar el contacto.</p></li>
+        <li><em>02</em><b>La gente ya lo recomienda</b><p>Entre 4.2 y 5.0 con reseñas reales: la mayoría de la zona no llega a 4.2, y un local con 3.2 no se sube a ningún lado. Sin clientes que lo respalden, una lista de servicios no vende en una demo.</p></li>
+        <li><em>03</em><b>Precios defendibles</b><p>Si el precio no es público, se muestra como «pregunta en cabina» en lugar de inventarlo. La demo puede costar más que el local.</p></li>
+        <li><em>04</em><b>Una firma visual</b><p>El letrero, el color de la cabina o el trabajo de la manicurista dan la identidad. Sin eso, la demo sería otra plantilla con otro nombre.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="cierre">
+  <div class="wrap">
+    <p class="kicker">Pulse LAT · Giro 02</p>
+    <h2>¿Tienes estudio y no tienes <em>sitio?</em></h2>
+    <p>Se arma la demo con tu lista de servicios y tus horarios, publicada en este giro. Sin plantillas: tu letrero y tu carta de servicios mandan.</p>
+    <div class="acciones">
+      <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20tengo%20un%20local%20de%20belleza%20en%20la%20zona%20y%20quiero%20una%20demo%20de%20Pulse%20LAT.">Hablar por WhatsApp
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+      </a>
+      <a class="alt" href="../cafeterias/">Ver el giro de cafeterías</a>
+    </div>
+    <div class="pie-pagina">
+      <span><a href="../">Pulse LAT</a> · maquetas de demostración</span>
+      <span>Lindavista, CDMX · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const q = document.getElementById('q');
+  const cards = Array.from(document.querySelectorAll('.ficha'));
+  const cuenta = document.getElementById('cuenta');
+  const vacio = document.getElementById('vacio');
+  const rejilla = document.getElementById('rejilla');
+  const vacioT = document.getElementById('vacio-t');
+  const vacioD = document.getElementById('vacio-d');
+  const limpiar = document.getElementById('limpiar');
+  const atajo = document.querySelector('.atajo');
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const reset = document.getElementById('reset');
+  let filtro = 'todos';
+
+  const normal = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  function aplicar() {
+    const texto = normal(q.value.trim());
+    let visibles = 0;
+    cards.forEach(card => {
+      const coincideTexto = !texto || normal(card.dataset.buscar).includes(texto);
+      const coincideChip = filtro === 'todos' || card.dataset.tags.split(' ').includes(filtro);
+      const ver = coincideTexto && coincideChip;
+      card.hidden = !ver;
+      if (ver) visibles++;
+    });
+    cuenta.textContent = (texto || filtro !== 'todos' ? visibles : cards.length) + ' fichas';
+    const hayFichas = cards.length > 0;
+    rejilla.hidden = hayFichas && visibles === 0;
+    vacio.hidden = !(hayFichas && visibles === 0);
+    if (!vacio.hidden) {
+      const bruto = q.value.trim();
+      if (bruto) {
+        vacioT.textContent = 'Nada para «' + bruto + '».';
+        vacioD.textContent = 'Prueba con el nombre del local, la calle o el servicio: uñas, pestañas, spa, facial, barbería.';
+      } else if (filtro === 'demo') {
+        vacioT.textContent = 'Las demos de belleza todavía no están.';
+        vacioD.textContent = 'El levantamiento va primero: ' + cards.length + ' locales con teléfono público. La maqueta se arma con los precios y horarios que confirme cada estudio.';
+      } else {
+        vacioT.textContent = 'Ningún local de ese servicio, todavía.';
+        vacioD.textContent = 'En el levantamiento no hay nadie de ese rubro. Se busca en la siguiente vuelta de la zona.';
+      }
+    }
+    limpiar.hidden = q.value === '';
+    atajo.hidden = q.value !== '';
+  }
+
+  q.addEventListener('input', aplicar);
+  limpiar.addEventListener('click', () => { q.value = ''; q.focus(); aplicar(); });
+  chips.forEach(btn => btn.addEventListener('click', () => {
+    filtro = btn.dataset.chip;
+    chips.forEach(x => x.setAttribute('aria-pressed', String(x === btn)));
+    aplicar();
+  }));
+  reset.addEventListener('click', () => {
+    q.value = ''; filtro = 'todos';
+    chips.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.chip === 'todos')));
+    aplicar(); q.focus();
+  });
+  document.addEventListener('keydown', e => {
+    const activo = document.activeElement.tagName;
+    if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(activo)) { e.preventDefault(); q.focus(); }
+    if (e.key === 'Escape' && document.activeElement === q) { q.value = ''; aplicar(); }
+  });
+
+  aplicar();
+})();
+</script>
+</body>
+</html>
