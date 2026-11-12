@@ -695,8 +695,10 @@
 
   // Quiz de fundador: califica y decide si va a WhatsApp o solo se guarda
   const WA_NUMERO = '522296500422';
-  // Pega aquí la URL de tu Apps Script (hoja de Google). Vacía = aún no se guarda en ningún lado.
-  const GUARDAR_URL = '';
+  // Supabase propio de Bit. La llave anon es pública; la tabla solo acepta inserciones (RLS).
+  const SUPABASE_URL = '';      // p. ej. https://abcd1234.supabase.co
+  const SUPABASE_ANON = '';     // Project Settings → API → anon public
+  const GUARDAR = Boolean(SUPABASE_URL && SUPABASE_ANON);
   const UMBRAL = 9; // de 15 puntos posibles
 
   const quiz = document.getElementById('quiz');
@@ -741,15 +743,20 @@
     };
 
     // Se guardan todos los leads (calificados o no) si hay a dónde.
-    if (GUARDAR_URL) {
-      try { fetch(GUARDAR_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(lead) }); } catch (_) {}
+    if (GUARDAR) {
+      const fila = Object.assign({}, lead); delete fila.fecha;
+      fetch(SUPABASE_URL + '/rest/v1/bit_leads', {
+        method: 'POST', keepalive: true,
+        headers: { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + SUPABASE_ANON, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify(fila)
+      }).catch(() => {});
     }
 
     quiz.hidden = true;
     document.querySelector('.quiz-barra').hidden = true;
     pasoTxt.textContent = 'Resultado';
-    // Sin lugar donde guardar, nadie se pierde: el no calificado también va a WhatsApp, marcado.
-    if (califica || !GUARDAR_URL) {
+    // Sin Supabase configurado, nadie se pierde: el no calificado también va a WhatsApp, marcado.
+    if (califica || !GUARDAR) {
       const texto = [
         califica ? 'Hola, quiero mi lugar de fundador en Bit.' : 'Hola, me interesa Bit (lead por calificar).',
         `Negocio: ${lead.negocio}`, `Nombre: ${lead.nombre}`, `Giro: ${lead.giro}`, `Número de: ${lead.compania}`,
