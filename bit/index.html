@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bit, agente de negocio · Pulse LAT</title>
+<title>Bit · by PulseLAT</title>
 <meta name="description" content="Bit es el agente de negocio de Pulse LAT: contesta las llamadas que desvías desde tu celular o fijo, vende con tu catálogo real de PulsePOS y te reporta por WhatsApp.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://demos.pulselat.online/bit/">
@@ -16,7 +16,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='15' y='2' width='2' height='7' fill='%23d5cd4a'/%3E%3Ccircle cx='16' cy='3.5' r='3' fill='%23f39a5b'/%3E%3Crect x='3' y='9' width='26' height='21' rx='2' fill='%23e3e67f'/%3E%3Crect x='6' y='12' width='20' height='14' fill='%23120d0e'/%3E%3Crect x='10' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3Crect x='19' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Cuarto */
@@ -56,6 +56,47 @@
   .estado a:hover{color:var(--texto)}
   .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--raya-2);padding-bottom:2px}
   .top-wa:hover{border-color:var(--lima)}
+
+  .by{display:inline-flex;align-items:center;gap:7px;font-family:"Quicksand",var(--sans);font-size:13px;color:var(--texto-3);border:1px solid var(--raya);border-radius:999px;padding:4px 11px 4px 5px;text-transform:none;letter-spacing:0}
+  .by b{font-weight:700;color:var(--texto)}.by .l{font-weight:300;color:var(--texto)}
+  .by:hover{border-color:var(--lima);color:var(--texto)}
+  .top-nav{margin-left:auto;display:flex;align-items:center;gap:16px}
+  .top-cta{font:700 13px/1 var(--sans);background:var(--lima);color:var(--tinta);border-radius:10px;padding:9px 13px}
+  .top-cta:hover{filter:brightness(1.05)}
+
+  /* Fundadores */
+  .fundadores{padding:clamp(60px,8vw,108px) 0;border-top:1px solid var(--raya);background:radial-gradient(50% 60% at 15% 20%,rgba(200,255,60,.08),transparent 70%),var(--noche-2)}
+  .oferta{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(20px,3vw,36px);align-items:start}
+  .lugares{display:flex;align-items:center;gap:14px;margin-top:22px}
+  .lugares b{font-family:var(--serif);font-weight:400;font-size:clamp(56px,6vw,80px);line-height:.8;color:var(--naranja)}
+  .lugares span{font-size:15px;font-weight:600;line-height:1.3;max-width:22ch}
+  .beneficios{list-style:none;margin-top:26px}
+  .beneficios li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:15px 0;border-top:1px solid var(--raya)}
+  .beneficios li:last-child{border-bottom:1px solid var(--raya)}
+  .beneficios li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--lima);color:var(--tinta);font-weight:800;font-size:13px}
+  .beneficios b{display:block;font-size:16px;font-weight:700}
+  .beneficios span{display:block;font-size:14.5px;color:var(--texto-2);margin-top:2px}
+  .linea-tiempo{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:28px}
+  .linea-tiempo li{padding:12px 14px;border-radius:12px;border:1px solid var(--raya);font-size:13.5px;color:var(--texto-3)}
+  .linea-tiempo li b{display:block;font-size:14.5px;color:var(--texto-2);margin-top:2px}
+  .linea-tiempo li.ahora{border-color:var(--lima);background:rgba(200,255,60,.07)}
+  .linea-tiempo li.ahora,.linea-tiempo li.ahora b{color:var(--lima)}
+  .apartar{padding:clamp(22px,2.6vw,30px)}
+  .apartar h3{font-weight:800;font-size:26px;letter-spacing:-.025em;line-height:1.05}
+  .apartar > p{font-size:15px;color:var(--tinta-2);margin-top:6px}
+  .campo{display:block;margin-top:16px}
+  .campo span{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+  .campo input:not([type=checkbox]),.campo select{width:100%;font:500 16px/1.2 var(--sans);color:var(--tinta);background:#fff;border:1px solid rgba(26,20,18,.18);border-radius:11px;padding:12px 13px;appearance:none}
+  .campo select{background-image:linear-gradient(45deg,transparent 50%,var(--tinta-2) 50%),linear-gradient(135deg,var(--tinta-2) 50%,transparent 50%);background-position:calc(100% - 18px) 52%,calc(100% - 13px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+  .campo input:focus,.campo select:focus{outline:2px solid var(--tinta);outline-offset:1px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;border:1px solid rgba(26,20,18,.18);border-radius:999px;padding:8px 12px;background:#fff;cursor:pointer}
+  .chips input{accent-color:var(--tinta)}
+  .apartar .btn{width:100%;justify-content:center;margin-top:20px;background:var(--tinta);color:var(--lima);box-shadow:none}
+  .apartar .btn:hover{background:#000}
+  .apartar .nota{font-size:12.5px;color:var(--tinta-3);margin-top:10px;text-align:center}
+  @media (max-width:960px){ .oferta{grid-template-columns:1fr} }
+  @media (max-width:520px){ .linea-tiempo{grid-template-columns:1fr} .by span{display:none} .top-nav .estado{display:none} }
 
   .etiqueta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--lima)}
   .etiqueta::before{content:"";width:8px;height:8px;background:var(--antena);border-radius:50%;box-shadow:0 0 12px var(--antena);flex:none}
@@ -287,20 +328,20 @@
 
 <div class="top">
   <div class="wrap">
-    <a class="marca-top" href="../"><svg width="16" height="20" viewBox="0 40 200 190" aria-hidden="true"><use href="#bit"/></svg>Pulse LAT · Bit</a>
-    <span class="estado"><a href="../">Directorio</a> · Producto</span>
-    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20Bit%20en%20el%20directorio%20de%20Pulse%20LAT%20y%20quiero%20acceso%20anticipado.">WhatsApp</a>
+    <a class="marca-top" href="./"><svg width="16" height="20" viewBox="0 40 200 190" aria-hidden="true"><use href="#bit"/></svg>Bit</a>
+    <a class="by" href="https://pulselat.online"><svg width="18" height="18" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="34" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="22" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="10" fill="#c8ff3c"/></svg><span>by <span class="l">pulse</span><b>lat</b></span></a>
+    <nav class="top-nav"><a class="estado" href="../">Demos</a><a class="top-cta" href="#fundadores">Apartar lugar</a></nav>
   </div>
 </div>
 
 <header class="portada">
   <div class="wrap">
     <div>
-      <p class="etiqueta">Producto · Acceso anticipado</p>
+      <p class="etiqueta">Pre-lanzamiento · Lugares de fundador</p>
       <h1>Bit contesta. Tú sigues en el <mark>mostrador.</mark></h1>
       <p class="lead">Bit es tu agente de negocio. Activas el desvío de tu celular o de tu fijo y cada llamada que no alcanzas cae con Bit: atiende, cotiza con tus precios reales, toma el pedido y te manda el resumen por WhatsApp.</p>
       <div class="acciones">
-        <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso anticipado
+        <a class="btn" href="#fundadores">Apartar mi lugar de fundador
           <svg width="16" height="11" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="alt" href="#desvio">Cómo se activa</a>
@@ -329,6 +370,52 @@
 </header>
 
 <main id="contenido">
+
+  <section class="fundadores" id="fundadores" aria-labelledby="t-fundadores">
+    <div class="wrap oferta">
+      <div>
+        <p class="etiqueta">Pre-lanzamiento</p>
+        <h2 id="t-fundadores" style="font-weight:800;font-size:clamp(34px,4.8vw,64px);line-height:.98;letter-spacing:-.03em;margin-top:16px">Sé de los primeros. <mark>Paga como fundador.</mark></h2>
+        <div class="lugares"><b>20</b><span>lugares de fundador para negocios de la zona norte de CDMX</span></div>
+        <ul class="beneficios">
+          <li><div><b>Precio de fundador congelado</b><span>El precio con el que entras se queda mientras sigas activo, aunque Bit suba después.</span></div></li>
+          <li><div><b>Alta e instalación sin costo</b><span>Tu línea Bit, tu catálogo y tus horarios: lo dejamos listo contigo, en tu negocio.</span></div></li>
+          <li><div><b>Probado con tu número antes de activar</b><span>Hacemos llamadas de prueba con tu desvío real antes de que conteste a un cliente.</span></div></li>
+          <li><div><b>Sin plazo forzoso</b><span>Si no te convence, marcas ##002# y vuelves a contestar tú. Tu número nunca cambió.</span></div></li>
+          <li><div><b>Conectado a lo que ya usas</b><span>Si tienes PulsePOS o Flama Stars, Bit los usa desde el primer día.</span></div></li>
+        </ul>
+        <ol class="linea-tiempo" aria-label="Etapas del lanzamiento">
+          <li class="ahora">Ahora<b>Apartas tu lugar</b></li>
+          <li>Después<b>Instalación con fundadores</b></li>
+          <li>Al final<b>Lanzamiento abierto</b></li>
+        </ol>
+      </div>
+
+      <form class="tarjeta apartar" id="apartar" action="https://wa.me/522296500422?text=Hola%2C%20quiero%20mi%20lugar%20de%20fundador%20en%20Bit." method="get" target="_blank" rel="noopener">
+        <h3>Aparta tu lugar</h3>
+        <p>Te escribimos por WhatsApp para agendar la instalación.</p>
+        <label class="campo"><span>Nombre de tu negocio</span><input name="negocio" id="f-negocio" autocomplete="organization" placeholder="Ej. Cafetería La Esquina" required></label>
+        <label class="campo"><span>Giro</span>
+          <select id="f-giro" name="giro">
+            <option>Cafetería o restaurante</option><option>Panadería o postres</option><option>Belleza o spa</option><option>Tienda o abarrotes</option><option>Consultorio o servicios</option><option>Otro</option>
+          </select>
+        </label>
+        <label class="campo"><span>¿Tu número del negocio es de…?</span>
+          <select id="f-compania" name="compania">
+            <option>Telcel</option><option>AT&amp;T</option><option>Movistar</option><option>Telmex (fijo)</option><option>Otra</option>
+          </select>
+        </label>
+        <div class="campo"><span>Ya uso</span>
+          <div class="chips">
+            <label><input type="checkbox" id="f-pos"> PulsePOS</label>
+            <label><input type="checkbox" id="f-flama"> Flama Stars</label>
+          </div>
+        </div>
+        <button class="btn" type="submit">Apartar por WhatsApp →</button>
+        <p class="nota">Sin pago para apartar. Te confirmamos precio y fecha por WhatsApp.</p>
+      </form>
+    </div>
+  </section>
 
   <section class="seccion" id="desvio" aria-labelledby="t-desvio">
     <div class="wrap">
@@ -470,7 +557,8 @@
         <details><summary>¿Funciona con fijo?</summary><p>Sí. En celulares Telcel, AT&amp;T y Movistar se activa con código; en un fijo Telmex se usa el servicio Sígueme. Antes de activar revisamos contigo cómo te lo cobra tu compañía.</p></details>
         <details><summary>¿Y si Bit no sabe algo?</summary><p>No inventa precios ni promete lo que no está en tus sistemas. Toma el dato del cliente, le dice que le devolverás la llamada y te lo deja como pendiente en WhatsApp. Si el cliente pide hablar con una persona, te transfiere.</p></details>
         <details><summary>¿Se graban las llamadas?</summary><p>Sólo si lo activas, y en ese caso Bit lo avisa al inicio de la llamada. Recibes el resumen escrito de cada llamada aunque no grabes el audio.</p></details>
-        <details><summary>¿Cuánto cuesta?</summary><p>Durante el acceso anticipado se cotiza por negocio, según el volumen de llamadas y los conectores que uses. Escríbenos y te pasamos la propuesta.</p></details>
+        <details><summary>¿Cuánto cuesta?</summary><p>Los negocios fundadores entran con un precio especial que se congela mientras sigan activos. Depende del volumen de llamadas y los conectores que uses; te lo confirmamos por WhatsApp al apartar tu lugar, sin pago por adelantado.</p></details>
+        <details><summary>¿Qué es un lugar de fundador?</summary><p>Son los primeros 20 negocios que instalamos antes del lanzamiento abierto. Reciben la instalación sin costo, el precio de fundador y línea directa con el equipo para pedir ajustes.</p></details>
       </div>
     </div>
   </section>
@@ -481,16 +569,16 @@
   <div class="wrap">
     <p class="etiqueta">Pulse LAT · Bit</p>
     <h2>Que la próxima llamada <mark>no se pierda.</mark></h2>
-    <p>Estamos abriendo Bit con pocos negocios de la zona que ya usan PulsePOS o Flama Stars. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
+    <p>Quedan lugares de fundador para la zona. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
     <div class="acciones">
-      <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso por WhatsApp
+      <a class="btn" href="#fundadores">Apartar mi lugar
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
       </a>
-      <a class="alt" href="../">Volver al directorio</a>
+      <a class="alt" href="../">Ver las demos</a>
     </div>
     <svg class="bit-mini" viewBox="0 0 200 270" aria-hidden="true"><use href="#bit"/></svg>
     <div class="pie-pagina">
-      <span><a href="../">Pulse LAT</a> · Bit, agente de negocio</span>
+      <a class="by" href="https://pulselat.online"><svg width="18" height="18" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="34" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="22" stroke="#f4dcae" stroke-width="6"/><circle cx="50" cy="50" r="10" fill="#c8ff3c"/></svg><span>Bit · by <span class="l">pulse</span><b>lat</b></span></a>
       <span>Lindavista, CDMX · 2026</span>
     </div>
   </div>
@@ -528,6 +616,16 @@
     });
   }
   document.getElementById('repetir').addEventListener('click', reproducir);
+
+  // Apartar lugar: arma el mensaje de WhatsApp
+  const form = document.getElementById('apartar');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id);
+    const usa = [v('f-pos').checked && 'PulsePOS', v('f-flama').checked && 'Flama Stars'].filter(Boolean).join(' y ') || 'ninguno todavía';
+    const texto = `Hola, quiero mi lugar de fundador en Bit.\nNegocio: ${v('f-negocio').value.trim()}\nGiro: ${v('f-giro').value}\nMi número es de: ${v('f-compania').value}\nYa uso: ${usa}`;
+    window.open('https://wa.me/522296500422?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  });
   reproducir();
 })();
 </script>
