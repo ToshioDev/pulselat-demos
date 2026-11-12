@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bit, agente de negocio · Pulse LAT</title>
+<meta name="description" content="Bit es el agente de negocio de Pulse LAT: contesta las llamadas que desvías desde tu celular o fijo, vende con tu catálogo real de PulsePOS y te reporta por WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/bit/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/bit/">
+<meta property="og:title" content="Bit, agente de negocio · Pulse LAT">
+<meta property="og:description" content="Activa el desvío de tu número y Bit contesta, vende y toma pedidos con tu inventario real. Se conecta con PulsePOS y Flame Stars.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#16130f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#f4efe6; --papel-2:#fbf7ef; --tinta:#16130f; --tinta-2:#211c17;
+    --cuerpo:#4e463b; --humo:#6b6357; --senal:#d9502b; --vivo:#3fae6a;
+    --linea:rgba(22,19,15,.16); --linea-fuerte:rgba(22,19,15,.42);
+    --claro-70:rgba(244,239,230,.72); --claro-50:rgba(244,239,230,.5); --claro-16:rgba(244,239,230,.16); --claro-30:rgba(244,239,230,.3);
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif:"Instrument Serif",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  [hidden]{display:none!important}
+  body{background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--senal);color:#fff;padding:10px 16px;z-index:100}
+  .skip:focus{left:12px;top:12px}
+  :focus-visible{outline:2px solid var(--senal);outline-offset:3px}
+
+  .top{background:var(--tinta);color:var(--papel);border-bottom:1px solid var(--claro-16)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
+  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--claro-50)}
+  .estado a{border-bottom:1px solid var(--claro-30)}
+  .estado a:hover{color:var(--papel)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--claro-50);padding-bottom:2px}
+  .top-wa:hover{color:#fff;border-color:var(--senal)}
+
+  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
+  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+
+  /* ---------- Portada ---------- */
+  .portada{background:var(--tinta);color:var(--papel);padding:clamp(46px,7vw,92px) 0 clamp(52px,7vw,96px)}
+  .portada .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,76px);align-items:center}
+  .portada h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,8.6vw,118px);line-height:.88;letter-spacing:-.03em;margin:20px 0 26px}
+  .portada h1 em{font-style:italic;color:var(--senal)}
+  .portada .lead{max-width:50ch;font-size:clamp(16px,1.4vw,19px);color:var(--claro-70)}
+  .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--senal);color:#fff;font:600 13.5px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:background .2s}
+  .btn:hover{background:#ee6a45}
+  .alt{font-size:13.5px;border-bottom:1px solid var(--claro-30);padding-bottom:2px;color:var(--claro-70)}
+  .alt:hover{border-color:var(--senal);color:#fff}
+  .sello{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:18px;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--claro-50)}
+  .sello b{color:var(--papel);font-weight:500}
+
+  /* Llamada en vivo */
+  .llamada{background:var(--tinta-2);border:1px solid var(--claro-30);display:flex;flex-direction:column;min-height:440px}
+  .llamada-cab{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--claro-16)}
+  .pulso{width:9px;height:9px;border-radius:50%;background:var(--vivo);flex:none;box-shadow:0 0 0 0 rgba(63,174,106,.6);animation:pulso 1.8s infinite}
+  @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(63,174,106,.55)}70%{box-shadow:0 0 0 9px rgba(63,174,106,0)}100%{box-shadow:0 0 0 0 rgba(63,174,106,0)}}
+  .llamada-cab .quien{font-size:13.5px;font-weight:600}
+  .llamada-cab .ruta{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
+  .reloj{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--claro-70);font-variant-numeric:tabular-nums}
+  .guion{list-style:none;flex:1;padding:18px;display:flex;flex-direction:column;gap:12px}
+  .guion li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;font-size:14px;line-height:1.5;opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+  .guion li.oculto{opacity:0;transform:translateY(6px)}
+  .guion .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding-top:3px;color:var(--claro-50)}
+  .guion .bit .h{color:var(--senal)}
+  .guion .bit p{color:var(--papel)}
+  .guion .cli p{color:var(--claro-70)}
+  .guion .accion{grid-template-columns:1fr}
+  .guion .accion p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--vivo);border:1px dashed rgba(63,174,106,.45);padding:8px 10px}
+  .llamada-pie{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
+  .repetir{background:none;border:1px solid var(--claro-30);color:var(--papel);font:500 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
+  .repetir:hover{border-color:var(--senal)}
+
+  /* ---------- Secciones ---------- */
+  .seccion{padding:clamp(56px,8vw,104px) 0;border-bottom:1px solid var(--linea-fuerte)}
+  .seccion-cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(30px,4vw,52px)}
+  .seccion h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:.94;letter-spacing:-.025em;margin-top:16px}
+  .seccion h2 em{font-style:italic;color:var(--senal)}
+  .seccion-cab p{font-size:16px;color:var(--cuerpo);max-width:52ch}
+
+  /* Desvío */
+  .desvio{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,3vw,40px)}
+  .pasos{list-style:none;border-top:1px solid var(--linea-fuerte)}
+  .pasos li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:20px 0;border-bottom:1px solid var(--linea)}
+  .pasos em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal);padding-top:4px}
+  .pasos b{display:block;font-size:16px;font-weight:600;letter-spacing:-.005em}
+  .pasos p{font-size:14.5px;color:var(--cuerpo);margin-top:4px;max-width:52ch}
+  .marcador{background:var(--papel-2);border:1px solid var(--linea-fuerte);padding:clamp(20px,2.6vw,30px)}
+  .marcador .titulo{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
+  .modos{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .modos button{flex:1 1 auto;background:transparent;border:1px solid var(--linea-fuerte);color:var(--tinta);font:600 13px/1.2 "Archivo",sans-serif;padding:11px 12px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .modos button:hover{border-color:var(--tinta)}
+  .modos button[aria-pressed="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+  .codigo{margin-top:22px;font-family:var(--mono);font-size:clamp(26px,4.4vw,48px);letter-spacing:.02em;line-height:1.1;overflow-wrap:anywhere}
+  .codigo span{color:var(--senal)}
+  .codigo-nota{margin-top:12px;font-size:14.5px;color:var(--cuerpo);max-width:48ch;min-height:3.2em}
+  .quitar{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:20px;padding-top:16px;border-top:1px solid var(--linea);font-size:13.5px;color:var(--humo)}
+  .quitar code{font-family:var(--mono);font-size:13px;color:var(--tinta);background:rgba(22,19,15,.06);padding:2px 6px}
+  .letra-chica{margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--humo);max-width:62ch}
+
+  /* Dos caras */
+  .caras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+  .cara{border:1px solid var(--linea-fuerte);background:var(--papel-2);display:flex;flex-direction:column}
+  .cara--oscura{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+  .cara-cab{padding:22px clamp(18px,2.4vw,28px) 0}
+  .folio{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--senal)}
+  .cara h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-.02em;margin-top:12px}
+  .cara h3 em{font-style:italic;color:var(--senal)}
+  .cara > p{font-size:15px;color:var(--cuerpo);margin:12px clamp(18px,2.4vw,28px) 0;max-width:46ch}
+  .cara--oscura > p{color:var(--claro-70)}
+  .lista{list-style:none;margin:20px clamp(18px,2.4vw,28px) 0}
+  .lista li{display:flex;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--linea);font-size:14.5px}
+  .lista li:last-child{border-bottom:1px solid var(--linea)}
+  .lista em{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;font-style:normal;color:var(--humo);flex:none;width:22px}
+  .chat{margin:22px clamp(18px,2.4vw,28px) clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:8px;flex:1;justify-content:flex-end}
+  .burbuja{max-width:86%;padding:10px 13px;font-size:14px;line-height:1.45}
+  .burbuja.yo{align-self:flex-end;background:var(--senal);color:#fff}
+  .burbuja.bit{align-self:flex-start;background:var(--tinta-2);border:1px solid var(--claro-16);color:var(--papel)}
+  .burbuja.bit b{font-weight:600}
+  .burbuja .fuente{display:block;margin-top:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--claro-50)}
+  .ejemplo{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--claro-50);text-align:center;margin-top:4px}
+
+  /* Conectores */
+  .conectores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+  .conector{border:1px solid var(--linea-fuerte);background:var(--papel-2);padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column}
+  .conector--propio{border-color:var(--tinta)}
+  .conector-cab{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .estado-c{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+  .estado-c::before{content:"";width:7px;height:7px;background:var(--senal)}
+  .estado-c.listo::before{background:var(--vivo)}
+  .estado-c.prox::before{background:transparent;border:1px solid var(--humo)}
+  .conector h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,44px);line-height:1;letter-spacing:-.02em;margin-top:18px}
+  .conector p{font-size:14.5px;color:var(--cuerpo);margin-top:10px}
+  .herramientas{list-style:none;margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+  .herramientas li{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;border:1px solid var(--linea-fuerte);padding:5px 8px;color:var(--tinta)}
+
+  /* Esquema */
+  .esquema{margin-top:clamp(28px,4vw,46px);border:1px solid var(--linea-fuerte);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .esquema div{padding:18px clamp(14px,2vw,22px);border-right:1px solid var(--linea)}
+  .esquema div:last-child{border-right:0}
+  .esquema .mono{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--senal)}
+  .esquema b{display:block;margin-top:8px;font-size:15px;font-weight:600}
+  .esquema p{font-size:13.5px;color:var(--cuerpo);margin-top:4px}
+
+  /* Preguntas */
+  .preguntas{border-top:1px solid var(--linea-fuerte)}
+  .preguntas details{border-bottom:1px solid var(--linea)}
+  .preguntas summary{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;font-size:16.5px;font-weight:600;cursor:pointer;list-style:none}
+  .preguntas summary::-webkit-details-marker{display:none}
+  .preguntas summary::after{content:"+";font-family:var(--mono);font-weight:400;font-size:18px;color:var(--senal);flex:none}
+  .preguntas details[open] summary::after{content:"–"}
+  .preguntas details p{padding:0 0 20px;font-size:15px;color:var(--cuerpo);max-width:70ch}
+
+  /* Cierre */
+  .cierre{background:var(--tinta);color:var(--papel);padding:clamp(56px,8vw,96px) 0 0}
+  .cierre h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,78px);line-height:.94;letter-spacing:-.02em;max-width:17ch;margin:18px 0}
+  .cierre h2 em{font-style:italic;color:var(--senal)}
+  .cierre p{max-width:54ch;color:var(--claro-70)}
+  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(46px,6vw,78px);padding:20px 0;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
+  .pie-pagina a{border-bottom:1px solid var(--claro-30)}
+
+  @media (max-width:960px){
+    .portada .wrap,.desvio,.seccion-cab{grid-template-columns:1fr}
+    .caras,.conectores{grid-template-columns:1fr}
+    .esquema{grid-template-columns:1fr}
+    .esquema div{border-right:0;border-bottom:1px solid var(--linea)}
+    .esquema div:last-child{border-bottom:0}
+    .llamada{min-height:0}
+  }
+  @media (max-width:900px){ .estado{display:none} }
+  @media (max-width:520px){
+    .wrap{width:calc(100% - 32px)}
+    .top .wrap{height:50px}
+    .marca-top{font-size:10px;letter-spacing:.18em}
+    .top-wa{font-size:9.5px}
+    .portada h1{font-size:clamp(46px,13vw,64px)}
+    .guion li{grid-template-columns:1fr;gap:2px}
+    .burbuja{max-width:94%}
+    .pie-pagina{font-size:9px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<div class="top">
+  <div class="wrap">
+    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
+    <span class="estado"><a href="../">Directorio</a> · Producto · Bit</span>
+    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20Bit%20en%20el%20directorio%20de%20Pulse%20LAT%20y%20quiero%20acceso%20anticipado.">WhatsApp</a>
+  </div>
+</div>
+
+<header class="portada">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Producto · Acceso anticipado</p>
+      <h1>Bit contesta.<br>Tú sigues en el <em>mostrador.</em></h1>
+      <p class="lead">Bit es tu agente de negocio. Activas el desvío de tu celular o de tu fijo y cada llamada que no alcanzas cae con Bit: atiende, cotiza con tus precios reales, toma el pedido y te manda el resumen por WhatsApp.</p>
+      <div class="acciones">
+        <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso anticipado
+          <svg width="16" height="11" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="alt" href="#desvio">Cómo se activa</a>
+      </div>
+      <p class="sello"><span><b>Número +52</b> propio</span><span><b>Telcel · AT&amp;T · Movistar · fijo</b></span><span>Se conecta con <b>PulsePOS</b> y <b>Flame Stars</b></span></p>
+    </div>
+
+    <figure class="llamada" aria-label="Ejemplo de una llamada atendida por Bit">
+      <div class="llamada-cab">
+        <span class="pulso" aria-hidden="true"></span>
+        <div>
+          <div class="quien">Llamada desviada · Bit atiende</div>
+          <div class="ruta">55 •••• 4821 → tu línea Bit</div>
+        </div>
+        <span class="reloj" id="reloj" aria-hidden="true">00:00</span>
+      </div>
+      <ol class="guion" id="guion">
+        <li class="bit"><span class="h">Bit</span><p>Buenas tardes, gracias por llamar a la cafetería. Le atiende Bit, el asistente. ¿En qué le ayudo?</p></li>
+        <li class="cli"><span class="h">Cliente</span><p>¿Todavía tienen pastel de zanahoria? Quiero uno entero para mañana.</p></li>
+        <li class="accion"><p>→ PulsePOS · consultar_existencia("pastel de zanahoria")</p></li>
+        <li class="bit"><span class="h">Bit</span><p>Sí, el entero de 12 rebanadas queda en $480. ¿Se lo aparto para recoger mañana a las 11?</p></li>
+        <li class="cli"><span class="h">Cliente</span><p>Sí, a nombre de Laura.</p></li>
+        <li class="accion"><p>→ PulsePOS · crear_pedido · WhatsApp al dueño ✓</p></li>
+        <li class="bit"><span class="h">Bit</span><p>Listo, Laura. Le llega la confirmación por WhatsApp a este número.</p></li>
+      </ol>
+      <figcaption class="llamada-pie"><span>Ejemplo ilustrativo</span><button class="repetir" type="button" id="repetir">Repetir</button></figcaption>
+    </figure>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="seccion" id="desvio" aria-labelledby="t-desvio">
+    <div class="wrap">
+      <div class="seccion-cab">
+        <div>
+          <p class="kicker">01 · Activación</p>
+          <h2 id="t-desvio">Tu número no cambia. <em>Solo se desvía.</em></h2>
+        </div>
+        <p>No hay que cambiar de compañía, portar el número ni instalar nada. Te asignamos una línea Bit con número mexicano y tú decides cuándo te entran las llamadas a ti y cuándo a Bit.</p>
+      </div>
+
+      <div class="desvio">
+        <ol class="pasos">
+          <li><em>01</em><div><b>Te damos tu línea Bit</b><p>Un número +52 sólo para tu negocio. Ahí vive tu agente con tu catálogo, tus horarios y tu forma de hablar.</p></div></li>
+          <li><em>02</em><div><b>Marcas un código desde tu teléfono</b><p>Eliges el modo: que Bit tome todas, sólo las que no contestas, o sólo cuando estás en otra llamada.</p></div></li>
+          <li><em>03</em><div><b>Bit atiende, vende y te avisa</b><p>Cada llamada termina con un resumen en tu WhatsApp: quién llamó, qué pidió y qué quedó pendiente.</p></div></li>
+        </ol>
+
+        <div class="marcador">
+          <p class="titulo">Prueba el modo de desvío</p>
+          <div class="modos" role="group" aria-label="Modo de desvío">
+            <button type="button" data-codigo="**61*" data-nota="Tu teléfono suena primero. Si no contestas, Bit toma la llamada. El modo más usado para empezar." aria-pressed="true">Si no contesto</button>
+            <button type="button" data-codigo="**67*" data-nota="Si ya estás en una llamada, la siguiente la atiende Bit en lugar de mandar a buzón." aria-pressed="false">Si estoy ocupado</button>
+            <button type="button" data-codigo="**21*" data-nota="Todas las llamadas van directo a Bit. Útil fuera de horario o en días de mucho mostrador." aria-pressed="false">Siempre</button>
+          </div>
+          <p class="codigo" aria-live="polite"><span id="codigo">**61*</span>tu-línea-Bit#</p>
+          <p class="codigo-nota" id="nota">Tu teléfono suena primero. Si no contestas, Bit toma la llamada. El modo más usado para empezar.</p>
+          <p class="quitar">Para quitarlo cuando quieras <code>##002#</code> desactiva todos los desvíos.</p>
+          <p class="letra-chica">En un fijo Telmex el desvío se activa con el servicio Sígueme. El tramo desviado lo cobra tu compañía según tu plan; como la línea Bit es un número mexicano, normalmente cuenta como llamada nacional. Lo revisamos contigo antes de activar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-caras">
+    <div class="wrap">
+      <div class="seccion-cab">
+        <div>
+          <p class="kicker">02 · Un agente, dos caras</p>
+          <h2 id="t-caras">Vende a tus clientes. <em>Te reporta a ti.</em></h2>
+        </div>
+        <p>El mismo Bit que contesta el teléfono es el que te responde a ti por WhatsApp. No es un bot de llamadas más: es quien sabe qué pasa en tu negocio porque lee tus sistemas.</p>
+      </div>
+
+      <div class="caras">
+        <article class="cara">
+          <div class="cara-cab">
+            <span class="folio">Para tus clientes</span>
+            <h3>Nunca más una <em>llamada perdida.</em></h3>
+          </div>
+          <p>Contesta en español natural, con la voz y el trato que tú defines. Si algo no lo sabe, no lo inventa: lo apunta y te lo pasa.</p>
+          <ul class="lista">
+            <li><em>01</em>Precios y existencias reales, leídos de tu punto de venta</li>
+            <li><em>02</em>Pedidos para recoger o a domicilio, apartados y cotizaciones</li>
+            <li><em>03</em>Horarios, ubicación y preguntas frecuentes</li>
+            <li><em>04</em>Seguimiento por WhatsApp al cliente al colgar</li>
+            <li><em>05</em>Te transfiere la llamada si el cliente pide hablar contigo</li>
+          </ul>
+        </article>
+
+        <article class="cara cara--oscura">
+          <div class="cara-cab">
+            <span class="folio">Para ti</span>
+            <h3>Tu negocio, <em>en una pregunta.</em></h3>
+          </div>
+          <p>Escríbele o mándale audio como a un encargado de confianza.</p>
+          <div class="chat" aria-label="Ejemplo de conversación del dueño con Bit">
+            <p class="burbuja yo">¿Cuánto vendí hoy y qué se está acabando?</p>
+            <p class="burbuja bit">Hoy llevas <b>$8,420</b> en 63 tickets, 12% arriba del martes pasado. Quedan <b>4 bolsas de café de Chiapas</b> y <b>leche de avena para un día</b>.<span class="fuente">PulsePOS · ventas_del_dia · existencias</span></p>
+            <p class="burbuja yo">¿Y las llamadas?</p>
+            <p class="burbuja bit">Atendí <b>9</b>: 3 pedidos cerrados por $1,260 y 1 cliente que quiere cotizar un evento. Te dejo su número.<span class="fuente">Bit · registro de llamadas</span></p>
+            <p class="ejemplo">Cifras de ejemplo</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-conecta">
+    <div class="wrap">
+      <div class="seccion-cab">
+        <div>
+          <p class="kicker">03 · Conectores</p>
+          <h2 id="t-conecta">Conecta lo que <em>ya usas.</em></h2>
+        </div>
+        <p>Bit no guarda una copia de tu inventario ni de tus ventas: se los pregunta a tus sistemas en el momento. Si ya usas PulsePOS o Flame Stars, lo activas desde tu cuenta con un clic.</p>
+      </div>
+
+      <div class="conectores">
+        <article class="conector conector--propio">
+          <div class="conector-cab"><span class="folio">Pulse LAT</span><span class="estado-c listo">Conector principal</span></div>
+          <h3>PulsePOS</h3>
+          <p>Tu punto de venta le da a Bit el catálogo, los precios y las existencias del momento. Los pedidos que toma por teléfono entran directo a tu caja.</p>
+          <ul class="herramientas" aria-label="Acciones disponibles">
+            <li>buscar_producto</li><li>consultar_existencia</li><li>crear_pedido</li><li>ventas_del_dia</li>
+          </ul>
+        </article>
+
+        <article class="conector conector--propio">
+          <div class="conector-cab"><span class="folio">Pulse LAT</span><span class="estado-c">En integración</span></div>
+          <h3>Flame Stars</h3>
+          <p>Lo que ya tienes en Flame Stars también lo lee Bit, para responder con datos de tu negocio y avisarte cuando algo necesita tu atención.</p>
+          <ul class="herramientas" aria-label="Acciones disponibles">
+            <li>consultar</li><li>avisos</li>
+          </ul>
+        </article>
+
+        <article class="conector">
+          <div class="conector-cab"><span class="folio">Siguiente</span><span class="estado-c prox">Próximamente</span></div>
+          <h3>Agenda y pagos</h3>
+          <p>Citas para giros de servicio como uñas, spa o consultorio, y ligas de pago que Bit manda por WhatsApp al cerrar una venta.</p>
+          <ul class="herramientas" aria-label="Acciones previstas">
+            <li>agendar_cita</li><li>liga_de_pago</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="esquema" aria-label="Cómo viaja una llamada">
+        <div><span class="mono">Entrada</span><b>Teléfono, WhatsApp o chat</b><p>Tu número desviado, tu WhatsApp de negocio o el chat de tu sitio.</p></div>
+        <div><span class="mono">Bit</span><b>Entiende y decide</b><p>Con tus reglas: qué puede vender, qué debe consultar y cuándo pasarte la llamada.</p></div>
+        <div><span class="mono">Tus sistemas</span><b>Consulta y registra</b><p>PulsePOS, Flame Stars y lo que conectes después. Todo queda en su lugar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-preguntas">
+    <div class="wrap">
+      <div class="seccion-cab">
+        <div>
+          <p class="kicker">04 · Preguntas</p>
+          <h2 id="t-preguntas">Antes de <em>activarlo.</em></h2>
+        </div>
+        <p>Lo que más preguntan los dueños antes de dejarle el teléfono a Bit.</p>
+      </div>
+      <div class="preguntas">
+        <details><summary>¿Tengo que cambiar mi número o de compañía?</summary><p>No. Tus clientes siguen marcando el mismo número de siempre. El desvío se activa y se quita desde tu propio teléfono con un código, y puedes regresar a contestar tú en cualquier momento.</p></details>
+        <details><summary>¿Funciona con fijo?</summary><p>Sí. En celulares Telcel, AT&amp;T y Movistar se activa con código; en un fijo Telmex se usa el servicio Sígueme. Antes de activar revisamos contigo cómo te lo cobra tu compañía.</p></details>
+        <details><summary>¿Y si Bit no sabe algo?</summary><p>No inventa precios ni promete lo que no está en tus sistemas. Toma el dato del cliente, le dice que le devolverás la llamada y te lo deja como pendiente en WhatsApp. Si el cliente pide hablar con una persona, te transfiere.</p></details>
+        <details><summary>¿Se graban las llamadas?</summary><p>Sólo si lo activas, y en ese caso Bit lo avisa al inicio de la llamada. Recibes el resumen escrito de cada llamada aunque no grabes el audio.</p></details>
+        <details><summary>¿Cuánto cuesta?</summary><p>Durante el acceso anticipado se cotiza por negocio, según el volumen de llamadas y los conectores que uses. Escríbenos y te pasamos la propuesta.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cierre">
+  <div class="wrap">
+    <p class="kicker">Pulse LAT · Bit</p>
+    <h2>Que la próxima llamada <em>no se pierda.</em></h2>
+    <p>Estamos abriendo Bit con pocos negocios de la zona que ya usan PulsePOS o Flame Stars. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
+    <div class="acciones">
+      <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso por WhatsApp
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+      </a>
+      <a class="alt" href="../">Volver al directorio</a>
+    </div>
+    <div class="pie-pagina">
+      <span><a href="../">Pulse LAT</a> · Bit, agente de negocio</span>
+      <span>Lindavista, CDMX · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Modo de desvío
+  const botones = document.querySelectorAll('.modos button');
+  const codigo = document.getElementById('codigo');
+  const nota = document.getElementById('nota');
+  botones.forEach(b => b.addEventListener('click', () => {
+    botones.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    codigo.textContent = b.dataset.codigo;
+    nota.textContent = b.dataset.nota;
+  }));
+
+  // Llamada de ejemplo
+  const lineas = Array.from(document.querySelectorAll('#guion li'));
+  const reloj = document.getElementById('reloj');
+  const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timers = [], seg = 0, tic = null;
+  const fmt = s => String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+
+  function reproducir() {
+    timers.forEach(clearTimeout); timers = []; clearInterval(tic);
+    if (quieto) { lineas.forEach(l => l.classList.remove('oculto')); reloj.textContent = '00:42'; return; }
+    lineas.forEach(l => l.classList.add('oculto'));
+    seg = 0; reloj.textContent = fmt(0);
+    tic = setInterval(() => { seg++; reloj.textContent = fmt(seg); if (seg >= 42) clearInterval(tic); }, 1000);
+    let t = 400;
+    lineas.forEach(l => {
+      timers.push(setTimeout(() => l.classList.remove('oculto'), t));
+      t += l.classList.contains('accion') ? 900 : 1700;
+    });
+  }
+  document.getElementById('repetir').addEventListener('click', reproducir);
+  reproducir();
+})();
+</script>
+</body>
+</html>
