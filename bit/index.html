@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://demos.pulselat.online/bit/">
 <meta property="og:title" content="Bit, agente de negocio · Pulse LAT">
-<meta property="og:description" content="Activa el desvío de tu número y Bit contesta, vende y toma pedidos con tu inventario real. Se conecta con PulsePOS y Flame Stars.">
+<meta property="og:description" content="Activa el desvío de tu número y Bit contesta, vende y toma pedidos con tu inventario real. Se conecta con PulsePOS y Flama Stars.">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#120a08">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='15' y='2' width='2' height='7' fill='%23d5cd4a'/%3E%3Ccircle cx='16' cy='3.5' r='3' fill='%23f39a5b'/%3E%3Crect x='3' y='9' width='26' height='21' rx='2' fill='%23e3e67f'/%3E%3Crect x='6' y='12' width='20' height='14' fill='%23120d0e'/%3E%3Crect x='10' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3Crect x='19' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3C/svg%3E">
@@ -184,6 +184,8 @@
   .conector--prox p{color:var(--texto-2)}
   .herramientas{list-style:none;margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:6px}
   .herramientas li{font-family:var(--mono);font-size:10.5px;border-radius:6px;padding:5px 8px;background:var(--tinta);color:var(--bit-claro)}
+  .sitio{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--tinta-2);border-bottom:1px solid var(--raya-c);align-self:flex-start}
+  .sitio:hover{color:var(--tinta);border-color:var(--naranja)}
   .conector--prox .herramientas li{background:var(--raya);color:var(--texto-2)}
 
   .esquema{margin-top:clamp(28px,4vw,46px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--raya);border-radius:16px;overflow:hidden}
@@ -303,7 +305,7 @@
         </a>
         <a class="alt" href="#desvio">Cómo se activa</a>
       </div>
-      <p class="sello"><span><b>Número +52</b> propio</span><span><b>Telcel · AT&amp;T · Movistar · fijo</b></span><span>Se conecta con <b>PulsePOS</b> y <b>Flame Stars</b></span></p>
+      <p class="sello"><span><b>Número +52</b> propio</span><span><b>Telcel · AT&amp;T · Movistar · fijo</b></span><span>Se conecta con <b>PulsePOS</b> y <b>Flama Stars</b></span></p>
     </div>
 
     <div class="escena">
@@ -380,7 +382,7 @@
             <li>Precios y existencias reales, leídos de tu punto de venta</li>
             <li>Pedidos para recoger o a domicilio, apartados y cotizaciones</li>
             <li>Horarios, ubicación y preguntas frecuentes</li>
-            <li>Seguimiento por WhatsApp al cliente al colgar</li>
+            <li>Al colgar, le pide su reseña con tu enlace de Flama Stars</li>
             <li>Te transfiere la llamada si el cliente pide hablar contigo</li>
           </ul>
           <div class="grande"><b>9</b><span>llamadas atendidas mientras cobrabas<small>Ejemplo de un martes</small></span></div>
@@ -413,7 +415,7 @@
           <p class="etiqueta">03 · Conectores</p>
           <h2 id="t-conecta">Conecta lo que <mark>ya usas.</mark></h2>
         </div>
-        <p>Bit no guarda una copia de tu inventario ni de tus ventas: se los pregunta a tus sistemas en el momento. Si ya usas PulsePOS o Flame Stars, lo activas desde tu cuenta con un clic.</p>
+        <p>Bit no guarda una copia de tu inventario ni de tus ventas: se los pregunta a tus sistemas en el momento. Si ya usas PulsePOS o Flama Stars, lo activas desde tu cuenta con un clic.</p>
       </div>
 
       <div class="conectores">
@@ -428,11 +430,12 @@
 
         <article class="tarjeta conector">
           <div class="conector-cab"><span class="de">Pulse LAT</span><span class="estado-c">En integración</span></div>
-          <h3>Flame Stars</h3>
-          <p>Lo que ya tienes en Flame Stars también lo lee Bit, para responder con datos de tu negocio y avisarte cuando algo necesita tu atención.</p>
+          <h3>Flama Stars</h3>
+          <p>Tus reseñas de Google y tu programa de lealtad. Al colgar, Bit le manda al cliente tu enlace de reseñas: con 4 o 5 estrellas va a Google Maps, con menos te llega a ti por WhatsApp. Y a quien ya no regresa, le recuerda su tarjeta de sellos.</p>
           <ul class="herramientas" aria-label="Acciones disponibles">
-            <li>consultar</li><li>avisos</li>
+            <li>enviar_enlace_resenas</li><li>resumen_resenas</li><li>consultar_tarjeta</li>
           </ul>
+          <a class="sitio" href="https://flamastars.pulselat.online">flamastars.pulselat.online ↗</a>
         </article>
 
         <article class="tarjeta conector conector--prox">
@@ -448,7 +451,7 @@
       <div class="esquema" aria-label="Cómo viaja una llamada">
         <div><span class="mono">Entrada</span><b>Teléfono, WhatsApp o chat</b><p>Tu número desviado, tu WhatsApp de negocio o el chat de tu sitio.</p></div>
         <div><span class="mono">Bit</span><b>Entiende y decide</b><p>Con tus reglas: qué puede vender, qué debe consultar y cuándo pasarte la llamada.</p></div>
-        <div><span class="mono">Tus sistemas</span><b>Consulta y registra</b><p>PulsePOS, Flame Stars y lo que conectes después. Todo queda en su lugar.</p></div>
+        <div><span class="mono">Tus sistemas</span><b>Consulta y registra</b><p>PulsePOS, Flama Stars y lo que conectes después. Todo queda en su lugar.</p></div>
       </div>
     </div>
   </section>
@@ -478,7 +481,7 @@
   <div class="wrap">
     <p class="etiqueta">Pulse LAT · Bit</p>
     <h2>Que la próxima llamada <mark>no se pierda.</mark></h2>
-    <p>Estamos abriendo Bit con pocos negocios de la zona que ya usan PulsePOS o Flame Stars. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
+    <p>Estamos abriendo Bit con pocos negocios de la zona que ya usan PulsePOS o Flama Stars. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
     <div class="acciones">
       <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso por WhatsApp
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
