@@ -105,6 +105,10 @@
   .lista-giro li:first-child{border-top:1px solid var(--linea-c)}
   .lista-giro em{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;font-style:normal;color:var(--humo-c)}
 
+  .muestra--bit{display:flex!important;flex-direction:row!important;align-items:center;gap:22px;background:radial-gradient(70% 70% at 30% 50%,rgba(243,154,91,.16),transparent 70%)}
+  .muestra--bit img{width:min(120px,32%);height:auto;flex:none}
+  .muestra--bit .escala{margin-top:0}
+  mark.lima{background:#c8ff3c;color:#16130f;padding:0 .12em;border-radius:.14em}
   .ya-en-la-lista{font-size:14.5px;line-height:1.55;color:var(--cuerpo-c);max-width:62ch;margin-top:2px}
   .ya-en-la-lista b{color:var(--txt);font-weight:600}
 
@@ -264,9 +268,9 @@
           </div>
           <span class="abrir">Conocer Bit <svg width="16" height="11" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
-        <div class="muestra">
-          <p class="tipo">**61<i>*</i></p>
-          <div class="escala"><span>Si no contestas, contesta Bit</span><span>Tu número no cambia</span><span class="mono">Telcel · AT&amp;T · Movistar · Telmex</span></div>
+        <div class="muestra muestra--bit">
+          <img src="bit/bit.svg" alt="" width="200" height="270">
+          <div class="escala"><span>Si no contestas, contesta <mark class="lima">Bit</mark></span><span>Tu número no cambia</span><span class="mono">**61* · Telcel · AT&amp;T · Movistar · Telmex</span></div>
         </div>
       </a>
 

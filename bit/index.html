@@ -12,187 +12,227 @@
 <meta property="og:title" content="Bit, agente de negocio · Pulse LAT">
 <meta property="og:description" content="Activa el desvío de tu número y Bit contesta, vende y toma pedidos con tu inventario real. Se conecta con PulsePOS y Flame Stars.">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#16130f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#120a08">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='15' y='2' width='2' height='7' fill='%23d5cd4a'/%3E%3Ccircle cx='16' cy='3.5' r='3' fill='%23f39a5b'/%3E%3Crect x='3' y='9' width='26' height='21' rx='2' fill='%23e3e67f'/%3E%3Crect x='6' y='12' width='20' height='14' fill='%23120d0e'/%3E%3Crect x='10' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3Crect x='19' y='15' width='3' height='4' fill='%23f6f6c4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --papel:#f4efe6; --papel-2:#fbf7ef; --tinta:#16130f; --tinta-2:#211c17;
-    --cuerpo:#4e463b; --humo:#6b6357; --senal:#d9502b; --vivo:#3fae6a;
-    --linea:rgba(22,19,15,.16); --linea-fuerte:rgba(22,19,15,.42);
-    --claro-70:rgba(244,239,230,.72); --claro-50:rgba(244,239,230,.5); --claro-16:rgba(244,239,230,.16); --claro-30:rgba(244,239,230,.3);
+    /* Cuarto */
+    --noche:#120a08; --noche-2:#1a0f0c; --noche-3:#24150f;
+    --madera:#935b48; --madera-2:#6e3420;
+    /* Bit */
+    --bit:#e3e67f; --bit-claro:#f2f4a6; --bit-sombra:#8f9c2a; --bit-hondo:#6a761a;
+    --pantalla:#120d0e; --ojo:#f6f6c4; --antena:#f39a5b; --antena-2:#ffc28f;
+    /* Señales */
+    --lima:#c8ff3c; --naranja:#ef6438; --estrella:#ed9f01; --wa:#25a35a;
+    /* Tarjetas */
+    --crema:#f1ede4; --crema-2:#fbf8f2; --tinta:#1a1412; --tinta-2:#5b524b; --tinta-3:#8a8178;
+    --texto:#f4efe6; --texto-2:rgba(244,239,230,.72); --texto-3:rgba(244,239,230,.48);
+    --raya:rgba(244,239,230,.12); --raya-2:rgba(244,239,230,.24);
+    --raya-c:rgba(26,20,18,.12);
+    --sans:"Bricolage Grotesque",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
     --serif:"Instrument Serif",Georgia,serif;
+    --sombra:0 24px 50px -18px rgba(0,0,0,.65),0 2px 0 rgba(255,255,255,.4) inset;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  [hidden]{display:none!important}
-  body{background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{background:var(--noche);color:var(--texto);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--senal);color:#fff;padding:10px 16px;z-index:100}
+  .wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--lima);color:var(--tinta);padding:10px 16px;z-index:100;font-weight:700}
   .skip:focus{left:12px;top:12px}
-  :focus-visible{outline:2px solid var(--senal);outline-offset:3px}
+  :focus-visible{outline:2px solid var(--lima);outline-offset:3px}
+  mark{background:var(--lima);color:var(--tinta);padding:0 .14em;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-  .top{background:var(--tinta);color:var(--papel);border-bottom:1px solid var(--claro-16)}
-  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
-  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
-  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
-  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--claro-50)}
-  .estado a{border-bottom:1px solid var(--claro-30)}
-  .estado a:hover{color:var(--papel)}
-  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--claro-50);padding-bottom:2px}
-  .top-wa:hover{color:#fff;border-color:var(--senal)}
+  .top{border-bottom:1px solid var(--raya)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:58px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+  .marca-top svg{flex:none}
+  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--texto-3)}
+  .estado a{border-bottom:1px solid var(--raya-2)}
+  .estado a:hover{color:var(--texto)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--raya-2);padding-bottom:2px}
+  .top-wa:hover{border-color:var(--lima)}
 
-  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
-  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+  .etiqueta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--lima)}
+  .etiqueta::before{content:"";width:8px;height:8px;background:var(--antena);border-radius:50%;box-shadow:0 0 12px var(--antena);flex:none}
 
   /* ---------- Portada ---------- */
-  .portada{background:var(--tinta);color:var(--papel);padding:clamp(46px,7vw,92px) 0 clamp(52px,7vw,96px)}
-  .portada .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,76px);align-items:center}
-  .portada h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,8.6vw,118px);line-height:.88;letter-spacing:-.03em;margin:20px 0 26px}
-  .portada h1 em{font-style:italic;color:var(--senal)}
-  .portada .lead{max-width:50ch;font-size:clamp(16px,1.4vw,19px);color:var(--claro-70)}
+  .portada{position:relative;overflow:hidden;padding:clamp(40px,6vw,80px) 0 clamp(56px,7vw,96px);
+    background:radial-gradient(60% 55% at 72% 38%,rgba(243,154,91,.13),transparent 70%),radial-gradient(40% 40% at 70% 70%,rgba(200,255,60,.06),transparent 70%),var(--noche)}
+  .portada .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
+  .portada h1{font-weight:800;font-size:clamp(46px,7.2vw,96px);line-height:.94;letter-spacing:-.035em;margin:20px 0 24px}
+  .portada .lead{max-width:48ch;font-size:clamp(16px,1.4vw,19px);color:var(--texto-2)}
   .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:30px}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--senal);color:#fff;font:600 13.5px/1 "Archivo",sans-serif;border:0;cursor:pointer;transition:background .2s}
-  .btn:hover{background:#ee6a45}
-  .alt{font-size:13.5px;border-bottom:1px solid var(--claro-30);padding-bottom:2px;color:var(--claro-70)}
-  .alt:hover{border-color:var(--senal);color:#fff}
-  .sello{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:18px;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--claro-50)}
-  .sello b{color:var(--papel);font-weight:500}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;background:var(--lima);color:var(--tinta);font:700 15px/1 var(--sans);border:0;border-radius:12px;cursor:pointer;box-shadow:0 10px 30px -10px rgba(200,255,60,.55);transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(200,255,60,.7)}
+  .alt{font-size:15px;font-weight:500;border-bottom:1px solid var(--raya-2);padding-bottom:2px;color:var(--texto-2)}
+  .alt:hover{border-color:var(--lima);color:var(--texto)}
+  .sello{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:34px;padding-top:18px;border-top:1px solid var(--raya);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto-3)}
+  .sello b{color:var(--texto);font-weight:500}
 
-  /* Llamada en vivo */
-  .llamada{background:var(--tinta-2);border:1px solid var(--claro-30);display:flex;flex-direction:column;min-height:440px}
-  .llamada-cab{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--claro-16)}
-  .pulso{width:9px;height:9px;border-radius:50%;background:var(--vivo);flex:none;box-shadow:0 0 0 0 rgba(63,174,106,.6);animation:pulso 1.8s infinite}
-  @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(63,174,106,.55)}70%{box-shadow:0 0 0 9px rgba(63,174,106,0)}100%{box-shadow:0 0 0 0 rgba(63,174,106,0)}}
-  .llamada-cab .quien{font-size:13.5px;font-weight:600}
-  .llamada-cab .ruta{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
-  .reloj{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--claro-70);font-variant-numeric:tabular-nums}
-  .guion{list-style:none;flex:1;padding:18px;display:flex;flex-direction:column;gap:12px}
-  .guion li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;font-size:14px;line-height:1.5;opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+  /* Escena: repisa, Bit, escritorio, tarjeta */
+  .escena{position:relative;display:flex;flex-direction:column;align-items:center}
+  .repisa{position:absolute;top:-8px;right:4%;display:flex;align-items:flex-end;gap:4px;opacity:.55}
+  .repisa i{display:block;width:18px;border-radius:2px 2px 0 0}
+  .repisa::after{content:"";position:absolute;left:-14px;right:-14px;bottom:-6px;height:6px;background:#2b1a14}
+  .bit-fig{position:relative;width:min(300px,70%);margin-top:28px;z-index:1}
+  .bit-fig svg{display:block;width:100%;height:auto;overflow:visible}
+  .escritorio{position:relative;width:100%;height:72px;margin-top:-30px;background:linear-gradient(180deg,var(--madera),var(--madera-2));transform:perspective(500px) rotateX(38deg);border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+  .tarjeta-llamada{position:relative;z-index:2;width:min(460px,100%);margin-top:-92px}
+
+  /* Tarjetas crema, como notificaciones */
+  .tarjeta{background:var(--crema);color:var(--tinta);border-radius:16px;box-shadow:var(--sombra)}
+  .t-cab{display:flex;align-items:center;gap:10px;padding:14px 16px 0;font-size:12px;color:var(--tinta-3)}
+  .t-cab b{color:var(--tinta);font-weight:700;font-size:13.5px}
+  .vivo{width:8px;height:8px;border-radius:50%;background:var(--wa);flex:none;animation:vivo 1.8s infinite}
+  @keyframes vivo{0%{box-shadow:0 0 0 0 rgba(37,163,90,.55)}70%{box-shadow:0 0 0 8px rgba(37,163,90,0)}100%{box-shadow:0 0 0 0 rgba(37,163,90,0)}}
+  .reloj{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+  .guion{list-style:none;padding:12px 16px 4px;display:flex;flex-direction:column;gap:8px}
+  .guion li{font-size:14px;line-height:1.45;transition:opacity .45s ease,transform .45s ease}
   .guion li.oculto{opacity:0;transform:translateY(6px)}
-  .guion .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding-top:3px;color:var(--claro-50)}
-  .guion .bit .h{color:var(--senal)}
-  .guion .bit p{color:var(--papel)}
-  .guion .cli p{color:var(--claro-70)}
-  .guion .accion{grid-template-columns:1fr}
-  .guion .accion p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--vivo);border:1px dashed rgba(63,174,106,.45);padding:8px 10px}
-  .llamada-pie{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
-  .repetir{background:none;border:1px solid var(--claro-30);color:var(--papel);font:500 9.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;cursor:pointer}
-  .repetir:hover{border-color:var(--senal)}
+  .guion .bit,.guion .cli{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px}
+  .guion .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px;color:var(--tinta-3)}
+  .guion .bit .h{color:var(--bit-hondo);font-weight:500}
+  .guion .cli p{color:var(--tinta-2)}
+  .guion .accion p{font-family:var(--mono);font-size:10.5px;color:var(--tinta);background:var(--lima);border-radius:6px;padding:6px 9px;display:inline-block}
+  .t-pie{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px 14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3)}
+  .repetir{background:var(--tinta);color:var(--crema);border:0;border-radius:8px;font:500 9.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:8px 11px;cursor:pointer}
+  .repetir:hover{background:#000}
+
+  /* Bit animado */
+  .ojo{transform-box:fill-box;transform-origin:center;animation:parpadeo 5s infinite}
+  @keyframes parpadeo{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+  .punta{animation:brillo 2.4s ease-in-out infinite}
+  @keyframes brillo{0%,100%{filter:drop-shadow(0 0 2px rgba(243,154,91,.5))}50%{filter:drop-shadow(0 0 12px rgba(243,154,91,.95))}}
+  .brazo-saludo{transform-box:fill-box;transform-origin:0% 100%;animation:saludo 3.2s ease-in-out infinite}
+  @keyframes saludo{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-12deg)}80%{transform:rotate(4deg)}90%{transform:rotate(-8deg)}}
 
   /* ---------- Secciones ---------- */
-  .seccion{padding:clamp(56px,8vw,104px) 0;border-bottom:1px solid var(--linea-fuerte)}
+  .seccion{padding:clamp(60px,8vw,108px) 0;border-top:1px solid var(--raya)}
+  .seccion--alt{background:var(--noche-2)}
   .seccion-cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(30px,4vw,52px)}
-  .seccion h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:.94;letter-spacing:-.025em;margin-top:16px}
-  .seccion h2 em{font-style:italic;color:var(--senal)}
-  .seccion-cab p{font-size:16px;color:var(--cuerpo);max-width:52ch}
+  .seccion h2{font-weight:800;font-size:clamp(34px,4.8vw,64px);line-height:.98;letter-spacing:-.03em;margin-top:16px}
+  .seccion-cab p{font-size:16.5px;color:var(--texto-2);max-width:52ch}
 
   /* Desvío */
-  .desvio{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,3vw,40px)}
-  .pasos{list-style:none;border-top:1px solid var(--linea-fuerte)}
-  .pasos li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:20px 0;border-bottom:1px solid var(--linea)}
-  .pasos em{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;font-style:normal;color:var(--senal);padding-top:4px}
-  .pasos b{display:block;font-size:16px;font-weight:600;letter-spacing:-.005em}
-  .pasos p{font-size:14.5px;color:var(--cuerpo);margin-top:4px;max-width:52ch}
-  .marcador{background:var(--papel-2);border:1px solid var(--linea-fuerte);padding:clamp(20px,2.6vw,30px)}
-  .marcador .titulo{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
-  .modos{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-  .modos button{flex:1 1 auto;background:transparent;border:1px solid var(--linea-fuerte);color:var(--tinta);font:600 13px/1.2 "Archivo",sans-serif;padding:11px 12px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-  .modos button:hover{border-color:var(--tinta)}
-  .modos button[aria-pressed="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
-  .codigo{margin-top:22px;font-family:var(--mono);font-size:clamp(26px,4.4vw,48px);letter-spacing:.02em;line-height:1.1;overflow-wrap:anywhere}
-  .codigo span{color:var(--senal)}
-  .codigo-nota{margin-top:12px;font-size:14.5px;color:var(--cuerpo);max-width:48ch;min-height:3.2em}
-  .quitar{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:20px;padding-top:16px;border-top:1px solid var(--linea);font-size:13.5px;color:var(--humo)}
-  .quitar code{font-family:var(--mono);font-size:13px;color:var(--tinta);background:rgba(22,19,15,.06);padding:2px 6px}
-  .letra-chica{margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--humo);max-width:62ch}
+  .desvio{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,3vw,40px);align-items:start}
+  .pasos{list-style:none}
+  .pasos li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:20px 0;border-top:1px solid var(--raya)}
+  .pasos li:last-child{border-bottom:1px solid var(--raya)}
+  .pasos em{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--bit);color:var(--tinta);font:500 11px/1 var(--mono);font-style:normal}
+  .pasos b{display:block;font-size:17px;font-weight:700;letter-spacing:-.01em}
+  .pasos p{font-size:15px;color:var(--texto-2);margin-top:4px;max-width:52ch}
+  .marcador{padding:clamp(20px,2.6vw,30px)}
+  .marcador .titulo{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-3)}
+  .modos{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;background:rgba(26,20,18,.06);padding:5px;border-radius:12px}
+  .modos button{flex:1 1 auto;background:transparent;border:0;border-radius:9px;color:var(--tinta-2);font:700 14px/1.2 var(--sans);padding:11px 12px;cursor:pointer;transition:background .2s,color .2s}
+  .modos button:hover{color:var(--tinta)}
+  .modos button[aria-pressed="true"]{background:var(--tinta);color:var(--lima)}
+  .codigo{margin-top:22px;font-family:var(--mono);font-size:clamp(24px,4vw,44px);font-weight:500;letter-spacing:.01em;line-height:1.1;overflow-wrap:anywhere}
+  .codigo span{color:var(--naranja)}
+  .codigo-nota{margin-top:12px;font-size:15px;color:var(--tinta-2);max-width:48ch;min-height:3.2em}
+  .quitar{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--raya-c);font-size:14px;color:var(--tinta-2)}
+  .quitar code{font-family:var(--mono);font-size:13px;color:var(--tinta);background:var(--lima);border-radius:5px;padding:2px 7px}
+  .letra-chica{margin-top:16px;font-size:12.5px;line-height:1.55;color:var(--tinta-3);max-width:62ch}
 
   /* Dos caras */
   .caras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
-  .cara{border:1px solid var(--linea-fuerte);background:var(--papel-2);display:flex;flex-direction:column}
-  .cara--oscura{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
-  .cara-cab{padding:22px clamp(18px,2.4vw,28px) 0}
-  .folio{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--senal)}
-  .cara h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-.02em;margin-top:12px}
-  .cara h3 em{font-style:italic;color:var(--senal)}
-  .cara > p{font-size:15px;color:var(--cuerpo);margin:12px clamp(18px,2.4vw,28px) 0;max-width:46ch}
-  .cara--oscura > p{color:var(--claro-70)}
-  .lista{list-style:none;margin:20px clamp(18px,2.4vw,28px) 0}
-  .lista li{display:flex;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--linea);font-size:14.5px}
-  .lista li:last-child{border-bottom:1px solid var(--linea)}
-  .lista em{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;font-style:normal;color:var(--humo);flex:none;width:22px}
-  .chat{margin:22px clamp(18px,2.4vw,28px) clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:8px;flex:1;justify-content:flex-end}
-  .burbuja{max-width:86%;padding:10px 13px;font-size:14px;line-height:1.45}
-  .burbuja.yo{align-self:flex-end;background:var(--senal);color:#fff}
-  .burbuja.bit{align-self:flex-start;background:var(--tinta-2);border:1px solid var(--claro-16);color:var(--papel)}
-  .burbuja.bit b{font-weight:600}
-  .burbuja .fuente{display:block;margin-top:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--claro-50)}
-  .ejemplo{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--claro-50);text-align:center;margin-top:4px}
+  .cara{display:flex;flex-direction:column;padding:clamp(22px,2.6vw,30px)}
+  .cara--clientes{background:var(--noche-3);border:1px solid var(--raya);border-radius:18px}
+  .cara-tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--lima)}
+  .cara h3{font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1.02;letter-spacing:-.025em;margin-top:12px}
+  .cara > p{font-size:15.5px;color:var(--texto-2);margin-top:10px;max-width:46ch}
+  .lista{list-style:none;margin-top:20px}
+  .lista li{display:flex;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid var(--raya);font-size:15px}
+  .lista li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--bit);flex:none;transform:translateY(-2px)}
+  .grande{display:flex;align-items:baseline;gap:12px;margin-top:auto;padding-top:22px}
+  .grande b{font-family:var(--serif);font-weight:400;font-size:clamp(64px,7vw,92px);line-height:.8;color:var(--naranja)}
+  .grande span{font-size:15px;font-weight:600;max-width:20ch;line-height:1.3}
+  .grande small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--texto-3);font-weight:400;margin-top:4px}
+  .cara--duenio{background:var(--crema);color:var(--tinta);border-radius:18px;box-shadow:var(--sombra)}
+  .cara--duenio .cara-tag{color:var(--bit-hondo)}
+  .cara--duenio > p{color:var(--tinta-2)}
+  .wa-cab{display:flex;align-items:center;gap:10px;margin-top:18px;padding-bottom:12px;border-bottom:1px solid var(--raya-c)}
+  .wa-cab .av{width:30px;height:30px;border-radius:50%;background:var(--pantalla);display:grid;place-items:center;flex:none}
+  .wa-cab b{font-size:14px}
+  .wa-cab span{display:block;font-size:11.5px;color:var(--wa)}
+  .chat{display:flex;flex-direction:column;gap:8px;margin-top:14px;flex:1;justify-content:flex-end}
+  .burbuja{max-width:88%;padding:9px 12px 7px;font-size:14px;line-height:1.45;border-radius:12px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+  .burbuja.yo{align-self:flex-end;background:#d9fdd3;border-top-right-radius:3px}
+  .burbuja.bit{align-self:flex-start;background:#fff;border-top-left-radius:3px}
+  .burbuja b{font-weight:700}
+  .burbuja .meta{display:block;text-align:right;font-family:var(--mono);font-size:9px;color:var(--tinta-3);margin-top:3px}
+  .burbuja .fuente{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:rgba(200,255,60,.45);border-radius:4px;padding:2px 6px;color:var(--tinta)}
+  .ejemplo{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3);text-align:center;margin-top:6px}
 
   /* Conectores */
   .conectores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
-  .conector{border:1px solid var(--linea-fuerte);background:var(--papel-2);padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column}
-  .conector--propio{border-color:var(--tinta)}
+  .conector{display:flex;flex-direction:column;padding:clamp(20px,2.4vw,26px)}
+  .conector--prox{background:transparent;color:var(--texto);border:1px dashed var(--raya-2);box-shadow:none}
   .conector-cab{display:flex;align-items:center;justify-content:space-between;gap:10px}
-  .estado-c{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
-  .estado-c::before{content:"";width:7px;height:7px;background:var(--senal)}
-  .estado-c.listo::before{background:var(--vivo)}
-  .estado-c.prox::before{background:transparent;border:1px solid var(--humo)}
-  .conector h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,44px);line-height:1;letter-spacing:-.02em;margin-top:18px}
-  .conector p{font-size:14.5px;color:var(--cuerpo);margin-top:10px}
+  .de{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-3)}
+  .conector--prox .de{color:var(--texto-3)}
+  .estado-c{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 9px;background:rgba(26,20,18,.07);color:var(--tinta-2)}
+  .estado-c.listo{background:var(--lima);color:var(--tinta)}
+  .conector--prox .estado-c{background:var(--raya);color:var(--texto-2)}
+  .conector h3{font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1;letter-spacing:-.03em;margin-top:18px}
+  .conector p{font-size:15px;color:var(--tinta-2);margin-top:10px}
+  .conector--prox p{color:var(--texto-2)}
   .herramientas{list-style:none;margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:6px}
-  .herramientas li{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;border:1px solid var(--linea-fuerte);padding:5px 8px;color:var(--tinta)}
+  .herramientas li{font-family:var(--mono);font-size:10.5px;border-radius:6px;padding:5px 8px;background:var(--tinta);color:var(--bit-claro)}
+  .conector--prox .herramientas li{background:var(--raya);color:var(--texto-2)}
 
-  /* Esquema */
-  .esquema{margin-top:clamp(28px,4vw,46px);border:1px solid var(--linea-fuerte);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-  .esquema div{padding:18px clamp(14px,2vw,22px);border-right:1px solid var(--linea)}
+  .esquema{margin-top:clamp(28px,4vw,46px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--raya);border-radius:16px;overflow:hidden}
+  .esquema div{padding:20px clamp(14px,2vw,22px);border-right:1px solid var(--raya)}
   .esquema div:last-child{border-right:0}
-  .esquema .mono{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--senal)}
-  .esquema b{display:block;margin-top:8px;font-size:15px;font-weight:600}
-  .esquema p{font-size:13.5px;color:var(--cuerpo);margin-top:4px}
+  .esquema .mono{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lima)}
+  .esquema b{display:block;margin-top:8px;font-size:16px;font-weight:700}
+  .esquema p{font-size:14px;color:var(--texto-2);margin-top:4px}
 
   /* Preguntas */
-  .preguntas{border-top:1px solid var(--linea-fuerte)}
-  .preguntas details{border-bottom:1px solid var(--linea)}
-  .preguntas summary{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;font-size:16.5px;font-weight:600;cursor:pointer;list-style:none}
+  .preguntas details{border-top:1px solid var(--raya)}
+  .preguntas details:last-child{border-bottom:1px solid var(--raya)}
+  .preguntas summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:19px 0;font-size:17px;font-weight:700;cursor:pointer;list-style:none}
   .preguntas summary::-webkit-details-marker{display:none}
-  .preguntas summary::after{content:"+";font-family:var(--mono);font-weight:400;font-size:18px;color:var(--senal);flex:none}
-  .preguntas details[open] summary::after{content:"–"}
-  .preguntas details p{padding:0 0 20px;font-size:15px;color:var(--cuerpo);max-width:70ch}
+  .preguntas summary::after{content:"+";display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--raya);font-family:var(--mono);font-weight:400;font-size:16px;color:var(--lima);flex:none}
+  .preguntas details[open] summary::after{content:"–";background:var(--lima);color:var(--tinta)}
+  .preguntas details p{padding:0 0 20px;font-size:15.5px;color:var(--texto-2);max-width:70ch}
 
   /* Cierre */
-  .cierre{background:var(--tinta);color:var(--papel);padding:clamp(56px,8vw,96px) 0 0}
-  .cierre h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,78px);line-height:.94;letter-spacing:-.02em;max-width:17ch;margin:18px 0}
-  .cierre h2 em{font-style:italic;color:var(--senal)}
-  .cierre p{max-width:54ch;color:var(--claro-70)}
-  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(46px,6vw,78px);padding:20px 0;border-top:1px solid var(--claro-16);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro-50)}
-  .pie-pagina a{border-bottom:1px solid var(--claro-30)}
+  .cierre{position:relative;overflow:hidden;padding:clamp(60px,8vw,100px) 0 0;border-top:1px solid var(--raya);background:radial-gradient(50% 60% at 85% 30%,rgba(243,154,91,.12),transparent 70%),var(--noche)}
+  .cierre .wrap{position:relative}
+  .cierre h2{font-weight:800;font-size:clamp(38px,5.6vw,76px);line-height:.98;letter-spacing:-.035em;max-width:15ch;margin:18px 0}
+  .cierre p{max-width:52ch;color:var(--texto-2);font-size:16.5px}
+  .bit-mini{position:absolute;right:0;bottom:70px;width:clamp(110px,14vw,170px)}
+  .pie-pagina{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:clamp(46px,6vw,78px);padding:20px 0;border-top:1px solid var(--raya);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--texto-3)}
+  .pie-pagina a{border-bottom:1px solid var(--raya-2)}
 
   @media (max-width:960px){
     .portada .wrap,.desvio,.seccion-cab{grid-template-columns:1fr}
-    .caras,.conectores{grid-template-columns:1fr}
-    .esquema{grid-template-columns:1fr}
-    .esquema div{border-right:0;border-bottom:1px solid var(--linea)}
+    .caras,.conectores,.esquema{grid-template-columns:1fr}
+    .esquema div{border-right:0;border-bottom:1px solid var(--raya)}
     .esquema div:last-child{border-bottom:0}
-    .llamada{min-height:0}
+    .bit-mini{display:none}
   }
   @media (max-width:900px){ .estado{display:none} }
   @media (max-width:520px){
     .wrap{width:calc(100% - 32px)}
-    .top .wrap{height:50px}
-    .marca-top{font-size:10px;letter-spacing:.18em}
+    .top .wrap{height:52px}
+    .marca-top{font-size:10px;letter-spacing:.16em}
     .top-wa{font-size:9.5px}
-    .portada h1{font-size:clamp(46px,13vw,64px)}
-    .guion li{grid-template-columns:1fr;gap:2px}
+    .portada h1{font-size:clamp(42px,12.4vw,58px)}
+    .bit-fig{width:62%}
+    .tarjeta-llamada{margin-top:-70px}
+    .guion .bit,.guion .cli{grid-template-columns:1fr;gap:1px}
     .burbuja{max-width:94%}
     .pie-pagina{font-size:9px}
   }
   @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
     html{scroll-behavior:auto}
   }
 </style>
@@ -200,10 +240,53 @@
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
+<!-- Bit, definido una vez y reutilizado -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bit" viewBox="0 0 200 270">
+      <ellipse cx="100" cy="262" rx="70" ry="7" fill="#000" opacity=".45"/>
+      <!-- antena -->
+      <rect x="96" y="20" width="7" height="34" fill="#d5cd4a"/>
+      <rect x="100" y="20" width="3" height="34" fill="#a9a334"/>
+      <g class="punta">
+        <polygon points="99.5,4 110,10 110,22 99.5,28 89,22 89,10" fill="#f39a5b"/>
+        <polygon points="99.5,4 110,10 99.5,16 89,10" fill="#ffc28f"/>
+        <polygon points="99.5,16 110,10 110,22 99.5,28" fill="#d9773f"/>
+      </g>
+      <!-- piernas -->
+      <rect x="62" y="222" width="26" height="36" fill="#a9b839"/>
+      <rect x="80" y="222" width="8" height="36" fill="#7a8720"/>
+      <rect x="112" y="222" width="26" height="36" fill="#a9b839"/>
+      <rect x="130" y="222" width="8" height="36" fill="#7a8720"/>
+      <!-- brazo izquierdo -->
+      <polygon points="48,166 30,176 22,214 40,218 50,186" fill="#cbd96e"/>
+      <polygon points="30,176 22,214 28,215 36,178" fill="#9aa83a"/>
+      <!-- cuerpo -->
+      <polygon points="48,160 62,150 162,150 148,160" fill="#f2f4a6"/>
+      <rect x="48" y="160" width="100" height="66" fill="#e3e67f"/>
+      <polygon points="148,160 162,150 162,216 148,226" fill="#8f9c2a"/>
+      <!-- brazo derecho, saluda -->
+      <g class="brazo-saludo">
+        <polygon points="150,170 178,148 190,158 160,192" fill="#d7e277"/>
+        <polygon points="178,148 190,158 186,162 175,153" fill="#f2f4a6"/>
+      </g>
+      <!-- cabeza -->
+      <polygon points="26,66 44,54 178,54 160,66" fill="#f2f4a6"/>
+      <rect x="26" y="66" width="134" height="102" fill="#e3e67f"/>
+      <polygon points="160,66 178,54 178,156 160,168" fill="#8f9c2a"/>
+      <rect x="40" y="80" width="106" height="74" fill="#120d0e"/>
+      <rect x="40" y="80" width="106" height="4" fill="#000" opacity=".5"/>
+      <rect class="ojo" x="62" y="96" width="17" height="20" fill="#f6f6c4"/>
+      <rect class="ojo" x="107" y="96" width="17" height="20" fill="#f6f6c4"/>
+      <rect x="82" y="134" width="22" height="3" fill="#f6f6c4"/>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="top">
   <div class="wrap">
-    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
-    <span class="estado"><a href="../">Directorio</a> · Producto · Bit</span>
+    <a class="marca-top" href="../"><svg width="16" height="20" viewBox="0 40 200 190" aria-hidden="true"><use href="#bit"/></svg>Pulse LAT · Bit</a>
+    <span class="estado"><a href="../">Directorio</a> · Producto</span>
     <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20Bit%20en%20el%20directorio%20de%20Pulse%20LAT%20y%20quiero%20acceso%20anticipado.">WhatsApp</a>
   </div>
 </div>
@@ -211,38 +294,35 @@
 <header class="portada">
   <div class="wrap">
     <div>
-      <p class="kicker">Producto · Acceso anticipado</p>
-      <h1>Bit contesta.<br>Tú sigues en el <em>mostrador.</em></h1>
+      <p class="etiqueta">Producto · Acceso anticipado</p>
+      <h1>Bit contesta. Tú sigues en el <mark>mostrador.</mark></h1>
       <p class="lead">Bit es tu agente de negocio. Activas el desvío de tu celular o de tu fijo y cada llamada que no alcanzas cae con Bit: atiende, cotiza con tus precios reales, toma el pedido y te manda el resumen por WhatsApp.</p>
       <div class="acciones">
         <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso anticipado
-          <svg width="16" height="11" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="11" viewBox="0 0 15 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="alt" href="#desvio">Cómo se activa</a>
       </div>
       <p class="sello"><span><b>Número +52</b> propio</span><span><b>Telcel · AT&amp;T · Movistar · fijo</b></span><span>Se conecta con <b>PulsePOS</b> y <b>Flame Stars</b></span></p>
     </div>
 
-    <figure class="llamada" aria-label="Ejemplo de una llamada atendida por Bit">
-      <div class="llamada-cab">
-        <span class="pulso" aria-hidden="true"></span>
-        <div>
-          <div class="quien">Llamada desviada · Bit atiende</div>
-          <div class="ruta">55 •••• 4821 → tu línea Bit</div>
-        </div>
-        <span class="reloj" id="reloj" aria-hidden="true">00:00</span>
-      </div>
-      <ol class="guion" id="guion">
-        <li class="bit"><span class="h">Bit</span><p>Buenas tardes, gracias por llamar a la cafetería. Le atiende Bit, el asistente. ¿En qué le ayudo?</p></li>
-        <li class="cli"><span class="h">Cliente</span><p>¿Todavía tienen pastel de zanahoria? Quiero uno entero para mañana.</p></li>
-        <li class="accion"><p>→ PulsePOS · consultar_existencia("pastel de zanahoria")</p></li>
-        <li class="bit"><span class="h">Bit</span><p>Sí, el entero de 12 rebanadas queda en $480. ¿Se lo aparto para recoger mañana a las 11?</p></li>
-        <li class="cli"><span class="h">Cliente</span><p>Sí, a nombre de Laura.</p></li>
-        <li class="accion"><p>→ PulsePOS · crear_pedido · WhatsApp al dueño ✓</p></li>
-        <li class="bit"><span class="h">Bit</span><p>Listo, Laura. Le llega la confirmación por WhatsApp a este número.</p></li>
-      </ol>
-      <figcaption class="llamada-pie"><span>Ejemplo ilustrativo</span><button class="repetir" type="button" id="repetir">Repetir</button></figcaption>
-    </figure>
+    <div class="escena">
+      <div class="repisa" aria-hidden="true"><i style="height:46px;background:#3b2a5c"></i><i style="height:38px;background:#6d1f2a"></i><i style="height:52px;background:#c9d84a"></i><i style="height:42px;background:#4a2a2a"></i><i style="height:34px;background:#2f3e5c"></i></div>
+      <div class="bit-fig"><svg viewBox="0 0 200 270" role="img" aria-label="Bit, el robot verde de antena naranja"><use href="#bit"/></svg></div>
+      <div class="escritorio" aria-hidden="true"></div>
+      <figure class="tarjeta tarjeta-llamada" aria-label="Ejemplo de una llamada atendida por Bit">
+        <div class="t-cab"><span class="vivo" aria-hidden="true"></span><div><b>Llamada desviada</b><br>55 •••• 4821 → tu línea Bit</div><span class="reloj" id="reloj" aria-hidden="true">00:00</span></div>
+        <ol class="guion" id="guion">
+          <li class="bit"><span class="h">Bit</span><p>Buenas tardes, gracias por llamar a la cafetería. Le atiende Bit. ¿En qué le ayudo?</p></li>
+          <li class="cli"><span class="h">Cliente</span><p>¿Tienen pastel de zanahoria? Quiero uno entero para mañana.</p></li>
+          <li class="accion"><p>PulsePOS · consultar_existencia ✓</p></li>
+          <li class="bit"><span class="h">Bit</span><p>Sí, el entero de 12 rebanadas queda en $480. ¿Se lo aparto para mañana a las 11?</p></li>
+          <li class="cli"><span class="h">Cliente</span><p>Sí, a nombre de Laura.</p></li>
+          <li class="accion"><p>PulsePOS · crear_pedido · WhatsApp al dueño ✓</p></li>
+        </ol>
+        <figcaption class="t-pie"><span>Llamada de ejemplo</span><button class="repetir" type="button" id="repetir">Repetir</button></figcaption>
+      </figure>
+    </div>
   </div>
 </header>
 
@@ -252,8 +332,8 @@
     <div class="wrap">
       <div class="seccion-cab">
         <div>
-          <p class="kicker">01 · Activación</p>
-          <h2 id="t-desvio">Tu número no cambia. <em>Solo se desvía.</em></h2>
+          <p class="etiqueta">01 · Activación</p>
+          <h2 id="t-desvio">Tu número no cambia. <mark>Solo se desvía.</mark></h2>
         </div>
         <p>No hay que cambiar de compañía, portar el número ni instalar nada. Te asignamos una línea Bit con número mexicano y tú decides cuándo te entran las llamadas a ti y cuándo a Bit.</p>
       </div>
@@ -265,7 +345,7 @@
           <li><em>03</em><div><b>Bit atiende, vende y te avisa</b><p>Cada llamada termina con un resumen en tu WhatsApp: quién llamó, qué pidió y qué quedó pendiente.</p></div></li>
         </ol>
 
-        <div class="marcador">
+        <div class="tarjeta marcador">
           <p class="titulo">Prueba el modo de desvío</p>
           <div class="modos" role="group" aria-label="Modo de desvío">
             <button type="button" data-codigo="**61*" data-nota="Tu teléfono suena primero. Si no contestas, Bit toma la llamada. El modo más usado para empezar." aria-pressed="true">Si no contesto</button>
@@ -281,43 +361,44 @@
     </div>
   </section>
 
-  <section class="seccion" aria-labelledby="t-caras">
+  <section class="seccion seccion--alt" aria-labelledby="t-caras">
     <div class="wrap">
       <div class="seccion-cab">
         <div>
-          <p class="kicker">02 · Un agente, dos caras</p>
-          <h2 id="t-caras">Vende a tus clientes. <em>Te reporta a ti.</em></h2>
+          <p class="etiqueta">02 · Un agente, dos caras</p>
+          <h2 id="t-caras">Vende a tus clientes. <mark>Te reporta a ti.</mark></h2>
         </div>
-        <p>El mismo Bit que contesta el teléfono es el que te responde a ti por WhatsApp. No es un bot de llamadas más: es quien sabe qué pasa en tu negocio porque lee tus sistemas.</p>
+        <p>El mismo Bit que contesta el teléfono es el que te responde a ti por WhatsApp. No es un bot de llamadas más: sabe qué pasa en tu negocio porque lee tus sistemas.</p>
       </div>
 
       <div class="caras">
-        <article class="cara">
-          <div class="cara-cab">
-            <span class="folio">Para tus clientes</span>
-            <h3>Nunca más una <em>llamada perdida.</em></h3>
-          </div>
+        <article class="cara cara--clientes">
+          <span class="cara-tag">Para tus clientes</span>
+          <h3>Nunca más una llamada perdida.</h3>
           <p>Contesta en español natural, con la voz y el trato que tú defines. Si algo no lo sabe, no lo inventa: lo apunta y te lo pasa.</p>
           <ul class="lista">
-            <li><em>01</em>Precios y existencias reales, leídos de tu punto de venta</li>
-            <li><em>02</em>Pedidos para recoger o a domicilio, apartados y cotizaciones</li>
-            <li><em>03</em>Horarios, ubicación y preguntas frecuentes</li>
-            <li><em>04</em>Seguimiento por WhatsApp al cliente al colgar</li>
-            <li><em>05</em>Te transfiere la llamada si el cliente pide hablar contigo</li>
+            <li>Precios y existencias reales, leídos de tu punto de venta</li>
+            <li>Pedidos para recoger o a domicilio, apartados y cotizaciones</li>
+            <li>Horarios, ubicación y preguntas frecuentes</li>
+            <li>Seguimiento por WhatsApp al cliente al colgar</li>
+            <li>Te transfiere la llamada si el cliente pide hablar contigo</li>
           </ul>
+          <div class="grande"><b>9</b><span>llamadas atendidas mientras cobrabas<small>Ejemplo de un martes</small></span></div>
         </article>
 
-        <article class="cara cara--oscura">
-          <div class="cara-cab">
-            <span class="folio">Para ti</span>
-            <h3>Tu negocio, <em>en una pregunta.</em></h3>
-          </div>
+        <article class="cara cara--duenio">
+          <span class="cara-tag">Para ti</span>
+          <h3>Tu negocio, en una pregunta.</h3>
           <p>Escríbele o mándale audio como a un encargado de confianza.</p>
+          <div class="wa-cab">
+            <span class="av"><svg width="20" height="22" viewBox="0 40 200 190" aria-hidden="true"><use href="#bit"/></svg></span>
+            <div><b>Bit</b><span>en línea</span></div>
+          </div>
           <div class="chat" aria-label="Ejemplo de conversación del dueño con Bit">
-            <p class="burbuja yo">¿Cuánto vendí hoy y qué se está acabando?</p>
-            <p class="burbuja bit">Hoy llevas <b>$8,420</b> en 63 tickets, 12% arriba del martes pasado. Quedan <b>4 bolsas de café de Chiapas</b> y <b>leche de avena para un día</b>.<span class="fuente">PulsePOS · ventas_del_dia · existencias</span></p>
-            <p class="burbuja yo">¿Y las llamadas?</p>
-            <p class="burbuja bit">Atendí <b>9</b>: 3 pedidos cerrados por $1,260 y 1 cliente que quiere cotizar un evento. Te dejo su número.<span class="fuente">Bit · registro de llamadas</span></p>
+            <p class="burbuja yo">¿Cuánto vendí hoy y qué se está acabando?<span class="meta">6:42 p. m. ✓✓</span></p>
+            <p class="burbuja bit">Hoy llevas <b>$8,420</b> en 63 tickets, 12% arriba del martes pasado. Quedan <b>4 bolsas de café de Chiapas</b> y <b>leche de avena para un día</b>.<br><span class="fuente">PulsePOS · ventas_del_dia</span><span class="meta">6:42 p. m.</span></p>
+            <p class="burbuja yo">¿Y las llamadas?<span class="meta">6:43 p. m. ✓✓</span></p>
+            <p class="burbuja bit">Atendí <b>9</b>: 3 pedidos cerrados por $1,260 y 1 cliente que quiere cotizar un evento. Te dejo su número.<br><span class="fuente">Bit · registro de llamadas</span><span class="meta">6:43 p. m.</span></p>
             <p class="ejemplo">Cifras de ejemplo</p>
           </div>
         </article>
@@ -329,15 +410,15 @@
     <div class="wrap">
       <div class="seccion-cab">
         <div>
-          <p class="kicker">03 · Conectores</p>
-          <h2 id="t-conecta">Conecta lo que <em>ya usas.</em></h2>
+          <p class="etiqueta">03 · Conectores</p>
+          <h2 id="t-conecta">Conecta lo que <mark>ya usas.</mark></h2>
         </div>
         <p>Bit no guarda una copia de tu inventario ni de tus ventas: se los pregunta a tus sistemas en el momento. Si ya usas PulsePOS o Flame Stars, lo activas desde tu cuenta con un clic.</p>
       </div>
 
       <div class="conectores">
-        <article class="conector conector--propio">
-          <div class="conector-cab"><span class="folio">Pulse LAT</span><span class="estado-c listo">Conector principal</span></div>
+        <article class="tarjeta conector">
+          <div class="conector-cab"><span class="de">Pulse LAT</span><span class="estado-c listo">Principal</span></div>
           <h3>PulsePOS</h3>
           <p>Tu punto de venta le da a Bit el catálogo, los precios y las existencias del momento. Los pedidos que toma por teléfono entran directo a tu caja.</p>
           <ul class="herramientas" aria-label="Acciones disponibles">
@@ -345,8 +426,8 @@
           </ul>
         </article>
 
-        <article class="conector conector--propio">
-          <div class="conector-cab"><span class="folio">Pulse LAT</span><span class="estado-c">En integración</span></div>
+        <article class="tarjeta conector">
+          <div class="conector-cab"><span class="de">Pulse LAT</span><span class="estado-c">En integración</span></div>
           <h3>Flame Stars</h3>
           <p>Lo que ya tienes en Flame Stars también lo lee Bit, para responder con datos de tu negocio y avisarte cuando algo necesita tu atención.</p>
           <ul class="herramientas" aria-label="Acciones disponibles">
@@ -354,8 +435,8 @@
           </ul>
         </article>
 
-        <article class="conector">
-          <div class="conector-cab"><span class="folio">Siguiente</span><span class="estado-c prox">Próximamente</span></div>
+        <article class="tarjeta conector conector--prox">
+          <div class="conector-cab"><span class="de">Siguiente</span><span class="estado-c">Próximamente</span></div>
           <h3>Agenda y pagos</h3>
           <p>Citas para giros de servicio como uñas, spa o consultorio, y ligas de pago que Bit manda por WhatsApp al cerrar una venta.</p>
           <ul class="herramientas" aria-label="Acciones previstas">
@@ -372,12 +453,12 @@
     </div>
   </section>
 
-  <section class="seccion" aria-labelledby="t-preguntas">
+  <section class="seccion seccion--alt" aria-labelledby="t-preguntas">
     <div class="wrap">
       <div class="seccion-cab">
         <div>
-          <p class="kicker">04 · Preguntas</p>
-          <h2 id="t-preguntas">Antes de <em>activarlo.</em></h2>
+          <p class="etiqueta">04 · Preguntas</p>
+          <h2 id="t-preguntas">Antes de <mark>activarlo.</mark></h2>
         </div>
         <p>Lo que más preguntan los dueños antes de dejarle el teléfono a Bit.</p>
       </div>
@@ -395,8 +476,8 @@
 
 <footer class="cierre">
   <div class="wrap">
-    <p class="kicker">Pulse LAT · Bit</p>
-    <h2>Que la próxima llamada <em>no se pierda.</em></h2>
+    <p class="etiqueta">Pulse LAT · Bit</p>
+    <h2>Que la próxima llamada <mark>no se pierda.</mark></h2>
     <p>Estamos abriendo Bit con pocos negocios de la zona que ya usan PulsePOS o Flame Stars. Lo configuramos contigo, con tu carta y tus horarios, y lo probamos con tu número antes de activarlo.</p>
     <div class="acciones">
       <a class="btn" href="https://wa.me/522296500422?text=Hola%2C%20quiero%20acceso%20anticipado%20a%20Bit%20para%20mi%20negocio.">Pedir acceso por WhatsApp
@@ -404,6 +485,7 @@
       </a>
       <a class="alt" href="../">Volver al directorio</a>
     </div>
+    <svg class="bit-mini" viewBox="0 0 200 270" aria-hidden="true"><use href="#bit"/></svg>
     <div class="pie-pagina">
       <span><a href="../">Pulse LAT</a> · Bit, agente de negocio</span>
       <span>Lindavista, CDMX · 2026</span>
@@ -432,10 +514,10 @@
 
   function reproducir() {
     timers.forEach(clearTimeout); timers = []; clearInterval(tic);
-    if (quieto) { lineas.forEach(l => l.classList.remove('oculto')); reloj.textContent = '00:42'; return; }
+    if (quieto) { lineas.forEach(l => l.classList.remove('oculto')); reloj.textContent = '00:38'; return; }
     lineas.forEach(l => l.classList.add('oculto'));
     seg = 0; reloj.textContent = fmt(0);
-    tic = setInterval(() => { seg++; reloj.textContent = fmt(seg); if (seg >= 42) clearInterval(tic); }, 1000);
+    tic = setInterval(() => { seg++; reloj.textContent = fmt(seg); if (seg >= 38) clearInterval(tic); }, 1000);
     let t = 400;
     lineas.forEach(l => {
       timers.push(setTimeout(() => l.classList.remove('oculto'), t));
