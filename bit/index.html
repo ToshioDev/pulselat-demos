@@ -38,6 +38,7 @@
     --sombra:0 24px 50px -18px rgba(0,0,0,.65),0 2px 0 rgba(255,255,255,.4) inset;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none!important}
   html{scroll-behavior:smooth}
   body{background:var(--noche);color:var(--texto);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -95,6 +96,32 @@
   .apartar .btn{width:100%;justify-content:center;margin-top:20px;background:var(--tinta);color:var(--lima);box-shadow:none}
   .apartar .btn:hover{background:#000}
   .apartar .nota{font-size:12.5px;color:var(--tinta-3);margin-top:10px;text-align:center}
+  .quiz-cab{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .quiz-paso{font-family:var(--mono);font-size:11px;color:var(--tinta-3);white-space:nowrap}
+  .quiz-barra{height:5px;border-radius:99px;background:rgba(26,20,18,.1);margin-top:14px;overflow:hidden}
+  .quiz-barra i{display:block;height:100%;width:0;background:var(--tinta);border-radius:99px;transition:width .3s ease}
+  .q-pantalla{border:0;margin-top:20px;display:flex;flex-direction:column;gap:8px}
+  .q-pantalla legend{font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.25;margin-bottom:10px;padding:0}
+  .op{display:block;cursor:pointer}
+  .op input{position:absolute;opacity:0;pointer-events:none}
+  .op span{display:block;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid rgba(26,20,18,.16);font-size:15.5px;font-weight:600;transition:border-color .15s,background .15s}
+  .op:hover span{border-color:var(--tinta)}
+  .op input:focus-visible + span{outline:2px solid var(--tinta);outline-offset:2px}
+  .op input:checked + span{background:var(--lima);border-color:var(--tinta)}
+  .q-pantalla .campo{margin-top:6px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .q-error{font-size:13.5px;color:#b3261e;margin-top:6px}
+  .q-nav{margin-top:12px;min-height:20px}
+  .q-atras{background:none;border:0;font:600 14px var(--sans);color:var(--tinta-2);cursor:pointer;padding:4px 0}
+  .q-atras:hover{color:var(--tinta)}
+  .q-resultado{margin-top:18px}
+  .q-sello{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--lima);color:var(--tinta);border-radius:999px;padding:4px 10px}
+  .q-sello--suave{background:rgba(26,20,18,.08)}
+  .q-resultado h3{margin-top:12px}
+  .q-resultado p{font-size:15px;color:var(--tinta-2);margin-top:8px}
+  .q-resultado .btn{display:flex}
+  .alt-oscuro{display:inline-block;margin-top:16px;font-weight:700;font-size:15px;border-bottom:2px solid var(--lima)}
+  @media (max-width:520px){ .dos{grid-template-columns:1fr} }
   @media (max-width:960px){ .oferta{grid-template-columns:1fr} }
   @media (max-width:520px){ .linea-tiempo{grid-template-columns:1fr} .by span{display:none} .top-nav .estado{display:none} }
 
@@ -385,35 +412,84 @@
           <li><div><b>Conectado a lo que ya usas</b><span>Si tienes PulsePOS o Flama Stars, Bit los usa desde el primer día.</span></div></li>
         </ul>
         <ol class="linea-tiempo" aria-label="Etapas del lanzamiento">
-          <li class="ahora">Ahora<b>Apartas tu lugar</b></li>
+          <li class="ahora">Ahora<b>Haces el quiz y apartas</b></li>
           <li>Después<b>Instalación con fundadores</b></li>
           <li>Al final<b>Lanzamiento abierto</b></li>
         </ol>
       </div>
 
-      <form class="tarjeta apartar" id="apartar" action="https://wa.me/522296500422?text=Hola%2C%20quiero%20mi%20lugar%20de%20fundador%20en%20Bit." method="get" target="_blank" rel="noopener">
-        <h3>Aparta tu lugar</h3>
-        <p>Te escribimos por WhatsApp para agendar la instalación.</p>
-        <label class="campo"><span>Nombre de tu negocio</span><input name="negocio" id="f-negocio" autocomplete="organization" placeholder="Ej. Cafetería La Esquina" required></label>
-        <label class="campo"><span>Giro</span>
-          <select id="f-giro" name="giro">
-            <option>Cafetería o restaurante</option><option>Panadería o postres</option><option>Belleza o spa</option><option>Tienda o abarrotes</option><option>Consultorio o servicios</option><option>Otro</option>
-          </select>
-        </label>
-        <label class="campo"><span>¿Tu número del negocio es de…?</span>
-          <select id="f-compania" name="compania">
-            <option>Telcel</option><option>AT&amp;T</option><option>Movistar</option><option>Telmex (fijo)</option><option>Otra</option>
-          </select>
-        </label>
-        <div class="campo"><span>Ya uso</span>
-          <div class="chips">
-            <label><input type="checkbox" id="f-pos"> PulsePOS</label>
-            <label><input type="checkbox" id="f-flama"> Flama Stars</label>
-          </div>
+      <div class="tarjeta apartar quiz" id="apartar" aria-live="polite">
+        <div class="quiz-cab"><h3>¿Bit es para tu negocio?</h3><span class="quiz-paso" id="q-paso">1 de 6</span></div>
+        <div class="quiz-barra" aria-hidden="true"><i id="q-barra"></i></div>
+
+        <form id="quiz" novalidate>
+          <fieldset class="q-pantalla" data-paso="1">
+            <legend>¿Cuántas llamadas recibe tu negocio al día?</legend>
+            <label class="op"><input type="radio" name="llamadas" value="Menos de 5" data-pts="0"><span>Menos de 5</span></label>
+            <label class="op"><input type="radio" name="llamadas" value="Entre 5 y 20" data-pts="2"><span>Entre 5 y 20</span></label>
+            <label class="op"><input type="radio" name="llamadas" value="Entre 20 y 50" data-pts="3"><span>Entre 20 y 50</span></label>
+            <label class="op"><input type="radio" name="llamadas" value="Más de 50" data-pts="3"><span>Más de 50</span></label>
+          </fieldset>
+          <fieldset class="q-pantalla" data-paso="2" hidden>
+            <legend>¿Cuántas se te van sin contestar?</legend>
+            <label class="op"><input type="radio" name="perdidas" value="Casi ninguna" data-pts="0"><span>Casi ninguna</span></label>
+            <label class="op"><input type="radio" name="perdidas" value="Algunas" data-pts="1"><span>Algunas</span></label>
+            <label class="op"><input type="radio" name="perdidas" value="Muchas, sobre todo en hora pico" data-pts="3"><span>Muchas, sobre todo en hora pico</span></label>
+            <label class="op"><input type="radio" name="perdidas" value="No sé" data-pts="1"><span>No sé, nunca las cuento</span></label>
+          </fieldset>
+          <fieldset class="q-pantalla" data-paso="3" hidden>
+            <legend>Por teléfono, ¿qué te piden más?</legend>
+            <label class="op"><input type="radio" name="motivo" value="Pedidos y apartados" data-pts="3"><span>Pedidos y apartados</span></label>
+            <label class="op"><input type="radio" name="motivo" value="Precios y existencias" data-pts="2"><span>Precios y existencias</span></label>
+            <label class="op"><input type="radio" name="motivo" value="Citas" data-pts="2"><span>Citas</span></label>
+            <label class="op"><input type="radio" name="motivo" value="Horarios y ubicación" data-pts="1"><span>Horarios y ubicación</span></label>
+          </fieldset>
+          <fieldset class="q-pantalla" data-paso="4" hidden>
+            <legend>¿Ya usas alguno de estos?</legend>
+            <label class="op"><input type="radio" name="usa" value="PulsePOS y Flama Stars" data-pts="3"><span>PulsePOS y Flama Stars</span></label>
+            <label class="op"><input type="radio" name="usa" value="PulsePOS" data-pts="2"><span>PulsePOS</span></label>
+            <label class="op"><input type="radio" name="usa" value="Flama Stars" data-pts="2"><span>Flama Stars</span></label>
+            <label class="op"><input type="radio" name="usa" value="Ninguno" data-pts="0"><span>Ninguno todavía</span></label>
+          </fieldset>
+          <fieldset class="q-pantalla" data-paso="5" hidden>
+            <legend>¿Cuándo te gustaría tenerlo?</legend>
+            <label class="op"><input type="radio" name="cuando" value="Esta semana" data-pts="3"><span>Esta semana</span></label>
+            <label class="op"><input type="radio" name="cuando" value="Este mes" data-pts="2"><span>Este mes</span></label>
+            <label class="op"><input type="radio" name="cuando" value="Más adelante" data-pts="0"><span>Más adelante, solo estoy viendo</span></label>
+          </fieldset>
+          <fieldset class="q-pantalla" data-paso="6" hidden>
+            <legend>¿A dónde te contactamos?</legend>
+            <label class="campo"><span>Nombre de tu negocio</span><input id="f-negocio" name="negocio" autocomplete="organization" placeholder="Ej. Cafetería La Esquina" required></label>
+            <label class="campo"><span>Tu nombre</span><input id="f-nombre" name="nombre" autocomplete="name" required></label>
+            <label class="campo"><span>Tu WhatsApp</span><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="10 dígitos" required></label>
+            <div class="dos">
+              <label class="campo"><span>Giro</span>
+                <select id="f-giro" name="giro"><option>Cafetería o restaurante</option><option>Panadería o postres</option><option>Belleza o spa</option><option>Tienda o abarrotes</option><option>Consultorio o servicios</option><option>Otro</option></select>
+              </label>
+              <label class="campo"><span>Su número es de</span>
+                <select id="f-compania" name="compania"><option>Telcel</option><option>AT&amp;T</option><option>Movistar</option><option>Telmex (fijo)</option><option>Otra</option></select>
+              </label>
+            </div>
+            <p class="q-error" id="q-error" hidden>Escribe el nombre del negocio, tu nombre y un WhatsApp de 10 dígitos.</p>
+            <button class="btn" type="submit">Ver mi resultado →</button>
+          </fieldset>
+          <div class="q-nav"><button type="button" class="q-atras" id="q-atras" hidden>← Atrás</button></div>
+        </form>
+
+        <div class="q-resultado" id="r-si" hidden>
+          <span class="q-sello">Calificas</span>
+          <h3>Tu negocio es candidato a lugar de fundador.</h3>
+          <p id="r-si-txt">Pierdes llamadas que Bit puede convertir en pedidos. Escríbenos y agendamos la instalación.</p>
+          <a class="btn" id="r-wa" href="#" target="_blank" rel="noopener">Apartar mi lugar por WhatsApp →</a>
+          <p class="nota">Sin pago para apartar. Te confirmamos precio y fecha.</p>
         </div>
-        <button class="btn" type="submit">Apartar por WhatsApp →</button>
-        <p class="nota">Sin pago para apartar. Te confirmamos precio y fecha por WhatsApp.</p>
-      </form>
+        <div class="q-resultado" id="r-no" hidden>
+          <span class="q-sello q-sello--suave">Te anotamos</span>
+          <h3>Gracias, ya tenemos tus datos.</h3>
+          <p>Por ahora estamos instalando a negocios con más llamadas perdidas. Te escribimos cuando abramos más lugares en tu zona.</p>
+          <a class="alt-oscuro" href="../">Mientras, mira las demos →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -617,15 +693,83 @@
   }
   document.getElementById('repetir').addEventListener('click', reproducir);
 
-  // Apartar lugar: arma el mensaje de WhatsApp
-  const form = document.getElementById('apartar');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const v = id => document.getElementById(id);
-    const usa = [v('f-pos').checked && 'PulsePOS', v('f-flama').checked && 'Flama Stars'].filter(Boolean).join(' y ') || 'ninguno todavía';
-    const texto = `Hola, quiero mi lugar de fundador en Bit.\nNegocio: ${v('f-negocio').value.trim()}\nGiro: ${v('f-giro').value}\nMi número es de: ${v('f-compania').value}\nYa uso: ${usa}`;
-    window.open('https://wa.me/522296500422?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  // Quiz de fundador: califica y decide si va a WhatsApp o solo se guarda
+  const WA_NUMERO = '522296500422';
+  // Pega aquí la URL de tu Apps Script (hoja de Google). Vacía = aún no se guarda en ningún lado.
+  const GUARDAR_URL = '';
+  const UMBRAL = 9; // de 15 puntos posibles
+
+  const quiz = document.getElementById('quiz');
+  const pantallas = Array.from(quiz.querySelectorAll('.q-pantalla'));
+  const pasoTxt = document.getElementById('q-paso');
+  const barra = document.getElementById('q-barra');
+  const atras = document.getElementById('q-atras');
+  let paso = 0;
+
+  function mostrar(i) {
+    paso = i;
+    pantallas.forEach((p, n) => p.hidden = n !== i);
+    pasoTxt.textContent = (i + 1) + ' de ' + pantallas.length;
+    barra.style.width = ((i + 1) / pantallas.length * 100) + '%';
+    atras.hidden = i === 0;
+    const foco = pantallas[i].querySelector('input:checked, input');
+    if (foco && i > 0) foco.focus({ preventScroll: true });
+  }
+  quiz.addEventListener('change', e => {
+    if (e.target.type === 'radio' && paso < pantallas.length - 1) setTimeout(() => mostrar(paso + 1), 180);
   });
+  atras.addEventListener('click', () => mostrar(Math.max(0, paso - 1)));
+
+  const valor = n => (quiz.querySelector(`input[name="${n}"]:checked`) || {}).value || '';
+  const puntos = n => +((quiz.querySelector(`input[name="${n}"]:checked`) || {dataset:{pts:0}}).dataset.pts);
+
+  quiz.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const tel = v('f-tel').replace(/\D/g, '').slice(-10);
+    const error = document.getElementById('q-error');
+    if (!v('f-negocio') || !v('f-nombre') || tel.length !== 10) { error.hidden = false; return; }
+    error.hidden = true;
+
+    const score = ['llamadas','perdidas','motivo','usa','cuando'].reduce((s, n) => s + puntos(n), 0);
+    const caliente = valor('cuando') === 'Esta semana' && puntos('perdidas') >= 3;
+    const califica = score >= UMBRAL || caliente;
+    const lead = {
+      fecha: new Date().toISOString(), negocio: v('f-negocio'), nombre: v('f-nombre'), whatsapp: tel,
+      giro: v('f-giro'), compania: v('f-compania'), llamadas: valor('llamadas'), perdidas: valor('perdidas'),
+      motivo: valor('motivo'), usa: valor('usa'), cuando: valor('cuando'), puntos: score, califica
+    };
+
+    // Se guardan todos los leads (calificados o no) si hay a dónde.
+    if (GUARDAR_URL) {
+      try { fetch(GUARDAR_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(lead) }); } catch (_) {}
+    }
+
+    quiz.hidden = true;
+    document.querySelector('.quiz-barra').hidden = true;
+    pasoTxt.textContent = 'Resultado';
+    // Sin lugar donde guardar, nadie se pierde: el no calificado también va a WhatsApp, marcado.
+    if (califica || !GUARDAR_URL) {
+      const texto = [
+        califica ? 'Hola, quiero mi lugar de fundador en Bit.' : 'Hola, me interesa Bit (lead por calificar).',
+        `Negocio: ${lead.negocio}`, `Nombre: ${lead.nombre}`, `Giro: ${lead.giro}`, `Número de: ${lead.compania}`,
+        `Llamadas al día: ${lead.llamadas}`, `Sin contestar: ${lead.perdidas}`, `Le piden: ${lead.motivo}`,
+        `Ya usa: ${lead.usa}`, `Lo quiere: ${lead.cuando}`, `Puntos: ${score}/15`
+      ].join('\n');
+      document.getElementById('r-wa').href = 'https://wa.me/' + WA_NUMERO + '?text=' + encodeURIComponent(texto);
+      if (!califica) {
+        document.querySelector('#r-si .q-sello').textContent = 'Casi';
+        document.querySelector('#r-si h3').textContent = 'Mándanos tus datos y lo revisamos contigo.';
+        document.getElementById('r-si-txt').textContent = 'Con tus respuestas vemos si Bit te conviene ya o más adelante.';
+        document.getElementById('r-wa').textContent = 'Enviar por WhatsApp →';
+      }
+      document.getElementById('r-si').hidden = false;
+    } else {
+      document.getElementById('r-no').hidden = false;
+    }
+    document.getElementById('apartar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  mostrar(0);
   reproducir();
 })();
 </script>
