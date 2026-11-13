@@ -696,8 +696,8 @@
   // Quiz de fundador: califica y decide si va a WhatsApp o solo se guarda
   const WA_NUMERO = '522296500422';
   // Supabase propio de Bit. La llave anon es pública; la tabla solo acepta inserciones (RLS).
-  const SUPABASE_URL = '';      // p. ej. https://abcd1234.supabase.co
-  const SUPABASE_ANON = '';     // Project Settings → API → anon public
+  const SUPABASE_URL = 'https://bit-db.pulselat.online';  // Supabase propio de Bit (Coolify)
+  const SUPABASE_ANON = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc5NDUyNzcwMCwiZXhwIjo0OTUwMjAxMzAwLCJyb2xlIjoiYW5vbiJ9.pZgx3vGcSyKz-TdkSrSjIBNwOnqgEfluXqNrllJ9HAQ';  // anon public (solo inserta; RLS)
   const GUARDAR = Boolean(SUPABASE_URL && SUPABASE_ANON);
   const UMBRAL = 9; // de 15 puntos posibles
 
