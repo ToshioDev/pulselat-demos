@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Dr. Santiago Treviño San Martin · Psiquiatra en Tlalpan, CDMX</title>
-<meta name="description" content="Psiquiatría y psiquiatría de enlace en CDMX: consulta presencial en Clínica Cuicuilco (Tlalpan) y SOMA Medicina Integral (Pedregal), o videoconsulta. Agenda tu cita en línea.">
+<meta name="description" content="Psiquiatría y psiquiatría de enlace en CDMX: consulta presencial en Clínica Cuicuilco (Tlalpan) y SOMA Medicina Integral (Pedregal), o videoconsulta. Mira la agenda y reserva tu cita.">
 <link rel="canonical" href="https://demos.pulselat.online/salud/santiago-trevino/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://demos.pulselat.online/salud/santiago-trevino/">
 <meta property="og:title" content="Dr. Santiago Treviño San Martin · Psiquiatría y psiquiatría de enlace">
-<meta property="og:description" content="Consulta presencial en Tlalpan y Pedregal, o por videoconsulta. Mira la disponibilidad y solicita tu cita.">
+<meta property="og:description" content="Consulta presencial en Tlalpan y Pedregal, o por videoconsulta. Mira la agenda y solicita tu cita.">
 <meta property="og:image" content="https://demos.pulselat.online/salud/santiago-trevino/img/retrato.jpg">
 <meta property="og:image:width" content="529">
 <meta property="og:image:height" content="530">
@@ -22,16 +22,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/antislop.css">
 <style>
   :root{
-    --marfil:#FFFDFB; --arena:#F6EEE6; --arena-2:#EFE3D7;
+    --marfil:#FFFDFB; --arena:#F6EEE6;
     --cafe:#2B1D16; --cafe-2:#3A281F; --cuerpo:#5A463A; --tenue:#76614F;
     --naranja:#EE7133; --teja:#A84A17; --teja-osc:#8E3C10;
     --dorado:#A8742A; --dorado-txt:#7A5418;
     --linea:rgba(43,29,22,.14); --linea-f:rgba(43,29,22,.32);
     --serif:"Fraunces",Georgia,"Times New Roman",serif;
     --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --radio:14px;
+    --radio:12px;
+
+    --as-tinta:var(--cafe); --as-tenue:var(--cuerpo); --as-linea:var(--linea);
+    --as-acento:var(--teja); --as-acento-tinta:var(--marfil);
+    --as-tarjeta:var(--marfil); --as-radio:999px;
+    --as-panel:var(--cafe); --as-panel-tinta:var(--marfil);
+    --as-panel-tenue:rgba(255,253,251,.74); --as-panel-linea:rgba(255,253,251,.2);
+    --as-panel-acento:var(--naranja); --as-panel-acento-tinta:var(--cafe);
+    --as-display:var(--serif); --as-display-weight:400; --as-display-ls:-.015em;
+    --as-body:var(--sans);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -39,107 +49,81 @@
   body{background:var(--marfil);color:var(--cafe);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit}
   img{display:block;max-width:100%;height:auto}
-  button,input,textarea,select{font:inherit;color:inherit}
+  button{font:inherit;color:inherit}
   .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
   .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--cafe);color:var(--marfil);padding:10px 16px;z-index:200;border-radius:8px}
-  .skip:focus{left:12px;top:12px}
   :focus-visible{outline:3px solid var(--teja);outline-offset:3px;border-radius:4px}
-  section[id],#reserva{scroll-margin-top:84px}
 
-  /* Tipografía */
-  .kicker{font-size:11.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--dorado-txt);display:flex;align-items:center;gap:12px}
-  .kicker::before{content:"";width:26px;height:1.5px;background:var(--naranja);flex:none}
-  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;font-variation-settings:"SOFT" 50}
-  h2{font-size:clamp(32px,4.6vw,52px);line-height:1.04;margin:14px 0 18px;max-width:20ch}
-  h2 em,h1 em{font-style:italic;color:var(--teja)}
-  h3{font-size:clamp(21px,2vw,25px);line-height:1.2}
-  .lead{font-size:clamp(16px,1.35vw,18px);color:var(--cuerpo);max-width:60ch}
+  .kicker{font-size:11.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--dorado-txt)}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+  h2{font-size:clamp(30px,4.2vw,48px);line-height:1.06;margin:12px 0 16px;max-width:22ch}
+  h3{font-size:clamp(20px,2vw,24px);line-height:1.2}
+  .lead{font-size:clamp(16px,1.35vw,18px);color:var(--cuerpo);max-width:58ch}
   p{max-width:68ch}
 
   /* Botones */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;border:1.5px solid var(--cafe);background:var(--cafe);color:var(--marfil);font-weight:600;font-size:14.5px;letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
-  .btn:hover{background:var(--teja-osc);border-color:var(--teja-osc)}
-  .btn--teja{background:var(--naranja);border-color:var(--naranja);color:var(--cafe)}
-  .btn--teja:hover{background:var(--teja-osc);border-color:var(--teja-osc);color:#fff}
-  .btn--linea{background:transparent;color:var(--cafe);border-color:var(--linea-f)}
-  .btn--linea:hover{background:var(--cafe);color:var(--marfil);border-color:var(--cafe)}
-  .btn--wa{background:var(--naranja);border-color:var(--naranja);color:var(--cafe)}
-  .btn--wa:hover{background:var(--teja-osc);border-color:var(--teja-osc);color:#fff}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;border:1.5px solid var(--naranja);background:var(--naranja);color:var(--cafe);font-weight:600;font-size:14.5px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap}
+  .btn:hover{background:var(--teja-osc);border-color:var(--teja-osc);color:#fff}
+  .btn--linea{background:transparent;border-color:var(--linea-f);color:var(--cafe)}
+  .btn--linea:hover{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
   .btn svg{flex:none;width:18px;height:18px}
-  .btn[disabled]{opacity:.45;cursor:not-allowed}
   .enlace{color:var(--teja);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
   .enlace:hover{color:var(--teja-osc)}
 
-  /* Cinta: el trazo de la firma */
-  .cinta{display:block;width:100%;height:34px;color:var(--naranja);overflow:hidden}
-  .cinta path{fill:none;stroke:currentColor;stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linecap:round}
-
   /* Barra superior */
-  .barra{position:sticky;top:0;z-index:60;background:rgba(255,253,251,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
-  .barra .wrap{display:flex;align-items:center;gap:18px;height:68px}
-  .firma{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
-  .firma img{width:74px;height:auto}
+  .barra{position:sticky;top:0;z-index:60;background:rgba(255,253,251,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  .barra .wrap{display:flex;align-items:center;gap:14px;height:70px}
+  .firma{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0;margin-right:auto}
+  .firma img{width:70px;height:auto}
   .firma span{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-  .firma b{font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
-  .firma small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dorado-txt);white-space:nowrap}
-  .nav{margin-left:auto;display:flex;align-items:center;gap:22px}
-  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:var(--cuerpo);padding:6px 0;border-bottom:1.5px solid transparent}
-  .nav a:hover{color:var(--cafe);border-color:var(--naranja)}
-  .barra .btn{min-height:42px;padding:9px 18px;font-size:13.5px;white-space:nowrap}
-  .menu-btn{display:none;align-items:center;gap:8px;min-height:42px;padding:8px 14px;border:1.5px solid var(--linea-f);border-radius:999px;background:transparent;font-weight:600;font-size:13px;cursor:pointer}
-  .menu-btn i{display:block;width:16px;height:10px;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;position:relative}
-  .menu-btn i::after{content:"";position:absolute;left:0;right:0;top:3px;border-top:1.5px solid currentColor}
-  .menu-movil{border-top:1px solid var(--linea);background:var(--marfil)}
-  .menu-movil nav{display:grid;padding:8px 0 16px}
-  .menu-movil a{display:block;padding:13px 2px;border-bottom:1px solid var(--linea);text-decoration:none;font-weight:500}
+  .firma b{font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+  .firma small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado-txt);white-space:nowrap}
+  .nav-escritorio{display:flex;align-items:center;gap:22px;margin-right:8px}
+  .nav-escritorio a{font-size:13.5px;font-weight:500;text-decoration:none;color:var(--cuerpo);padding:6px 0;border-bottom:1.5px solid transparent}
+  .nav-escritorio a:hover{color:var(--cafe);border-color:var(--naranja)}
+  .barra .btn{min-height:42px;padding:9px 18px;font-size:13.5px}
+  .barra .wa-barra{gap:8px}
 
   /* Hero */
-  .hero{overflow:hidden;padding:clamp(34px,6vw,78px) 0 clamp(30px,5vw,60px);background:linear-gradient(180deg,var(--marfil) 0%,#FBF1E6 100%)}
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,72px);align-items:center}
-  .hero-mono{width:min(320px,70%);margin-bottom:6px}
-  .hero h1{font-size:clamp(40px,6.4vw,78px);line-height:.98;margin:16px 0 14px}
-  .hero h1 small{display:block;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado-txt);margin-bottom:10px}
-  .especialidad{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--teja);margin-bottom:18px}
+  .hero{padding:clamp(36px,6vw,80px) 0 clamp(36px,5vw,64px);background:var(--arena)}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,72px);align-items:center}
+  .hero h1{font-size:clamp(40px,6vw,74px);line-height:1;margin:14px 0 10px}
+  .especialidad{font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--teja);margin-bottom:18px}
   .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-  .cedulas{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;padding-top:18px;border-top:1px solid var(--linea)}
-  .cedulas div{display:flex;flex-direction:column}
-  .cedulas span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue)}
-  .cedulas b{font-weight:500;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
-  .retrato{position:relative;margin:0}
+  .datos-hero{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;padding-top:18px;border-top:1px solid var(--linea-f);font-size:13.5px;color:var(--cuerpo)}
+  .datos-hero b{display:block;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+  .retrato{margin:0}
   .retrato img{width:100%;aspect-ratio:1/1.08;object-fit:cover;object-position:50% 30%;border-radius:var(--radio)}
-  .retrato{z-index:0}
-  .retrato::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--naranja);border-radius:var(--radio);z-index:-1}
-  .retrato::after{content:"";position:absolute;inset:-12px 26px 30px -12px;border:1.5px solid var(--dorado);border-radius:var(--radio);z-index:-2}
-  .retrato figcaption{position:absolute;left:14px;bottom:14px;right:14px;display:flex;flex-wrap:wrap;gap:6px}
-  .pill{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:rgba(255,253,251,.95);font-size:12px;font-weight:600;color:var(--cafe);box-shadow:0 4px 16px rgba(43,29,22,.12)}
-  .pill i{width:7px;height:7px;border-radius:50%;background:var(--naranja)}
+  .retrato figcaption{margin-top:10px;font-size:12.5px;color:var(--tenue)}
+
+  /* Próximos horarios */
+  .proximos{border-bottom:1px solid var(--linea);background:var(--marfil)}
+  .proximos .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px 28px;align-items:center;padding:22px 0}
+  .proximos h2{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado-txt);margin:0;max-width:none}
+  .proximos ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+  .hora-link{display:flex;flex-direction:column;justify-content:center;min-height:52px;padding:7px 14px;border:1.5px solid var(--linea-f);border-radius:10px;text-decoration:none;line-height:1.25;transition:border-color .15s,background .15s}
+  .hora-link:hover{border-color:var(--naranja);background:#FFF1E6}
+  .hora-link b{font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
+  .hora-link span{font-size:12px;color:var(--tenue);text-transform:capitalize}
+  .proximos .vacio{font-size:14px;color:var(--cuerpo)}
 
   /* Secciones */
-  .seccion{padding:clamp(54px,8vw,104px) 0}
+  .seccion{padding:clamp(56px,8vw,100px) 0}
   .seccion--arena{background:var(--arena)}
   .seccion--cafe{background:var(--cafe);color:var(--marfil)}
   .seccion--cafe .kicker{color:#F2B27E}
-  .seccion--cafe h2 em{color:#F2A27A}
   .seccion--cafe .lead{color:rgba(255,253,251,.78)}
   .cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(18px,4vw,60px);align-items:end;margin-bottom:clamp(26px,4vw,44px)}
-  .cab .lead{justify-self:end}
 
-  /* Sobre mí */
+  /* Sobre */
   .sobre{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:start}
-  .cita-bio{font-family:var(--serif);font-size:clamp(21px,2.3vw,28px);line-height:1.38;font-weight:300;color:var(--cafe);max-width:34ch}
-  .cita-bio::before{content:"“";display:block;font-size:64px;line-height:.6;color:var(--naranja);margin-bottom:12px}
+  .cita-bio{font-family:var(--serif);font-size:clamp(21px,2.3vw,28px);line-height:1.38;font-weight:300;max-width:34ch}
   .bio p{color:var(--cuerpo);margin-top:16px}
-  .bio .cierre-bio{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--teja);margin-top:22px}
+  .bio .cita-bio{color:var(--cafe);margin-top:0}
   .ficha-lista{list-style:none;border-top:1px solid var(--linea-f)}
-  .ficha-lista li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding:15px 0;border-bottom:1px solid var(--linea)}
-  .ficha-lista span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
+  .ficha-lista li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--linea)}
+  .ficha-lista span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
   .ficha-lista b{font-weight:500;font-size:15px}
-  .enfoque{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(36px,5vw,56px)}
-  .enfoque article{border-top:3px solid var(--naranja);padding-top:16px}
-  .enfoque em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--dorado-txt)}
-  .enfoque h3{margin:8px 0 8px}
-  .enfoque p{font-size:15px;color:var(--cuerpo)}
   .galeria{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:12px;margin-top:clamp(36px,5vw,56px)}
   .galeria figure{margin:0;display:flex;flex-direction:column;gap:8px}
   .galeria img{width:100%;height:clamp(200px,26vw,320px);object-fit:cover;border-radius:10px}
@@ -148,256 +132,111 @@
   /* Atiende */
   .atiende{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,36px)}
   .lista-p{list-style:none}
-  .lista-p li{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--linea);font-family:var(--serif);font-size:clamp(21px,2.1vw,27px);line-height:1.2}
+  .lista-p li{padding:15px 0;border-bottom:1px solid var(--linea);font-family:var(--serif);font-size:clamp(20px,2vw,25px);line-height:1.2}
   .lista-p li:first-child{border-top:1px solid var(--linea-f)}
-  .lista-p em{font-family:var(--sans);font-style:normal;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--dorado-txt);min-width:26px}
   .nota{font-size:13.5px;color:var(--tenue);margin-top:14px}
-  .tarjeta{background:var(--marfil);border:1px solid var(--linea);border-radius:var(--radio);padding:clamp(20px,2.6vw,30px)}
+  .tarjeta{background:var(--marfil);border:1px solid var(--linea);border-radius:var(--radio);padding:clamp(20px,2.6vw,28px)}
   .tarjeta + .tarjeta{margin-top:14px}
   .tarjeta h3{margin-bottom:8px}
   .tarjeta p{color:var(--cuerpo);font-size:15px}
 
   /* Servicios */
   .servicios{list-style:none;border-top:1px solid rgba(255,253,251,.3)}
-  .servicios li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px 28px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,253,251,.16)}
-  .servicios h3{font-size:clamp(20px,2vw,25px)}
+  .servicios li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px 28px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,253,251,.16)}
   .servicios p{font-size:14px;color:rgba(255,253,251,.7);margin-top:4px}
-  .modo{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border:1px solid rgba(238,113,51,.6);border-radius:999px;white-space:nowrap;color:#F2DCC4}
-  .precio{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);color:var(--naranja);font-variant-numeric:lining-nums;white-space:nowrap;text-align:right;min-width:4.5ch}
-  .precio small{font-family:var(--sans);font-size:11px;letter-spacing:.12em;color:rgba(255,253,251,.65);margin-left:4px}
+  .precio{font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);color:var(--naranja);white-space:nowrap;text-align:right}
+  .precio small{font-family:var(--sans);font-size:11px;letter-spacing:.1em;color:rgba(255,253,251,.65);margin-left:4px}
+  .reservar-link{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid rgba(255,253,251,.35);border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+  .reservar-link:hover{border-color:var(--naranja);color:var(--naranja)}
   .servicios-pie{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;margin-top:24px;font-size:13.5px;color:rgba(255,253,251,.72)}
-  .seccion--cafe .btn{background:var(--naranja);color:var(--cafe);border-color:var(--naranja)}
-  .seccion--cafe .btn:hover{background:var(--marfil);border-color:var(--marfil)}
-
-  /* Disponibilidad */
-  .agenda-ctrl{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;margin-bottom:16px}
-  .filtros{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{min-height:40px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--linea-f);background:var(--marfil);font-size:13px;font-weight:500;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-  .chip:hover{border-color:var(--cafe)}
-  .chip[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
-  .semana-nav{display:flex;align-items:center;gap:10px}
-  .semana-nav b{font-weight:500;font-size:14px;min-width:18ch;text-align:center}
-  .icono-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--linea-f);background:var(--marfil);display:grid;place-items:center;cursor:pointer;font-size:18px;line-height:1}
-  .icono-btn:hover:not([disabled]){border-color:var(--cafe)}
-  .icono-btn[disabled]{opacity:.35;cursor:not-allowed}
-  .leyenda{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;font-size:12.5px;color:var(--cuerpo);margin-bottom:18px}
-  .leyenda li{display:flex;align-items:center;gap:8px}
-  .muestra-slot{display:inline-block;width:30px;height:18px;border-radius:6px}
-  .resumen-semana{font-size:13.5px;color:var(--cuerpo);margin-bottom:14px}
-  .semana{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
-  .dia{background:var(--marfil);border:1px solid var(--linea);border-radius:12px;padding:12px 10px;min-height:150px;display:flex;flex-direction:column;gap:8px}
-  .dia--hoy{border-color:var(--naranja);box-shadow:inset 0 0 0 1px var(--naranja)}
-  .dia--pasado{background:transparent;border-style:dashed}
-  .dia-cab{display:flex;align-items:baseline;justify-content:space-between;gap:6px;padding-bottom:8px;border-bottom:1px solid var(--linea)}
-  .dia-cab b{font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-  .dia-cab span{font-family:var(--serif);font-size:22px;line-height:1}
-  .dia-cab small{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teja)}
-  .dia-vacio{font-size:12.5px;color:var(--tenue)}
-  .slots{display:flex;flex-direction:column;gap:6px;list-style:none}
-  .slot{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;min-height:40px;padding:6px 9px;border-radius:8px;font-size:13px;text-align:left;border:1.5px solid transparent;line-height:1.15}
-  .slot b{font-weight:600;font-variant-numeric:tabular-nums}
-  .slot small{font-size:10.5px;font-weight:500;letter-spacing:.04em}
-  .slot .sede-tag{display:block;font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-top:2px}
-  .slot--libre{background:var(--naranja);border-color:var(--naranja);color:var(--cafe);cursor:pointer}
-  .slot--libre:hover{background:var(--teja-osc);border-color:var(--teja-osc);color:#fff}
-  .slot--libre small::before{content:"+ "}
-  .slot--ocupado{background:repeating-linear-gradient(135deg,#E3D3C3 0 6px,#D8C4B1 6px 12px);border-color:#C9B29C;color:var(--cafe-2)}
-  .slot--ocupado b{text-decoration:line-through;text-decoration-thickness:1.5px}
-  .slot--no{border:1.5px dashed var(--linea-f);color:var(--tenue);background:transparent}
-  .slot--elegido{background:var(--cafe)!important;border-color:var(--cafe)!important;color:var(--marfil)!important}
-  .aviso-demo{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--cuerpo);background:var(--marfil);border:1px dashed var(--linea-f);border-radius:10px;padding:10px 14px;margin-top:16px}
-  .aviso-demo b{font-weight:600}
-
-  /* Reserva */
-  .reserva{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,4vw,56px);align-items:start}
-  .reserva-lado .lead{margin-bottom:18px}
-  .garantias{list-style:none;display:grid;gap:12px;margin-top:20px}
-  .garantias li{position:relative;padding-left:22px;font-size:14.5px;color:var(--cuerpo)}
-  .garantias li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--naranja)}
-  .asistente{background:#fff;border:1px solid var(--linea);border-radius:20px;box-shadow:0 30px 60px -30px rgba(43,29,22,.25);overflow:hidden}
-  .pasos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;border-bottom:1px solid var(--linea);counter-reset:p}
-  .pasos li{position:relative;padding:14px 10px 16px;font-size:12px;font-weight:500;color:var(--tenue);text-align:center;line-height:1.25}
-  .pasos li span{display:block;font-family:var(--serif);font-size:20px;color:var(--tenue);margin-bottom:2px}
-  .pasos li::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}
-  .pasos li.hecho{color:var(--cuerpo)}
-  .pasos li.hecho span{color:var(--dorado-txt)}
-  .pasos li.hecho::after{background:var(--dorado)}
-  .pasos li[aria-current="step"]{color:var(--cafe);font-weight:600}
-  .pasos li[aria-current="step"] span{color:var(--teja)}
-  .pasos li[aria-current="step"]::after{background:var(--naranja);height:4px}
-  .progreso{height:3px;background:var(--arena);position:relative}
-  .progreso i{position:absolute;left:0;top:0;bottom:0;background:var(--naranja);transition:width .3s ease}
-  .paso{padding:clamp(20px,3vw,32px)}
-  .paso h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:6px}
-  .paso h3:focus{outline:none}
-  .paso h3:focus-visible{outline:3px solid var(--teja)}
-  .paso-sub{font-size:14px;color:var(--tenue);margin-bottom:18px}
-  fieldset{border:0;margin:0 0 20px;min-width:0}
-  legend{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado-txt);margin-bottom:10px}
-  .opciones{display:grid;gap:10px}
-  .opciones--3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .opcion{position:relative;display:flex;flex-direction:column;gap:3px;padding:14px 14px 14px 44px;border:1.5px solid var(--linea-f);border-radius:12px;cursor:pointer;transition:border-color .15s,background .15s;min-height:56px}
-  .opcion:hover{border-color:var(--cafe)}
-  .opcion input{position:absolute;left:15px;top:17px;width:18px;height:18px;accent-color:var(--teja);margin:0}
-  .opcion b{font-weight:600;font-size:14.5px;line-height:1.25}
-  .opcion small{font-size:12.5px;color:var(--tenue);line-height:1.35}
-  .opcion:has(input:checked){border-color:var(--naranja);background:#FFF1E6;box-shadow:inset 0 0 0 1px var(--naranja)}
-  .opcion:has(input:focus-visible){outline:3px solid var(--teja);outline-offset:2px}
-  .opcion:has(input:disabled){opacity:.45;cursor:not-allowed}
-  .total{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 16px;border-radius:12px;background:var(--arena);margin-top:4px}
-  .total span{font-size:14px;color:var(--cuerpo)}
-  .total b{font-family:var(--serif);font-size:26px;font-weight:400}
-  .banner{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#FFF1E6;border:1px solid #F3C9AC;font-size:14px;margin-bottom:16px}
-  .banner b{font-weight:600}
-  .paso-pie{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:22px;padding-top:18px;border-top:1px solid var(--linea)}
-  .error{color:#A11D1D;font-size:13.5px;font-weight:500;margin-top:8px}
-  .cal{border:1px solid var(--linea);border-radius:14px;padding:12px}
-  .cal-cab{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
-  .cal-cab b{font-family:var(--serif);font-weight:400;font-size:20px;text-transform:capitalize}
-  .cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}
-  .cal-grid .dsem{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);padding:4px 0}
-  .cal-dia{aspect-ratio:1/1;min-height:38px;border-radius:10px;border:1.5px solid transparent;background:transparent;font-size:14px;font-weight:500;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-variant-numeric:tabular-nums}
-  .cal-dia i{width:6px;height:6px;border-radius:50%;background:var(--naranja)}
-  .cal-dia:hover:not([disabled]){border-color:var(--naranja);background:#FFF1E6}
-  .cal-dia[disabled]{color:#B7A797;cursor:not-allowed;text-decoration:line-through;text-decoration-color:rgba(43,29,22,.2)}
-  .cal-dia[aria-pressed="true"]{background:var(--cafe);color:var(--marfil)}
-  .cal-dia[aria-pressed="true"] i{background:var(--marfil)}
-  .cal-dia.hoy{border-color:var(--linea-f)}
-  .horas-titulo{font-size:14px;font-weight:600;margin:18px 0 10px}
-  .horas{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;list-style:none}
-  .horas .slot{min-height:46px}
-  .zona{font-size:12.5px;color:var(--tenue);margin-top:10px}
-  .campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .campo{display:flex;flex-direction:column;gap:6px}
-  .campo--ancho{grid-column:1/-1}
-  .campo label{font-size:13.5px;font-weight:600}
-  .campo label small{font-weight:400;color:var(--tenue)}
-  .campo input,.campo textarea{width:100%;min-height:48px;padding:12px 14px;border:1.5px solid var(--linea-f);border-radius:10px;background:var(--marfil);font-size:16px}
-  .campo textarea{min-height:88px;resize:vertical}
-  .campo input:focus,.campo textarea:focus{outline:none;border-color:var(--teja);box-shadow:0 0 0 3px rgba(168,74,23,.18)}
-  .campo [aria-invalid="true"]{border-color:#A11D1D}
-  .ayuda{font-size:12.5px;color:var(--tenue)}
-  .check{display:flex;gap:12px;align-items:flex-start;font-size:14px;margin-top:4px}
-  .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--teja);flex:none}
-  .urgencia{margin-top:16px;padding:12px 14px;border-left:3px solid var(--naranja);background:var(--arena);border-radius:0 10px 10px 0;font-size:13.5px;color:var(--cuerpo)}
-  .urgencia a{font-weight:600;color:var(--cafe)}
-  .resumen{list-style:none;border:1px solid var(--linea);border-radius:14px;overflow:hidden}
-  .resumen li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:12px 16px;border-bottom:1px solid var(--linea);font-size:14.5px}
-  .resumen li:last-child{border-bottom:0}
-  .resumen span{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);padding-top:2px}
-  .resumen b{font-weight:500;overflow-wrap:anywhere}
-  .estado-solicitud{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:12px;background:#FFF6EF;border:1px solid #F3C9AC;font-size:14px}
-  .exito{text-align:left}
-  .folio{display:inline-block;font-family:var(--serif);font-size:clamp(26px,3vw,34px);letter-spacing:.02em;color:var(--teja);margin:4px 0 12px}
-  .exito-acciones{display:grid;gap:10px;margin-top:18px}
-  .exito-acciones .btn{width:100%}
 
   /* Consultorios */
   .sedes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .sede{display:flex;flex-direction:column;gap:12px;background:var(--marfil);border:1px solid var(--linea);border-radius:var(--radio);padding:clamp(20px,2.4vw,28px)}
   .sede .kicker{font-size:10.5px}
-  .sede address{font-style:normal;color:var(--cuerpo);font-size:15px}
-  .sede ul{list-style:none;display:grid;gap:6px;font-size:14px;color:var(--cuerpo)}
-  .sede ul li{display:flex;gap:10px}
-  .sede ul li::before{content:"—";color:var(--naranja)}
+  .sede address,.sede > p{font-style:normal;color:var(--cuerpo);font-size:15px}
+  .sede ul{list-style:none;display:grid;gap:4px;font-size:14px;color:var(--cuerpo)}
+  .sede-dias{font-size:13.5px;color:var(--cafe);padding:10px 12px;background:var(--arena);border-radius:8px}
+  .sede-dias b{font-weight:600}
   .sede-acc{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
   .sede-acc .btn{min-height:44px;padding:10px 16px;font-size:13.5px}
 
   /* Opiniones */
   .opiniones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  .opinion{margin:0;background:var(--marfil);border:1px solid var(--linea);border-radius:var(--radio);padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:14px}
-  .opinion blockquote{font-family:var(--serif);font-size:clamp(19px,1.8vw,23px);line-height:1.4;font-weight:300}
-  .opinion figcaption{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--tenue);margin-top:auto}
-  .opinion figcaption b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--naranja);color:var(--cafe);font-weight:600}
-  .temas{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:6px}
-  .temas li{padding:7px 13px;border-radius:999px;border:1px solid var(--linea-f);font-size:13px;background:var(--marfil)}
+  .opinion{margin:0;background:var(--marfil);border:1px solid var(--linea);border-radius:var(--radio);padding:clamp(20px,2.6vw,28px);display:flex;flex-direction:column;gap:14px}
+  .opinion blockquote{font-family:var(--serif);font-size:clamp(19px,1.8vw,22px);line-height:1.4;font-weight:300}
+  .opinion figcaption{font-size:13px;color:var(--tenue);margin-top:auto}
 
-  /* FAQ */
-  .faq{max-width:860px}
-  .faq details{border-bottom:1px solid var(--linea)}
-  .faq details:first-child{border-top:1px solid var(--linea-f)}
-  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 0;font-family:var(--serif);font-size:clamp(19px,1.9vw,23px);line-height:1.3}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linea-f);font-family:var(--sans);font-size:18px;color:var(--teja);transition:transform .2s}
-  .faq details[open] summary::after{transform:rotate(45deg)}
-  .faq details p{padding:0 0 20px;color:var(--cuerpo)}
+  /* Dudas (componente compartido) */
+  .dudas{background:var(--marfil)}
+
+  /* Cierre */
+  .cierre{background:var(--naranja);color:var(--cafe);padding:clamp(44px,6vw,72px) 0}
+  .cierre .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+  .cierre h2{margin:0;max-width:18ch}
+  .cierre p{margin-top:10px;font-size:15px;max-width:48ch}
+  .cierre .acciones{margin-top:0}
+  .cierre .btn{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
+  .cierre .btn:hover{background:var(--teja-osc);border-color:var(--teja-osc)}
+  .cierre .btn--linea{background:transparent;color:var(--cafe);border-color:var(--cafe)}
+  .cierre .btn--linea:hover{background:var(--cafe);color:var(--marfil)}
 
   /* Pie */
-  .crisis{background:var(--cafe);border-top:4px solid var(--naranja);color:var(--marfil);border-radius:20px;padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:center}
-  .crisis h2{font-size:clamp(24px,2.8vw,34px);margin:0 0 8px;max-width:none}
+  .pie{padding:clamp(40px,6vw,72px) 0 28px;background:var(--arena)}
+  .crisis{background:var(--cafe);color:var(--marfil);border-radius:16px;padding:clamp(22px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:center}
+  .crisis h2{font-size:clamp(24px,2.8vw,32px);margin:0 0 8px;max-width:none}
   .crisis p{color:rgba(255,253,251,.82);font-size:15px}
   .crisis-num{display:grid;gap:10px}
-  .crisis-num a{display:flex;flex-direction:column;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,253,251,.25);text-decoration:none;min-width:240px}
+  .crisis-num a{display:flex;flex-direction:column;padding:12px 18px;border-radius:10px;border:1px solid rgba(255,253,251,.25);text-decoration:none;min-width:240px}
   .crisis-num a:hover{border-color:#F2A27A}
-  .crisis-num span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#E8C79A}
-  .crisis-num b{font-family:var(--serif);font-weight:400;font-size:24px;font-variant-numeric:lining-nums}
-  .pie{padding:clamp(40px,6vw,72px) 0 28px;background:var(--arena);border-top:4px solid var(--naranja)}
+  .crisis-num span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E8C79A}
+  .crisis-num b{font-family:var(--serif);font-weight:400;font-size:24px}
   .pie-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:28px;margin-top:clamp(32px,5vw,52px)}
-  .pie-grid h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--dorado-txt);margin-bottom:12px}
+  .pie-grid h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado-txt);margin-bottom:12px}
   .pie-grid p,.pie-grid li{font-size:14px;color:var(--cuerpo)}
   .pie-grid ul{list-style:none;display:grid;gap:6px}
   .pie-grid a{color:var(--cafe)}
-  .pie-logo{width:150px;margin-bottom:12px}
+  .pie-logo{width:140px;margin-bottom:12px}
   .privacidad{margin-top:28px;border-top:1px solid var(--linea);padding-top:16px}
   .privacidad summary{cursor:pointer;font-weight:600;font-size:14px;width:max-content;max-width:100%}
   .privacidad p{font-size:13.5px;color:var(--cuerpo);margin-top:10px;max-width:90ch}
-  .pie-final{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:24px;padding-top:16px;border-top:1px solid var(--linea);font-size:12px;letter-spacing:.06em;color:var(--tenue)}
-  .pie-final a{color:inherit}
+  .pie-final{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:24px;padding-top:16px;border-top:1px solid var(--linea);font-size:12px;letter-spacing:.04em;color:var(--tenue)}
 
-  /* Animación de entrada */
-  .js [data-aparece]{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-  .js [data-aparece].vis{opacity:1;transform:none}
-  .cinta-dibujo path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:trazo 2.4s .2s cubic-bezier(.65,0,.35,1) forwards}
-  @keyframes trazo{to{stroke-dashoffset:0}}
+  /* Acción fija en móvil */
+  .accion-fija{display:none}
 
   @media (max-width:1040px){
-    .nav{display:none}
-    .menu-btn{display:inline-flex}
-    .barra .btn{margin-left:auto}
-    .semana{grid-template-columns:repeat(4,minmax(0,1fr))}
     .sedes{grid-template-columns:1fr 1fr}
     .pie-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:860px){
-    .hero .wrap,.sobre,.atiende,.reserva,.cab{grid-template-columns:1fr}
-    .cab .lead{justify-self:start}
-    .hero .retrato{max-width:420px;order:-1}
-    .hero-mono{display:none}
-    .enfoque{grid-template-columns:1fr}
+    .hero .wrap,.sobre,.atiende,.cab{grid-template-columns:1fr}
+    .hero .retrato{order:-1}
+    .retrato img{aspect-ratio:4/3;object-position:50% 22%}
+    .retrato figcaption{display:none}
+    .proximos .wrap{grid-template-columns:1fr}
     .galeria{grid-template-columns:1fr 1fr}
     .galeria figure:first-child{grid-column:1/-1}
     .opiniones{grid-template-columns:1fr}
     .crisis{grid-template-columns:1fr}
+    .accion-fija{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1.4fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,253,251,.97);border-top:1px solid var(--linea);box-shadow:0 -8px 24px rgba(43,29,22,.08)}
+    .accion-fija .btn{min-height:48px;padding:10px 12px}
+    body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+    html.menu-abierto .accion-fija{display:none}
   }
   @media (max-width:720px){
-    .semana{grid-template-columns:1fr;gap:10px}
-    .dia{min-height:0}
-    .dia-cab{justify-content:flex-start;gap:10px}
-    .dia-cab small{margin-left:auto}
-    .slots{flex-direction:row;flex-wrap:wrap}
-    .slots li{flex:1 1 112px;max-width:calc(50% - 3px)}
-    .opciones--3{grid-template-columns:1fr}
-    .campos{grid-template-columns:1fr}
     .sedes{grid-template-columns:1fr}
     .servicios li{grid-template-columns:minmax(0,1fr) auto}
-    .servicios .modo{grid-row:2;justify-self:start}
-    .servicios .precio{grid-row:1/3;grid-column:2}
-    .agenda-ctrl{flex-direction:column;align-items:stretch}
-    .semana-nav{justify-content:space-between}
-    .semana-nav b{min-width:0;flex:1}
+    .servicios .reservar-link{grid-column:1;justify-self:start}
+    .servicios .precio{grid-row:1;grid-column:2}
   }
   @media (max-width:520px){
-    .barra .wrap{height:62px;gap:10px}
+    .barra .wrap{height:62px;gap:8px}
     .firma img{width:54px}
     .firma small{display:none}
-    .firma b{font-size:11px;letter-spacing:.1em}
+    .firma b{font-size:11px;letter-spacing:.08em}
     .barra .btn{padding:8px 14px;font-size:13px}
-    .menu-btn{padding:8px 11px}
-    .menu-btn .txt{display:none}
     .acciones .btn{flex:1 1 100%}
-    .pasos li{font-size:10.5px;padding:12px 4px 14px}
-    .pasos li span{font-size:18px}
-    .resumen li{grid-template-columns:1fr;gap:2px}
     .ficha-lista li{grid-template-columns:1fr;gap:2px}
     .pie-grid{grid-template-columns:1fr}
     .crisis-num a{min-width:0}
@@ -405,18 +244,16 @@
   }
   @media (max-width:430px){
     .firma span{display:none}
-    .firma img{width:64px}
+    .barra .btn-agendar{display:none}
   }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
-    .js [data-aparece]{opacity:1;transform:none}
-    .cinta-dibujo path{stroke-dashoffset:0}
-  }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
 </style>
 </head>
 <body>
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></symbol>
+</svg>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
 <header class="barra">
   <div class="wrap">
@@ -424,119 +261,102 @@
       <img src="img/logo.png" alt="" width="560" height="208">
       <span><b>Dr. Santiago Treviño</b><small>Psiquiatría &amp; psiquiatría de enlace</small></span>
     </a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="#sobre">Sobre mí</a>
-      <a href="#atiende">Qué atiendo</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#disponibilidad">Disponibilidad</a>
-      <a href="#consultorios">Consultorios</a>
-      <a href="#preguntas">Preguntas</a>
-    </nav>
-    <a class="btn btn--teja" href="#reserva" data-ir-reserva>Agendar cita</a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil" id="menu-btn"><i aria-hidden="true"></i><span class="txt">Menú</span><span class="sr">Abrir menú de secciones</span></button>
-  </div>
-  <div class="menu-movil" id="menu-movil" hidden>
-    <nav class="wrap" aria-label="Secciones (móvil)">
-      <a href="#sobre">Sobre mí</a>
-      <a href="#atiende">Qué atiendo</a>
-      <a href="#servicios">Servicios y precios</a>
-      <a href="#disponibilidad">Disponibilidad</a>
-      <a href="#reserva">Agendar cita</a>
+    <nav class="nav-escritorio" aria-label="Secciones">
+      <a href="#servicios">Precios</a>
       <a href="#consultorios">Consultorios</a>
       <a href="#opiniones">Opiniones</a>
-      <a href="#preguntas">Preguntas frecuentes</a>
+      <a href="#dudas">Dudas</a>
     </nav>
+    <a class="btn btn--linea wa-barra" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<span class="wa-num">&nbsp;222 357 2531</span></a>
+    <a class="btn btn-agendar" href="agenda/">Reservar cita</a>
+    <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
   </div>
 </header>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">Dr. Santiago Treviño</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="agenda/"><span>→</span> Agenda y reserva</a>
+    <a href="#servicios"><span>01</span> Precios</a>
+    <a href="#consultorios"><span>02</span> Consultorios</a>
+    <a href="#opiniones"><span>03</span> Opiniones</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="agenda/">Reservar cita</a>
+    <a class="menu-movil-cta" style="background:transparent;color:inherit;border:1px solid var(--as-panel-linea)" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <p>Tel. y WhatsApp 222 357 2531 · Clínica Cuicuilco (Tlalpan), SOMA (Pedregal) y videoconsulta.</p>
+  </div>
+</div>
 
 <main id="contenido">
 
 <section class="hero" id="inicio" aria-labelledby="t-hero">
   <div class="wrap">
     <div>
-      <img class="hero-mono" src="img/logo.png" alt="" width="560" height="208">
-      <p class="kicker">Tlalpan · Pedregal · Videoconsulta</p>
-      <h1 id="t-hero"><small>Médico psiquiatra</small>Santiago Treviño <em>San Martin</em></h1>
-      <p class="especialidad">Psiquiatría &amp; psiquiatría de enlace</p>
-      <p class="lead">Atención psiquiátrica para adultos, enfocada en intervención en crisis y psiquiatría de enlace. Una evaluación clínica cuidadosa, basada en evidencia, en un espacio seguro y sin juicios.</p>
+      <p class="kicker">Médico psiquiatra · Tlalpan, Pedregal y en línea</p>
+      <h1 id="t-hero">Santiago Treviño San Martin</h1>
+      <p class="especialidad">Psiquiatría y psiquiatría de enlace</p>
+      <p class="lead">Consulta para adultos, con enfoque en intervención en crisis. Evaluación clínica basada en evidencia y explicaciones claras en cada paso.</p>
       <div class="acciones">
-        <a class="btn btn--teja" href="#reserva" data-ir-reserva>Agendar cita</a>
-        <a class="btn btn--linea" href="#disponibilidad">Ver disponibilidad</a>
-        <a class="btn btn--linea" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
-          WhatsApp
-        </a>
+        <a class="btn" href="agenda/">Ver agenda y reservar</a>
+        <a class="btn btn--linea" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
-      <div class="cedulas">
-        <div><span>Cédula profesional</span><b>12848096</b></div>
-        <div><span>Cédula de especialidad</span><b>15944678</b></div>
+      <div class="datos-hero">
+        <div><b>Primera consulta</b>$1,800 presencial · $1,500 video</div>
+        <div><b>Cédula profesional</b>12848096</div>
+        <div><b>Cédula de especialidad</b>15944678</div>
       </div>
     </div>
     <figure class="retrato">
       <img src="img/retrato.jpg" alt="Retrato del Dr. Santiago Treviño San Martin, sonriente, con lentes y camisa de cuadros" width="529" height="530" fetchpriority="high">
-      <figcaption>
-        <span class="pill"><i aria-hidden="true"></i>Presencial y videoconsulta</span>
-        <span class="pill">Adultos</span>
-      </figcaption>
+      <figcaption>Atiende adultos, solo pacientes privados.</figcaption>
     </figure>
   </div>
 </section>
 
-<svg class="cinta cinta-dibujo" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 30 C 120 32, 190 8, 320 14 S 520 38, 650 22 S 860 2, 990 16 S 1150 34, 1210 10"/></svg>
+<section class="proximos" aria-labelledby="t-proximos">
+  <div class="wrap">
+    <h2 id="t-proximos">Próximos horarios libres</h2>
+    <ul id="proximos-lista"><li class="vacio">Consulta la agenda para ver los horarios.</li></ul>
+    <a class="enlace" href="agenda/">Ver la agenda completa</a>
+  </div>
+</section>
 
 <section class="seccion" id="sobre" aria-labelledby="t-sobre">
   <div class="wrap">
-    <p class="kicker">01 · Sobre mí</p>
-    <h2 id="t-sobre">Detrás de los síntomas <em>hay historias.</em></h2>
+    <p class="kicker">Sobre el doctor</p>
+    <h2 id="t-sobre">Detrás de los síntomas hay historias.</h2>
     <div class="sobre">
-      <div class="bio" data-aparece>
-        <p class="cita-bio">Elegí la psiquiatría porque entendí muy pronto que el sufrimiento psíquico rara vez es evidente, pero siempre es profundo.</p>
-        <p>Detrás de los síntomas hay historias, contextos y experiencias que merecen ser comprendidas con rigor y respeto. Mi práctica se basa en una evaluación clínica cuidadosa, sustentada en evidencia científica, pero también en la escucha genuina y sin juicios.</p>
-        <p>Mi objetivo no es solo disminuir síntomas, sino fortalecer recursos internos y promover estabilidad a largo plazo. He acompañado a personas con depresión, ansiedad, trastornos relacionados con trauma, desregulación emocional y dificultades en entornos de alta exigencia. Priorizo crear un espacio seguro, estructurado y profesional.</p>
-        <p class="cierre-bio">¡Permíteme convertirme en tu psiquiatra de confianza!</p>
+      <div class="bio">
+        <p class="cita-bio">«Elegí la psiquiatría porque entendí muy pronto que el sufrimiento psíquico rara vez es evidente, pero siempre es profundo.»</p>
+        <p>Su práctica parte de una evaluación clínica cuidadosa, sustentada en evidencia científica, y de una escucha sin juicios. El objetivo no es solo disminuir síntomas, sino fortalecer recursos internos y sostener la estabilidad a largo plazo.</p>
+        <p>Ha acompañado a personas con depresión, ansiedad, trastornos relacionados con trauma, desregulación emocional y dificultades en entornos de alta exigencia.</p>
       </div>
-      <div data-aparece>
-        <ul class="ficha-lista" aria-label="Formación y registro">
-          <li><span>Formación</span><b>Universidad La Salle</b></li>
-          <li><span>Formación</span><b>Universidad del Ejército, Fuerza Aérea y Guardia Nacional</b></li>
-          <li><span>Especialidad</span><b>Psiquiatría y psiquiatría de enlace</b></li>
-          <li><span>Céd. profesional</span><b>12848096</b></li>
-          <li><span>Céd. especialidad</span><b>15944678</b></li>
-          <li><span>Atiende</span><b>Adultos · solo pacientes privados</b></li>
-        </ul>
-      </div>
+      <ul class="ficha-lista" aria-label="Formación y registro">
+        <li><span>Formación</span><b>Universidad La Salle</b></li>
+        <li><span>Formación</span><b>Universidad del Ejército, Fuerza Aérea y Guardia Nacional</b></li>
+        <li><span>Especialidad</span><b>Psiquiatría y psiquiatría de enlace</b></li>
+        <li><span>Céd. profesional</span><b>12848096</b></li>
+        <li><span>Céd. especialidad</span><b>15944678</b></li>
+        <li><span>Atiende</span><b>Adultos · solo pacientes privados</b></li>
+      </ul>
     </div>
-
-    <div class="enfoque">
-      <article data-aparece>
-        <em>ENFOQUE 01</em>
-        <h3>Evaluación cuidadosa</h3>
-        <p>Una valoración clínica completa, sustentada en evidencia científica, antes de proponer cualquier tratamiento.</p>
-      </article>
-      <article data-aparece>
-        <em>ENFOQUE 02</em>
-        <h3>Escucha sin juicios</h3>
-        <p>Tu historia y tu contexto importan tanto como el diagnóstico. Explicaciones claras en cada paso.</p>
-      </article>
-      <article data-aparece>
-        <em>ENFOQUE 03</em>
-        <h3>Estabilidad a largo plazo</h3>
-        <p>No solo bajar síntomas: fortalecer recursos internos y sostener lo logrado con seguimiento.</p>
-      </article>
-    </div>
-
     <div class="galeria">
-      <figure data-aparece>
+      <figure>
         <img src="img/psicoeducacion.jpg" alt="El doctor, con bata, da una plática de salud a un grupo de personas sentadas al aire libre" width="1280" height="960" loading="lazy">
         <figcaption>Psicoeducación: pláticas de salud con la comunidad.</figcaption>
       </figure>
-      <figure data-aparece>
+      <figure>
         <img src="img/consultorio-puerta.jpg" alt="Puerta de madera entreabierta hacia el consultorio, con un sillón café y cojín naranja" width="348" height="490" loading="lazy">
         <figcaption>El consultorio.</figcaption>
       </figure>
-      <figure data-aparece>
+      <figure>
         <img src="img/consultorio-tapete.jpg" alt="Sillón café oscuro con cojín ocre sobre un tapete persa de tonos rojos y azules" width="337" height="490" loading="lazy">
-        <figcaption>Un espacio seguro, estructurado y profesional.</figcaption>
+        <figcaption>Sala de consulta.</figcaption>
       </figure>
     </div>
   </div>
@@ -546,32 +366,30 @@
   <div class="wrap">
     <div class="cab">
       <div>
-        <p class="kicker">02 · Qué atiendo</p>
-        <h2 id="t-atiende">Padecimientos que <em>acompaño.</em></h2>
+        <p class="kicker">Qué atiende</p>
+        <h2 id="t-atiende">Padecimientos frecuentes en consulta.</h2>
       </div>
-      <p class="lead">Algunos de los padecimientos que atiende en consulta. Si no ves el tuyo, escribe: la primera consulta sirve para valorar tu caso.</p>
+      <p class="lead">Si no ves el tuyo, escribe por WhatsApp: la primera consulta sirve para valorar tu caso.</p>
     </div>
     <div class="atiende">
-      <div data-aparece>
+      <div>
         <ul class="lista-p">
-          <li><em>01</em>Depresión</li>
-          <li><em>02</em>Ansiedad</li>
-          <li><em>03</em>Trastorno límite de la personalidad</li>
-          <li><em>04</em>Trastorno de estrés postraumático</li>
-          <li><em>05</em>Trastorno del espectro autista (TEA)</li>
+          <li>Depresión</li>
+          <li>Ansiedad</li>
+          <li>Trastorno límite de la personalidad</li>
+          <li>Trastorno de estrés postraumático</li>
+          <li>Trastorno del espectro autista (TEA)</li>
         </ul>
         <p class="nota">Su perfil de Doctoralia lista además otros padecimientos. <a class="enlace" href="https://www.doctoralia.com.mx/perfil/santiago-trevino-san-martin" target="_blank" rel="noopener">Ver perfil completo</a>.</p>
       </div>
-      <div data-aparece>
+      <div>
         <article class="tarjeta">
-          <p class="kicker">Enfoque</p>
           <h3>Intervención en crisis</h3>
-          <p>Atención clínica para recuperar estabilidad después de un momento agudo y ordenar los siguientes pasos del tratamiento. Si la crisis está ocurriendo ahora, usa las líneas de ayuda que aparecen al final de esta página.</p>
+          <p>Atención clínica para recuperar estabilidad después de un momento agudo y ordenar los siguientes pasos del tratamiento. Si la crisis está ocurriendo ahora, usa las líneas de ayuda al final de esta página.</p>
         </article>
         <article class="tarjeta">
-          <p class="kicker">Enfoque</p>
           <h3>Psiquiatría de enlace</h3>
-          <p>Atención de la salud mental de personas que también viven con una enfermedad médica o están en tratamiento con otras especialidades, en diálogo con su equipo médico.</p>
+          <p>Salud mental de personas que también viven con una enfermedad médica o están en tratamiento con otras especialidades, en diálogo con su equipo médico.</p>
         </article>
       </div>
     </div>
@@ -582,209 +400,21 @@
   <div class="wrap">
     <div class="cab">
       <div>
-        <p class="kicker">03 · Servicios y precios</p>
-        <h2 id="t-servicios">Precios claros, <em>sin aseguradoras.</em></h2>
+        <p class="kicker">Servicios y precios</p>
+        <h2 id="t-servicios">Precios claros, sin aseguradoras.</h2>
       </div>
       <p class="lead">Precios para pacientes privados, tomados de su perfil de Doctoralia. Pago en efectivo o transferencia.</p>
     </div>
     <ul class="servicios">
-      <li data-aparece><div><h3>Consulta psiquiátrica · primera vez</h3><p>Evaluación clínica inicial y plan de tratamiento.</p></div><span class="modo">Presencial</span><span class="precio">$1,800<small>MXN</small></span></li>
-      <li data-aparece><div><h3>Consulta de seguimiento</h3><p>Revisión de la evolución y ajuste del tratamiento.</p></div><span class="modo">Presencial</span><span class="precio">$1,500<small>MXN</small></span></li>
-      <li data-aparece><div><h3>Telepsiquiatría</h3><p>Consulta por videoconsulta, desde donde estés.</p></div><span class="modo">Videoconsulta</span><span class="precio">$1,500<small>MXN</small></span></li>
-      <li data-aparece><div><h3>Psicoeducación</h3><p>Información clara sobre el diagnóstico y el tratamiento.</p></div><span class="modo">Presencial</span><span class="precio">$1,800<small>MXN</small></span></li>
-      <li data-aparece><div><h3>Primera visita de Medicina General</h3><p>Consulta médica general.</p></div><span class="modo">Presencial</span><span class="precio">$800<small>MXN</small></span></li>
-      <li data-aparece><div><h3>Tratamiento psicoterapéutico y psicofarmacológico asociado al aborto</h3><p>Acompañamiento clínico confidencial.</p></div><span class="modo">Presencial</span><span class="precio">$1,800<small>MXN</small></span></li>
+      <li><div><h3>Consulta psiquiátrica · primera vez</h3><p>Presencial · evaluación clínica inicial y plan de tratamiento.</p></div><span class="precio">$1,800<small>MXN</small></span><a class="reservar-link" href="agenda/?servicio=primera">Reservar<span class="sr"> primera consulta</span></a></li>
+      <li><div><h3>Consulta de seguimiento</h3><p>Presencial · revisión de la evolución y ajuste del tratamiento.</p></div><span class="precio">$1,500<small>MXN</small></span><a class="reservar-link" href="agenda/?servicio=seguimiento">Reservar<span class="sr"> seguimiento</span></a></li>
+      <li><div><h3>Telepsiquiatría</h3><p>Videoconsulta · primera vez o seguimiento, desde donde estés.</p></div><span class="precio">$1,500<small>MXN</small></span><a class="reservar-link" href="agenda/?sede=video">Reservar<span class="sr"> videoconsulta</span></a></li>
+      <li><div><h3>Psicoeducación</h3><p>Presencial · información clara sobre el diagnóstico y el tratamiento.</p></div><span class="precio">$1,800<small>MXN</small></span><a class="reservar-link" href="agenda/?servicio=psicoeducacion">Reservar<span class="sr"> psicoeducación</span></a></li>
+      <li><div><h3>Primera visita de Medicina General</h3><p>Presencial · consulta médica general.</p></div><span class="precio">$800<small>MXN</small></span><a class="reservar-link" href="agenda/?servicio=medgen">Reservar<span class="sr"> medicina general</span></a></li>
+      <li><div><h3>Tratamiento psicoterapéutico y psicofarmacológico asociado al aborto</h3><p>Presencial · acompañamiento clínico confidencial.</p></div><span class="precio">$1,800<small>MXN</small></span><a class="reservar-link" href="agenda/?servicio=aborto">Reservar<span class="sr"> acompañamiento asociado al aborto</span></a></li>
     </ul>
     <div class="servicios-pie">
       <span>Los precios pueden cambiar; el consultorio los confirma al agendar.</span>
-      <a class="btn" href="#reserva" data-ir-reserva>Agendar cita</a>
-    </div>
-  </div>
-</section>
-
-<section class="seccion seccion--arena" id="disponibilidad" aria-labelledby="t-dispo">
-  <div class="wrap">
-    <div class="cab">
-      <div>
-        <p class="kicker">04 · Disponibilidad</p>
-        <h2 id="t-dispo">Mira la semana y <em>aparta tu hora.</em></h2>
-      </div>
-      <p class="lead">Toca un horario libre y pasa directo a tus datos. La cita queda solicitada y el consultorio la confirma por WhatsApp.</p>
-    </div>
-
-    <div class="agenda-ctrl">
-      <div class="filtros" role="group" aria-label="Filtrar por modalidad">
-        <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
-        <button class="chip" type="button" data-filtro="cuicuilco" aria-pressed="false">Cuicuilco</button>
-        <button class="chip" type="button" data-filtro="soma" aria-pressed="false">SOMA</button>
-        <button class="chip" type="button" data-filtro="video" aria-pressed="false">Videoconsulta</button>
-      </div>
-      <div class="semana-nav">
-        <button class="icono-btn" type="button" id="sem-ant" aria-label="Semana anterior">←</button>
-        <b id="sem-titulo" aria-live="polite"></b>
-        <button class="icono-btn" type="button" id="sem-sig" aria-label="Semana siguiente">→</button>
-      </div>
-    </div>
-    <ul class="leyenda" aria-label="Leyenda">
-      <li><span class="muestra-slot slot--libre"></span>Libre: tócalo para apartar</li>
-      <li><span class="muestra-slot slot--ocupado"></span>Ocupado (hora tachada)</li>
-      <li><span class="muestra-slot slot--no"></span>No disponible (pasado o con menos de 12 h)</li>
-    </ul>
-    <p class="resumen-semana" id="sem-resumen" aria-live="polite"></p>
-    <div class="semana" id="semana"></div>
-    <p class="aviso-demo"><span aria-hidden="true">ⓘ</span><span><b>Horarios de muestra del demo;</b> el consultorio confirma disponibilidad. Todas las horas son del centro de México (CDMX).</span></p>
-  </div>
-</section>
-
-<section class="seccion" id="reserva" aria-labelledby="t-reserva">
-  <div class="wrap reserva">
-    <div class="reserva-lado">
-      <p class="kicker">05 · Agendar cita</p>
-      <h2 id="t-reserva">Solicita tu cita en <em>cuatro pasos.</em></h2>
-      <p class="lead">Elige servicio, fecha y hora, deja tus datos de contacto y envía la solicitud por WhatsApp. El consultorio te responde para confirmarla.</p>
-      <ul class="garantias">
-        <li>Solo pedimos datos de contacto, nunca información clínica.</li>
-        <li>Puedes enviarla también por correo o guardarla en tu calendario.</li>
-        <li>¿Prefieres hablar? Llama o escribe al <a class="enlace" href="tel:+522223572531">222 357 2531</a>.</li>
-      </ul>
-    </div>
-
-    <div class="asistente" id="asistente">
-      <ol class="pasos" id="pasos">
-        <li data-paso="1"><span>1</span>Servicio</li>
-        <li data-paso="2"><span>2</span>Fecha y hora</li>
-        <li data-paso="3"><span>3</span>Tus datos</li>
-        <li data-paso="4"><span>4</span>Confirmar</li>
-      </ol>
-      <div class="progreso" role="progressbar" aria-label="Avance de la reserva" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="progreso"><i style="width:25%"></i></div>
-      <p class="sr" id="anuncio" aria-live="polite"></p>
-
-      <!-- Paso 1 -->
-      <div class="paso" data-panel="1">
-        <h3 tabindex="-1">¿Qué consulta necesitas?</h3>
-        <p class="paso-sub">Paso 1 de 4 · elige dónde y qué tipo de consulta.</p>
-        <div class="banner" id="banner-slot" hidden><span aria-hidden="true">◷</span><span id="banner-slot-txt"></span></div>
-        <fieldset>
-          <legend>Modalidad</legend>
-          <div class="opciones opciones--3">
-            <label class="opcion"><input type="radio" name="sede" value="cuicuilco"><b>Clínica Cuicuilco</b><small>Presencial · Tlalpan</small></label>
-            <label class="opcion"><input type="radio" name="sede" value="soma"><b>SOMA Medicina Integral</b><small>Presencial · Pedregal</small></label>
-            <label class="opcion"><input type="radio" name="sede" value="video"><b>Videoconsulta</b><small>Desde donde estés</small></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Tipo de consulta</legend>
-          <div class="opciones opciones--3">
-            <label class="opcion"><input type="radio" name="tipo" value="primera"><b>Primera vez</b><small>Nunca he consultado con él</small></label>
-            <label class="opcion"><input type="radio" name="tipo" value="seguimiento"><b>Seguimiento</b><small>Ya soy paciente</small></label>
-            <label class="opcion" id="opcion-otro"><input type="radio" name="tipo" value="otro"><b>Otro servicio</b><small>Psicoeducación y más</small></label>
-          </div>
-        </fieldset>
-        <fieldset id="otros" hidden>
-          <legend>Otro servicio</legend>
-          <div class="opciones">
-            <label class="opcion"><input type="radio" name="otro" value="psicoeducacion"><b>Psicoeducación</b><small>$1,800 · presencial</small></label>
-            <label class="opcion"><input type="radio" name="otro" value="medgen"><b>Primera visita de Medicina General</b><small>$800 · presencial</small></label>
-            <label class="opcion"><input type="radio" name="otro" value="aborto"><b>Tratamiento psicoterapéutico y psicofarmacológico asociado al aborto</b><small>$1,800 · presencial</small></label>
-          </div>
-        </fieldset>
-        <p class="nota" id="nota-video" hidden>Por videoconsulta se agenda Telepsiquiatría, tanto para primera vez como para seguimiento.</p>
-        <div class="total" id="total-1"><span>Elige modalidad y tipo para ver el precio.</span></div>
-        <p class="error" id="error-1" role="alert"></p>
-        <div class="paso-pie">
-          <span></span>
-          <button class="btn btn--teja" type="button" data-sig="1">Continuar</button>
-        </div>
-      </div>
-
-      <!-- Paso 2 -->
-      <div class="paso" data-panel="2" hidden>
-        <h3 tabindex="-1">Elige fecha y hora</h3>
-        <p class="paso-sub" id="sub-2">Paso 2 de 4.</p>
-        <div class="cal">
-          <div class="cal-cab">
-            <button class="icono-btn" type="button" id="mes-ant" aria-label="Mes anterior">←</button>
-            <b id="mes-titulo" aria-live="polite"></b>
-            <button class="icono-btn" type="button" id="mes-sig" aria-label="Mes siguiente">→</button>
-          </div>
-          <div class="cal-grid" id="cal-grid"></div>
-        </div>
-        <p class="horas-titulo" id="horas-titulo">Elige un día con punto para ver sus horarios.</p>
-        <ul class="horas" id="horas" aria-labelledby="horas-titulo"></ul>
-        <p class="zona">Hora del centro de México (CDMX) · bloques de 50 min · <b>horarios de muestra del demo; el consultorio confirma disponibilidad.</b></p>
-        <p class="error" id="error-2" role="alert"></p>
-        <div class="paso-pie">
-          <button class="btn btn--linea" type="button" data-ant="2">Atrás</button>
-          <button class="btn btn--teja" type="button" data-sig="2">Continuar</button>
-        </div>
-      </div>
-
-      <!-- Paso 3 -->
-      <div class="paso" data-panel="3" hidden>
-        <h3 tabindex="-1">Tus datos de contacto</h3>
-        <p class="paso-sub" id="sub-3">Paso 3 de 4.</p>
-        <form id="form-datos" novalidate>
-          <div class="campos">
-            <div class="campo campo--ancho">
-              <label for="f-nombre">Nombre completo</label>
-              <input id="f-nombre" name="nombre" autocomplete="name" required minlength="3" maxlength="80" aria-describedby="e-nombre">
-              <span class="error" id="e-nombre"></span>
-            </div>
-            <div class="campo">
-              <label for="f-tel">Teléfono (WhatsApp)</label>
-              <input id="f-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="55 1234 5678" aria-describedby="a-tel e-tel">
-              <span class="ayuda" id="a-tel">10 dígitos.</span>
-              <span class="error" id="e-tel"></span>
-            </div>
-            <div class="campo">
-              <label for="f-correo">Correo electrónico</label>
-              <input id="f-correo" name="correo" type="email" autocomplete="email" required placeholder="tu@correo.com" aria-describedby="e-correo">
-              <span class="error" id="e-correo"></span>
-            </div>
-            <div class="campo campo--ancho">
-              <label for="f-motivo">Motivo breve <small>(opcional)</small></label>
-              <textarea id="f-motivo" name="motivo" maxlength="160" aria-describedby="a-motivo"></textarea>
-              <span class="ayuda" id="a-motivo">Una frase basta (por ejemplo, «primera consulta por ansiedad»). No compartas detalles clínicos aquí; se platican en consulta.</span>
-            </div>
-          </div>
-          <label class="check"><input type="checkbox" id="f-aviso" required aria-describedby="e-aviso"><span>Leí el <a class="enlace" href="#privacidad" data-abrir-privacidad>aviso de privacidad</a> y acepto que mis datos se usen para solicitar esta cita.</span></label>
-          <span class="error" id="e-aviso"></span>
-          <p class="urgencia"><b>Esta agenda no es para urgencias.</b> Si estás en crisis o tienes pensamientos de hacerte daño, llama a la Línea de la Vida <a href="tel:8009112000">800 911 2000</a> (24 h) o a SAPTEL <a href="tel:+525552598121">55 5259 8121</a>; en emergencia, al <a href="tel:911">911</a>.</p>
-          <div class="paso-pie">
-            <button class="btn btn--linea" type="button" data-ant="3">Atrás</button>
-            <button class="btn btn--teja" type="submit">Revisar solicitud</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Paso 4 -->
-      <div class="paso" data-panel="4" hidden>
-        <div id="confirmar-bloque">
-          <h3 tabindex="-1">Revisa y envía tu solicitud</h3>
-          <p class="paso-sub">Paso 4 de 4.</p>
-          <ul class="resumen" id="resumen"></ul>
-          <div class="estado-solicitud"><span aria-hidden="true">◷</span><span>Al enviar, tu cita queda <b>solicitada</b>. Se abre WhatsApp con el mensaje listo; <b>el consultorio la confirma por WhatsApp</b>.</span></div>
-          <p class="error" id="error-4" role="alert"></p>
-          <div class="paso-pie">
-            <button class="btn btn--linea" type="button" data-ant="4">Atrás</button>
-            <a class="btn btn--wa" id="btn-confirmar" href="#" target="_blank" rel="noopener">Solicitar cita por WhatsApp</a>
-          </div>
-        </div>
-        <div class="exito" id="exito" hidden>
-          <h3 tabindex="-1">Solicitud lista</h3>
-          <p>Folio de tu solicitud:</p>
-          <p class="folio" id="exito-folio"></p>
-          <p id="exito-txt"></p>
-          <div class="estado-solicitud"><span aria-hidden="true">◷</span><span>Tu cita está <b>solicitada, no confirmada</b>. El consultorio la confirma por WhatsApp. Si no se abrió WhatsApp, usa el primer botón.</span></div>
-          <div class="exito-acciones">
-            <a class="btn btn--wa" id="exito-wa" href="#" target="_blank" rel="noopener">Abrir WhatsApp con la solicitud</a>
-            <a class="btn btn--linea" id="exito-mail" href="#">Enviar por correo</a>
-            <a class="btn btn--linea" id="exito-ics" href="#" download>Añadir al calendario (.ics)</a>
-            <button class="btn btn--linea" type="button" id="otra-cita">Agendar otra cita</button>
-          </div>
-          <p class="nota">Este demo guarda tu solicitud solo en este navegador: el horario aparece como ocupado en la disponibilidad.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -793,48 +423,41 @@
   <div class="wrap">
     <div class="cab">
       <div>
-        <p class="kicker">06 · Consultorios</p>
-        <h2 id="t-sedes">Dos consultorios en el sur <em>y videoconsulta.</em></h2>
+        <p class="kicker">Consultorios</p>
+        <h2 id="t-sedes">Dos consultorios en el sur y videoconsulta.</h2>
       </div>
       <p class="lead">Consulta solo con cita. Pagos en efectivo o transferencia; no se aceptan aseguradoras.</p>
     </div>
     <div class="sedes">
-      <article class="sede" data-aparece>
-        <p class="kicker">Consultorio principal</p>
+      <article class="sede">
+        <p class="kicker">Tlalpan</p>
         <h3>Clínica Cuicuilco</h3>
-        <address>Consultorio Privado Plaza Cuicuilco<br>Av. San Fernando 649, Casa G<br>Manantial Peña Pobre, Tlalpan<br>14060, Ciudad de México</address>
-        <ul>
-          <li>Estacionamiento en Plaza Cuicuilco</li>
-          <li>Efectivo y transferencia</li>
-        </ul>
+        <address>Consultorio Privado Plaza Cuicuilco<br>Av. San Fernando 649, Casa G<br>Manantial Peña Pobre, Tlalpan, 14060</address>
+        <p class="sede-dias"><b>Lun, mié y jue</b> · horarios de muestra</p>
+        <ul><li>Estacionamiento en Plaza Cuicuilco</li></ul>
         <div class="sede-acc">
+          <a class="btn" href="agenda/?sede=cuicuilco">Ver horarios<span class="sr"> en Clínica Cuicuilco</span></a>
           <a class="btn btn--linea" href="https://www.google.com/maps/search/?api=1&amp;query=19.2964096%2C-99.1838684" target="_blank" rel="noopener">Cómo llegar<span class="sr"> a Clínica Cuicuilco (Google Maps)</span></a>
-          <a class="btn" href="#reserva" data-ir-reserva data-sede="cuicuilco">Agendar aquí</a>
         </div>
       </article>
-      <article class="sede" data-aparece>
-        <p class="kicker">Segundo consultorio</p>
+      <article class="sede">
+        <p class="kicker">Pedregal</p>
         <h3>SOMA Medicina Integral</h3>
-        <address>Blvd. Adolfo Ruiz Cortines 3332<br>Jardines del Pedregal, Álvaro Obregón<br>01900, Ciudad de México</address>
-        <ul>
-          <li>Efectivo y transferencia</li>
-          <li>Solo pacientes privados</li>
-        </ul>
+        <address>Blvd. Adolfo Ruiz Cortines 3332<br>Jardines del Pedregal, Álvaro Obregón, 01900</address>
+        <p class="sede-dias"><b>Mar y vie</b> · horarios de muestra</p>
+        <ul><li>Solo pacientes privados</li></ul>
         <div class="sede-acc">
+          <a class="btn" href="agenda/?sede=soma">Ver horarios<span class="sr"> en SOMA Medicina Integral</span></a>
           <a class="btn btn--linea" href="https://www.google.com/maps/search/?api=1&amp;query=19.3234596%2C-99.2164993" target="_blank" rel="noopener">Cómo llegar<span class="sr"> a SOMA Medicina Integral (Google Maps)</span></a>
-          <a class="btn" href="#reserva" data-ir-reserva data-sede="soma">Agendar aquí</a>
         </div>
       </article>
-      <article class="sede" data-aparece>
+      <article class="sede">
         <p class="kicker">En línea</p>
         <h3>Videoconsulta</h3>
-        <p style="color:var(--cuerpo);font-size:15px">Telepsiquiatría desde donde estés: $1,500 MXN. Necesitas conexión estable y un lugar privado para hablar con calma.</p>
-        <ul>
-          <li>Primera vez y seguimiento</li>
-          <li>Pago por transferencia</li>
-        </ul>
+        <p>Telepsiquiatría desde donde estés: $1,500 MXN. Necesitas conexión estable y un lugar privado para hablar con calma.</p>
+        <p class="sede-dias"><b>Lun a sáb</b> · horarios de muestra</p>
         <div class="sede-acc">
-          <a class="btn" href="#reserva" data-ir-reserva data-sede="video">Agendar videoconsulta</a>
+          <a class="btn" href="agenda/?sede=video">Ver horarios<span class="sr"> de videoconsulta</span></a>
         </div>
       </article>
     </div>
@@ -845,77 +468,66 @@
   <div class="wrap">
     <div class="cab">
       <div>
-        <p class="kicker">07 · Opiniones</p>
-        <h2 id="t-opiniones">Lo que dicen <em>sus pacientes.</em></h2>
+        <p class="kicker">Opiniones</p>
+        <h2 id="t-opiniones">Lo que dicen sus pacientes.</h2>
       </div>
-      <div>
-        <p class="lead">Fragmentos de opiniones verificadas en Doctoralia (9 opiniones). Lo más mencionado:</p>
-        <ul class="temas" aria-label="Temas más mencionados">
-          <li>Dedicación durante la visita</li>
-          <li>Explicaciones detalladas</li>
-          <li>Eficacia del tratamiento</li>
-        </ul>
-      </div>
+      <p class="lead">Fragmentos de opiniones verificadas en Doctoralia. Lo más mencionado: dedicación durante la visita, explicaciones detalladas y eficacia del tratamiento.</p>
     </div>
     <div class="opiniones">
-      <figure class="opinion" data-aparece>
+      <figure class="opinion">
         <blockquote>«El doctor Santiago es súper amable, muy puntual y un profesional muy capacitado… nunca me he sentido juzgado con él.»</blockquote>
-        <figcaption><b aria-hidden="true">A</b><span>A. · Opinión verificada en Doctoralia</span></figcaption>
+        <figcaption>A. · Opinión verificada en Doctoralia</figcaption>
       </figure>
-      <figure class="opinion" data-aparece>
+      <figure class="opinion">
         <blockquote>«Tiene un trato muy profesional y humano, ha llevado el tratamiento de mi hijo por el último año y medio… Lo recomiendo ampliamente.»</blockquote>
-        <figcaption><b aria-hidden="true">V</b><span>V. · Opinión verificada en Doctoralia</span></figcaption>
+        <figcaption>V. · Opinión verificada en Doctoralia</figcaption>
       </figure>
-      <figure class="opinion" data-aparece>
+      <figure class="opinion">
         <blockquote>«Se toma el tiempo de explicar el diagnóstico con claridad… conocimientos basados en evidencia científica. Amable, respetuoso y genera un espacio de confianza.»</blockquote>
-        <figcaption><b aria-hidden="true">M</b><span>M. · Opinión verificada en Doctoralia</span></figcaption>
+        <figcaption>M. · Opinión verificada en Doctoralia</figcaption>
       </figure>
-      <figure class="opinion" data-aparece>
+      <figure class="opinion">
         <blockquote>«Muy dedicado y logra hacer que uno se sienta bien. Excelente explicando.»</blockquote>
-        <figcaption><b aria-hidden="true">G</b><span>G. · Opinión verificada en Doctoralia</span></figcaption>
+        <figcaption>G. · Opinión verificada en Doctoralia</figcaption>
       </figure>
     </div>
-    <p class="nota"><a class="enlace" href="https://www.doctoralia.com.mx/perfil/santiago-trevino-san-martin" target="_blank" rel="noopener">Leer todas las opiniones en Doctoralia</a></p>
   </div>
 </section>
 
-<section class="seccion seccion--arena" id="preguntas" aria-labelledby="t-faq">
-  <div class="wrap">
-    <p class="kicker">08 · Preguntas frecuentes</p>
-    <h2 id="t-faq">Antes de tu <em>primera cita.</em></h2>
+<section class="dudas" id="dudas" aria-labelledby="t-dudas"><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de tu primera cita</div>
+    <h2 id="t-dudas">Lo que más preguntan.</h2>
+    <p>Si falta algo, escribe al WhatsApp 222 357 2531.</p>
+  </div>
+  <div class="dudas-grid">
     <div class="faq">
-      <details>
-        <summary>¿Cómo es la primera consulta?</summary>
-        <p>Es una evaluación clínica: el doctor escucha el motivo de consulta, tu historia y tu contexto, y al final te explica con claridad lo que observa y las opciones de tratamiento. Si hace falta seguimiento, se acuerda en ese momento.</p>
-      </details>
-      <details>
-        <summary>¿Qué debo llevar?</summary>
-        <p>Si tienes estudios, recetas o informes médicos previos, llévalos o tenlos a la mano, junto con la lista de medicamentos que tomas. No son obligatorios para agendar.</p>
-      </details>
-      <details>
-        <summary>¿Cómo se paga?</summary>
-        <p>En efectivo o por transferencia. Los precios están en la sección de servicios y el consultorio los confirma al agendar.</p>
-      </details>
-      <details>
-        <summary>¿Aceptan seguro de gastos médicos?</summary>
-        <p>No. El doctor atiende solo a pacientes privados y no trabaja con aseguradoras.</p>
-      </details>
-      <details>
-        <summary>¿Puedo consultar por videollamada?</summary>
-        <p>Sí. La telepsiquiatría (videoconsulta) cuesta $1,500 MXN. Busca un lugar privado y una conexión estable para hablar con calma.</p>
-      </details>
-      <details>
-        <summary>¿Lo que cuento en consulta es confidencial?</summary>
-        <p>Sí, como en toda atención médica. Este sitio, además, no te pide datos clínicos: el formulario solo pide datos de contacto para solicitar la cita.</p>
-      </details>
-      <details>
-        <summary>¿Atiende a niños o adolescentes?</summary>
-        <p>Su perfil de Doctoralia indica atención a adultos. Si tienes dudas sobre un caso en particular, pregunta por WhatsApp antes de agendar.</p>
-      </details>
-      <details>
-        <summary>¿Puedo usar esta agenda en una urgencia?</summary>
-        <p>No. Si estás en crisis o tienes pensamientos de hacerte daño, llama a la Línea de la Vida 800 911 2000 (24 h) o a SAPTEL 55 5259 8121; en emergencia, al 911.</p>
-      </details>
+      <details><summary>¿Cómo es la primera consulta?</summary><p>Es una evaluación clínica: el doctor escucha el motivo de consulta, tu historia y tu contexto, y al final te explica con claridad lo que observa y las opciones de tratamiento. Si hace falta seguimiento, se acuerda en ese momento.</p></details>
+      <details><summary>¿Cómo reservo?</summary><p>En la <a href="agenda/">agenda</a> eliges día y hora, dejas tus datos de contacto y envías la solicitud por WhatsApp. El consultorio te responde para confirmarla.</p></details>
+      <details><summary>¿Qué debo llevar?</summary><p>Si tienes estudios, recetas o informes médicos previos, llévalos o tenlos a la mano, junto con la lista de medicamentos que tomas. No son obligatorios para agendar.</p></details>
+      <details><summary>¿Aceptan seguro de gastos médicos?</summary><p>No. El doctor atiende solo a pacientes privados, con pago en efectivo o transferencia.</p></details>
+      <details><summary>¿Puedo consultar por videollamada?</summary><p>Sí. La telepsiquiatría cuesta $1,500 MXN. Busca un lugar privado y una conexión estable para hablar con calma.</p></details>
+      <details><summary>¿Atiende a niños o adolescentes?</summary><p>Su perfil de Doctoralia indica atención a adultos. Si tienes dudas sobre un caso en particular, pregunta por <a href="https://wa.me/522223572531" target="_blank" rel="noopener">WhatsApp</a> antes de agendar.</p></details>
+      <details><summary>¿Puedo usar la agenda en una urgencia?</summary><p>No. Si estás en crisis o tienes pensamientos de hacerte daño, llama a la Línea de la Vida 800 911 2000 (24 h) o a SAPTEL 55 5259 8121; en emergencia, al 911.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Opiniones en Doctoralia">
+      <div class="google-score"><b>9</b><span>opiniones<br>verificadas</span></div>
+      <p>Pacientes destacan la puntualidad, el trato sin juicios y que explica el diagnóstico con claridad. El perfil de Doctoralia es la fuente.</p>
+      <a href="https://www.doctoralia.com.mx/perfil/santiago-trevino-san-martin" target="_blank" rel="noopener">Leer las opiniones</a>
+      <span class="google-fuente">Fuente: Doctoralia</span>
+    </aside>
+  </div>
+</div></section>
+
+<section class="cierre" aria-labelledby="t-cierre">
+  <div class="wrap">
+    <div>
+      <h2 id="t-cierre">Aparta tu primera consulta.</h2>
+      <p>Elige día y hora en la agenda, o escribe si prefieres resolver dudas antes.</p>
+    </div>
+    <div class="acciones">
+      <a class="btn" href="agenda/">Ver agenda y reservar</a>
+      <a class="btn btn--linea" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
     </div>
   </div>
 </section>
@@ -927,7 +539,7 @@
     <div class="crisis">
       <div>
         <h2 id="t-crisis">¿Estás en crisis ahora?</h2>
-        <p>Si estás en crisis o tienes pensamientos de hacerte daño: Línea de la Vida 800 911 2000 (24 h) o SAPTEL 55 5259 8121; en emergencia llama al 911.</p>
+        <p>Si tienes pensamientos de hacerte daño, no esperes una cita: llama a una línea de ayuda. En emergencia, al 911.</p>
       </div>
       <div class="crisis-num">
         <a href="tel:8009112000"><span>Línea de la Vida · 24 h</span><b>800 911 2000</b></a>
@@ -939,16 +551,16 @@
     <div class="pie-grid">
       <div>
         <img class="pie-logo" src="img/logo.png" alt="" width="560" height="208" loading="lazy">
-        <p><b>Dr. Santiago Treviño San Martin</b><br>Psiquiatría &amp; psiquiatría de enlace</p>
+        <p><b>Dr. Santiago Treviño San Martin</b><br>Psiquiatría y psiquiatría de enlace</p>
         <p style="margin-top:8px">Céd. profesional 12848096<br>Céd. especialidad 15944678</p>
       </div>
       <div>
         <h3>Contacto</h3>
         <ul>
-          <li>Tel. y WhatsApp: <a href="tel:+522223572531">222 357 2531</a></li>
-          <li><a href="https://wa.me/522223572531" target="_blank" rel="noopener">Escribir por WhatsApp</a></li>
+          <li><a href="agenda/">Agenda y reserva</a></li>
+          <li><a href="https://wa.me/522223572531" target="_blank" rel="noopener">WhatsApp 222 357 2531</a></li>
+          <li><a href="tel:+522223572531">Llamar</a></li>
           <li><a href="mailto:psiqtrevsan@gmail.com">psiqtrevsan@gmail.com</a></li>
-          <li>Reservas por teléfono 24/7</li>
         </ul>
       </div>
       <div>
@@ -972,6 +584,11 @@
     </div>
   </div>
 </footer>
+
+<nav class="accion-fija" aria-label="Acciones rápidas">
+  <a class="btn" href="agenda/">Reservar cita</a>
+  <a class="btn btn--linea" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Quisiera%20informes%20para%20agendar%20una%20cita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+</nav>
 
 <script type="application/ld+json">
 {
@@ -1010,514 +627,29 @@
     {"@type":"Offer","name":"Primera visita de Medicina General","price":"800","priceCurrency":"MXN"},
     {"@type":"Offer","name":"Tratamiento psicoterapéutico y psicofarmacológico asociado al aborto","price":"1800","priceCurrency":"MXN"}
   ],
+  "potentialAction":{"@type":"ReserveAction","target":"https://demos.pulselat.online/salud/santiago-trevino/agenda/"},
   "sameAs":["https://www.doctoralia.com.mx/perfil/santiago-trevino-san-martin"]
 }
 </script>
-
+<script src="agenda.js"></script>
 <script>
-/* =========================================================================
-   CONFIG de agenda.
-   IMPORTANTE: los días y horarios de abajo son DE MUESTRA para el demo.
-   No son los horarios reales del consultorio; se reemplazan cuando el
-   consultorio confirme su disponibilidad.
-   ========================================================================= */
-var CONFIG = {
-  zona: 'America/Mexico_City',
-  offset: '-06:00',            // CDMX no usa horario de verano desde 2022
-  duracionMin: 50,
-  anticipacionHoras: 12,       // no se puede solicitar con menos de 12 h
-  diasHorizonte: 56,           // se agenda hasta 8 semanas adelante
-  ocupadosMuestraPct: 28,      // % de horarios marcados ocupados (determinista, de muestra)
-  telefonoWa: '522223572531',
-  correo: 'psiqtrevsan@gmail.com',
-  sedes: {
-    cuicuilco: {
-      nombre: 'Clínica Cuicuilco', corto: 'Cuicuilco', modalidad: 'presencial',
-      direccion: 'Av. San Fernando 649, Casa G, Manantial Peña Pobre, Tlalpan, 14060 CDMX',
-      // 1 = lunes … 6 = sábado (MUESTRA)
-      horario: { 1: ['16:00','17:00','18:00','19:00'], 3: ['16:00','17:00','18:00','19:00'], 4: ['10:00','11:00','12:00','13:00','16:00','17:00'] }
-    },
-    soma: {
-      nombre: 'SOMA Medicina Integral', corto: 'SOMA', modalidad: 'presencial',
-      direccion: 'Blvd. Adolfo Ruiz Cortines 3332, Jardines del Pedregal, Álvaro Obregón, 01900 CDMX',
-      horario: { 2: ['10:00','11:00','12:00','13:00'], 5: ['10:00','11:00','12:00','13:00'] }
-    },
-    video: {
-      nombre: 'Videoconsulta', corto: 'Video', modalidad: 'video',
-      direccion: 'En línea (videoconsulta)',
-      horario: { 1: ['08:00','09:00'], 2: ['17:00','18:00','19:00'], 3: ['08:00','09:00'], 5: ['17:00','18:00'], 6: ['09:00','10:00','11:00'] }
-    }
-  }
-};
-
-var SERVICIOS = {
-  primera:        { nombre: 'Consulta psiquiátrica · primera vez', precio: 1800, modalidades: ['presencial'] },
-  seguimiento:    { nombre: 'Consulta de seguimiento', precio: 1500, modalidades: ['presencial'] },
-  tele:           { nombre: 'Telepsiquiatría (videoconsulta)', precio: 1500, modalidades: ['video'] },
-  psicoeducacion: { nombre: 'Psicoeducación', precio: 1800, modalidades: ['presencial'] },
-  medgen:         { nombre: 'Primera visita de Medicina General', precio: 800, modalidades: ['presencial'] },
-  aborto:         { nombre: 'Tratamiento psicoterapéutico y psicofarmacológico asociado al aborto', precio: 1800, modalidades: ['presencial'] }
-};
-
 (function () {
-  'use strict';
-  document.documentElement.classList.add('js');
-
-  var CLAVE = 'st-trevino-citas-v1';
-  var DIAS_CORTOS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-  var $ = function (s, r) { return (r || document).querySelector(s); };
-  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-
-  /* ---------- Fechas (todo en hora de CDMX) ---------- */
-  function hoy() {
-    return new Intl.DateTimeFormat('en-CA', { timeZone: CONFIG.zona, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  }
-  function instante(fecha, hora) { return new Date(fecha + 'T' + hora + ':00' + CONFIG.offset); }
-  function sumarDias(fecha, n) {
-    var p = fecha.split('-').map(Number);
-    var d = new Date(Date.UTC(p[0], p[1] - 1, p[2] + n));
-    return d.toISOString().slice(0, 10);
-  }
-  function diaSemana(fecha) { return new Date(fecha + 'T00:00:00Z').getUTCDay(); }
-  function lunesDe(fecha) { var d = diaSemana(fecha); return sumarDias(fecha, d === 0 ? -6 : 1 - d); }
-  var fmtLargo = new Intl.DateTimeFormat('es-MX', { timeZone: CONFIG.zona, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-  var fmtMedio = new Intl.DateTimeFormat('es-MX', { timeZone: CONFIG.zona, weekday: 'long', day: 'numeric', month: 'long' });
-  var fmtDiaMes = new Intl.DateTimeFormat('es-MX', { timeZone: CONFIG.zona, day: 'numeric', month: 'short' });
-  var fmtMes = new Intl.DateTimeFormat('es-MX', { timeZone: CONFIG.zona, month: 'long', year: 'numeric' });
-  function fechaLarga(f) { return fmtLargo.format(instante(f, '12:00')); }
-  function fechaMedia(f) { return fmtMedio.format(instante(f, '12:00')); }
-  function dinero(n) { return '$' + n.toLocaleString('es-MX') + ' MXN'; }
-
-  /* ---------- Apartados guardados en este navegador ---------- */
-  function leerCitas() {
-    try { var v = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; }
-  }
-  var memoriaCitas = leerCitas();
-  function guardarCita(c) {
-    memoriaCitas.push(c);
-    try { localStorage.setItem(CLAVE, JSON.stringify(memoriaCitas)); } catch (e) {}
-  }
-  function apartado(fecha, hora) {
-    // Un solo médico: un horario apartado se bloquea en todas las modalidades.
-    return memoriaCitas.some(function (c) { return c.fecha === fecha && c.hora === hora; });
-  }
-
-  /* ---------- Fuente única de disponibilidad ---------- */
-  function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
-  function ocupadoMuestra(fecha, hora, sede) { return hash(fecha + '|' + hora + '|' + sede) % 100 < CONFIG.ocupadosMuestraPct; }
-  function dentroHorizonte(fecha) { var h = hoy(); return fecha >= h && fecha <= sumarDias(h, CONFIG.diasHorizonte); }
-  function estadoSlot(fecha, hora, sede) {
-    if (instante(fecha, hora).getTime() - Date.now() < CONFIG.anticipacionHoras * 3600e3) return 'no';
-    if (!dentroHorizonte(fecha)) return 'no';
-    if (apartado(fecha, hora)) return 'ocupado';
-    if (ocupadoMuestra(fecha, hora, sede)) return 'ocupado';
-    return 'libre';
-  }
-  function slotsDia(fecha, sedes) {
-    var dow = diaSemana(fecha), out = [];
-    sedes.forEach(function (s) {
-      (CONFIG.sedes[s].horario[dow] || []).forEach(function (h) { out.push({ fecha: fecha, hora: h, sede: s, estado: estadoSlot(fecha, h, s) }); });
-    });
-    return out.sort(function (a, b) { return a.hora < b.hora ? -1 : a.hora > b.hora ? 1 : 0; });
-  }
-  var ETIQUETA = { libre: 'Libre', ocupado: 'Ocupado', no: 'No disp.' };
-  var ETIQUETA_SR = { libre: 'libre', ocupado: 'ocupado', no: 'no disponible' };
-
-  /* ---------- Estado del asistente ---------- */
-  var st = { paso: 1, sede: null, tipo: null, otro: null, fecha: null, hora: null, mesVista: null, datos: null, folio: null, desdeAgenda: false };
-
-  function servicioId() {
-    if (!st.sede || !st.tipo) return null;
-    var mod = CONFIG.sedes[st.sede].modalidad;
-    if (mod === 'video') return st.tipo === 'otro' ? null : 'tele';
-    if (st.tipo === 'primera') return 'primera';
-    if (st.tipo === 'seguimiento') return 'seguimiento';
-    if (st.tipo === 'otro' && st.otro && SERVICIOS[st.otro].modalidades.indexOf(mod) > -1) return st.otro;
-    return null;
-  }
-  function slotValido() { return st.fecha && st.hora && st.sede && estadoSlot(st.fecha, st.hora, st.sede) === 'libre'; }
-
-  /* ---------- Agenda semanal ---------- */
-  var filtro = 'todas';
-  var semanaIni = lunesDe(hoy());
-  var semanaMin = semanaIni;
-  var semanaMax = lunesDe(sumarDias(hoy(), CONFIG.diasHorizonte));
-
-  function sedesFiltro() { return filtro === 'todas' ? ['cuicuilco', 'soma', 'video'] : [filtro]; }
-
-  function pintarSemana() {
-    var cont = $('#semana'), h = hoy(), libres = 0, html = '';
-    var fin = sumarDias(semanaIni, 6);
-    $('#sem-titulo').textContent = fmtDiaMes.format(instante(semanaIni, '12:00')) + ' – ' + fmtDiaMes.format(instante(fin, '12:00'));
-    $('#sem-ant').disabled = semanaIni <= semanaMin;
-    $('#sem-sig').disabled = semanaIni >= semanaMax;
-    for (var i = 0; i < 7; i++) {
-      var f = sumarDias(semanaIni, i), dow = diaSemana(f), pasado = f < h;
-      var slots = pasado ? [] : slotsDia(f, sedesFiltro());
-      var clases = 'dia' + (f === h ? ' dia--hoy' : '') + (pasado ? ' dia--pasado' : '');
-      html += '<div class="' + clases + '" role="group" aria-label="' + fechaMedia(f) + '">';
-      html += '<div class="dia-cab"><b>' + DIAS_CORTOS[dow] + '</b><span>' + Number(f.slice(8)) + '</span>' + (f === h ? '<small>Hoy</small>' : '') + '</div>';
-      if (pasado) html += '<p class="dia-vacio">Día pasado</p>';
-      else if (!slots.length) html += '<p class="dia-vacio">Sin consulta' + (filtro !== 'todas' ? ' en esta modalidad' : '') + '</p>';
-      else {
-        html += '<ul class="slots">';
-        slots.forEach(function (s) {
-          var sedeTxt = CONFIG.sedes[s.sede].corto;
-          var sedeTag = '<span class="sede-tag">' + sedeTxt + '</span>';
-          var etiqueta = fechaMedia(f) + ', ' + s.hora + ', ' + CONFIG.sedes[s.sede].nombre + ': ' + ETIQUETA_SR[s.estado];
-          if (s.estado === 'libre') {
-            libres++;
-            var elegido = st.fecha === f && st.hora === s.hora && st.sede === s.sede;
-            html += '<li><button type="button" class="slot slot--libre' + (elegido ? ' slot--elegido' : '') + '" data-fecha="' + f + '" data-hora="' + s.hora + '" data-sede="' + s.sede + '" aria-label="' + etiqueta + '. Apartar"><span><b>' + s.hora + '</b>' + sedeTag + '</span><small>' + ETIQUETA.libre + '</small></button></li>';
-          } else {
-            html += '<li><span class="slot slot--' + s.estado + '" role="img" aria-label="' + etiqueta + '"><span><b>' + s.hora + '</b>' + sedeTag + '</span><small>' + ETIQUETA[s.estado] + '</small></span></li>';
-          }
-        });
-        html += '</ul>';
-      }
-      html += '</div>';
-    }
-    cont.innerHTML = html;
-    $('#sem-resumen').textContent = libres === 0 ? 'No hay horarios libres esta semana con este filtro. Prueba la semana siguiente.' : libres + (libres === 1 ? ' horario libre' : ' horarios libres') + ' esta semana.';
-  }
-
-  $$('[data-filtro]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      filtro = b.getAttribute('data-filtro');
-      $$('[data-filtro]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      pintarSemana();
-    });
+  var A = window.Agenda; if (!A) return;
+  var lista = document.getElementById('proximos-lista');
+  var slots = A.proximosLibres(3);
+  if (!slots.length) return;
+  lista.innerHTML = '';
+  slots.forEach(function (s) {
+    var li = document.createElement('li'), a = document.createElement('a'), b = document.createElement('b'), sp = document.createElement('span');
+    a.className = 'hora-link';
+    a.href = A.urlSlot('agenda/', s);
+    b.textContent = A.fecha(s.fecha, 'corto') + ' · ' + s.hora;
+    sp.textContent = A.CONFIG.sedes[s.sede].nombre;
+    a.setAttribute('aria-label', 'Reservar ' + A.fecha(s.fecha) + ' a las ' + s.hora + ', ' + A.CONFIG.sedes[s.sede].nombre);
+    a.appendChild(b); a.appendChild(sp); li.appendChild(a); lista.appendChild(li);
   });
-  $('#sem-ant').addEventListener('click', function () { if (semanaIni > semanaMin) { semanaIni = sumarDias(semanaIni, -7); pintarSemana(); } });
-  $('#sem-sig').addEventListener('click', function () { if (semanaIni < semanaMax) { semanaIni = sumarDias(semanaIni, 7); pintarSemana(); } });
-  $('#semana').addEventListener('click', function (e) {
-    var b = e.target.closest('.slot--libre');
-    if (!b) return;
-    var sede = b.getAttribute('data-sede');
-    if (st.sede !== sede) { st.otro = st.otro && SERVICIOS[st.otro].modalidades.indexOf(CONFIG.sedes[sede].modalidad) > -1 ? st.otro : null; }
-    st.sede = sede; st.fecha = b.getAttribute('data-fecha'); st.hora = b.getAttribute('data-hora');
-    st.mesVista = st.fecha.slice(0, 7); st.desdeAgenda = true;
-    if (st.tipo === 'otro' && !servicioId()) st.tipo = null;
-    sincronizarPaso1();
-    irPaso(servicioId() ? 3 : 1, true);
-    pintarSemana();
-  });
-
-  /* ---------- Asistente ---------- */
-  var NOMBRES_PASO = ['', 'Servicio', 'Fecha y hora', 'Tus datos', 'Confirmar'];
-
-  function irPaso(n, desplazar) {
-    st.paso = n;
-    $$('[data-panel]').forEach(function (p) { p.hidden = Number(p.getAttribute('data-panel')) !== n; });
-    $$('#pasos li').forEach(function (li) {
-      var k = Number(li.getAttribute('data-paso'));
-      li.classList.toggle('hecho', k < n);
-      if (k === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
-    });
-    var pr = $('#progreso'); pr.setAttribute('aria-valuenow', String(n)); pr.setAttribute('aria-valuetext', 'Paso ' + n + ' de 4: ' + NOMBRES_PASO[n]);
-    $('#progreso i').style.width = (n * 25) + '%';
-    if (n === 1) pintarPaso1();
-    if (n === 2) pintarCalendario();
-    if (n === 3) pintarSub3();
-    if (n === 4) pintarResumen();
-    $('#anuncio').textContent = 'Paso ' + n + ' de 4: ' + NOMBRES_PASO[n];
-    var panel = $('[data-panel="' + n + '"]');
-    var h = panel.querySelector('h3:not([hidden])');
-    if (desplazar) {
-      var bloque = $('#asistente');
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      bloque.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-    }
-    if (h) h.focus({ preventScroll: true });
-  }
-
-  function sincronizarPaso1() {
-    $$('input[name="sede"]').forEach(function (i) { i.checked = i.value === st.sede; });
-    $$('input[name="tipo"]').forEach(function (i) { i.checked = i.value === st.tipo; });
-    $$('input[name="otro"]').forEach(function (i) { i.checked = i.value === st.otro; });
-  }
-  function pintarPaso1() {
-    var esVideo = st.sede && CONFIG.sedes[st.sede].modalidad === 'video';
-    var otroInput = $('input[name="tipo"][value="otro"]');
-    otroInput.disabled = !!esVideo;
-    if (esVideo && st.tipo === 'otro') { st.tipo = null; otroInput.checked = false; }
-    $('#otros').hidden = st.tipo !== 'otro' || esVideo;
-    $('#nota-video').hidden = !esVideo;
-    var b = $('#banner-slot');
-    if (st.fecha && st.hora && st.sede && st.desdeAgenda) {
-      b.hidden = false;
-      $('#banner-slot-txt').innerHTML = 'Horario apartado: <b>' + fechaMedia(st.fecha) + ', ' + st.hora + ' h</b> · ' + CONFIG.sedes[st.sede].nombre + '. Elige el tipo de consulta para continuar.';
-    } else b.hidden = true;
-    var id = servicioId(), t = $('#total-1');
-    t.innerHTML = id ? '<span>' + SERVICIOS[id].nombre + ' · ' + CONFIG.duracionMin + ' min</span><b>' + dinero(SERVICIOS[id].precio) + '</b>' : '<span>Elige modalidad y tipo para ver el precio.</span>';
-  }
-  $$('input[name="sede"]').forEach(function (i) {
-    i.addEventListener('change', function () {
-      if (st.sede !== i.value && st.fecha) { st.fecha = null; st.hora = null; st.desdeAgenda = false; }
-      st.sede = i.value; $('#error-1').textContent = ''; pintarPaso1(); pintarSemana();
-    });
-  });
-  $$('input[name="tipo"]').forEach(function (i) { i.addEventListener('change', function () { st.tipo = i.value; $('#error-1').textContent = ''; pintarPaso1(); }); });
-  $$('input[name="otro"]').forEach(function (i) { i.addEventListener('change', function () { st.otro = i.value; $('#error-1').textContent = ''; pintarPaso1(); }); });
-
-  /* Calendario mensual del paso 2: usa la misma fuente (slotsDia) */
-  function pintarCalendario() {
-    var h = hoy();
-    if (!st.mesVista) st.mesVista = (st.fecha || h).slice(0, 7);
-    var mesMin = h.slice(0, 7), mesMax = sumarDias(h, CONFIG.diasHorizonte).slice(0, 7);
-    var primero = st.mesVista + '-01';
-    $('#mes-titulo').textContent = fmtMes.format(instante(primero, '12:00'));
-    $('#mes-ant').disabled = st.mesVista <= mesMin;
-    $('#mes-sig').disabled = st.mesVista >= mesMax;
-    var sub = st.sede ? CONFIG.sedes[st.sede].nombre : '';
-    $('#sub-2').textContent = 'Paso 2 de 4 · ' + sub + ' · los días con punto tienen horarios libres.';
-    var html = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(function (d) { return '<span class="dsem" aria-hidden="true">' + d + '</span>'; }).join('');
-    var lead = (diaSemana(primero) + 6) % 7;
-    for (var k = 0; k < lead; k++) html += '<span aria-hidden="true"></span>';
-    for (var f = primero; f.slice(0, 7) === st.mesVista; f = sumarDias(f, 1)) {
-      var libres = (f < h) ? 0 : slotsDia(f, [st.sede]).filter(function (s) { return s.estado === 'libre'; }).length;
-      var dis = libres === 0;
-      var sel = st.fecha === f;
-      var et = fechaMedia(f) + (dis ? ', sin horarios libres' : ', ' + libres + (libres === 1 ? ' horario libre' : ' horarios libres'));
-      html += '<button type="button" class="cal-dia' + (f === h ? ' hoy' : '') + '" data-dia="' + f + '"' + (dis ? ' disabled' : '') + ' aria-pressed="' + sel + '" aria-label="' + et + '">' + Number(f.slice(8)) + (dis ? '' : '<i aria-hidden="true"></i>') + '</button>';
-    }
-    $('#cal-grid').innerHTML = html;
-    pintarHoras();
-  }
-  function pintarHoras() {
-    var ul = $('#horas'), tit = $('#horas-titulo');
-    if (!st.fecha || st.fecha.slice(0, 7) !== st.mesVista) { ul.innerHTML = ''; tit.textContent = 'Elige un día con punto para ver sus horarios.'; return; }
-    var slots = slotsDia(st.fecha, [st.sede]);
-    tit.textContent = 'Horarios del ' + fechaMedia(st.fecha);
-    ul.innerHTML = slots.map(function (s) {
-      var et = s.hora + ' h, ' + ETIQUETA_SR[s.estado];
-      if (s.estado === 'libre') {
-        var sel = st.hora === s.hora;
-        return '<li><button type="button" class="slot slot--libre' + (sel ? ' slot--elegido' : '') + '" data-hora="' + s.hora + '" aria-pressed="' + sel + '" aria-label="' + et + '"><b>' + s.hora + '</b><small>' + (sel ? 'Elegido' : ETIQUETA.libre) + '</small></button></li>';
-      }
-      return '<li><span class="slot slot--' + s.estado + '" role="img" aria-label="' + et + '"><b>' + s.hora + '</b><small>' + ETIQUETA[s.estado] + '</small></span></li>';
-    }).join('');
-  }
-  $('#cal-grid').addEventListener('click', function (e) {
-    var b = e.target.closest('.cal-dia'); if (!b || b.disabled) return;
-    var nuevo = b.getAttribute('data-dia');
-    if (nuevo !== st.fecha) st.hora = null;
-    st.fecha = nuevo; $('#error-2').textContent = '';
-    pintarCalendario();
-    var foco = $('#cal-grid [data-dia="' + nuevo + '"]'); if (foco) foco.focus();
-  });
-  $('#horas').addEventListener('click', function (e) {
-    var b = e.target.closest('.slot--libre'); if (!b) return;
-    st.hora = b.getAttribute('data-hora'); $('#error-2').textContent = '';
-    pintarHoras(); pintarSemana();
-    var foco = $('#horas [data-hora="' + st.hora + '"]'); if (foco) foco.focus();
-  });
-  $('#mes-ant').addEventListener('click', function () { st.mesVista = sumarDias(st.mesVista + '-01', -1).slice(0, 7); pintarCalendario(); });
-  $('#mes-sig').addEventListener('click', function () { st.mesVista = sumarDias(st.mesVista + '-28', 7).slice(0, 7); pintarCalendario(); });
-
-  /* Paso 3 */
-  function pintarSub3() {
-    var id = servicioId();
-    $('#sub-3').textContent = 'Paso 3 de 4 · ' + (id ? SERVICIOS[id].nombre : '') + ' · ' + (st.fecha ? fechaMedia(st.fecha) + ', ' + st.hora + ' h' : '');
-  }
-  function validar() {
-    var ok = true, primero = null;
-    function marca(input, err, msg) {
-      $(err).textContent = msg || '';
-      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
-      if (msg) { ok = false; if (!primero) primero = input; }
-    }
-    var n = $('#f-nombre'), t = $('#f-tel'), c = $('#f-correo'), a = $('#f-aviso');
-    var nombre = n.value.trim().replace(/\s+/g, ' ');
-    var dig = t.value.replace(/\D/g, '');
-    if (dig.length === 12 && dig.slice(0, 2) === '52') dig = dig.slice(2);
-    marca(n, '#e-nombre', nombre.length < 3 ? 'Escribe tu nombre (mínimo 3 letras).' : '');
-    marca(t, '#e-tel', dig.length !== 10 ? 'Escribe un teléfono de 10 dígitos.' : '');
-    marca(c, '#e-correo', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.value.trim()) ? 'Escribe un correo válido.' : '');
-    marca(a, '#e-aviso', !a.checked ? 'Necesitas aceptar el aviso de privacidad para continuar.' : '');
-    if (!ok) { primero.focus(); return null; }
-    return { nombre: nombre, telefono: dig.replace(/(\d{2})(\d{4})(\d{4})/, '$1 $2 $3'), correo: c.value.trim(), motivo: $('#f-motivo').value.trim().replace(/\s+/g, ' ') };
-  }
-  $('#form-datos').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var d = validar(); if (!d) return;
-    st.datos = d; st.folio = nuevoFolio();
-    irPaso(4, true);
-  });
-
-  /* Paso 4 */
-  function nuevoFolio() {
-    var abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = '';
-    var buf = new Uint32Array(4);
-    if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(buf); else for (var i = 0; i < 4; i++) buf[i] = hash(Date.now() + ':' + i);
-    for (var j = 0; j < 4; j++) s += abc[buf[j] % abc.length];
-    return 'ST-' + st.fecha.slice(2).replace(/-/g, '') + '-' + s;
-  }
-  function lineasMensaje() {
-    var id = servicioId(), sede = CONFIG.sedes[st.sede], d = st.datos;
-    var l = [
-      'Hola, Dr. Santiago Treviño. Quiero solicitar una cita.',
-      '',
-      'Folio: ' + st.folio,
-      'Servicio: ' + SERVICIOS[id].nombre,
-      'Modalidad: ' + (sede.modalidad === 'video' ? 'Videoconsulta' : 'Presencial · ' + sede.nombre),
-      'Fecha: ' + fechaLarga(st.fecha),
-      'Hora: ' + st.hora + ' h (hora del centro de México)',
-      'Precio de lista: ' + dinero(SERVICIOS[id].precio),
-      '',
-      'Nombre: ' + d.nombre,
-      'Teléfono: ' + d.telefono,
-      'Correo: ' + d.correo
-    ];
-    if (d.motivo) l.push('Motivo breve: ' + d.motivo);
-    l.push('', 'Quedo atento(a) a su confirmación. Gracias.');
-    return l;
-  }
-  function urlWa() { return 'https://wa.me/' + CONFIG.telefonoWa + '?text=' + encodeURIComponent(lineasMensaje().join('\n')); }
-  function urlMail() {
-    return 'mailto:' + CONFIG.correo + '?subject=' + encodeURIComponent('Solicitud de cita ' + st.folio + ' · ' + fechaMedia(st.fecha) + ' ' + st.hora + ' h') + '&body=' + encodeURIComponent(lineasMensaje().join('\r\n'));
-  }
-  function pintarResumen() {
-    var id = servicioId(), sede = CONFIG.sedes[st.sede], d = st.datos;
-    var filas = [
-      ['Servicio', SERVICIOS[id].nombre],
-      ['Modalidad', sede.modalidad === 'video' ? 'Videoconsulta' : 'Presencial · ' + sede.nombre],
-      ['Lugar', sede.direccion],
-      ['Fecha', fechaLarga(st.fecha)],
-      ['Hora', st.hora + ' h · ' + CONFIG.duracionMin + ' min (CDMX)'],
-      ['Precio', dinero(SERVICIOS[id].precio) + ' · efectivo o transferencia'],
-      ['Nombre', d.nombre], ['Teléfono', d.telefono], ['Correo', d.correo]
-    ];
-    if (d.motivo) filas.push(['Motivo', d.motivo]);
-    filas.push(['Folio', st.folio]);
-    var ul = $('#resumen'); ul.innerHTML = '';
-    filas.forEach(function (f) {
-      var li = document.createElement('li'), s = document.createElement('span'), b = document.createElement('b');
-      s.textContent = f[0]; b.textContent = f[1]; li.appendChild(s); li.appendChild(b); ul.appendChild(li);
-    });
-    $('#btn-confirmar').href = urlWa();
-    $('#confirmar-bloque').hidden = false; $('#exito').hidden = true;
-    $('#error-4').textContent = '';
-  }
-
-  /* .ics */
-  function icsFecha(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
-  function icsTexto(s) { return String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n'); }
-  function plegar(linea) {
-    var out = [], resto = linea;
-    while (resto.length > 60) { out.push(resto.slice(0, 60)); resto = ' ' + resto.slice(60); }
-    out.push(resto); return out.join('\r\n');
-  }
-  function crearIcs() {
-    var id = servicioId(), sede = CONFIG.sedes[st.sede];
-    var ini = instante(st.fecha, st.hora), fin = new Date(ini.getTime() + CONFIG.duracionMin * 60000);
-    var desc = 'Folio: ' + st.folio + '\nServicio: ' + SERVICIOS[id].nombre + '\nEstado: SOLICITADA. El consultorio la confirma por WhatsApp.\nTel. y WhatsApp: +52 222 357 2531';
-    var l = [
-      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Pulse LAT//Demo Dr. Santiago Trevino//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'UID:' + st.folio + '@demos.pulselat.online',
-      'DTSTAMP:' + icsFecha(new Date()),
-      'DTSTART:' + icsFecha(ini),
-      'DTEND:' + icsFecha(fin),
-      'SUMMARY:' + icsTexto('Cita solicitada · Dr. Santiago Treviño (' + SERVICIOS[id].nombre + ')'),
-      'LOCATION:' + icsTexto(sede.modalidad === 'video' ? 'Videoconsulta' : sede.nombre + ', ' + sede.direccion),
-      'DESCRIPTION:' + icsTexto(desc),
-      'STATUS:TENTATIVE',
-      'END:VEVENT', 'END:VCALENDAR'
-    ];
-    return l.map(plegar).join('\r\n') + '\r\n';
-  }
-  var urlIcs = null;
-
-  $('#btn-confirmar').addEventListener('click', function (e) {
-    if (!servicioId() || !st.datos) { e.preventDefault(); irPaso(1, true); return; }
-    if (!slotValido()) {
-      e.preventDefault();
-      $('#error-4').textContent = 'Ese horario ya no está disponible. Elige otro, por favor.';
-      st.hora = null; pintarSemana(); irPaso(2, true); return;
-    }
-    this.href = urlWa();
-    guardarCita({ folio: st.folio, fecha: st.fecha, hora: st.hora, sede: st.sede, servicio: servicioId(), creada: new Date().toISOString() });
-    if (urlIcs) URL.revokeObjectURL(urlIcs);
-    urlIcs = URL.createObjectURL(new Blob([crearIcs()], { type: 'text/calendar;charset=utf-8' }));
-    $('#exito-folio').textContent = st.folio;
-    $('#exito-txt').textContent = 'Solicitaste ' + SERVICIOS[servicioId()].nombre.toLowerCase() + ' el ' + fechaLarga(st.fecha) + ' a las ' + st.hora + ' h (' + (CONFIG.sedes[st.sede].modalidad === 'video' ? 'videoconsulta' : CONFIG.sedes[st.sede].nombre) + ').';
-    $('#exito-wa').href = urlWa();
-    $('#exito-mail').href = urlMail();
-    var ics = $('#exito-ics'); ics.href = urlIcs; ics.setAttribute('download', 'cita-' + st.folio + '.ics');
-    $('#confirmar-bloque').hidden = true; $('#exito').hidden = false;
-    $$('#pasos li').forEach(function (li) { li.classList.add('hecho'); li.removeAttribute('aria-current'); });
-    $('#progreso i').style.width = '100%';
-    $('#progreso').setAttribute('aria-valuetext', 'Solicitud lista');
-    $('#anuncio').textContent = 'Solicitud lista. Folio ' + st.folio + '. El consultorio confirma tu cita por WhatsApp.';
-    setTimeout(function () { var h = $('#exito h3'); if (h) h.focus({ preventScroll: true }); }, 0);
-    pintarSemana();
-  });
-
-  $('#otra-cita').addEventListener('click', function () {
-    st = { paso: 1, sede: null, tipo: null, otro: null, fecha: null, hora: null, mesVista: null, datos: null, folio: null, desdeAgenda: false };
-    $('#form-datos').reset();
-    $$('#form-datos [aria-invalid]').forEach(function (i) { i.removeAttribute('aria-invalid'); });
-    sincronizarPaso1(); irPaso(1, true);
-  });
-
-  /* Navegación entre pasos */
-  $$('[data-sig]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var n = Number(b.getAttribute('data-sig'));
-      if (n === 1) {
-        if (!st.sede) { $('#error-1').textContent = 'Elige una modalidad.'; $('input[name="sede"]').focus(); return; }
-        if (!st.tipo) { $('#error-1').textContent = 'Elige el tipo de consulta.'; $('input[name="tipo"]').focus(); return; }
-        if (!servicioId()) { $('#error-1').textContent = 'Elige cuál otro servicio necesitas.'; $('input[name="otro"]').focus(); return; }
-        irPaso(slotValido() ? 3 : 2, false);
-      } else if (n === 2) {
-        if (!slotValido()) { $('#error-2').textContent = st.fecha ? 'Elige una hora libre.' : 'Elige un día y una hora.'; return; }
-        irPaso(3, false);
-      }
-    });
-  });
-  $$('[data-ant]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var n = Number(b.getAttribute('data-ant'));
-      if (n === 3 || n === 2) st.desdeAgenda = false;
-      irPaso(n - 1, false);
-    });
-  });
-
-  /* Enlaces "Agendar" en la página */
-  $$('[data-ir-reserva]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      var s = a.getAttribute('data-sede');
-      if (s && s !== st.sede) { st.sede = s; st.fecha = null; st.hora = null; st.desdeAgenda = false; sincronizarPaso1(); if (st.paso !== 1) irPaso(1, false); else pintarPaso1(); }
-      cerrarMenu();
-    });
-  });
-  $$('[data-abrir-privacidad]').forEach(function (a) { a.addEventListener('click', function () { $('#privacidad').open = true; }); });
-
-  /* Menú móvil */
-  var menuBtn = $('#menu-btn'), menu = $('#menu-movil');
-  function cerrarMenu() { menu.hidden = true; menuBtn.setAttribute('aria-expanded', 'false'); }
-  menuBtn.addEventListener('click', function () {
-    var abrir = menu.hidden; menu.hidden = !abrir; menuBtn.setAttribute('aria-expanded', String(abrir));
-    if (abrir) { var p = menu.querySelector('a'); if (p) p.focus(); }
-  });
-  $$('#menu-movil a').forEach(function (a) { a.addEventListener('click', cerrarMenu); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { cerrarMenu(); menuBtn.focus(); } });
-
-  /* Aparición suave */
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('vis'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -30px 0px' });
-    $$('[data-aparece]').forEach(function (el) { io.observe(el); });
-  } else $$('[data-aparece]').forEach(function (el) { el.classList.add('vis'); });
-
-  /* Ganchos para pruebas automatizadas */
-  window.__agenda = { estadoSlot: estadoSlot, slotsDia: slotsDia, hoy: hoy, crearIcs: function () { return crearIcs(); }, urlMail: function () { return urlMail(); }, estado: function () { return st; } };
-
-  pintarSemana();
-  irPaso(1, false);
-  // No robar el foco al cargar la página
-  if (document.activeElement && document.activeElement.matches('.paso h3')) document.activeElement.blur();
 })();
 </script>
+<script src="../../assets/antislop.js" defer></script>
 </body>
 </html>
