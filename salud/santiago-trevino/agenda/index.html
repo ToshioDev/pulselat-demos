@@ -2,696 +2,526 @@
 <html lang="es-MX">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Agenda · Dr. Santiago Treviño, psiquiatra</title>
-<meta name="description" content="Agenda del Dr. Santiago Treviño San Martin: elige día y hora en Clínica Cuicuilco, SOMA Medicina Integral o videoconsulta y envía tu solicitud por WhatsApp.">
+<title>Agendar cita · Dr. Santiago Treviño</title>
+<meta name="description" content="Elige día y hora para tu consulta con el Dr. Santiago Treviño en Plaza Cuicuilco, el Pedregal o por video.">
 <link rel="canonical" href="https://demos.pulselat.online/salud/santiago-trevino/agenda/">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://demos.pulselat.online/salud/santiago-trevino/agenda/">
-<meta property="og:title" content="Agenda · Dr. Santiago Treviño San Martin">
-<meta property="og:description" content="Elige día y hora y solicita tu cita por WhatsApp.">
+<meta property="og:title" content="Agendar cita · Dr. Santiago Treviño">
 <meta property="og:image" content="https://demos.pulselat.online/salud/santiago-trevino/img/retrato.jpg">
-<meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#EE7133">
+<meta name="theme-color" content="#FFFDFB">
 <link rel="icon" href="../img/logo-icono.png" type="image/png">
 <link rel="apple-touch-icon" href="../img/logo-icono.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/antislop.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ===== Mini sistema de diseño de la agenda ===== */
   :root{
-    --marfil:#FFFDFB; --arena:#F6EEE6; --arena-2:#EFE3D7;
-    --cafe:#2B1D16; --cafe-2:#3A281F; --cuerpo:#5A463A; --tenue:#76614F;
-    --naranja:#EE7133; --teja:#A84A17; --teja-osc:#8E3C10;
-    --dorado-txt:#7A5418;
-    --linea:rgba(43,29,22,.14); --linea-f:rgba(43,29,22,.32);
-    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    /* Color: acento, tinta, fondo, neutro cálido */
+    --acento:#EE7133; --tinta:#2B1D16; --fondo:#FFFDFB; --neutro:#EFE6DC;
+    --texto-2:#6E5E52;                 /* texto secundario, 5.9:1 sobre fondo */
+    --linea:rgba(43,29,22,.12);
+    /* Tipografía: 12 / 14 / 16 / 20 / 28 */
+    --t-xs:12px; --t-s:14px; --t-m:16px; --t-l:20px; --t-xl:28px;
     --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-    /* Color por consultorio */
-    --c-cuicuilco:#EE7133; --t-cuicuilco:#FDE7DA;
-    --c-soma:#5F8571;      --t-soma:#E2ECE5;
-    --c-video:#4F6D8F;     --t-video:#E1E8F1;
-
-    --as-tinta:var(--cafe); --as-tenue:var(--cuerpo); --as-linea:var(--linea);
-    --as-acento:var(--teja); --as-acento-tinta:var(--marfil);
-    --as-body:var(--sans);
+    --serif:"Fraunces",Georgia,serif;
+    /* Radios y espacios (múltiplos de 4) */
+    --r-s:8px; --r-m:12px; --r-l:20px;
+    --e-4:4px; --e-8:8px; --e-12:12px; --e-16:16px; --e-24:24px;
+    /* Única elevación */
+    --sombra:0 8px 24px rgba(43,29,22,.12);
+    --toque:48px;
   }
+  @media (prefers-reduced-motion:no-preference){ @view-transition{navigation:auto} }
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.32s}
   *{box-sizing:border-box;margin:0;padding:0}
   [hidden]{display:none!important}
-  html{-webkit-text-size-adjust:100%}
-  body{background:var(--arena);color:var(--cafe);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit}
-  img{display:block;max-width:100%;height:auto}
+  html,body{height:100%}
+  body{background:var(--fondo);color:var(--tinta);font-family:var(--sans);font-size:var(--t-m);line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow:hidden}
   button,input,textarea{font:inherit;color:inherit}
-  .wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+  button{cursor:pointer;touch-action:manipulation}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
   .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  :focus-visible{outline:3px solid var(--teja);outline-offset:2px;border-radius:4px}
-  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+  .ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--naranja);background:var(--naranja);color:var(--cafe);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap}
-  .btn:hover{background:var(--teja-osc);border-color:var(--teja-osc);color:#fff}
-  .btn--linea{background:transparent;border-color:var(--linea-f);color:var(--cafe)}
-  .btn--linea:hover{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
-  .btn--ancho{width:100%}
-  .btn svg{flex:none;width:18px;height:18px}
-  .enlace{color:var(--teja);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:0}
-  .enlace:hover{color:var(--teja-osc)}
+  .app{display:flex;flex-direction:column;height:100vh;height:100dvh;background:var(--fondo)}
 
-  /* Barra */
-  .barra{position:sticky;top:0;z-index:60;background:rgba(255,253,251,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
-  .barra .wrap{display:flex;align-items:center;gap:12px;height:64px}
-  .volver{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;min-width:0}
-  .volver img{width:60px}
-  .volver span{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-  .volver small{font-size:11px;color:var(--tenue)}
-  .volver b{font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-  .barra .btn{min-height:42px;padding:8px 16px;font-size:13.5px}
+  /* App bar */
+  .appbar{flex:none;display:grid;grid-template-columns:var(--toque) 1fr var(--toque);align-items:center;gap:var(--e-8);padding:calc(var(--e-4) + env(safe-area-inset-top)) var(--e-8) var(--e-4);border-bottom:1px solid var(--linea);view-transition-name:barra}
+  .icono-btn{width:var(--toque);height:var(--toque);display:grid;place-items:center;border:0;border-radius:var(--r-m);background:transparent;text-decoration:none}
+  .icono-btn:active{background:var(--neutro)}
+  .icono-btn[disabled]{opacity:.3;cursor:default}
+  .appbar h1{font-family:var(--serif);font-weight:400;font-size:var(--t-l);text-align:center}
+  .appbar img{width:44px;height:auto;display:block;justify-self:end;margin-right:var(--e-4);view-transition-name:monograma}
 
-  /* Cabecera de la agenda */
-  .cabeza{padding:28px 0 18px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 32px}
-  .cabeza h1{font-size:clamp(30px,4vw,46px);line-height:1.05}
-  .cabeza p{color:var(--cuerpo);max-width:56ch;margin-top:6px}
-  .barra-ctrl{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:14px}
-  .filtros{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--linea-f);background:var(--marfil);font-size:13px;font-weight:500;cursor:pointer}
-  .chip:hover{border-color:var(--cafe)}
-  .chip[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
-  .punto{width:10px;height:10px;border-radius:50%;flex:none;background:var(--c)}
-  .mes-nav{display:flex;align-items:center;gap:8px}
-  .mes-nav h2{font-size:22px;min-width:9.5em;text-align:center}
-  .mes-nav h2::first-letter{text-transform:uppercase}
-  .icono-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--linea-f);background:var(--marfil);display:grid;place-items:center;cursor:pointer;font-size:17px;line-height:1}
-  .icono-btn:hover:not([disabled]){border-color:var(--cafe)}
-  .icono-btn[disabled]{opacity:.35;cursor:not-allowed}
-  .chip-hoy{min-height:42px;padding:0 14px;border-radius:999px;border:1.5px solid var(--linea-f);background:var(--marfil);font-size:13px;font-weight:600;cursor:pointer}
-  .chip-hoy:hover{border-color:var(--cafe)}
+  /* Contenido */
+  .contenido{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:var(--e-16) var(--e-16) var(--e-24);display:flex;flex-direction:column;gap:var(--e-16)}
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--neutro);border-radius:var(--r-m);padding:var(--e-4);gap:var(--e-4)}
+  .seg button{min-height:44px;border:0;border-radius:var(--r-s);background:transparent;font-size:var(--t-s);font-weight:600;color:var(--texto-2);display:flex;align-items:center;justify-content:center;gap:6px}
+  .seg button .ico{width:18px;height:18px}
+  .seg button[aria-checked="true"]{background:var(--fondo);color:var(--tinta);box-shadow:var(--sombra)}
+  .chips{display:flex;flex-wrap:wrap;gap:var(--e-8)}
+  .chip{min-height:40px;padding:0 var(--e-12);border:1px solid var(--linea);border-radius:999px;background:var(--fondo);font-size:var(--t-s);font-weight:500;display:flex;align-items:center;gap:6px;position:relative;text-align:left}
+  .chip::before{content:"";position:absolute;inset:-4px 0}
+  .chip span{color:var(--texto-2)}
+  .chip[aria-checked="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--fondo)}
+  .chip[aria-checked="true"] span{color:#E9D3BD}
 
-  /* Disposición: calendario + panel */
-  .agenda{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start;padding-bottom:40px}
+  /* Calendario: tira de semana + mes */
+  .cal-cab{display:flex;align-items:center;justify-content:space-between;gap:var(--e-8)}
+  .mes-btn{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 var(--e-12);border:0;border-radius:var(--r-s);background:transparent;font-weight:600;font-size:var(--t-m)}
+  .mes-btn .ico{width:18px;height:18px;transition:transform .2s}
+  .mes-btn[aria-expanded="true"] .ico{transform:rotate(180deg)}
+  .semana{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--e-4);touch-action:pan-y;margin-top:var(--e-4)}
+  .dia{position:relative;min-height:64px;border:0;border-radius:var(--r-m);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-variant-numeric:tabular-nums}
+  .dia .ds{font-size:11px;font-weight:600;color:var(--texto-2);text-transform:uppercase}
+  .dia b{font-size:var(--t-l);font-weight:600;line-height:1}
+  .dia i{width:6px;height:6px;border-radius:50%;background:var(--acento)}
+  .dia i.vacio{background:transparent}
+  .dia.hoy{box-shadow:inset 0 0 0 1.5px var(--acento)}
+  .dia[disabled]{cursor:default}
+  .dia[disabled] b{color:#B4A496;font-weight:400}
+  .dia[aria-pressed="true"]{background:var(--tinta);color:var(--fondo)}
+  .dia[aria-pressed="true"] .ds{color:#E9D3BD}
+  .dia:not([disabled]):active{transform:scale(.95)}
+  .mes{margin-top:var(--e-8);padding-top:var(--e-8);border-top:1px solid var(--linea)}
+  .mes-cab{display:flex;align-items:center;justify-content:space-between}
+  .mes-cab b{font-size:var(--t-s);font-weight:600}
+  .mes-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--e-4)}
+  .mes-grid .ds{font-size:11px;font-weight:600;color:var(--texto-2);text-align:center;padding:var(--e-4) 0}
+  .mes-grid .dia{min-height:44px}
+  .mes-grid .dia b{font-size:var(--t-m)}
 
-  /* Calendario mensual */
-  .mes{background:var(--marfil);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
-  .mes-sem,.mes-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
-  .mes-sem span{padding:10px 10px 8px;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);border-bottom:1px solid var(--linea)}
-  .celda{position:relative;display:flex;flex-direction:column;gap:4px;min-height:118px;padding:8px;border-right:1px solid var(--linea);border-bottom:1px solid var(--linea);background:transparent;text-align:left;border-top:0;border-left:0;min-width:0}
-  .celda:nth-child(7n){border-right:0}
-  .celda--fuera{background:repeating-linear-gradient(135deg,transparent 0 7px,rgba(43,29,22,.035) 7px 14px)}
-  .celda--pasado .num,.celda--fuera .num{color:#B5A493}
-  button.celda{cursor:pointer;transition:background .12s}
-  button.celda:hover{background:#FFF6EF}
-  .celda[aria-pressed="true"]{background:#FFF1E6;box-shadow:inset 0 0 0 2px var(--naranja)}
-  .celda-top{display:flex;align-items:center;justify-content:space-between;gap:4px}
-  .num{font-family:var(--serif);font-size:19px;line-height:1;font-variant-numeric:lining-nums}
-  .celda--hoy .num{display:inline-grid;place-items:center;width:30px;height:30px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--cafe);color:var(--marfil);font-size:16px}
-  .libres{font-size:10.5px;font-weight:600;color:var(--tenue);white-space:nowrap}
-  .evs{display:flex;flex-direction:column;gap:3px;list-style:none;min-width:0}
-  .ev{display:block;padding:3px 6px 3px 7px;border-left:3px solid var(--c);background:var(--t);border-radius:4px;font-size:11.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .ev b{font-weight:600;font-variant-numeric:tabular-nums}
-  .ev-mas{font-size:11px;font-weight:600;color:var(--teja);padding-left:2px}
-  .puntos{display:none;gap:3px;flex-wrap:wrap}
-  .puntos i{width:7px;height:7px;border-radius:50%;background:var(--c)}
-  .sin{font-size:11px;color:#A8988A}
-  [data-sede="cuicuilco"]{--c:var(--c-cuicuilco);--t:var(--t-cuicuilco)}
-  [data-sede="soma"]{--c:var(--c-soma);--t:var(--t-soma)}
-  [data-sede="video"]{--c:var(--c-video);--t:var(--t-video)}
-  .mes-pie{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;padding:12px 14px;font-size:12.5px;color:var(--tenue);border-top:1px solid var(--linea)}
-  .leyenda{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none}
-  .leyenda li{display:flex;align-items:center;gap:6px}
+  /* Turnero */
+  .turnero-cab{display:flex;align-items:baseline;justify-content:space-between;gap:var(--e-8)}
+  .turnero-cab h2{font-size:var(--t-m);font-weight:600}
+  .turnero-cab span{font-size:var(--t-xs);color:var(--texto-2)}
+  .turnos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-8);list-style:none;margin-top:var(--e-12)}
+  .turno{width:100%;min-height:56px;border-radius:var(--r-m);border:1.5px solid transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-variant-numeric:tabular-nums;line-height:1}
+  .turno b{font-size:var(--t-m);font-weight:600}
+  .turno small{font-size:11px;font-weight:500}
+  .turno--libre{background:var(--acento);color:var(--tinta)}
+  .turno--ocupado{background:var(--neutro);color:var(--texto-2)}
+  .turno--ocupado b{text-decoration:line-through;font-weight:500}
+  .turno--no{border:1.5px dashed var(--linea);color:var(--texto-2)}
+  .turno--elegido{background:var(--tinta);color:var(--fondo)}
+  .turno--libre:active{transform:scale(.96)}
+  .esqueleto{min-height:56px;border-radius:var(--r-m);background:var(--neutro)}
+  .vacio-txt{grid-column:1/-1;font-size:var(--t-s);color:var(--texto-2);padding:var(--e-16) 0}
+  .nota{font-size:var(--t-xs);color:var(--texto-2);margin-top:auto}
+  .nota a{font-weight:600;color:var(--tinta)}
 
-  /* Panel */
-  .panel{position:sticky;top:80px;background:var(--marfil);border:1px solid var(--linea);border-radius:14px;overflow:hidden;scroll-margin-top:76px}
-  .pasos{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;border-bottom:1px solid var(--linea)}
-  .pasos li{padding:11px 6px 12px;text-align:center;font-size:11.5px;font-weight:500;color:var(--tenue);border-bottom:3px solid transparent;margin-bottom:-1px}
-  .pasos li.hecho{color:var(--cuerpo);border-color:#D9B48A}
-  .pasos li[aria-current="step"]{color:var(--cafe);font-weight:600;border-color:var(--naranja)}
-  .vista{padding:20px}
-  .vista h3{font-size:22px;line-height:1.2;margin-bottom:4px}
-  .vista h3:focus{outline:none}
-  .vista h3::first-letter{text-transform:uppercase}
-  .sub{font-size:13px;color:var(--tenue);margin-bottom:16px}
-  .horas{list-style:none;display:grid;gap:8px}
-  .hora{display:grid;grid-template-columns:62px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;min-height:54px;padding:8px 12px;border:1.5px solid var(--linea-f);border-left:5px solid var(--c);border-radius:10px;background:var(--marfil);text-align:left;cursor:pointer}
-  .hora:hover{border-color:var(--c);background:var(--t)}
-  .hora b{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
-  .hora span{font-size:13px;line-height:1.25}
-  .hora span small{display:block;color:var(--tenue);font-size:11.5px}
-  .hora em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teja)}
-  .hora--ocupado{cursor:default;background:transparent;border-color:var(--linea);border-left-color:var(--linea-f);color:var(--tenue)}
-  .hora--ocupado:hover{background:transparent;border-color:var(--linea);border-left-color:var(--linea-f)}
-  .hora--ocupado b{text-decoration:line-through}
-  .hora--ocupado em{color:var(--tenue)}
-  .vacio{padding:18px;border:1px dashed var(--linea-f);border-radius:10px;font-size:14px;color:var(--cuerpo)}
-  .vacio .btn{margin-top:12px}
-  .elegido{display:grid;gap:2px;padding:12px 14px;border-left:5px solid var(--c);background:var(--t);border-radius:10px;margin-bottom:18px}
-  .elegido b{font-size:15px}
-  .elegido span{font-size:13px;color:var(--cuerpo)}
-  .elegido .enlace{justify-self:start;font-size:13px;margin-top:4px}
-  fieldset{border:0;margin:0 0 16px;min-width:0}
-  legend,.etq{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--dorado-txt);margin-bottom:8px}
-  .opciones{display:grid;gap:8px}
-  .opcion{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:11px 12px 11px 40px;border:1.5px solid var(--linea-f);border-radius:10px;cursor:pointer;min-height:52px}
-  .opcion:hover{border-color:var(--cafe)}
-  .opcion input{position:absolute;left:13px;top:50%;margin-top:-9px;width:18px;height:18px;accent-color:var(--teja)}
-  .opcion b{font-weight:600;font-size:14px;line-height:1.25}
-  .opcion small{grid-column:1;font-size:12px;color:var(--tenue);line-height:1.3}
-  .opcion i{grid-row:1/3;grid-column:2;font-style:normal;font-family:var(--serif);font-size:17px}
-  .opcion:has(input:checked){border-color:var(--naranja);background:#FFF1E6;box-shadow:inset 0 0 0 1px var(--naranja)}
-  .opcion:has(input:focus-visible){outline:3px solid var(--teja);outline-offset:2px}
-  .campos{display:grid;gap:12px}
-  .campo{display:flex;flex-direction:column;gap:5px}
-  .campo label{font-size:13px;font-weight:600}
-  .campo label small{font-weight:400;color:var(--tenue)}
-  .campo input,.campo textarea{width:100%;min-height:46px;padding:11px 13px;border:1.5px solid var(--linea-f);border-radius:10px;background:#fff;font-size:16px}
-  .campo textarea{min-height:76px;resize:vertical}
-  .campo input:focus,.campo textarea:focus{outline:none;border-color:var(--teja);box-shadow:0 0 0 3px rgba(168,74,23,.18)}
+  /* Barra inferior */
+  .bottombar{flex:none;display:flex;align-items:center;gap:var(--e-12);padding:var(--e-12) var(--e-16) calc(var(--e-12) + env(safe-area-inset-bottom));border-top:1px solid var(--linea);background:var(--fondo)}
+  .resumen{flex:1;min-width:0}
+  .resumen b{display:block;font-size:var(--t-m);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .resumen span{display:block;font-size:var(--t-xs);color:var(--texto-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cta{min-height:var(--toque);padding:0 var(--e-24);border:0;border-radius:var(--r-m);background:var(--acento);color:var(--tinta);font-weight:600;font-size:var(--t-m);display:inline-flex;align-items:center;justify-content:center;gap:var(--e-8);text-decoration:none}
+  .cta:active{transform:scale(.97)}
+  .cta[disabled]{background:var(--neutro);color:var(--texto-2);cursor:default;transform:none}
+  .cta--tinta{background:var(--tinta);color:var(--fondo)}
+  .cta--linea{background:transparent;box-shadow:inset 0 0 0 1px var(--linea)}
+
+  /* Bottom sheet */
+  dialog.sheet{border:0;padding:0;margin:auto auto 0;width:100%;max-width:440px;max-height:92dvh;background:transparent;overflow:visible}
+  dialog.sheet::backdrop{background:rgba(43,29,22,.45)}
+  .sheet-in{background:var(--fondo);border-radius:var(--r-l) var(--r-l) 0 0;box-shadow:var(--sombra);max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;padding:0 var(--e-16) calc(var(--e-16) + env(safe-area-inset-bottom));touch-action:pan-y}
+  .agarre{display:flex;justify-content:center;padding:var(--e-8) 0 var(--e-4);cursor:grab;touch-action:none}
+  .agarre span{width:40px;height:4px;border-radius:2px;background:rgba(43,29,22,.25)}
+  .sheet-cab{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--e-8);padding-bottom:var(--e-12);touch-action:none}
+  .sheet-cab h2{font-family:var(--serif);font-weight:400;font-size:var(--t-xl);line-height:1.1}
+  .sheet-cab p{font-size:var(--t-s);color:var(--texto-2);margin-top:var(--e-4)}
+  .campo{display:flex;flex-direction:column;gap:6px;margin-bottom:var(--e-12)}
+  .campo label{font-size:var(--t-s);font-weight:600}
+  .campo label small{font-weight:400;color:var(--texto-2)}
+  .campo input,.campo textarea{width:100%;min-height:var(--toque);padding:var(--e-12);border:1px solid rgba(43,29,22,.3);border-radius:var(--r-m);background:#fff;font-size:16px}
+  .campo textarea{min-height:72px;resize:none}
+  .campo input:focus,.campo textarea:focus{outline:none;border-color:var(--tinta);box-shadow:0 0 0 3px rgba(238,113,51,.35)}
   .campo [aria-invalid="true"]{border-color:#A11D1D}
-  .ayuda{font-size:12px;color:var(--tenue)}
-  .error{color:#A11D1D;font-size:13px;font-weight:500}
-  .error:empty{display:none}
-  .check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;margin-top:14px}
-  .check input{width:20px;height:20px;margin-top:1px;accent-color:var(--teja);flex:none}
-  .urgencia{margin-top:14px;padding:11px 13px;border-left:3px solid var(--naranja);background:var(--arena);border-radius:0 10px 10px 0;font-size:12.5px;color:var(--cuerpo)}
-  .urgencia a{font-weight:600;color:var(--cafe)}
-  .pie-vista{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--linea)}
-  .pie-vista .btn{flex:1}
-  .pie-vista .btn--linea{flex:0 0 auto}
-  .resumen{list-style:none;border:1px solid var(--linea);border-radius:12px;overflow:hidden}
-  .resumen li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:10px 14px;border-bottom:1px solid var(--linea);font-size:14px}
-  .resumen li:last-child{border-bottom:0}
-  .resumen span{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);padding-top:2px}
-  .resumen b{font-weight:500;overflow-wrap:anywhere}
-  .estado{margin-top:14px;padding:12px 14px;border-radius:10px;background:#FFF6EF;border:1px solid #F3C9AC;font-size:13.5px}
-  .folio{font-family:var(--serif);font-size:30px;color:var(--teja);margin:2px 0 10px}
-  .exito-acciones{display:grid;gap:8px;margin-top:16px}
-  .nota{font-size:12.5px;color:var(--tenue);margin-top:12px}
+  .error{font-size:var(--t-xs);color:#A11D1D;font-weight:500}
+  .legal{font-size:var(--t-xs);color:var(--texto-2);margin-bottom:var(--e-12)}
+  .legal a{font-weight:600}
+  .sheet .cta{width:100%}
+  .ok{text-align:center;padding:var(--e-8) 0 var(--e-4)}
+  .check{width:72px;height:72px;margin:var(--e-8) auto var(--e-12)}
+  .check circle{fill:var(--acento)}
+  .check path{fill:none;stroke:var(--tinta);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:0}
+  @media (prefers-reduced-motion:no-preference){
+    .ok:not([hidden]) .check circle{animation:pop .35s ease-out both}
+    .ok:not([hidden]) .check path{stroke-dashoffset:40;animation:trazo .45s .25s ease-out forwards}
+  }
+  @keyframes pop{from{transform:scale(.6);transform-origin:center;opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes trazo{to{stroke-dashoffset:0}}
+  .ok h2{font-family:var(--serif);font-weight:400;font-size:var(--t-xl)}
+  .ok .folio{font-size:var(--t-l);font-weight:600;letter-spacing:.04em;margin:var(--e-8) 0 var(--e-4);font-variant-numeric:tabular-nums}
+  .ok p{font-size:var(--t-s);color:var(--texto-2)}
+  .ok .acciones{display:grid;gap:var(--e-8);margin-top:var(--e-16)}
+  .ok .fila{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-8)}
 
-  /* Pie */
-  .pie{border-top:1px solid var(--linea);background:var(--marfil);padding:22px 0 28px;font-size:13px;color:var(--cuerpo)}
-  .pie .wrap{display:grid;gap:12px}
-  .pie-crisis{padding:12px 14px;background:var(--cafe);color:var(--marfil);border-radius:10px;line-height:1.8}
-  .pie-crisis a{font-weight:600;color:#F7C9A6}
-  .pie details summary{cursor:pointer;font-weight:600;width:max-content;max-width:100%}
-  .pie details p{margin-top:8px;max-width:90ch}
-  .pie-final{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;font-size:12px;color:var(--tenue)}
-
-  @media (max-width:1000px){
-    .agenda{grid-template-columns:1fr}
-    .panel{position:static}
+  /* Escritorio: la agenda como tarjeta de app */
+  @media (min-width:720px){
+    body{background:var(--neutro);display:flex;align-items:center;justify-content:center;padding:var(--e-24)}
+    .app{width:440px;height:min(860px,calc(100dvh - 48px));border-radius:var(--r-l);box-shadow:var(--sombra);overflow:hidden}
+    dialog.sheet{margin:auto}
+    .sheet-in{border-radius:var(--r-l)}
   }
-  @media (max-width:760px){
-    .celda{min-height:64px;padding:6px 4px;align-items:center;gap:5px}
-    .celda-top{justify-content:center}
-    .libres,.evs{display:none}
-    .puntos{display:flex;justify-content:center}
-    .num{font-size:17px}
-    .celda--hoy .num{margin:0;width:28px;height:28px;font-size:15px}
-    .mes-sem span{padding:8px 2px;text-align:center;letter-spacing:.06em}
-    .sin{display:none}
-    .barra-ctrl{flex-direction:column;flex-wrap:nowrap;align-items:stretch}
-    .mes-nav{justify-content:space-between}
-    .mes-nav h2{min-width:0;flex:1;font-size:20px}
-    .filtros{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none}
-    .filtros::-webkit-scrollbar{display:none}
-    .chip{flex:none}
-  }
-  @media (max-width:520px){
-    .volver img{width:48px}
-    .volver b{font-size:11px;letter-spacing:.08em}
-    .vista{padding:16px}
-    .resumen li{grid-template-columns:1fr;gap:1px}
-  }
-  @media (max-width:400px){
-    .volver span{display:none}
-  }
+  @media (max-width:359px){ .turnos{grid-template-columns:repeat(2,1fr)} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></symbol>
-</svg>
-<a class="saltar" href="#calendario">Saltar al calendario</a>
+<div class="app">
+  <header class="appbar">
+    <a class="icono-btn" href="../" aria-label="Volver al inicio"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="../iconos.svg#flecha"/></svg></a>
+    <h1>Agendar</h1>
+    <img src="../img/logo.png" alt="" width="560" height="208">
+  </header>
 
-<header class="barra">
-  <div class="wrap">
-    <a class="volver" href="../">
-      <img src="../img/logo.png" alt="" width="560" height="208">
-      <span><small>← Volver al perfil</small><b>Dr. Santiago Treviño</b></span>
-    </a>
-    <a class="btn btn--linea wa-barra" href="https://wa.me/522223572531?text=Hola%2C%20Dr.%20Trevi%C3%B1o.%20Tengo%20una%20duda%20antes%20de%20agendar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<span class="wa-num">&nbsp;222 357 2531</span></a>
-  </div>
-</header>
+  <main class="contenido" id="contenido">
+    <noscript><p>Para elegir horario necesitas JavaScript. También puedes agendar por <a href="https://wa.me/522223572531">WhatsApp</a> o al <a href="tel:+522223572531">222 357 2531</a>.</p></noscript>
+    <div class="seg" role="radiogroup" aria-label="Modalidad" id="seg"></div>
+    <div class="chips" role="radiogroup" aria-label="Tipo de consulta" id="chips"></div>
 
-<main class="wrap" id="contenido">
-  <div class="cabeza">
-    <div>
-      <h1>Agenda de citas</h1>
-      <p>Toca un día con horarios libres, elige la hora y envía tu solicitud por WhatsApp. El consultorio la confirma por el mismo medio.</p>
-    </div>
-  </div>
-
-  <div class="barra-ctrl">
-    <div class="filtros" role="group" aria-label="Filtrar por consultorio">
-      <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todos</button>
-      <button class="chip" type="button" data-filtro="cuicuilco" data-sede="cuicuilco" aria-pressed="false"><span class="punto" aria-hidden="true"></span>Cuicuilco · Tlalpan</button>
-      <button class="chip" type="button" data-filtro="soma" data-sede="soma" aria-pressed="false"><span class="punto" aria-hidden="true"></span>SOMA · Pedregal</button>
-      <button class="chip" type="button" data-filtro="video" data-sede="video" aria-pressed="false"><span class="punto" aria-hidden="true"></span>Videoconsulta</button>
-    </div>
-    <div class="mes-nav">
-      <button class="chip-hoy" type="button" id="ir-hoy">Hoy</button>
-      <button class="icono-btn" type="button" id="mes-ant" aria-label="Mes anterior">←</button>
-      <h2 id="mes-titulo" aria-live="polite"></h2>
-      <button class="icono-btn" type="button" id="mes-sig" aria-label="Mes siguiente">→</button>
-    </div>
-  </div>
-
-  <div class="agenda">
-    <section class="mes" id="calendario" aria-labelledby="mes-titulo">
-      <div class="mes-sem" aria-hidden="true"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
-      <div class="mes-grid" id="mes-grid"></div>
-      <div class="mes-pie">
-        <ul class="leyenda" aria-label="Consultorios">
-          <li data-sede="cuicuilco"><span class="punto" aria-hidden="true"></span>Cuicuilco</li>
-          <li data-sede="soma"><span class="punto" aria-hidden="true"></span>SOMA</li>
-          <li data-sede="video"><span class="punto" aria-hidden="true"></span>Video</li>
-        </ul>
-        <span>Horarios de muestra del demo · hora del centro de México · bloques de 50 min</span>
+    <section aria-label="Calendario">
+      <div class="cal-cab">
+        <button class="icono-btn" type="button" id="sem-ant" aria-label="Semana anterior"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="../iconos.svg#flecha"/></svg></button>
+        <button class="mes-btn" type="button" id="mes-btn" aria-expanded="false" aria-controls="mes"><span id="mes-txt"></span><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="icono-btn" type="button" id="sem-sig" aria-label="Semana siguiente"><svg class="ico" aria-hidden="true"><use href="../iconos.svg#flecha"/></svg></button>
+      </div>
+      <div class="semana" id="semana" aria-label="Semana; desliza para cambiar"></div>
+      <div class="mes" id="mes" hidden>
+        <div class="mes-cab">
+          <button class="icono-btn" type="button" id="mes-ant" aria-label="Mes anterior"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="../iconos.svg#flecha"/></svg></button>
+          <b id="mes-titulo"></b>
+          <button class="icono-btn" type="button" id="mes-sig" aria-label="Mes siguiente"><svg class="ico" aria-hidden="true"><use href="../iconos.svg#flecha"/></svg></button>
+        </div>
+        <div class="mes-grid" id="mes-grid"></div>
       </div>
     </section>
 
-    <aside class="panel" id="panel" aria-label="Tu cita">
-      <ol class="pasos" id="pasos">
-        <li data-paso="1">1 · Horario</li>
-        <li data-paso="2">2 · Tus datos</li>
-        <li data-paso="3">3 · Enviar</li>
-      </ol>
-      <p class="sr" id="anuncio" aria-live="polite"></p>
+    <section aria-labelledby="t-dia">
+      <div class="turnero-cab"><h2 id="t-dia" tabindex="-1"></h2><span id="t-libres" aria-live="polite"></span></div>
+      <ul class="turnos" id="turnos" aria-labelledby="t-dia"></ul>
+    </section>
 
-      <!-- 1 · Horarios del día -->
-      <div class="vista" data-vista="dia">
-        <h3 tabindex="-1" id="dia-titulo">Elige un día</h3>
-        <p class="sub" id="dia-sub">Los días con color tienen horarios libres.</p>
-        <ul class="horas" id="horas"></ul>
-      </div>
+    <p class="nota">Horarios de muestra del demo; el consultorio confirma. Hora de CDMX, 50 min. ¿Crisis? <a href="tel:8009112000">800 911 2000</a> · <a href="tel:911">911</a></p>
+  </main>
 
-      <!-- 2 · Servicio y datos -->
-      <div class="vista" data-vista="datos" hidden>
-        <h3 tabindex="-1">Tus datos</h3>
-        <p class="sub">Solo datos de contacto; nada clínico.</p>
-        <div class="elegido" id="elegido"></div>
-        <form id="form-datos" novalidate>
-          <fieldset>
-            <legend>Tipo de consulta</legend>
-            <div class="opciones" id="servicios"></div>
-            <p class="error" id="e-servicio" role="alert"></p>
-          </fieldset>
-          <div class="campos">
-            <div class="campo">
-              <label for="f-nombre">Nombre completo</label>
-              <input id="f-nombre" name="nombre" autocomplete="name" required minlength="3" maxlength="80" aria-describedby="e-nombre">
-              <span class="error" id="e-nombre"></span>
-            </div>
-            <div class="campo">
-              <label for="f-tel">Teléfono (WhatsApp)</label>
-              <input id="f-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="55 1234 5678" aria-describedby="a-tel e-tel">
-              <span class="ayuda" id="a-tel">10 dígitos.</span>
-              <span class="error" id="e-tel"></span>
-            </div>
-            <div class="campo">
-              <label for="f-correo">Correo electrónico</label>
-              <input id="f-correo" name="correo" type="email" autocomplete="email" required placeholder="tu@correo.com" aria-describedby="e-correo">
-              <span class="error" id="e-correo"></span>
-            </div>
-            <div class="campo">
-              <label for="f-motivo">Motivo breve <small>(opcional)</small></label>
-              <textarea id="f-motivo" name="motivo" maxlength="160" aria-describedby="a-motivo"></textarea>
-              <span class="ayuda" id="a-motivo">Una frase basta, por ejemplo «primera consulta por ansiedad».</span>
-            </div>
-          </div>
-          <label class="check"><input type="checkbox" id="f-aviso" required aria-describedby="e-aviso"><span>Leí el <a class="enlace" href="#privacidad" data-abrir-privacidad>aviso de privacidad</a> y acepto que mis datos se usen para solicitar esta cita.</span></label>
-          <span class="error" id="e-aviso"></span>
-          <p class="urgencia"><b>Esta agenda no es para urgencias.</b> En crisis llama a la Línea de la Vida <a href="tel:8009112000">800 911 2000</a> (24 h) o a SAPTEL <a href="tel:+525552598121">55 5259 8121</a>; en emergencia, al <a href="tel:911">911</a>.</p>
-          <div class="pie-vista">
-            <button class="btn btn--linea" type="button" data-volver="dia">Atrás</button>
-            <button class="btn" type="submit">Revisar solicitud</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- 3 · Revisar y enviar -->
-      <div class="vista" data-vista="enviar" hidden>
-        <h3 tabindex="-1">Revisa y envía</h3>
-        <p class="sub">Se abre WhatsApp con el mensaje listo.</p>
-        <ul class="resumen" id="resumen"></ul>
-        <p class="estado">Al enviar, la cita queda <b>solicitada</b>. El consultorio la confirma por WhatsApp.</p>
-        <p class="error" id="e-enviar" role="alert"></p>
-        <div class="pie-vista">
-          <button class="btn btn--linea" type="button" data-volver="datos">Atrás</button>
-          <a class="btn" id="btn-enviar" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- Listo -->
-      <div class="vista" data-vista="listo" hidden>
-        <h3 tabindex="-1">Solicitud lista</h3>
-        <p class="sub">Folio de tu solicitud:</p>
-        <p class="folio" id="exito-folio"></p>
-        <p id="exito-txt"></p>
-        <p class="estado">Tu cita está <b>solicitada, no confirmada</b>. Si WhatsApp no se abrió, usa el primer botón.</p>
-        <div class="exito-acciones">
-          <a class="btn" id="exito-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Abrir WhatsApp con la solicitud</a>
-          <a class="btn btn--linea" id="exito-mail" href="#">Enviar por correo</a>
-          <a class="btn btn--linea" id="exito-ics" href="#" download>Añadir a mi calendario (.ics)</a>
-          <button class="btn btn--linea" type="button" id="otra-cita">Agendar otra cita</button>
-        </div>
-        <p class="nota">Este demo guarda tu solicitud solo en este navegador: el horario aparece como ocupado en la agenda.</p>
-      </div>
-    </aside>
+  <div class="bottombar">
+    <div class="resumen" aria-live="polite"><b id="bb-1">Elige una hora</b><span id="bb-2"></span></div>
+    <button class="cta" type="button" id="apartar" disabled>Apartar</button>
   </div>
-</main>
+</div>
 
-<footer class="pie">
-  <div class="wrap">
-    <p class="pie-crisis"><b>¿En crisis ahora?</b> Línea de la Vida <a href="tel:8009112000">800 911 2000</a> · SAPTEL <a href="tel:+525552598121">55 5259 8121</a> · Emergencias <a href="tel:911">911</a></p>
-    <details id="privacidad">
-      <summary>Aviso de privacidad (versión breve)</summary>
-      <p>Los datos que escribes (nombre, teléfono, correo y, si quieres, un motivo breve) se usan únicamente para armar tu solicitud de cita. Este sitio no los envía a ningún servidor: se guardan solo en tu navegador y salen únicamente cuando tú envías el mensaje por WhatsApp o por correo al consultorio. No pedimos ni guardamos información clínica. Para cualquier aclaración, escribe a psiqtrevsan@gmail.com.</p>
-    </details>
-    <div class="pie-final">
-      <span>Muestra de Pulse LAT · <a href="https://pulselat.online">pulselat.online</a></span>
-      <span>Sitio de demostración · los horarios son de muestra</span>
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-t">
+  <div class="sheet-in" id="sheet-in">
+    <div class="agarre" id="agarre" aria-hidden="true"><span></span></div>
+    <div id="paso-form">
+      <div class="sheet-cab" id="sheet-cab">
+        <div><h2 id="sheet-t">Tus datos</h2><p id="sheet-resumen"></p></div>
+        <button class="icono-btn" type="button" data-cerrar aria-label="Cerrar"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <form id="form" novalidate>
+        <div class="campo"><label for="f-nombre">Nombre</label><input id="f-nombre" autocomplete="name" required maxlength="80" aria-describedby="e-nombre"><span class="error" id="e-nombre"></span></div>
+        <div class="campo"><label for="f-tel">Teléfono</label><input id="f-tel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="10 dígitos" aria-describedby="e-tel"><span class="error" id="e-tel"></span></div>
+        <div class="campo"><label for="f-correo">Correo <small>opcional</small></label><input id="f-correo" type="email" inputmode="email" autocomplete="email" aria-describedby="e-correo"><span class="error" id="e-correo"></span></div>
+        <div class="campo"><label for="f-motivo">Motivo <small>opcional, sin detalles clínicos</small></label><textarea id="f-motivo" maxlength="140"></textarea></div>
+        <p class="legal">Al enviar aceptas el <a href="../#privacidad">aviso de privacidad</a>. No es para urgencias: <a href="tel:8009112000">800 911 2000</a>.</p>
+        <button class="cta" type="submit">Solicitar cita</button>
+      </form>
+    </div>
+    <div class="ok" id="paso-ok" hidden>
+      <svg class="check" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34"/><path d="M23 37l9 9 17-19"/></svg>
+      <h2 id="ok-t" tabindex="-1">Cita solicitada</h2>
+      <p class="folio" id="ok-folio"></p>
+      <p id="ok-txt"></p>
+      <div class="acciones">
+        <a class="cta" id="ok-wa" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="../iconos.svg#wa"/></svg>Enviar por WhatsApp</a>
+        <div class="fila">
+          <a class="cta cta--linea" id="ok-ics" href="#" download><svg class="ico" aria-hidden="true"><use href="../iconos.svg#calendario"/></svg>.ics</a>
+          <a class="cta cta--linea" id="ok-mail" href="#"><svg class="ico" aria-hidden="true"><use href="../iconos.svg#correo"/></svg>Correo</a>
+        </div>
+        <button class="cta cta--linea" type="button" data-cerrar>Listo</button>
+      </div>
     </div>
   </div>
-</footer>
+</dialog>
 
 <script src="../agenda.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script>
 (function () {
   'use strict';
   var A = window.Agenda, C = A.CONFIG, S = A.SERVICIOS;
-  var $ = function (s, r) { return (r || document).querySelector(s); };
-  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var esc = function (t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; };
+  var $ = function (s) { return document.querySelector(s); };
+  var reducir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = function () { return !reducir && window.gsap ? window.gsap : null; };
+  var DS = ['D','L','M','M','J','V','S'];
+  var ICO = { cuicuilco: 'puerta', soma: 'puerta', video: 'video' };
+  function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
+  function lunes(f) { var d = A.diaSemana(f); return A.sumarDias(f, d === 0 ? -6 : 1 - d); }
+  function libres(f, sede) { return f < A.hoy() ? 0 : A.slotsDia(f, [sede]).filter(function (s) { return s.estado === 'libre'; }).length; }
+  function precio(n) { return '$' + n.toLocaleString('es-MX'); }
 
-  var HOY = A.hoy();
-  var MES_MIN = HOY.slice(0, 7), MES_MAX = A.sumarDias(HOY, C.diasHorizonte).slice(0, 7);
-  var st = { filtro: 'todas', mes: MES_MIN, dia: null, slot: null, servicio: null, datos: null, folio: null, vista: 'dia' };
+  var st = { sede: 'cuicuilco', serv: 'primera', fecha: null, hora: null, semana: lunes(A.hoy()), mes: A.hoy().slice(0, 7) };
+  var MAX = A.sumarDias(A.hoy(), C.diasHorizonte);
 
-  function sedesFiltro() { return st.filtro === 'todas' ? A.TODAS : [st.filtro]; }
-  function libresDia(f) { return f < HOY ? [] : A.slotsDia(f, sedesFiltro()).filter(function (s) { return s.estado === 'libre'; }); }
-  function primerDiaLibre(desde) {
-    var fin = A.sumarDias(HOY, C.diasHorizonte);
-    for (var f = desde < HOY ? HOY : desde; f <= fin; f = A.sumarDias(f, 1)) if (libresDia(f).length) return f;
-    return null;
-  }
+  function primerLibre() { for (var i = 0; i <= C.diasHorizonte; i++) { var f = A.sumarDias(A.hoy(), i); if (libres(f, st.sede)) return f; } return null; }
+  function servicios() { var m = C.sedes[st.sede].modalidad; return Object.keys(S).filter(function (k) { return S[k].modalidad === m; }); }
 
-  /* ---------- Calendario mensual ---------- */
-  function pintarMes() {
-    var primero = st.mes + '-01';
-    $('#mes-titulo').textContent = A.fecha(primero, 'mes');
-    $('#mes-ant').disabled = st.mes <= MES_MIN;
-    $('#mes-sig').disabled = st.mes >= MES_MAX;
-    var html = '', lead = (A.diaSemana(primero) + 6) % 7;
-    for (var k = 0; k < lead; k++) html += '<div class="celda celda--fuera" aria-hidden="true"></div>';
-    var n = 0, f;
-    for (f = primero; f.slice(0, 7) === st.mes; f = A.sumarDias(f, 1)) {
-      n++;
-      var pasado = f < HOY, lejos = !pasado && f > A.sumarDias(HOY, C.diasHorizonte);
-      var libres = (pasado || lejos) ? [] : libresDia(f);
-      var cls = 'celda' + (f === HOY ? ' celda--hoy' : '') + (pasado ? ' celda--pasado' : '') + (lejos ? ' celda--fuera' : '');
-      var top = '<span class="celda-top"><span class="num">' + Number(f.slice(8)) + '</span>' + (libres.length ? '<span class="libres">' + libres.length + ' libre' + (libres.length === 1 ? '' : 's') + '</span>' : '') + '</span>';
-      if (!libres.length) {
-        var lleno = !pasado && !lejos && A.slotsDia(f, sedesFiltro()).some(function (s) { return s.estado === 'ocupado'; });
-        html += '<div class="' + cls + '">' + top + (lleno ? '<span class="sin">Lleno</span>' : '') + '</div>';
-        continue;
-      }
-      var evs = libres.slice(0, 3).map(function (s) {
-        return '<li class="ev" data-sede="' + s.sede + '"><b>' + s.hora + '</b> ' + C.sedes[s.sede].corto + '</li>';
-      }).join('');
-      if (libres.length > 3) evs += '<li class="ev-mas">+' + (libres.length - 3) + ' más</li>';
-      var sedesDia = libres.map(function (s) { return s.sede; }).filter(function (v, i, a) { return a.indexOf(v) === i; });
-      var puntos = sedesDia.map(function (s) { return '<i data-sede="' + s + '"></i>'; }).join('');
-      var et = A.fecha(f) + ': ' + libres.length + (libres.length === 1 ? ' horario libre' : ' horarios libres');
-      html += '<button type="button" class="' + cls + '" data-dia="' + f + '" aria-pressed="' + (st.dia === f) + '" aria-label="' + et + '">' + top + '<ul class="evs" aria-hidden="true">' + evs + '</ul><span class="puntos" aria-hidden="true">' + puntos + '</span></button>';
+  /* Preselección desde la landing: ?d=AAAA-MM-DD&h=HH:MM&s=sede */
+  (function () {
+    var q = new URLSearchParams(location.search), d = q.get('d'), h = q.get('h'), s = q.get('s');
+    if (s && C.sedes[s]) st.sede = s;
+    if (d && /^\d{4}-\d{2}-\d{2}$/.test(d)) {
+      st.fecha = d;
+      if (h && A.estadoSlot(d, h, st.sede) === 'libre') st.hora = h;
     }
-    var cola = (7 - (lead + n) % 7) % 7;
-    for (k = 0; k < cola; k++) html += '<div class="celda celda--fuera" aria-hidden="true"></div>';
+  })();
+  if (!st.fecha || !libres(st.fecha, st.sede)) { st.fecha = primerLibre(); st.hora = null; }
+  if (st.fecha) { st.semana = lunes(st.fecha); st.mes = st.fecha.slice(0, 7); }
+  if (servicios().indexOf(st.serv) < 0) st.serv = servicios()[0];
+
+  /* Modalidad y servicio (radiogroups con flechas) */
+  function pintarSeg() {
+    $('#seg').innerHTML = Object.keys(C.sedes).map(function (k) {
+      var on = k === st.sede;
+      return '<button type="button" role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-v="' + k + '"><svg class="ico" aria-hidden="true"><use href="../iconos.svg#' + ICO[k] + '"/></svg>' + C.sedes[k].corto + '</button>';
+    }).join('');
+  }
+  function pintarChips() {
+    var ids = servicios(); if (ids.indexOf(st.serv) < 0) st.serv = ids[0];
+    $('#chips').innerHTML = ids.map(function (k) {
+      var on = k === st.serv;
+      return '<button type="button" class="chip" role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-v="' + k + '">' + S[k].corto + ' <span>' + precio(S[k].precio) + '</span></button>';
+    }).join('');
+  }
+  function radio(el, fn) {
+    el.addEventListener('click', function (e) { var b = e.target.closest('[data-v]'); if (b) { fn(b.getAttribute('data-v')); pop(el.querySelector('[data-v="' + b.getAttribute('data-v') + '"]')); } });
+    el.addEventListener('keydown', function (e) {
+      var k = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!k) return;
+      e.preventDefault();
+      var bs = Array.prototype.slice.call(el.querySelectorAll('[data-v]')), i = bs.indexOf(document.activeElement); if (i < 0) return;
+      var v = bs[(i + k + bs.length) % bs.length].getAttribute('data-v'); fn(v); el.querySelector('[data-v="' + v + '"]').focus();
+    });
+  }
+  radio($('#seg'), function (v) {
+    if (v === st.sede) return;
+    st.sede = v; st.hora = null;
+    if (!st.fecha || !libres(st.fecha, v)) { st.fecha = primerLibre(); if (st.fecha) { st.semana = lunes(st.fecha); st.mes = st.fecha.slice(0, 7); } }
+    pintarSeg(); pintarChips(); pintarCal(); pintarTurnos(0); pintarBarra();
+  });
+  radio($('#chips'), function (v) { st.serv = v; pintarChips(); pintarBarra(); });
+
+  /* Semana y mes */
+  function celda(f, conDs) {
+    var n = libres(f, st.sede), sel = f === st.fecha, hoy = f === A.hoy();
+    var et = A.fecha(f) + (hoy ? ', hoy' : '') + (n ? ', ' + n + (n === 1 ? ' horario libre' : ' horarios libres') : ', sin horarios');
+    return '<button type="button" class="dia' + (hoy ? ' hoy' : '') + '" data-dia="' + f + '"' + (n ? '' : ' disabled') + ' aria-pressed="' + sel + '" aria-label="' + et + '">' +
+      (conDs ? '<span class="ds" aria-hidden="true">' + DS[A.diaSemana(f)] + '</span>' : '') + '<b>' + Number(f.slice(8)) + '</b><i class="' + (n ? '' : 'vacio') + '" aria-hidden="true"></i></button>';
+  }
+  function pintarCal() {
+    var h = A.hoy(), html = '';
+    for (var i = 0; i < 7; i++) html += celda(A.sumarDias(st.semana, i), true);
+    $('#semana').innerHTML = html;
+    var ref = st.fecha && st.fecha >= st.semana && st.fecha <= A.sumarDias(st.semana, 6) ? st.fecha : A.sumarDias(st.semana, 3);
+    $('#mes-txt').textContent = cap(A.fecha(ref, 'mes'));
+    $('#sem-ant').disabled = st.semana <= lunes(h);
+    $('#sem-sig').disabled = st.semana >= lunes(MAX);
+    if (!$('#mes').hidden) pintarMes();
+  }
+  function pintarMes() {
+    var h = A.hoy(), primero = st.mes + '-01';
+    $('#mes-titulo').textContent = cap(A.fecha(primero, 'mes'));
+    $('#mes-ant').disabled = st.mes <= h.slice(0, 7);
+    $('#mes-sig').disabled = st.mes >= MAX.slice(0, 7);
+    var html = ['L','M','M','J','V','S','D'].map(function (d) { return '<span class="ds" aria-hidden="true">' + d + '</span>'; }).join('');
+    for (var k = 0, lead = (A.diaSemana(primero) + 6) % 7; k < lead; k++) html += '<span aria-hidden="true"></span>';
+    for (var f = primero; f.slice(0, 7) === st.mes; f = A.sumarDias(f, 1)) html += celda(f, false);
     $('#mes-grid').innerHTML = html;
   }
-
-  $('#mes-grid').addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-dia]'); if (!b) return;
-    st.dia = b.getAttribute('data-dia');
-    pintarMes(); irVista('dia', true);
-    var foco = $('#mes-grid [data-dia="' + st.dia + '"]');
-    if (foco && window.innerWidth > 1000) foco.focus();
+  function cambiarSemana(dir) {
+    var nueva = A.sumarDias(st.semana, 7 * dir);
+    if (nueva < lunes(A.hoy()) || nueva > lunes(MAX)) return;
+    st.semana = nueva; pintarCal();
+    var g = G(); if (g) g.from('#semana', { x: 24 * dir, opacity: 0, duration: .28, ease: 'power2.out' });
+  }
+  function elegirDia(f, desdeMes) {
+    var dir = st.fecha && f < st.fecha ? -1 : 1;
+    if (f !== st.fecha) st.hora = null;
+    st.fecha = f; st.semana = lunes(f); st.mes = f.slice(0, 7);
+    if (desdeMes) { $('#mes').hidden = true; $('#mes-btn').setAttribute('aria-expanded', 'false'); }
+    pintarCal(); pintarTurnos(dir); pintarBarra();
+    var b = $('#semana [data-dia="' + f + '"]'); if (b) b.focus();
+  }
+  $('#semana').addEventListener('click', function (e) { var b = e.target.closest('.dia'); if (b && !b.disabled) elegirDia(b.getAttribute('data-dia'), false); });
+  $('#mes-grid').addEventListener('click', function (e) { var b = e.target.closest('.dia'); if (b && !b.disabled) elegirDia(b.getAttribute('data-dia'), true); });
+  $('#sem-ant').addEventListener('click', function () { cambiarSemana(-1); });
+  $('#sem-sig').addEventListener('click', function () { cambiarSemana(1); });
+  $('#mes-btn').addEventListener('click', function () {
+    var abrir = $('#mes').hidden; $('#mes').hidden = !abrir; this.setAttribute('aria-expanded', String(abrir));
+    if (abrir) { pintarMes(); var g = G(); if (g) g.from('#mes', { height: 0, opacity: 0, duration: .3, ease: 'power2.out', clearProps: 'height' }); }
   });
   $('#mes-ant').addEventListener('click', function () { st.mes = A.sumarDias(st.mes + '-01', -1).slice(0, 7); pintarMes(); });
   $('#mes-sig').addEventListener('click', function () { st.mes = A.sumarDias(st.mes + '-28', 7).slice(0, 7); pintarMes(); });
-  $('#ir-hoy').addEventListener('click', function () { st.mes = MES_MIN; pintarMes(); });
-
-  function aplicarFiltro(v) {
-    st.filtro = v;
-    $$('[data-filtro]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-filtro') === v)); });
-  }
-  $$('[data-filtro]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      aplicarFiltro(b.getAttribute('data-filtro'));
-      if (!st.dia || !libresDia(st.dia).length) {
-        st.dia = primerDiaLibre(st.dia || HOY);
-        if (st.dia) st.mes = st.dia.slice(0, 7);
-      }
-      pintarMes();
-      if (st.vista === 'dia') pintarDia();
+  /* Gesto: deslizar la semana */
+  (function () {
+    var x0 = null, y0 = 0, el = $('#semana');
+    el.addEventListener('pointerdown', function (e) { x0 = e.clientX; y0 = e.clientY; });
+    el.addEventListener('pointerup', function (e) {
+      if (x0 === null) return; var dx = e.clientX - x0, dy = e.clientY - y0; x0 = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) cambiarSemana(dx < 0 ? 1 : -1);
     });
+    el.addEventListener('pointercancel', function () { x0 = null; });
+  })();
+
+  /* Turnero (con esqueleto breve al cambiar de día) */
+  var ETQ = { libre: 'libre', ocupado: 'ocupado', no: 'no disp.' };
+  var tEsq = null;
+  function pintarTurnos(dir) {
+    var ul = $('#turnos');
+    if (!st.fecha) { $('#t-dia').textContent = 'Sin horarios'; $('#t-libres').textContent = ''; ul.innerHTML = '<li class="vacio-txt">No hay horarios libres en las próximas semanas para esta modalidad.</li>'; return; }
+    $('#t-dia').textContent = cap(A.fecha(st.fecha));
+    var real = function () {
+      var slots = A.slotsDia(st.fecha, [st.sede]), n = 0;
+      ul.innerHTML = slots.map(function (s) {
+        var et = s.hora + ', ' + ETQ[s.estado];
+        if (s.estado === 'libre') {
+          n++; var sel = s.hora === st.hora;
+          return '<li><button type="button" class="turno ' + (sel ? 'turno--elegido' : 'turno--libre') + '" data-hora="' + s.hora + '" aria-pressed="' + sel + '" aria-label="' + et + (sel ? ', elegido' : '') + '"><b>' + s.hora + '</b><small>' + (sel ? 'elegido' : 'libre') + '</small></button></li>';
+        }
+        return '<li><span class="turno turno--' + s.estado + '" role="img" aria-label="' + et + '"><b>' + s.hora + '</b><small>' + ETQ[s.estado] + '</small></span></li>';
+      }).join('');
+      $('#t-libres').textContent = n + (n === 1 ? ' libre' : ' libres');
+      var g = G(); if (g && dir) g.from(ul, { x: 20 * dir, opacity: 0, duration: .26, ease: 'power2.out' });
+    };
+    clearTimeout(tEsq);
+    if (dir && !reducir) {
+      ul.innerHTML = '<li class="esqueleto"></li><li class="esqueleto"></li><li class="esqueleto"></li>';
+      tEsq = setTimeout(real, 160);
+    } else real();
+  }
+  function pop(el) { var g = G(); if (g && el) g.fromTo(el, { scale: .92 }, { scale: 1, duration: .35, ease: 'back.out(3)' }); }
+  $('#turnos').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-hora]'); if (!b) return;
+    var h = b.getAttribute('data-hora'); st.hora = st.hora === h ? null : h;
+    pintarTurnos(0); pintarBarra();
+    var nb = $('#turnos [data-hora="' + h + '"]'); if (nb) { nb.focus(); pop(nb); }
   });
 
-  /* ---------- Panel ---------- */
-  var ORDEN = { dia: 1, datos: 2, enviar: 3, listo: 4 };
-  var NOMBRE = { dia: 'Elige horario', datos: 'Tus datos', enviar: 'Revisa y envía', listo: 'Solicitud lista' };
-  function irVista(v, desplazar) {
-    st.vista = v;
-    $$('[data-vista]').forEach(function (p) { p.hidden = p.getAttribute('data-vista') !== v; });
-    $$('#pasos li').forEach(function (li) {
-      var k = Number(li.getAttribute('data-paso'));
-      li.classList.toggle('hecho', k < ORDEN[v]);
-      if (k === ORDEN[v]) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+  /* Barra inferior */
+  function pintarBarra() {
+    var ok = !!(st.fecha && st.hora), s = S[st.serv];
+    $('#apartar').disabled = !ok;
+    var dia = st.fecha ? cap(A.fecha(st.fecha, 'corto').replace(/\./g, '')) : '';
+    $('#bb-1').textContent = ok ? dia + ' · ' + st.hora : 'Elige una hora';
+    $('#bb-2').textContent = C.sedes[st.sede].corto + ' · ' + s.corto + ' · ' + precio(s.precio);
+  }
+
+  /* Hoja inferior */
+  var sheet = $('#sheet'), sheetIn = $('#sheet-in');
+  function abrir() {
+    if (!(st.fecha && st.hora) || A.estadoSlot(st.fecha, st.hora, st.sede) !== 'libre') { st.hora = null; pintarTurnos(0); pintarBarra(); return; }
+    $('#paso-form').hidden = false; $('#paso-ok').hidden = true;
+    $('#sheet-resumen').textContent = cap(A.fecha(st.fecha)) + ', ' + st.hora + ' h · ' + C.sedes[st.sede].nombre + ' · ' + S[st.serv].nombre + ' · ' + precio(S[st.serv].precio) + ' MXN';
+    sheet.showModal(); document.body.classList.add('bloqueado');
+    var g = G(); if (g) g.fromTo(sheetIn, { yPercent: 100 }, { yPercent: 0, duration: .5, ease: 'back.out(1.1)' });
+    $('#f-nombre').focus();
+  }
+  function cerrar() {
+    if (!sheet.open) return;
+    var g = G();
+    if (g) g.to(sheetIn, { yPercent: 100, duration: .22, ease: 'power2.in', onComplete: function () { g.set(sheetIn, { clearProps: 'transform' }); sheet.close(); } });
+    else sheet.close();
+  }
+  sheet.addEventListener('cancel', function (e) { e.preventDefault(); cerrar(); });
+  sheet.addEventListener('close', function () { pintarCal(); pintarTurnos(0); pintarBarra(); ($('#apartar').disabled ? $('#t-dia') : $('#apartar')).focus(); });
+  sheet.addEventListener('click', function (e) { if (e.target === sheet) cerrar(); });
+  document.querySelectorAll('[data-cerrar]').forEach(function (b) { b.addEventListener('click', cerrar); });
+  $('#apartar').addEventListener('click', abrir);
+  /* Arrastrar hacia abajo para cerrar */
+  (function () {
+    var y0 = null, dy = 0;
+    function ini(e) { y0 = e.clientY; dy = 0; sheetIn.style.transition = 'none'; e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId); }
+    function mov(e) { if (y0 === null) return; dy = Math.max(0, e.clientY - y0); sheetIn.style.transform = 'translateY(' + dy + 'px)'; }
+    function fin() {
+      if (y0 === null) return; y0 = null; sheetIn.style.transition = '';
+      if (dy > 90) { sheetIn.style.transform = ''; sheet.close(); } else sheetIn.style.transform = '';
+    }
+    ['#agarre', '#sheet-cab'].forEach(function (s) {
+      var el = $(s); el.addEventListener('pointerdown', function (e) { if (e.target.closest('button')) return; ini(e); });
+      el.addEventListener('pointermove', mov); el.addEventListener('pointerup', fin); el.addEventListener('pointercancel', fin);
     });
-    if (v === 'dia') pintarDia();
-    if (v === 'datos') pintarDatos();
-    if (v === 'enviar') pintarResumen();
-    $('#anuncio').textContent = NOMBRE[v];
-    if (desplazar && window.innerWidth <= 1000) {
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      $('#panel').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-    }
-    var h = $('[data-vista="' + v + '"] h3');
-    if (desplazar && h) h.focus({ preventScroll: true });
-  }
-
-  function pintarDia() {
-    var ul = $('#horas');
-    if (!st.dia) {
-      $('#dia-titulo').textContent = 'Sin horarios libres';
-      $('#dia-sub').textContent = 'No hay horarios libres con este filtro en las próximas 8 semanas.';
-      ul.innerHTML = '<li class="vacio">Escribe por WhatsApp y el consultorio te propone una fecha.<br><a class="btn btn--linea" href="' + A.urlWa('Hola, Dr. Treviño. No encontré horario en la agenda, ¿me puede proponer una fecha?') + '" target="_blank" rel="noopener">Escribir por WhatsApp</a></li>';
-      return;
-    }
-    var slots = A.slotsDia(st.dia, sedesFiltro());
-    var libres = slots.filter(function (s) { return s.estado === 'libre'; }).length;
-    $('#dia-titulo').textContent = A.fecha(st.dia);
-    $('#dia-sub').textContent = libres ? libres + (libres === 1 ? ' horario libre' : ' horarios libres') + ' · toca uno para seguir' : 'Este día ya no tiene horarios libres.';
-    ul.innerHTML = slots.map(function (s) {
-      var sede = C.sedes[s.sede];
-      var txt = '<b>' + s.hora + '</b><span>' + sede.nombre + '<small>' + (sede.modalidad === 'video' ? 'En línea' : 'Presencial · ' + sede.zona) + '</small></span>';
-      if (s.estado === 'libre') {
-        return '<li><button type="button" class="hora" data-sede="' + s.sede + '" data-hora="' + s.hora + '" aria-label="' + s.hora + ' h, ' + sede.nombre + ', libre. Elegir">' + txt + '<em>Elegir</em></button></li>';
-      }
-      return '<li><div class="hora hora--ocupado" data-sede="' + s.sede + '" role="img" aria-label="' + s.hora + ' h, ' + sede.nombre + ', ocupado">' + txt + '<em>Ocupado</em></div></li>';
-    }).join('');
-  }
-  $('#horas').addEventListener('click', function (e) {
-    var b = e.target.closest('button.hora'); if (!b) return;
-    elegirSlot({ fecha: st.dia, hora: b.getAttribute('data-hora'), sede: b.getAttribute('data-sede') });
-  });
-
-  function elegirSlot(s) {
-    var mod = C.sedes[s.sede].modalidad;
-    if (st.servicio && S[st.servicio].modalidad !== mod) st.servicio = null;
-    st.slot = s;
-    irVista('datos', true);
-  }
-
-  function pintarDatos() {
-    var s = st.slot, sede = C.sedes[s.sede], mod = sede.modalidad;
-    var el = $('#elegido');
-    el.setAttribute('data-sede', s.sede);
-    el.innerHTML = '<b>' + esc(A.fecha(s.fecha)) + ' · ' + s.hora + ' h</b><span>' + esc(sede.nombre) + ' · ' + esc(sede.direccion) + '</span><button type="button" class="enlace" data-volver="dia">Cambiar horario</button>';
-    var ids = Object.keys(S).filter(function (k) { return S[k].modalidad === mod; });
-    if (ids.length && !st.servicio && ids.length === 1) st.servicio = ids[0];
-    $('#servicios').innerHTML = ids.map(function (k) {
-      return '<label class="opcion"><input type="radio" name="servicio" value="' + k + '"' + (st.servicio === k ? ' checked' : '') + '><b>' + esc(S[k].corto) + '</b><small>' + esc(S[k].nota) + '</small><i>' + A.dinero(S[k].precio).replace(' MXN', '') + '</i></label>';
-    }).join('');
-  }
-  $('#servicios').addEventListener('change', function (e) { if (e.target.name === 'servicio') { st.servicio = e.target.value; $('#e-servicio').textContent = ''; } });
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-volver]'); if (!b) return;
-    irVista(b.getAttribute('data-volver'), true);
-  });
+  })();
 
   function validar() {
     var ok = true, primero = null;
-    function marca(input, err, msg) {
-      $(err).textContent = msg || '';
-      if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
-      if (msg) { ok = false; if (!primero) primero = input || $('#servicios input'); }
-    }
-    marca(null, '#e-servicio', st.servicio ? '' : 'Elige el tipo de consulta.');
-    var n = $('#f-nombre'), t = $('#f-tel'), c = $('#f-correo'), a = $('#f-aviso');
-    var nombre = n.value.trim().replace(/\s+/g, ' ');
-    var dig = t.value.replace(/\D/g, '');
+    function m(el, err, msg) { $(err).textContent = msg || ''; el.setAttribute('aria-invalid', msg ? 'true' : 'false'); if (msg && !primero) { primero = el; ok = false; } }
+    var n = $('#f-nombre'), t = $('#f-tel'), c = $('#f-correo');
+    var nombre = n.value.trim().replace(/\s+/g, ' '), dig = t.value.replace(/\D/g, '');
     if (dig.length === 12 && dig.slice(0, 2) === '52') dig = dig.slice(2);
-    marca(n, '#e-nombre', nombre.length < 3 ? 'Escribe tu nombre (mínimo 3 letras).' : '');
-    marca(t, '#e-tel', dig.length !== 10 ? 'Escribe un teléfono de 10 dígitos.' : '');
-    marca(c, '#e-correo', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.value.trim()) ? 'Escribe un correo válido.' : '');
-    marca(a, '#e-aviso', !a.checked ? 'Necesitas aceptar el aviso de privacidad para continuar.' : '');
-    if (!ok) { if (primero) primero.focus(); return null; }
+    m(n, '#e-nombre', nombre.length < 3 ? 'Escribe tu nombre.' : '');
+    m(t, '#e-tel', dig.length !== 10 ? 'Teléfono de 10 dígitos.' : '');
+    m(c, '#e-correo', c.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.value.trim()) ? 'Revisa el correo.' : '');
+    if (!ok) { primero.focus(); return null; }
     return { nombre: nombre, telefono: dig.replace(/(\d{2})(\d{4})(\d{4})/, '$1 $2 $3'), correo: c.value.trim(), motivo: $('#f-motivo').value.trim().replace(/\s+/g, ' ') };
   }
-  $('#form-datos').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var d = validar(); if (!d) return;
-    st.datos = d; st.folio = nuevoFolio();
-    irVista('enviar', true);
-  });
-
-  function nuevoFolio() {
-    var abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = '', buf = new Uint32Array(4);
-    if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(buf); else for (var i = 0; i < 4; i++) buf[i] = A.hash(Date.now() + ':' + i);
-    for (var j = 0; j < 4; j++) s += abc[buf[j] % abc.length];
-    return 'ST-' + st.slot.fecha.slice(2).replace(/-/g, '') + '-' + s;
+  function folio() {
+    var abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = '', b = new Uint32Array(4);
+    if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(b); else for (var i = 0; i < 4; i++) b[i] = A.hash(Date.now() + ':' + i);
+    for (var j = 0; j < 4; j++) s += abc[b[j] % abc.length];
+    return 'ST-' + st.fecha.slice(2).replace(/-/g, '') + '-' + s;
   }
-  function modalidadTxt() { var sede = C.sedes[st.slot.sede]; return sede.modalidad === 'video' ? 'Videoconsulta' : 'Presencial · ' + sede.nombre; }
-  function lineasMensaje() {
-    var sv = S[st.servicio], d = st.datos;
-    var l = [
-      'Hola, Dr. Santiago Treviño. Quiero solicitar una cita.', '',
-      'Folio: ' + st.folio,
-      'Servicio: ' + sv.nombre,
-      'Modalidad: ' + modalidadTxt(),
-      'Fecha: ' + A.fecha(st.slot.fecha, 'largo'),
-      'Hora: ' + st.slot.hora + ' h (hora del centro de México)',
-      'Precio de lista: ' + A.dinero(sv.precio), '',
-      'Nombre: ' + d.nombre, 'Teléfono: ' + d.telefono, 'Correo: ' + d.correo
-    ];
-    if (d.motivo) l.push('Motivo breve: ' + d.motivo);
-    l.push('', 'Quedo atento(a) a su confirmación. Gracias.');
+  function mensaje(c) {
+    var sede = C.sedes[c.sede], s = S[c.serv];
+    var l = ['Hola, Dr. Santiago Treviño. Quiero solicitar una cita.', '', 'Folio: ' + c.folio, 'Servicio: ' + s.nombre,
+      'Modalidad: ' + (sede.modalidad === 'video' ? 'Videoconsulta' : 'Presencial, ' + sede.nombre),
+      'Fecha: ' + A.fecha(c.fecha, 'largo'), 'Hora: ' + c.hora + ' h (CDMX)', 'Precio de lista: ' + precio(s.precio) + ' MXN', '',
+      'Nombre: ' + c.datos.nombre, 'Teléfono: ' + c.datos.telefono];
+    if (c.datos.correo) l.push('Correo: ' + c.datos.correo);
+    if (c.datos.motivo) l.push('Motivo: ' + c.datos.motivo);
+    l.push('', 'Quedo atento(a) a su confirmación.');
     return l;
   }
-  function urlWa() { return A.urlWa(lineasMensaje().join('\n')); }
-  function urlMail() {
-    return 'mailto:' + C.correo + '?subject=' + encodeURIComponent('Solicitud de cita ' + st.folio + ' · ' + A.fecha(st.slot.fecha) + ' ' + st.slot.hora + ' h') + '&body=' + encodeURIComponent(lineasMensaje().join('\r\n'));
-  }
-  function pintarResumen() {
-    var sv = S[st.servicio], sede = C.sedes[st.slot.sede], d = st.datos;
-    var filas = [
-      ['Fecha', A.fecha(st.slot.fecha, 'largo')],
-      ['Hora', st.slot.hora + ' h · ' + C.duracionMin + ' min'],
-      ['Lugar', sede.modalidad === 'video' ? 'Videoconsulta' : sede.nombre + ' · ' + sede.direccion],
-      ['Servicio', sv.nombre],
-      ['Precio', A.dinero(sv.precio) + ' · efectivo o transferencia'],
-      ['Nombre', d.nombre], ['Teléfono', d.telefono], ['Correo', d.correo]
-    ];
-    if (d.motivo) filas.push(['Motivo', d.motivo]);
-    filas.push(['Folio', st.folio]);
-    var ul = $('#resumen'); ul.innerHTML = '';
-    filas.forEach(function (f) {
-      var li = document.createElement('li'), s = document.createElement('span'), b = document.createElement('b');
-      s.textContent = f[0]; b.textContent = f[1]; li.appendChild(s); li.appendChild(b); ul.appendChild(li);
-    });
-    $('#btn-enviar').href = urlWa();
-    $('#e-enviar').textContent = '';
-  }
-
-  /* .ics */
-  function icsFecha(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
-  function icsTexto(s) { return String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n'); }
-  function plegar(linea) { var out = [], r = linea; while (r.length > 60) { out.push(r.slice(0, 60)); r = ' ' + r.slice(60); } out.push(r); return out.join('\r\n'); }
-  function crearIcs() {
-    var sv = S[st.servicio], sede = C.sedes[st.slot.sede];
-    var ini = A.instante(st.slot.fecha, st.slot.hora), fin = new Date(ini.getTime() + C.duracionMin * 60000);
-    var desc = 'Folio: ' + st.folio + '\nServicio: ' + sv.nombre + '\nEstado: SOLICITADA. El consultorio la confirma por WhatsApp.\nTel. y WhatsApp: +52 ' + C.telefonoTxt;
-    return [
-      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Pulse LAT//Demo Dr. Santiago Trevino//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'UID:' + st.folio + '@demos.pulselat.online',
-      'DTSTAMP:' + icsFecha(new Date()),
-      'DTSTART:' + icsFecha(ini),
-      'DTEND:' + icsFecha(fin),
-      'SUMMARY:' + icsTexto('Cita solicitada · Dr. Santiago Treviño (' + sv.nombre + ')'),
-      'LOCATION:' + icsTexto(sede.modalidad === 'video' ? 'Videoconsulta' : sede.nombre + ', ' + sede.direccion),
-      'DESCRIPTION:' + icsTexto(desc),
-      'STATUS:TENTATIVE',
-      'END:VEVENT', 'END:VCALENDAR'
-    ].map(plegar).join('\r\n') + '\r\n';
+  function icsF(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+  function icsT(s) { return String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n'); }
+  function plegar(x) { var o = []; while (x.length > 60) { o.push(x.slice(0, 60)); x = ' ' + x.slice(60); } o.push(x); return o.join('\r\n'); }
+  function ics(c) {
+    var sede = C.sedes[c.sede], ini = A.instante(c.fecha, c.hora), fin = new Date(ini.getTime() + C.duracionMin * 60000);
+    return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Pulse LAT//Demo Dr. Santiago Trevino//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'BEGIN:VEVENT',
+      'UID:' + c.folio + '@demos.pulselat.online', 'DTSTAMP:' + icsF(new Date()), 'DTSTART:' + icsF(ini), 'DTEND:' + icsF(fin),
+      'SUMMARY:' + icsT('Cita solicitada · Dr. Santiago Treviño (' + S[c.serv].nombre + ')'),
+      'LOCATION:' + icsT(sede.modalidad === 'video' ? 'Videoconsulta' : sede.nombre + ', ' + sede.direccion),
+      'DESCRIPTION:' + icsT('Folio: ' + c.folio + '\nEstado: SOLICITADA; el consultorio la confirma por WhatsApp.\nTel. +52 222 357 2531'),
+      'STATUS:TENTATIVE', 'END:VEVENT', 'END:VCALENDAR'].map(plegar).join('\r\n') + '\r\n';
   }
   var urlIcs = null;
-
-  $('#btn-enviar').addEventListener('click', function (e) {
-    if (!st.slot || !st.servicio || !st.datos) { e.preventDefault(); irVista('dia', true); return; }
-    if (A.estadoSlot(st.slot.fecha, st.slot.hora, st.slot.sede) !== 'libre') {
-      e.preventDefault();
-      st.dia = st.slot.fecha; st.slot = null;
-      pintarMes(); irVista('dia', true);
-      $('#dia-sub').textContent = 'Ese horario ya no está disponible. Elige otro, por favor.';
-      return;
-    }
-    this.href = urlWa();
-    A.guardarCita({ folio: st.folio, fecha: st.slot.fecha, hora: st.slot.hora, sede: st.slot.sede, servicio: st.servicio, creada: new Date().toISOString() });
+  $('#form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (A.estadoSlot(st.fecha, st.hora, st.sede) !== 'libre') { cerrar(); return; }
+    var d = validar(); if (!d) return;
+    var c = { folio: folio(), fecha: st.fecha, hora: st.hora, sede: st.sede, serv: st.serv, datos: d };
+    A.guardarCita({ folio: c.folio, fecha: c.fecha, hora: c.hora, sede: c.sede, servicio: c.serv, creada: new Date().toISOString() });
+    var txt = mensaje(c);
+    $('#ok-wa').href = A.urlWa(txt.join('\n'));
+    $('#ok-mail').href = 'mailto:' + C.correo + '?subject=' + encodeURIComponent('Solicitud de cita ' + c.folio) + '&body=' + encodeURIComponent(txt.join('\r\n'));
     if (urlIcs) URL.revokeObjectURL(urlIcs);
-    urlIcs = URL.createObjectURL(new Blob([crearIcs()], { type: 'text/calendar;charset=utf-8' }));
-    $('#exito-folio').textContent = st.folio;
-    $('#exito-txt').textContent = 'Solicitaste ' + S[st.servicio].nombre.toLowerCase() + ' el ' + A.fecha(st.slot.fecha, 'largo') + ' a las ' + st.slot.hora + ' h (' + modalidadTxt().toLowerCase() + ').';
-    $('#exito-wa').href = urlWa();
-    $('#exito-mail').href = urlMail();
-    var ics = $('#exito-ics'); ics.href = urlIcs; ics.setAttribute('download', 'cita-' + st.folio + '.ics');
-    var folio = st.folio;
-    setTimeout(function () { irVista('listo', true); $('#anuncio').textContent = 'Solicitud lista. Folio ' + folio + '.'; pintarMes(); }, 0);
+    urlIcs = URL.createObjectURL(new Blob([ics(c)], { type: 'text/calendar;charset=utf-8' }));
+    var ai = $('#ok-ics'); ai.href = urlIcs; ai.setAttribute('download', 'cita-' + c.folio + '.ics');
+    $('#ok-folio').textContent = c.folio;
+    $('#ok-txt').textContent = cap(A.fecha(c.fecha)) + ', ' + c.hora + ' h · ' + C.sedes[c.sede].corto + '. Envíala por WhatsApp; ahí te confirman.';
+    $('#paso-form').hidden = true; $('#paso-ok').hidden = false;
+    $('#form').reset(); st.hora = null;
+    $('#ok-t').focus();
   });
 
-  $('#otra-cita').addEventListener('click', function () {
-    st.slot = null; st.servicio = null; st.datos = null; st.folio = null;
-    $('#form-datos').reset();
-    $$('#form-datos [aria-invalid]').forEach(function (i) { i.removeAttribute('aria-invalid'); });
-    if (!st.dia || !libresDia(st.dia).length) st.dia = primerDiaLibre(HOY);
-    if (st.dia) st.mes = st.dia.slice(0, 7);
-    pintarMes(); irVista('dia', true);
-  });
-  $$('[data-abrir-privacidad]').forEach(function (a) { a.addEventListener('click', function () { $('#privacidad').open = true; }); });
-
-  /* ---------- Arranque: parámetros desde la página principal ---------- */
-  var q = new URLSearchParams(location.search);
-  var pServ = q.get('servicio'), pSede = q.get('sede'), pD = q.get('d'), pH = q.get('h'), pS = q.get('s');
-  if (pServ && S[pServ]) { st.servicio = pServ; if (S[pServ].modalidad === 'video') aplicarFiltro('video'); }
-  if (pSede && C.sedes[pSede]) aplicarFiltro(pSede);
-  var directo = null;
-  if (pD && /^\d{4}-\d{2}-\d{2}$/.test(pD) && pH && pS && C.sedes[pS]) {
-    st.dia = pD;
-    if (A.estadoSlot(pD, pH, pS) === 'libre') directo = { fecha: pD, hora: pH, sede: pS };
-  }
-  if (!st.dia || st.dia < HOY || st.dia > A.sumarDias(HOY, C.diasHorizonte)) st.dia = primerDiaLibre(HOY);
-  if (st.dia) st.mes = st.dia.slice(0, 7);
-  pintarMes();
-  if (directo) elegirSlot(directo);
-  else {
-    irVista('dia', false);
-    if (pD && pS) $('#dia-sub').textContent = 'Ese horario ya no está libre. Elige otro de este día.';
-  }
-
-  /* Ganchos para pruebas automatizadas */
-  window.__agenda = { estado: function () { return st; }, crearIcs: function () { return crearIcs(); }, urlMail: function () { return urlMail(); } };
+  window.__agenda = { estado: function () { return st; }, estadoSlot: A.estadoSlot };
+  pintarSeg(); pintarChips(); pintarCal(); pintarTurnos(0); pintarBarra();
+  if (st.hora) { var b = $('#turnos [data-hora="' + st.hora + '"]'); if (b) b.scrollIntoView({ block: 'nearest' }); }
 })();
 </script>
 </body>
