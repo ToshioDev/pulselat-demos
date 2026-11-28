@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maqueta movida · Pulse LAT</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{--papel:#f4efe6;--tinta:#16130f;--senal:#d9502b;--mono:"IBM Plex Mono",ui-monospace,monospace;--serif:"Instrument Serif",Georgia,serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{min-height:100dvh;background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;display:grid;place-items:center;padding:24px}
+  .caja{max-width:34rem;border:1px solid rgba(22,19,15,.42);background:#fbf7ef;padding:clamp(26px,5vw,44px)}
+  p.k{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal);display:flex;gap:12px;align-items:center}
+  p.k::before{content:"";width:28px;height:1px;background:currentColor}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,7vw,58px);line-height:.95;letter-spacing:-.02em;margin:18px 0 14px}
+  .ruta{font-family:var(--mono);font-size:12.5px;color:#4e463b;word-break:break-all;background:rgba(22,19,15,.05);padding:12px 14px;border-left:2px solid var(--senal)}
+  a{color:inherit}
+  .boton{display:inline-flex;gap:9px;margin-top:22px;padding:13px 20px;background:var(--tinta);color:var(--papel);font:600 13px/1 "Archivo",sans-serif;text-decoration:none}
+  .boton:hover{background:var(--senal)}
+  ul{list-style:none;margin-top:24px;border-top:1px solid rgba(22,19,15,.16)}
+  li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(22,19,15,.16);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#6b6357}
+  li b{color:var(--tinta);font-weight:500}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="caja">
+  <p class="k">Dirección 404</p>
+  <h1>Esta maqueta cambió de ruta.</h1>
+  <p style="color:#4e463b;margin-bottom:18px">Las demos viven ahora por giro: <b>/giro/negocio/</b>. Si llegaste desde un enlace viejo, te llevamos a la misma página.</p>
+  <p class="ruta" id="ruta">demos.pulselat.online/</p>
+  <a class="boton" id="ir" href="/">Ir a la maqueta</a>
+  <ul>
+    <li><span>Giro 01 · Cafeterías y comida</span><b><a href="/cafeterias/">16 demos</a></b></li>
+    <li><span>Giro 02 · Diseño de marca</span><b><a href="/marca/">en armaje</a></b></li>
+    <li><span>Directorio por giro</span><b><a href="/">inicio</a></b></li>
+  </ul>
+</div>
+<script>
+(() => {
+  const giros = ['cafeterias', 'marca'];
+  const seg = location.pathname.split('/').filter(Boolean);
+  const yaPorGiro = seg.length && giros.indexOf(seg[0].toLowerCase()) !== -1;
+  const destino = (!yaPorGiro && seg.length === 1) ? '/cafeterias/' + seg[0] + '/' : location.pathname;
+  const ir = document.getElementById('ir');
+  if (destino !== location.pathname) {
+    const final = destino + location.search + location.hash;
+    document.getElementById('ruta').textContent = 'demos.pulselat.online' + decodeURIComponent(final);
+    ir.href = final;
+    setTimeout(() => { location.replace(final); }, 900);
+  } else {
+    ir.href = '/';
+    document.getElementById('ruta').textContent = 'demos.pulselat.online' + decodeURIComponent(location.pathname);
+  }
+})();
+</script>
+</body>
+</html>

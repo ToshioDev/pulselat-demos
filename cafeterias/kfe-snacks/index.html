@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>K-fé Snacks · crepas, hotcakes y café en Av. Montevideo</title>
+<meta name="description" content="Crepas, chilaquiles, mini hotcakes y café de barra. Av. Montevideo 525, San Bartolo Atepehuacán. Pedidos por WhatsApp y entrega a domicilio.">
+<meta property="og:title" content="K-fé Snacks · crepas, hotcakes y café en Av. Montevideo">
+<meta property="og:description" content="Momentos dulces, recuerdos felices. Carta completa con precios, pedidos por WhatsApp.">
+<meta property="og:image" content="https://demos.pulselat.online/cafeterias/kfe-snacks/fotos/interior.jpg">
+<meta property="og:url" content="https://demos.pulselat.online/cafeterias/kfe-snacks/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/reclamo.css">
+<style>
+  :root{
+    --tinta:#141b2a;
+    --tinta-2:#101827;
+    --tinta-3:#182438;
+    --oro:#b49664;
+    --oro-2:#cbb183;
+    --crema:#f4ead8;
+    --papel:#fbf5ea;
+    --cobre:#a9714f;
+    --rosa:#c07d6c;
+    --madera:#8a6242;
+    --humo:#6f6357;
+    --linea:rgba(20,27,42,.14);
+    --rc-bg:#182438;
+    --rc-fg:#f4ead8;
+    --rc-acc:#cbb183;
+    --rc-acc-fg:#141b2a;
+    --rc-kicker:#e2cfa9;
+    --rc-line:rgba(244,234,216,.24);
+    --rc-tenue:rgba(244,234,216,.76);
+    --rc-display:"Fraunces",Georgia,serif;
+    --rc-display-weight:500;
+    --rc-display-ls:-.01em;
+    --rc-float-bg:#141b2a;
+    --rc-float-fg:#f4ead8;
+    --rc-float-acc:#cbb183;
+    --as-tinta:var(--tinta);
+    --as-tenue:var(--humo);
+    --as-linea:var(--linea);
+    --as-acento:#925a38;
+    --as-acento-tinta:var(--papel);
+    --as-tarjeta:rgba(244,234,216,.42);
+    --as-panel:var(--tinta);
+    --as-panel-tinta:var(--crema);
+    --as-panel-tenue:rgba(244,234,216,.68);
+    --as-panel-linea:rgba(244,234,216,.18);
+    --as-panel-acento:var(--oro-2);
+    --as-panel-acento-tinta:var(--tinta);
+    --as-display:"Fraunces",Georgia,serif;
+    --as-display-weight:500;
+    --as-display-ls:-.012em;
+    --as-body:"DM Sans",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  section[id]{scroll-margin-top:84px}
+  body{background:var(--papel);color:var(--tinta);font-family:"DM Sans",system-ui,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 30px}
+  .serif{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:.98;letter-spacing:-.012em}
+  .script{font-family:"Parisienne",cursive;font-weight:400}
+
+  nav{position:fixed;inset:0 0 auto;z-index:30;padding:14px 0;background:rgba(251,245,234,.94);border-bottom:1px solid var(--linea);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .marca{display:flex;align-items:center;gap:11px}
+  .marca img{width:40px;height:40px;object-fit:cover;border-radius:50%;flex:none}
+  .marca b{font-family:"Fraunces",Georgia,serif;font-size:20px;font-weight:500;line-height:.9;letter-spacing:-.01em}
+  .marca b em{font-family:"Parisienne",cursive;font-style:normal;font-size:16px;color:var(--cobre);display:block;margin-top:1px}
+  .enlaces{display:flex;gap:26px;font-size:13px;color:rgba(20,27,42,.7)}
+  .enlaces a:hover{color:var(--cobre)}
+  .nav-wa{border:1px solid var(--tinta);color:var(--tinta);padding:9px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+  .nav-wa:hover{background:var(--tinta);color:var(--crema)}
+
+  header{position:relative;padding:132px 0 72px;overflow:hidden;background:
+    radial-gradient(90% 70% at 85% 0%,rgba(180,150,100,.16),transparent 60%),
+    radial-gradient(70% 60% at 0% 100%,rgba(192,125,108,.1),transparent 65%),var(--papel)}
+  .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+  .sello{width:clamp(120px,13vw,168px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:26px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cobre);margin-bottom:16px}
+  .eyebrow i{display:block;width:28px;height:1px;background:var(--oro);font-style:normal}
+  h1{font-size:clamp(38px,5.4vw,74px);max-width:14ch}
+  h1 em{font-family:"Parisienne",cursive;font-style:normal;color:var(--cobre);font-size:.98em;line-height:0;letter-spacing:0}
+  .lead{margin-top:20px;font-size:17px;max-width:44ch;color:rgba(20,27,42,.78)}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid transparent;transition:.2s}
+  .btn-solido{background:var(--tinta);color:var(--crema)}
+  .btn-solido:hover{background:var(--tinta-3)}
+  .btn-linea{border-color:rgba(20,27,42,.35)}
+  .btn-linea:hover{border-color:var(--tinta);background:rgba(20,27,42,.05)}
+  .hero-foto{position:relative}
+  .hero-foto img{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 42%}
+  .hero-foto::after{content:"";position:absolute;inset:14px;border:1px solid rgba(251,245,234,.55);pointer-events:none}
+  .hero-foto figcaption{position:absolute;left:14px;bottom:14px;padding:8px 12px;background:rgba(20,27,42,.86);color:var(--crema);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+
+  .cinta{background:var(--tinta);color:var(--crema);overflow:hidden}
+  .cinta .pista{display:flex;width:max-content;animation:correr 30s linear infinite}
+  .cinta span{display:block;padding:13px 0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:var(--oro-2)}
+  .cinta span+span::before{content:"♥";padding:0 18px;color:var(--cobre);font-size:9px;vertical-align:1px}
+  @keyframes correr{to{transform:translateX(-50%)}}
+
+  section{padding:92px 0}
+  .cabeza{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:44px}
+  .cabeza h2{font-size:clamp(30px,4.2vw,54px);max-width:19ch}
+  .cabeza p{font-size:14px;color:var(--humo);max-width:34ch}
+  .filete{height:1px;background:linear-gradient(90deg,var(--oro),transparent);transform:scaleX(0);transform-origin:left}
+  .vis .filete{transform:scaleX(1);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+
+  .tableros{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+  .tablero{position:relative;background:var(--tinta-2);color:var(--crema);padding:30px 26px 26px;border:1px solid rgba(180,150,100,.4)}
+  .tablero::after{content:"";position:absolute;inset:7px;border:1px solid rgba(180,150,100,.18);pointer-events:none}
+  .tablero h3{font-family:"Fraunces",Georgia,serif;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-2);text-align:center;line-height:1.4}
+  .tablero h3 span{display:block;font-family:"Parisienne",cursive;font-size:26px;letter-spacing:0;text-transform:none;color:var(--crema);margin-top:2px}
+  .tablero .corazon{display:block;text-align:center;color:var(--cobre);font-size:9px;margin:8px 0 18px}
+  .renglon{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(244,234,216,.12)}
+  .renglon b{font-weight:500;font-size:14px;line-height:1.35}
+  .renglon small{grid-column:1;font-size:11px;line-height:1.4;color:rgba(244,234,216,.62)}
+  .renglon .precio{grid-column:2;grid-row:1 / span 2;align-self:center;font-family:"Fraunces",Georgia,serif;font-size:15.5px;color:var(--oro-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tablero .pie{margin-top:16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,234,216,.5);text-align:center}
+  .nota{font-size:12.5px;line-height:1.65;color:var(--humo);margin-top:26px;max-width:78ch}
+
+  .combos{background:var(--crema);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .combos-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .combos-grid p{font-size:16.5px;color:rgba(20,27,42,.8);max-width:46ch}
+  .combos-grid p+p{margin-top:12px}
+  .pasos{display:grid;gap:14px;margin-top:26px;list-style:none;counter-reset:paso}
+  .pasos li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:start;padding:12px 0;border-bottom:1px solid var(--linea);counter-increment:paso}
+  .pasos li::before{content:counter(paso,decimal-leading-zero);font-family:"Fraunces",Georgia,serif;font-size:15px;color:var(--cobre);letter-spacing:.04em}
+  .pasos b{display:block;font-size:15px;font-weight:600}
+  .pasos small{display:block;font-size:12.5px;color:var(--humo);line-height:1.5;margin-top:2px}
+  .combo-foto{position:relative}
+  .combo-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+  .combo-foto figcaption{position:absolute;left:0;bottom:0;right:0;padding:34px 14px 12px;background:linear-gradient(0deg,rgba(20,27,42,.88),rgba(20,27,42,0));color:var(--oro-2);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+
+  .local{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .local figure{position:relative;overflow:hidden}
+  .local img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+  .local figure:hover img{transform:scale(1.04)}
+  .local figcaption{position:absolute;inset:auto 0 0;padding:32px 12px 10px;background:linear-gradient(0deg,rgba(20,27,42,.88),rgba(20,27,42,0));color:var(--oro-2);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+
+  .ubic{display:grid;grid-template-columns:1fr 1fr;gap:58px}
+  .dato{padding:20px 0;border-bottom:1px solid var(--linea)}
+  .dato:first-child{padding-top:0}
+  .dato h3{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cobre);margin-bottom:6px;font-weight:600}
+  .dato p{font-size:18px;line-height:1.45}
+  .dato a{border-bottom:1px solid rgba(20,27,42,.3)}
+  .horario{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-size:14.5px;border-bottom:1px solid rgba(20,27,42,.1);color:rgba(20,27,42,.82)}
+
+  .cierre{background:var(--tinta);color:var(--crema);text-align:center;padding:92px 0;position:relative;overflow:hidden}
+  .cierre .agua{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:300px;height:300px;color:rgba(180,150,100,.12);pointer-events:none}
+  .cierre>.logo-agua{right:4%;top:50%;transform:translateY(-50%);height:min(300px,40vw);opacity:.14}
+  .cierre h2{font-size:clamp(30px,4.4vw,54px);max-width:22ch;margin:0 auto 14px;position:relative}
+  .cierre p{color:rgba(244,234,216,.76);max-width:44ch;margin:0 auto 28px;position:relative}
+  .cierre .acciones{justify-content:center;position:relative}
+  .cierre .btn-solido{background:var(--oro-2);color:var(--tinta-2)}
+  .cierre .btn-solido:hover{background:var(--crema)}
+  .cierre .btn-linea{border-color:rgba(244,234,216,.45);color:var(--crema)}
+
+  footer{padding:30px 0;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--humo);border-top:1px solid var(--linea)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+  /* movimiento */
+  .wm-ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+  .wm-ln>span{display:block}
+  .js .wm-ln>span{transform:translateY(106%);opacity:0;animation:wm-subir .9s cubic-bezier(.22,1,.36,1) forwards}
+  .js .wm-ln:nth-child(1)>span{animation-delay:.1s}
+  .js .wm-ln:nth-child(2)>span{animation-delay:.22s}
+  @keyframes wm-subir{to{transform:translateY(0);opacity:1}}
+
+  .draw path{stroke-dasharray:1;stroke-dashoffset:1}
+  .draw.on path{animation:dibujar 1.2s cubic-bezier(.3,.7,.2,1) forwards}
+  .draw.on path:nth-child(2){animation-delay:.08s}
+  .draw.on path:nth-child(3){animation-delay:.16s}
+  .draw.on path:nth-child(4){animation-delay:.22s}
+  .draw.on path:nth-child(5){animation-delay:.28s}
+  .draw.on path:nth-child(6){animation-delay:.34s}
+  @keyframes dibujar{to{stroke-dashoffset:0}}
+  .latido{transform-box:fill-box;transform-origin:center;animation:latido 4.2s ease-in-out infinite}
+  @keyframes latido{0%,100%{transform:scale(1)}45%{transform:scale(1.12)}55%{transform:scale(1.06)}}
+
+  .js .hero-foto img{animation:entrar 1.2s cubic-bezier(.22,1,.36,1) both}
+  @keyframes entrar{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
+
+  .tablero,.renglon,.horario,.dato,.local figure,.pasos li{opacity:1;transform:none}
+  .vis .tablero,.vis .renglon,.vis .horario,.vis .dato,.vis .local figure,.vis .pasos li{animation:kfe-entra .6s cubic-bezier(.22,1,.36,1) both}
+  .vis .tablero:nth-child(2){animation-delay:.1s}
+  .vis .tablero:nth-child(3){animation-delay:.2s}
+  .vis .renglon:nth-child(2){animation-delay:.05s}
+  .vis .renglon:nth-child(3){animation-delay:.1s}
+  .vis .renglon:nth-child(4){animation-delay:.15s}
+  .vis .renglon:nth-child(5){animation-delay:.2s}
+  .vis .renglon:nth-child(6){animation-delay:.25s}
+  .vis .pasos li:nth-child(2){animation-delay:.08s}
+  .vis .pasos li:nth-child(3){animation-delay:.16s}
+  @keyframes kfe-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  @media (prefers-reduced-motion:reduce){
+    .wm-ln>span,.draw path,.tablero,.renglon,.horario,.dato,.local figure,.pasos li,.hero-foto img,.latido,.filete{
+      animation:none!important;transition:none!important;transform:none!important;opacity:1!important;stroke-dashoffset:0!important
+    }
+    .cinta .pista{animation:none;width:auto;flex-wrap:wrap}
+    .filete{transform:scaleX(1)}
+  }
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:34px}
+    .hero-foto img{aspect-ratio:16/11}
+    .hero-foto::after{inset:10px}
+    .tableros{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .combos-grid{grid-template-columns:1fr;gap:34px}
+    .combo-foto img{aspect-ratio:16/10}
+  }
+  @media (max-width:900px){
+    .enlaces{display:none}
+    .ubic{grid-template-columns:1fr;gap:34px}
+    section{padding:70px 0}
+    header{padding:112px 0 56px}
+  }
+  @media (max-width:680px){
+    .wrap{padding:0 20px}
+    h1{font-size:clamp(36px,10.5vw,54px)}
+    .tableros{grid-template-columns:1fr;gap:16px}
+    .local{grid-template-columns:1fr 1fr;gap:10px}
+    .local figure:first-child{grid-column:1 / -1}
+    .local figure:first-child img{aspect-ratio:16/10}
+    .local img{aspect-ratio:4/5}
+    .btn{flex:1;justify-content:center}
+    .cabeza h2{font-size:clamp(28px,7.4vw,40px)}
+    .cierre h2{font-size:clamp(28px,8.6vw,42px)}
+  }
+  @media (max-width:400px){
+    .local{grid-template-columns:1fr}
+    .local figure:first-child{grid-column:auto}
+  }
+</style>
+<link rel="stylesheet" href="../../assets/motion.css">
+<link rel="stylesheet" href="../../assets/antislop.css">
+<link rel="stylesheet" href="../../assets/venta.css">
+<link rel="stylesheet" href="../../assets/pedido.css">
+</head>
+<body>
+
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+
+<nav><div class="wrap">
+  <a class="marca" href="#inicio" aria-label="K-fé Snacks">
+    <img class="marca-sello marca-hover" src="img/logo.png" alt="K-fé Snacks">
+    <b>K-fé<em>Snacks</em></b>
+  </a>
+  <div class="enlaces nav-escritorio">
+    <a href="#carta">La carta</a><a href="#pedido">Cómo pedir</a><a href="#local">El local</a><a href="#visita">Visítanos</a>
+  </div>
+  <a class="nav-wa wa-barra" href="https://wa.me/528338035302">WhatsApp</a>
+  <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil"><span class="menu-btn-icon" aria-hidden="true"></span>Menú</button>
+</div></nav>
+
+<div class="menu-movil" id="menu-movil" hidden>
+  <div class="menu-movil-top">
+    <span class="menu-movil-marca">K-fé Snacks</span>
+    <button class="menu-movil-cerrar" type="button" data-menu-close>Cerrar <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="menu-movil-nav" aria-label="Menú del sitio">
+    <a href="#carta"><span>01</span> La carta</a>
+    <a href="#pedido"><span>02</span> Cómo pedir</a>
+    <a href="#local"><span>03</span> El local</a>
+    <a href="#dudas"><span>04</span> Dudas</a>
+    <a href="#visita"><span>05</span> Visítanos</a>
+  </nav>
+  <div class="menu-movil-pie">
+    <a class="menu-movil-cta" href="https://wa.me/528338035302">Pedir por WhatsApp</a>
+    <p>Av. Montevideo 525, local A · San Bartolo<br>Entrega a domicilio en la zona; pregunta por el costo.</p>
+  </div>
+</div>
+
+<header id="inicio">
+  <div class="wrap hero">
+    <div>
+      <img class="sello marca-latido" src="img/logo.png" alt="Emblema de K-fé Snacks">
+      <div class="eyebrow"><i></i>Av. Montevideo 525 · San Bartolo</div>
+      <h1 class="serif wm"><span class="wm-ln"><span>Momentos <em>dulces,</em></span></span><span class="wm-ln"><span>recuerdos felices.</span></span></h1>
+      <p class="lead">Crepas, mini hotcakes y chilaquiles recién hechos; café de barra y malteadas para la tarde. Pedidos por WhatsApp y entrega a domicilio.</p>
+      <div class="acciones">
+        <a class="btn btn-solido" href="https://wa.me/528338035302">Pedir por WhatsApp</a>
+        <a class="btn btn-linea" href="#carta">Ver la carta</a>
+      </div>
+    </div>
+    <figure class="hero-foto">
+      <img src="fotos/interior.jpg" alt="Interior de K-fé Snacks con los tableros de la carta, barra de madera y luces colgantes">
+      <figcaption>La barra · Av. Montevideo 525</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="cinta" aria-hidden="true"><div class="pista">
+  <span>Crepas</span><span>Mini hotcakes</span><span>Chilaquiles</span><span>Café de barra</span><span>Malteadas</span><span>Para llevar</span>
+  <span>Crepas</span><span>Mini hotcakes</span><span>Chilaquiles</span><span>Café de barra</span><span>Malteadas</span><span>Para llevar</span>
+</div></div>
+
+<section id="carta" data-anim><div class="wrap">
+  <div class="cabeza">
+    <h2 class="serif">La carta,<br>tal cual está en la barra.</h2>
+    <p>Precios tomados de los tableros del local. Los combos del desayuno se anuncian aparte.</p>
+  </div>
+  <div class="tableros">
+    <div class="tablero">
+      <h3>Bebidas<span>calientes</span></h3>
+      <span class="corazon">♥</span>
+      <div class="renglon"><b>Café Americano</b><small>Espresso y agua caliente</small><span class="precio">$40</span></div>
+      <div class="renglon"><b>Capuchino</b><small>Leche vaporizada y espuma</small><span class="precio">$55</span></div>
+      <div class="renglon"><b>Capuchino francés</b><small>Con crema batida</small><span class="precio">$60</span></div>
+      <div class="renglon"><b>Latte</b><small>Más leche, café suave</small><span class="precio">$55</span></div>
+      <div class="renglon"><b>Mokalatte</b><small>Café, chocolate y leche</small><span class="precio">$65</span></div>
+      <p class="pie">Hecho con amor, para ti</p>
+    </div>
+    <div class="tablero">
+      <h3>Bebidas<span>frías</span></h3>
+      <span class="corazon">♥</span>
+      <div class="renglon"><b>Soda Italiana</b><small>Agua mineral y jarabe de fruta</small><span class="precio">$65</span></div>
+      <div class="renglon"><b>Frapuchino</b><small>Café frappé de la casa</small><span class="precio">$75</span></div>
+      <div class="renglon"><b>Smothie de agua</b><small>Fruta de temporada</small><span class="precio">$70</span></div>
+      <div class="renglon"><b>Smothie de leche</b><small>Fruta con leche</small><span class="precio">$75</span></div>
+      <div class="renglon"><b>Malteada</b><small>Con crema batida</small><span class="precio">$85</span></div>
+      <p class="pie">Ingredientes frescos</p>
+    </div>
+    <div class="tablero">
+      <h3>Menú<span>para disfrutar</span></h3>
+      <span class="corazon">♥</span>
+      <div class="renglon"><b>Crepas dulces sencillas</b><small>Relleno a elegir</small><span class="precio">$65</span></div>
+      <div class="renglon"><b>Crepas saladas</b><small>De la casa</small><span class="precio">$60</span></div>
+      <div class="renglon"><b>Mini Hotcakes</b><small>Con miel y fruta</small><span class="precio">$60</span></div>
+      <div class="renglon"><b>Chilaquiles con pollo</b><small>Verdes o rojos, con crema y queso</small><span class="precio">$85</span></div>
+      <div class="renglon"><b>Chilaquiles con Bistec</b><small>Verdes o rojos, con crema y queso</small><span class="precio">$100</span></div>
+      <p class="pie">Calidez en cada bocado</p>
+    </div>
+  </div>
+  <p class="nota">Precios tal como están impresos en los tableros al armar esta muestra; pueden cambiar. También hay ensaladas y snacks fuera de carta: pregunta por lo del día al 833 803 5302.</p>
+</div></section>
+
+<section class="combos" id="pedido" data-anim><div class="wrap">
+  <div class="combos-grid">
+    <div>
+      <div class="cabeza" style="margin-bottom:18px">
+        <h2 class="serif">Combos de la casa.</h2>
+      </div>
+      <p>En la barra hay una cartelera de <strong>combos del desayuno</strong>: desayuno clásico, bagel norteño, chilaquiles y frappé. Cambian con la temporada y no se publican en línea, así que pídelos directo.</p>
+      <p>Si vienes por antojo de algo que no está en la carta, pregunta: aquí se prepara al momento y muchas veces se puede resolver.</p>
+      <ol class="pasos">
+        <li><div><b>Manda el pedido por WhatsApp</b><small>Al 833 803 5302, con lo que quieres y la hora en que pasas.</small></div></li>
+        <li><div><b>Recoge o pide entrega</b><small>Hay entregas a domicilio en la zona; pregunta por el costo según tu colonia.</small></div></li>
+        <li><div><b>Pasa por tu pedido</b><small>Av. Montevideo 525, local A. Abierto hasta las 9 p.m.</small></div></li>
+      </ol>
+    </div>
+    <figure class="combo-foto">
+      <img src="fotos/frappe.jpg" alt="Malteada de K-fé Snacks con crema batida, barquillo y popotes, con la calcomanía del negocio">
+      <figcaption>Malteada de la casa · $85</figcaption>
+    </figure>
+  </div>
+  <div class="carrito carrito--suelto" data-carrito data-wa="528338035302" data-cafe="K-fé Snacks" data-verbo="pedido">
+    <div class="carrito-cabeza">
+      <p class="carrito-titulo">Arma tu pedido</p>
+      <span class="carrito-comanda">Comanda</span>
+    </div>
+    <p class="carrito-intro">Toca + en lo que se te antoje y el total se arma solo. El mensaje sale con tu comanda, entrega o recojo y la hora.</p>
+    <div class="carrito-lista">
+      <article class="carrito-item" data-item data-nombre="Crepas dulces" data-precio="65">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Crepas dulces</h3>
+            <p class="carrito-item-desc">Con el dulce de la casa.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de crepas dulces">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas crepas dulces">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas crepas dulces">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$65</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Crepas saladas" data-precio="60">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Crepas saladas</h3>
+            <p class="carrito-item-desc">Con queso y lo que pidas de la barra.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de crepas saladas">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unas crepas saladas">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unas crepas saladas">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$60</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Mini hotcakes" data-precio="60">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Mini hotcakes</h3>
+            <p class="carrito-item-desc">Para compartir o para ti solo.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de mini hotcakes">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos mini hotcakes">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos mini hotcakes">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$60</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Chilaquiles" data-precio="85">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Chilaquiles</h3>
+            <p class="carrito-item-desc">Con crema, queso y cebolla.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de chilaquiles">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar unos chilaquiles">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir unos chilaquiles">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$85</span>
+          </div>
+        </div>
+        <div class="carrito-variantes" role="group" aria-label="Proteína de los chilaquiles">
+          <button type="button" data-variante data-nombre-variante="Con pollo" data-precio="85" aria-pressed="true">Pollo <b>$85</b></button>
+          <button type="button" data-variante data-nombre-variante="Con bistec" data-precio="100">Bistec <b>$100</b></button>
+        </div>
+      </article>
+
+      <article class="carrito-item" data-item data-nombre="Malteada" data-precio="85">
+        <div class="carrito-item-fila">
+          <div>
+            <h3 class="carrito-item-nombre">Malteada</h3>
+            <p class="carrito-item-desc">La de la casa, con crema batida.</p>
+          </div>
+          <div class="carrito-item-compra">
+            <div class="carrito-stepper" role="group" aria-label="Cantidad de malteadas">
+              <button class="carrito-paso" type="button" data-menos aria-label="Quitar una malteada">−</button>
+              <span class="carrito-cantidad" data-cantidad>0</span>
+              <button class="carrito-paso" type="button" data-mas aria-label="Añadir una malteada">+</button>
+            </div>
+            <span class="carrito-item-precio" data-precio-item>$85</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="carrito-chips">
+      <div class="carrito-grupo">
+        <p class="carrito-etiqueta" id="kf-modo">Entrega o recojo</p>
+        <div class="carrito-chips-fila" role="group" aria-labelledby="kf-modo" data-modo>
+          <button type="button" data-modo-opcion aria-pressed="true">Recojo en el local</button>
+          <button type="button" data-modo-opcion>Entrega a domicilio</button>
+        </div>
+      </div>
+      <div class="carrito-grupo">
+        <p class="carrito-etiqueta" id="kf-cuando">¿Para cuándo?</p>
+        <div class="carrito-chips-fila" role="group" aria-labelledby="kf-cuando" data-hora>
+          <button type="button" data-hora-opcion aria-pressed="true">Lo antes posible</button>
+          <button type="button" data-hora-opcion>En la mañana</button>
+          <button type="button" data-hora-opcion>Al mediodía</button>
+          <button type="button" data-hora-opcion>Tarde o noche</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carrito-resumen" role="status" aria-live="polite">
+      <div>
+        <span class="carrito-cuenta" data-cuenta>Elige al menos un producto</span>
+        <button class="carrito-vaciar" type="button" data-vaciar hidden>Vaciar pedido</button>
+      </div>
+      <div class="carrito-resumen-total">
+        <span class="carrito-etiqueta">Total</span>
+        <b class="carrito-total" data-total>$0</b>
+      </div>
+    </div>
+
+    <button class="carrito-cta" type="button" data-enviar disabled>Enviar pedido por WhatsApp</button>
+    <p class="carrito-legal">No se cobra nada aquí. El costo de entrega, la dirección y el total se confirman en el chat.</p>
+    <p class="carrito-aviso" role="status" aria-live="polite" hidden></p>
+  </div>
+</div></section>
+
+<section id="local" data-anim><div class="wrap">
+  <div class="cabeza">
+    <h2 class="serif">Un mostrador<br>con corazón.</h2>
+    <p>Barra de madera, paredes claras y el olor a café desde la entrada.</p>
+  </div>
+  <div class="local">
+    <figure><img src="fotos/fria.jpg" alt="Bebida fría rosa de K-fé Snacks servida en vaso alto junto a la ventana"><figcaption>Bebidas frías</figcaption></figure>
+    <figure><img src="fotos/latte.jpg" alt="Latte caliente de K-fé Snacks en taza de vidrio con espuma y canela"><figcaption>Café de barra</figcaption></figure>
+    <figure><img src="fotos/carta.jpg" alt="Tableros de la carta de K-fé Snacks colgados en la pared del local"><figcaption>La carta en la pared</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="dudas" id="dudas" data-anim><div class="wrap">
+  <div class="dudas-cabeza">
+    <div class="dudas-kicker">Antes de pedir</div>
+    <h2>Lo que siempre preguntan.</h2>
+    <p>Si falta algo, el WhatsApp del mostrador está abierto: 833 803 5302.</p>
+  </div>
+  <div class="dudas-grid">
+    <div class="faq">
+      <details><summary>¿Hacen entregas a domicilio?</summary><p>Sí, en la zona de San Bartolo y alrededores. El costo depende de tu colonia; se confirma al <a href="https://wa.me/528338035302">mandar el pedido</a>.</p></details>
+      <details><summary>¿Puedo pedir para llevar?</summary><p>Sí. Café, crepas y malteadas van en vaso sellado. Pide por WhatsApp y pasa por tu pedido a Av. Montevideo 525, local A.</p></details>
+      <details><summary>¿Los combos del desayuno están publicados?</summary><p>No. Cambian con la temporada y se anuncian en la cartelera de la barra. Pregunta por los del día al 833 803 5302.</p></details>
+      <details><summary>¿Los precios de la carta son finales?</summary><p>Son los que están impresos en los tableros del local y pueden cambiar. También hay ensaladas y snacks fuera de carta.</p></details>
+      <details><summary>¿A qué hora cierran y cómo llego?</summary><p>El local cierra a las 9 p.m. todos los días. Estamos sobre Av. Montevideo, en San Bartolo Atepehuacán; revisa la <a href="https://www.google.com/maps/search/?api=1&amp;query=K+f%C3%A9+snacks+Av+Montevideo+525">ficha de Google Maps</a> antes de salir.</p></details>
+    </div>
+    <aside class="google-card" aria-label="Calificación en Google">
+      <div class="google-score"><b>4.8</b><span>de 5 en Google<br>San Bartolo Atepehuacán</span></div>
+      <p class="google-estrellas" aria-hidden="true">★★★★★</p>
+      <p>La calificación reúne a quienes pasan por crepas, chilaquiles y café de barra sobre Montevideo.</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=K+f%C3%A9+snacks+Av+Montevideo+525" target="_blank" rel="noopener">Ver la ficha en Google</a>
+      <span class="google-fuente">Fuente: Google Maps</span>
+    </aside>
+  </div>
+</div></section>
+
+<section id="visita" data-anim><div class="wrap">
+  <div class="cabeza">
+    <h2 class="serif">Aquí, sobre Montevideo.</h2>
+  </div>
+  <div class="ubic">
+    <div>
+      <div class="dato"><h3>Dirección</h3><p>Av. Montevideo 525, local A<br>San Bartolo Atepehuacán, 07730</p></div>
+      <div class="dato"><h3>Pedidos por teléfono y WhatsApp</h3><p><a href="https://wa.me/528338035302">833 803 5302</a></p></div>
+      <div class="dato" style="border:none"><h3>Cómo llegar</h3><p><a href="https://www.google.com/maps/search/?api=1&amp;query=K+f%C3%A9+snacks+Av+Montevideo+525">Abrir en Google Maps →</a></p></div>
+    </div>
+    <div>
+      <div class="dato" style="padding-top:0"><h3>Horario</h3></div>
+      <div class="horario"><b>Todos los días</b><span>Cierra 9 p.m.</span></div>
+      <div class="dato" style="border:none;margin-top:26px"><h3>Para llevar</h3><p style="font-size:15px;color:var(--humo)">Café, crepas y malteadas en vaso sellado. Pide por WhatsApp y pasa por tu pedido.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cierre">
+  <div class="logo-agua marca-flota" aria-hidden="true"><img src="img/logo.png" alt=""></div>
+  <div class="wrap">
+  <h2 class="serif">Tu lugar favorito<br>te espera.</h2>
+  <p>Escríbenos por WhatsApp para pedir, preguntar por los combos del día o apartar tu pedido.</p>
+  <div class="acciones">
+    <a class="btn btn-solido" href="https://wa.me/528338035302">Escribir por WhatsApp</a>
+    <a class="btn btn-linea" href="#carta">Ver la carta</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span><img class="logo-pie logo-pie-radio" src="img/logo.png" alt="" aria-hidden="true">K-fé Snacks · Av. Montevideo 525, San Bartolo</span>
+  <span>Muestra de Pulse LAT · pulselat.online</span>
+</div></footer>
+
+<noscript><style>
+  .wm-ln>span,.draw path,.tablero,.renglon,.horario,.dato,.local figure,.pasos li{transform:none!important;opacity:1!important;stroke-dashoffset:0!important}
+  .filete{transform:scaleX(1)}
+  .cinta .pista{animation:none;width:auto;flex-wrap:wrap}
+</style></noscript>
+<script>
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+  document.querySelectorAll('[data-anim]').forEach(function (el) { io.observe(el); });
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"K-fé Snacks","url":"https://demos.pulselat.online/cafeterias/kfe-snacks/","image":"https://demos.pulselat.online/cafeterias/kfe-snacks/fotos/interior.jpg","telephone":"+528338035302","priceRange":"$","servesCuisine":"Crepas, chilaquiles y café","address":{"@type":"PostalAddress","streetAddress":"Av. Montevideo 525, local A, San Bartolo Atepehuacán","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"07730","addressCountry":"MX"}}
+</script>
+<script src="../../assets/venta.js" defer></script>
+<script src="../../assets/antislop.js" defer></script>
+<script src="../../assets/reclamo.js" defer></script>
+
+<aside class="rc-float" id="rc-float" aria-label="Reclamo del sitio">
+  <a href="https://wa.me/522296500422?text=Hola%2C%20soy%20de%20K-f%C3%A9%20Snacks.%20Vi%20el%20sitio%20de%20muestra%20y%20quiero%20reclamarlo%20para%20administrarlo." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.9.92-3.02-.2-.31a8.2 8.2 0 1 1 6.88 3.76Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.7c-.14-.25-.02-.38.11-.5.11-.12.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+    <span class="rc-opcional">¿Es tuyo este sitio?</span> <b>Reclámalo</b>
+  </a>
+  <button class="rc-cerrar" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
+
+</body>
+</html>

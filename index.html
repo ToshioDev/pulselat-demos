@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demos · by PulseLAT</title>
+<meta name="description" content="Demos reales de PulseLAT: cafeterías, belleza, salud y marca de CDMX, con carta, carrito, agenda de citas y pedido directo a WhatsApp. Y Bit, el agente que contesta tus llamadas.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/">
+<meta property="og:title" content="Demos · by PulseLAT">
+<meta property="og:description" content="Así se vería tu negocio vendiendo en línea: 17 demos reales con pedido o cita directo a WhatsApp.">
+<meta property="og:image" content="https://demos.pulselat.online/cafeterias/thumbs/jam-coffee.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="assets/pulselat-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0b0b; --surface:#111111; --line:#262626; --line-2:#3a3732;
+    --muted:#b8b88b; --text:#ffffff; --text-2:rgba(255,255,255,.72);
+    --gold:#d9a441; --copper:#b5642a; --cream:#f4dcae;
+    --lima:#c8ff3c;
+    --sans:"Quicksand",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);padding:10px 16px;z-index:100;font-weight:700}
+  .skip:focus{left:12px;top:12px}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  /* Marca */
+  .logo{display:inline-flex;align-items:center;gap:10px;font-size:20px;letter-spacing:-.02em;text-transform:lowercase}
+  .logo img{width:28px;height:28px}
+  .logo .l{font-weight:300}.logo .b{font-weight:700}
+  .logo .sub{font-weight:500;color:var(--muted);font-size:15px;margin-left:2px}
+  .by{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 6px;transition:border-color .2s,color .2s}
+  .by img{width:22px;height:22px}
+  .by b{font-weight:700;color:var(--text)}.by .l{font-weight:300;color:var(--text)}
+  .by:hover{border-color:var(--gold);color:var(--text)}
+
+  /* Barra */
+  .top{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:14px;height:64px}
+  .top nav{display:flex;align-items:center;gap:6px;margin-left:auto}
+  .top nav a:not(.btn){font-size:14px;font-weight:600;padding:8px 12px;border-radius:10px;color:var(--text-2)}
+  .top nav a:not(.btn):hover{color:var(--text);background:var(--surface)}
+  .pill-bit{display:inline-flex;align-items:center;gap:6px}
+  .pill-bit i{font-style:normal;font-size:10.5px;font-weight:700;background:var(--lima);color:var(--ink);border-radius:999px;padding:2px 7px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:14px;font:700 15px/1 var(--sans);border:0;cursor:pointer;transition:filter .2s,transform .2s,border-color .2s}
+  .btn--oro{background:var(--gold);color:var(--ink)}
+  .btn--oro:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .btn--linea{border:1px solid var(--line-2);color:var(--text)}
+  .btn--linea:hover{border-color:var(--gold)}
+  .btn--chico{padding:10px 16px;font-size:14px;border-radius:12px}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(48px,6vw,80px);
+    background:radial-gradient(55% 60% at 80% 30%,rgba(217,164,65,.16),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(181,100,42,.12),transparent 70%)}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}
+  .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  h1{font-weight:700;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.035em;margin:22px 0 20px}
+  h1 span{color:var(--gold)}
+  .lead{font-size:clamp(17px,1.5vw,20px);color:var(--text-2);max-width:42ch}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;transform:rotate(-3deg);padding-bottom:26px}
+  .collage a{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -20px rgba(0,0,0,.8);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .collage a:nth-child(2),.collage a:nth-child(5){transform:translateY(26px)}
+  .collage a:hover{transform:translateY(-6px) scale(1.03)}
+  .collage a:nth-child(2):hover,.collage a:nth-child(5):hover{transform:translateY(20px) scale(1.03)}
+  .collage img{aspect-ratio:1/1;object-fit:cover;width:100%;height:auto}
+
+  /* Cifras */
+  .cifras{border-block:1px solid var(--line);background:var(--surface)}
+  .cifras ul{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cifras li{padding:22px 8px;text-align:center;border-right:1px solid var(--line)}
+  .cifras li:last-child{border-right:0}
+  .cifras b{display:block;font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;color:var(--cream);line-height:1}
+  .cifras span{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+
+  /* Secciones */
+  .seccion{padding:clamp(56px,7vw,96px) 0}
+  .seccion--pegada{padding-top:0}
+  .cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px}
+  .cab h2{font-weight:700;font-size:clamp(30px,3.8vw,48px);line-height:1.05;letter-spacing:-.03em}
+  .cab h2 span{color:var(--gold)}
+  .ver-todo{font-weight:700;font-size:15px;color:var(--gold);white-space:nowrap}
+  .ver-todo:hover{text-decoration:underline;text-underline-offset:4px}
+
+  /* Demos */
+  .demos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .demo{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .25s,transform .3s cubic-bezier(.22,1,.36,1)}
+  .demo:hover{border-color:var(--gold);transform:translateY(-4px)}
+  .demo figure{position:relative;overflow:hidden}
+  .demo img{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+  .demo:hover img{transform:scale(1.05)}
+  .demo .wa{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;background:rgba(11,11,11,.78);backdrop-filter:blur(6px);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:600}
+  .demo .wa::before{content:"";width:6px;height:6px;border-radius:50%;background:#34a853}
+  .demo .txt{padding:14px 16px 16px}
+  .demo b{display:block;font-size:16.5px;font-weight:700;letter-spacing:-.01em}
+  .demo .txt span{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+
+  /* Giros */
+  .giros{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .giro{position:relative;display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:20px;background:var(--surface);border:1px solid var(--line);min-height:210px;transition:border-color .25s}
+  .giro:hover{border-color:var(--gold)}
+  .giro .estado{align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;background:rgba(52,168,83,.16);color:#7fd99a}
+  .giro .estado--lev{background:rgba(217,164,65,.14);color:var(--gold)}
+  .giro h3{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
+  .giro p{font-size:15px;color:var(--text-2)}
+  .giro .num{margin-top:auto;display:flex;align-items:baseline;gap:8px;font-size:14px;color:var(--muted)}
+  .giro .num b{font-size:34px;font-weight:700;letter-spacing:-.03em;color:var(--cream);line-height:1}
+  .giro .flecha{position:absolute;right:22px;bottom:22px;font-size:22px;color:var(--gold);transition:transform .25s}
+  .giro:hover .flecha{transform:translateX(4px)}
+
+  /* Banda Bit */
+  .bit{position:relative;overflow:hidden;border-radius:28px;background:radial-gradient(60% 80% at 80% 40%,rgba(243,154,91,.18),transparent 70%),#120a08;border:1px solid #2a1a14;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:24px;padding:clamp(28px,4vw,52px)}
+  .bit .nuevo{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--lima)}
+  .bit .nuevo::before{content:"";width:8px;height:8px;border-radius:50%;background:#f39a5b;box-shadow:0 0 10px #f39a5b}
+  .bit h2{font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1.04;letter-spacing:-.035em;margin:14px 0 12px}
+  .bit h2 mark{background:var(--lima);color:var(--ink);border-radius:.14em;padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .bit p{color:var(--text-2);font-size:16.5px;max-width:44ch}
+  .bit ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .bit li{font-size:13.5px;font-weight:600;border:1px solid #3a2a22;border-radius:999px;padding:6px 12px;color:#f4efe6}
+  .btn--lima{background:var(--lima);color:var(--ink)}
+  .btn--lima:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .bit .robot{justify-self:center;width:min(240px,100%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+  .bit .robot img{width:100%;height:auto;animation:flota 4s ease-in-out infinite}
+  @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* Pasos */
+  .pasos{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:p}
+  .pasos li{padding:24px;border-radius:20px;border:1px solid var(--line);background:var(--surface)}
+  .pasos li::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--gold);color:var(--ink);font-weight:700;font-size:16px}
+  .pasos b{display:block;margin-top:16px;font-size:18px;font-weight:700;letter-spacing:-.01em}
+  .pasos p{margin-top:6px;font-size:15px;color:var(--text-2)}
+
+  /* Cierre */
+  .cierre{padding:clamp(56px,8vw,100px) 0 0;border-top:1px solid var(--line);background:radial-gradient(50% 70% at 50% 0%,rgba(217,164,65,.14),transparent 70%)}
+  .cierre .wrap{text-align:center}
+  .cierre h2{font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.035em;max-width:16ch;margin:0 auto}
+  .cierre h2 span{color:var(--gold)}
+  .cierre p{color:var(--text-2);font-size:17px;max-width:44ch;margin:16px auto 0}
+  .cierre .acciones{justify-content:center}
+  .pie{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:clamp(48px,7vw,80px);padding:22px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+  @media (max-width:1180px) and (min-width:961px){ .giros{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:960px){
+    .hero .wrap{grid-template-columns:1fr}
+    .collage{transform:none;max-width:520px}
+    .demos{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .giros,.pasos{grid-template-columns:1fr}
+    .giro{min-height:0}
+    .bit{grid-template-columns:1fr}
+    .bit .robot{order:-1;width:140px;justify-self:start}
+    .cifras ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cifras li:nth-child(2){border-right:0}
+    .cifras li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  }
+  @media (max-width:640px){ .top nav .ocultable{display:none} }
+  @media (max-width:520px){
+    .wrap{width:calc(100% - 32px)}
+    .top .wrap{height:58px}
+    .logo{font-size:18px}.logo .sub{display:none}
+    .demos{gap:10px}
+    .demo .txt{padding:10px 12px 12px}
+    .demo b{font-size:15px}
+    .demo .wa{font-size:10.5px}
+    .collage{gap:8px}
+    .acciones .btn{flex:1 1 auto}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#demos">Saltar a las demos</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="PulseLAT demos, inicio"><img src="assets/pulselat-isotipo.svg" alt="" width="28" height="28"><span><span class="l">pulse</span><span class="b">lat</span></span><span class="sub">/ demos</span></a>
+    <nav aria-label="Principal">
+      <a class="ocultable" href="#demos">Demos</a>
+      <a class="pill-bit" href="bit/">Bit <i>Nuevo</i></a>
+      <a class="btn btn--oro btn--chico" href="https://wa.me/522296500422?text=Hola%2C%20vi%20las%20demos%20de%20PulseLAT%20y%20quiero%20una%20para%20mi%20negocio.">Quiero la mía</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="wrap">
+      <div>
+        <p class="chip">Demos reales · Lindavista, Vallejo y San Bartolo</p>
+        <h1 id="t-hero">Así se vería tu negocio <span>vendiendo en línea.</span></h1>
+        <p class="lead">Tu carta, tu carrito y cada pedido directo a tu WhatsApp. Abre una demo y pruébala como cliente.</p>
+        <div class="acciones">
+          <a class="btn btn--oro" href="https://wa.me/522296500422?text=Hola%2C%20vi%20las%20demos%20de%20PulseLAT%20y%20quiero%20una%20para%20mi%20negocio.">Quiero la de mi negocio →</a>
+          <a class="btn btn--linea" href="#demos">Ver las demos</a>
+        </div>
+      </div>
+      <div class="collage" aria-label="Algunas demos publicadas">
+        <a href="cafeterias/jam-coffee/"><img src="cafeterias/thumbs/jam-coffee.jpg" alt="Demo de JAM Coffee" width="640" height="640"></a>
+        <a href="cafeterias/xochipilli/"><img src="cafeterias/thumbs/xochipilli.jpg" alt="Demo de Xochipilli Café" width="640" height="640"></a>
+        <a href="cafeterias/chios/"><img src="cafeterias/thumbs/chios.jpg" alt="Demo de Chios Café" width="640" height="640"></a>
+        <a href="cafeterias/green-planet/"><img src="cafeterias/thumbs/green-planet.jpg" alt="Demo de Green Planet Cafetería" width="640" height="640"></a>
+        <a href="cafeterias/el-carrito-rojo/"><img src="cafeterias/thumbs/el-carrito-rojo.jpg" alt="Demo de El Carrito Rojo" width="640" height="640"></a>
+        <a href="cafeterias/los-postres/"><img src="cafeterias/thumbs/los-postres.jpg" alt="Demo de Postres de Calderón" width="640" height="640"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cifras" aria-label="En números">
+    <ul class="wrap">
+      <li><b>17</b><span>demos publicadas</span></li>
+      <li><b>08</b><span>colonias</span></li>
+      <li><b>100%</b><span>pedido a WhatsApp</span></li>
+      <li><b>0</b><span>plantillas repetidas</span></li>
+    </ul>
+  </section>
+
+  <section class="seccion" id="demos" aria-labelledby="t-demos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-demos">Ábrela y <span>pide algo.</span></h2>
+        <a class="ver-todo" href="cafeterias/">Ver las 16 demos →</a>
+      </div>
+      <div class="demos">
+        <a class="demo" href="cafeterias/jam-coffee/"><figure><img src="cafeterias/thumbs/jam-coffee.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>JAM Coffee</b><span>Café con alma musical · Vallejo</span></div></a>
+        <a class="demo" href="cafeterias/xochipilli/"><figure><img src="cafeterias/thumbs/xochipilli.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Xochipilli Café</b><span>Flores y café · Montevideo</span></div></a>
+        <a class="demo" href="cafeterias/al-grano/"><figure><img src="cafeterias/thumbs/al-grano.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Al Grano</b><span>Café y terraza · Lindavista</span></div></a>
+        <a class="demo" href="cafeterias/chios/"><figure><img src="cafeterias/thumbs/chios.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Chios Café</b><span>La barra de la comida · Vallejo</span></div></a>
+        <a class="demo" href="cafeterias/los-postres/"><figure><img src="cafeterias/thumbs/los-postres.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Postres de Calderón</b><span>La noche dulce · San Bartolo</span></div></a>
+        <a class="demo" href="cafeterias/el-carrito-rojo/"><figure><img src="cafeterias/thumbs/el-carrito-rojo.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>El Carrito Rojo</b><span>Desayunos de carrito · Lindavista</span></div></a>
+        <a class="demo" href="cafeterias/cafetzin/"><figure><img src="cafeterias/thumbs/cafetzin.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Cafetzin</b><span>Café de barrio · Col. Estrella</span></div></a>
+        <a class="demo" href="cafeterias/las-alondras/"><figure><img src="cafeterias/thumbs/las-alondras.jpg" alt="" width="640" height="640" loading="lazy"><span class="wa">Pedido a WhatsApp</span></figure><div class="txt"><b>Las Alondras</b><span>Pan dulce · San Bartolo</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--pegada" aria-labelledby="t-giros">
+    <div class="wrap">
+      <div class="cab"><h2 id="t-giros">Por <span>giro.</span></h2></div>
+      <div class="giros">
+        <a class="giro" href="cafeterias/">
+          <span class="estado">Publicado</span>
+          <h3>Cafeterías y comida</h3>
+          <p>Carta con carrito y pedido directo al dueño.</p>
+          <span class="num"><b>16</b> demos</span>
+          <span class="flecha" aria-hidden="true">→</span>
+        </a>
+        <a class="giro" href="belleza/">
+          <span class="estado estado--lev">En levantamiento</span>
+          <h3>Belleza y cuidado</h3>
+          <p>Servicios, tiempos y la cita a WhatsApp.</p>
+          <span class="num"><b>40</b> locales en lista</span>
+          <span class="flecha" aria-hidden="true">→</span>
+        </a>
+        <a class="giro" href="salud/">
+          <span class="estado">Publicado</span>
+          <h3>Salud y consultorios</h3>
+          <p>Calendario, turnero y la cita al WhatsApp del médico.</p>
+          <span class="num"><b>1</b> demo · psiquiatría</span>
+          <span class="flecha" aria-hidden="true">→</span>
+        </a>
+        <a class="giro" href="marca/">
+          <span class="estado">Publicado</span>
+          <h3>Diseño de marca</h3>
+          <p>Logo, paleta y tipografía de cada negocio.</p>
+          <span class="num"><b>16</b> hojas de marca</span>
+          <span class="flecha" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--pegada" aria-labelledby="t-bit">
+    <div class="wrap">
+      <div class="bit">
+        <div>
+          <span class="nuevo">Nuevo · Pre-lanzamiento</span>
+          <h2 id="t-bit">Que ninguna llamada se quede <mark>sin vender.</mark></h2>
+          <p>Bit contesta las llamadas que no alcanzas, cotiza con tus precios reales y te pasa el pedido por WhatsApp. Tu número no cambia.</p>
+          <ul><li>Celular o fijo</li><li>PulsePOS</li><li>Flama Stars</li></ul>
+          <div class="acciones"><a class="btn btn--lima" href="bit/">Apartar mi lugar de fundador →</a></div>
+        </div>
+        <div class="robot"><img src="bit/bit.svg" alt="Bit, el robot verde de antena naranja" width="200" height="270"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--pegada" aria-labelledby="t-pasos">
+    <div class="wrap">
+      <div class="cab"><h2 id="t-pasos">Tu demo en <span>tres pasos.</span></h2></div>
+      <ol class="pasos">
+        <li><b>Levantamos tu negocio</b><p>Tu letrero, tu carta y tus precios, tal como son hoy.</p></li>
+        <li><b>Armamos tu demo</b><p>Con tu marca, tu carrito y tu forma de entregar.</p></li>
+        <li><b>Recibes pedidos</b><p>Cada orden llega armada a tu WhatsApp.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="cierre">
+  <div class="wrap">
+    <h2>¿Tu negocio no está aquí? <span>Lo armamos.</span></h2>
+    <p>Mándanos el nombre de tu negocio y te enseñamos cómo se vería.</p>
+    <div class="acciones">
+      <a class="btn btn--oro" href="https://wa.me/522296500422?text=Hola%2C%20vi%20las%20demos%20de%20PulseLAT%20y%20quiero%20una%20para%20mi%20negocio.">Hablar por WhatsApp →</a>
+    </div>
+    <div class="pie">
+      <a class="by" href="https://pulselat.online"><img src="assets/pulselat-isotipo.svg" alt="" width="22" height="22"><span>by <span class="l">pulse</span><b>lat</b></span></a>
+      <span>Lindavista, CDMX · 2026</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

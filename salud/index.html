@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salud · Pulse LAT</title>
+<meta name="description" content="Giro de salud del directorio Pulse LAT: consultorios con agenda de citas en línea, calendario con turnero y solicitud directa al WhatsApp del médico.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://demos.pulselat.online/salud/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demos.pulselat.online/salud/">
+<meta property="og:title" content="Salud · Pulse LAT">
+<meta property="og:description" content="Consultorios con agenda en línea y cita directa al WhatsApp del médico.">
+<meta property="og:image" content="https://demos.pulselat.online/salud/santiago-trevino/img/retrato.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f4efe6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316130f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23d9502b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#f4efe6; --papel-2:#fbf7ef; --tinta:#16130f;
+    --cuerpo:#4e463b; --humo:#6b6357; --senal:#c2461f;
+    --linea:rgba(22,19,15,.16); --linea-fuerte:rgba(22,19,15,.42);
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif:"Instrument Serif",Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--papel);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1220px,100% - 48px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--tinta);color:var(--papel);padding:10px 16px;z-index:100}
+  .skip:focus{left:12px;top:12px}
+  :focus-visible{outline:2px solid var(--senal);outline-offset:3px}
+  .top{background:var(--tinta);color:var(--papel)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .marca-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+  .marca-top i{display:block;width:8px;height:8px;background:var(--senal);flex:none}
+  .estado{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,230,.62)}
+  .estado a{border-bottom:1px solid rgba(244,239,230,.28)}
+  .top-wa{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(244,239,230,.5);padding-bottom:2px}
+  .intro{padding:clamp(46px,7vw,92px) 0 clamp(30px,4vw,48px)}
+  .intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:clamp(28px,5vw,72px);align-items:end}
+  .kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--senal)}
+  .kicker::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8.6vw,112px);line-height:.9;letter-spacing:-.025em;margin:20px 0 24px;max-width:15ch}
+  h1 em{font-style:italic;color:var(--senal)}
+  .lead{max-width:54ch;font-size:clamp(16px,1.4vw,19px);color:var(--cuerpo)}
+  .tecnica{list-style:none;border-top:1px solid var(--linea-fuerte)}
+  .tecnica li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--linea)}
+  .tecnica span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--humo)}
+  .tecnica b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1}
+  .rejilla{padding:clamp(10px,2vw,20px) 0 clamp(48px,7vw,80px)}
+  .ficha{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:center;border:1px solid var(--linea-fuerte);background:var(--papel-2);padding:16px;transition:border-color .2s,transform .3s}
+  .ficha:hover{border-color:var(--tinta);transform:translateY(-3px)}
+  .ficha img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .num{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--senal)}
+  .ficha h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.02;margin:6px 0 4px}
+  .fserv{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--humo)}
+  .fd{margin-top:12px;font-size:15px;color:var(--cuerpo);max-width:62ch}
+  .lnk{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;font-weight:600;border-bottom:1px solid var(--linea-fuerte);padding-bottom:2px}
+  .ficha:hover .lnk{color:var(--senal);border-color:var(--senal)}
+  .pie{border-top:1px solid var(--linea-fuerte);padding:20px 0 28px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+  @media (max-width:760px){
+    .intro .wrap{grid-template-columns:1fr}
+    .estado{display:none}
+    .ficha{grid-template-columns:1fr}
+    .ficha img{aspect-ratio:16/10}
+  }
+  @media (max-width:520px){.wrap{width:calc(100% - 32px)}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}.ficha:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#indice">Saltar al índice</a>
+<div class="top">
+  <div class="wrap">
+    <a class="marca-top" href="../"><i></i>Pulse LAT</a>
+    <span class="estado"><a href="../">Giros</a> · Salud</span>
+    <a class="top-wa" href="https://wa.me/522296500422?text=Hola%2C%20vi%20el%20giro%20de%20salud%20de%20Pulse%20LAT%20y%20quiero%20una%20demo%20para%20mi%20consultorio.">WhatsApp</a>
+  </div>
+</div>
+<header class="intro">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Giro · salud</p>
+      <h1>Consultorio con <em>agenda.</em></h1>
+      <p class="lead">Sitios para médicos y consultorios: cédulas visibles, servicios con precio, calendario con turnero y una solicitud de cita que llega armada al WhatsApp del médico, con folio, correo y archivo de calendario.</p>
+    </div>
+    <ul class="tecnica" aria-label="Resumen del giro">
+      <li><span>Demos</span><b>01</b></li>
+      <li><span>Con agenda</span><b>01</b></li>
+    </ul>
+  </div>
+</header>
+<main id="indice">
+  <div class="wrap rejilla">
+    <a class="ficha" href="santiago-trevino/">
+      <img src="santiago-trevino/img/retrato.jpg" alt="" width="529" height="530">
+      <div>
+        <span class="num">01</span>
+        <h2>Dr. Santiago Treviño San Martin</h2>
+        <p class="fserv">Psiquiatría y psiquiatría de enlace · Tlalpan y Pedregal</p>
+        <p class="fd">Clínica Cuicuilco y SOMA Medicina Integral, más videoconsulta. Landing por situación del paciente y agenda tipo app: calendario, turnero y solicitud directa a WhatsApp con folio.</p>
+        <span class="lnk">Abrir la demo →</span>
+      </div>
+    </a>
+  </div>
+</main>
+<footer class="pie"><div class="wrap">Pulse LAT · maquetas de demostración · CDMX 2026</div></footer>
+</body>
+</html>
